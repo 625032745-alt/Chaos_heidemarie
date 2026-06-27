@@ -1,0 +1,50 @@
+<Project Sdk="Godot.NET.Sdk/4.5.1">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>ChaosHeidemarie</RootNamespace>
+    <ImplicitUsings>true</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <AssemblyName>ChaosHeidemarie</AssemblyName>
+    <CopyToGame Condition="'$(CopyToGame)' == ''">true</CopyToGame>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="STS2.RitsuLib" Version="0.4.38" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="sts2" HintPath="$(Sts2DataDir)\sts2.dll" Private="False" />
+    <Reference Include="0Harmony" HintPath="$(Sts2DataDir)\0Harmony.dll" Private="False" />
+    <Reference Include="SmartFormat" HintPath="$(Sts2DataDir)\SmartFormat.dll" Private="False" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="mod_manifest.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="src\Localization\**\*.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="ArtWorks\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <Target Name="ValidateSts2GameInstall" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="!Exists('$(Sts2DataDir)\sts2.dll')" Text="Could not find sts2.dll under '$(Sts2DataDir)'." />
+    <Error Condition="!Exists('$(Sts2DataDir)\0Harmony.dll')" Text="Could not find 0Harmony.dll under '$(Sts2DataDir)'." />
+    <Error Condition="!Exists('$(Sts2DataDir)\SmartFormat.dll')" Text="Could not find SmartFormat.dll under '$(Sts2DataDir)'." />
+  </Target>
+
+  <Target Name="PackPck" Condition="'$(CopyToGame)' == 'true'">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\tools\export-pure-resource-pck.ps1&quot; -OutputPck &quot;$(MSBuildProjectDirectory)\$(MSBuildProjectName).pck&quot;" />
+  </Target>
+
+  <Target Name="Copy Mod" AfterTargets="Build" DependsOnTargets="PackPck" Condition="'$(CopyToGame)' == 'true'">
+    <PropertyGroup>
+      <ModInstallDir>$(Sts2Dir)\mods\$(MSBuildProjectName)</ModInstallDir>
+    </PropertyGroup>
+    <MakeDir Directories="$(ModInstallDir)" />
+    <RemoveDir Directories="$(ModInstallDir)\ArtWorks" Condition="Exists('$(ModInstallDir)\ArtWorks')" />
+    <RemoveDir Directories="$(ModInstallDir)\localization" Condition="Exists('$(ModInstallDir)\localization')" />
+    <Delete Files="$(ModInstallDir)\mod_manifest.json" Condition="Exists('$(ModInstallDir)\mod_manifest.json')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModInstallDir)" />
+    <Copy SourceFiles="mod_manifest.json" DestinationFiles="$(ModInstallDir)\$(MSBuildProjectName).json" />
+    <Copy SourceFiles="ChaosHeidemarie.pck" DestinationFolder="$(ModInstallDir)" Condition="Exists('ChaosHeidemarie.pck')" />
+  </Target>
+</Project>

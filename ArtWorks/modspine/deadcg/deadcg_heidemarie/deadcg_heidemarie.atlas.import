@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://vpsd2cfo5o88"
+path="res://.godot/imported/deadcg_heidemarie.atlas-86bf6f6e520dd0a0d00c93aa25fb936c.spatlas"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/deadcg/deadcg_heidemarie/deadcg_heidemarie.atlas"
+dest_files=["res://.godot/imported/deadcg_heidemarie.atlas-86bf6f6e520dd0a0d00c93aa25fb936c.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

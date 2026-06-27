@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://breoflc6ogamg"
+path="res://.godot/imported/characterselect_heidemarie.skel-00d417c200540d20e4ff692090b62e60.spskel"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie.skel"
+dest_files=["res://.godot/imported/characterselect_heidemarie.skel-00d417c200540d20e4ff692090b62e60.spskel"]
+
+[params]
+

@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://rgg5m8j3mv1m"
+path="res://.godot/imported/characterselect_heidemarie_b1.atlas-f97179a2b7204df3ed66e19081b83331.spatlas"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_b1.atlas"
+dest_files=["res://.godot/imported/characterselect_heidemarie_b1.atlas-f97179a2b7204df3ed66e19081b83331.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

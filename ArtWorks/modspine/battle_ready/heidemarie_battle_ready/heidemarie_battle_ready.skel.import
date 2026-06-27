@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://ckra3or4jw0mx"
+path="res://.godot/imported/heidemarie_battle_ready.skel-5d2aeec999c8c7e91063458c3c6f05db.spskel"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/battle_ready/heidemarie_battle_ready/heidemarie_battle_ready.skel"
+dest_files=["res://.godot/imported/heidemarie_battle_ready.skel-5d2aeec999c8c7e91063458c3c6f05db.spskel"]
+
+[params]
+

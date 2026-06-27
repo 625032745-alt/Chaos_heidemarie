@@ -1,0 +1,9 @@
+[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3 uid="uid://b1tcqgu1oa353"]
+
+[ext_resource type="SpineAtlasResource" uid="uid://b5vl6xdtmtq0h" path="res://ArtWorks/modspine/effect/tongyong/step_player_move/step_player_move.atlas" id="1_u6rvh"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://842b8f1jekgn" path="res://ArtWorks/modspine/effect/tongyong/step_player_move/step_player_move.skel" id="2_yq40n"]
+
+[resource]
+atlas_res = ExtResource("1_u6rvh")
+skeleton_file_res = ExtResource("2_yq40n")
+

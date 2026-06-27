@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://c1rrtb25ut4ku"
+path="res://.godot/imported/heidemarie_battle_ready.atlas-77b60dad64ad7ce253966a012ae9ed29.spatlas"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/battle_ready/heidemarie_battle_ready/heidemarie_battle_ready.atlas"
+dest_files=["res://.godot/imported/heidemarie_battle_ready.atlas-77b60dad64ad7ce253966a012ae9ed29.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

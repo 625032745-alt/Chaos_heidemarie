@@ -1,0 +1,14 @@
+{
+  "id": "ChaosHeidemarie",
+  "pck_name": "ChaosHeidemarie",
+  "name": "Chaos Heidemarie",
+  "author": "Chaos",
+  "description": "Adds Heidemarie as a new playable character.",
+  "version": "0.1.0",
+  "has_pck": true,
+  "has_dll": true,
+  "affects_gameplay": true,
+  "dependencies": [
+    { "id": "STS2-RitsuLib" }
+  ]
+}

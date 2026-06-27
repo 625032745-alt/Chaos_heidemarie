@@ -1,0 +1,9 @@
+[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3 uid="uid://dnu4867v8nnui"]
+
+[ext_resource type="SpineAtlasResource" uid="uid://3w5saumr7nh7" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie.atlas" id="1_utpl3"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://biajl7r5qktk8" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie.skel" id="2_t2720"]
+
+[resource]
+atlas_res = ExtResource("1_utpl3")
+skeleton_file_res = ExtResource("2_t2720")
+default_mix = 0.05

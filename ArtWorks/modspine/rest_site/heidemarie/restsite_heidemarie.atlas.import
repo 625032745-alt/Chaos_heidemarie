@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://cu1bg6j0taj0s"
+path="res://.godot/imported/restsite_heidemarie.atlas-1c1fbf7d7da17444edbf6158b8d19621.spatlas"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/rest_site/heidemarie/restsite_heidemarie.atlas"
+dest_files=["res://.godot/imported/restsite_heidemarie.atlas-1c1fbf7d7da17444edbf6158b8d19621.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

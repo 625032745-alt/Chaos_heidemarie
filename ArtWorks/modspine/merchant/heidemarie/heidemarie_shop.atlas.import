@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://b2ydbbbt3b06x"
+path="res://.godot/imported/heidemarie_shop.atlas-31d2322d496492a874e9babae91c65ff.spatlas"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/merchant/heidemarie/heidemarie_shop.atlas"
+dest_files=["res://.godot/imported/heidemarie_shop.atlas-31d2322d496492a874e9babae91c65ff.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

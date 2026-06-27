@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="SpineSkeletonDataResource" path="res://ArtWorks/modspine/characters/heidemarie/heidemarie_skel_data.tres" id="2_skel"]
+
+[node name="ChaosHeidemarie" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="Visuals" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("2_skel")
+preview_skin = "Default"
+preview_animation = "idle_loop"
+preview_frame = false
+preview_time = 0.0
+unique_name_in_owner = true
+position = Vector2(2, -20)
+scale = Vector2(0.29, 0.29)
+
+[node name="ChaosEff" type="Marker2D" parent="Visuals"]
+unique_name_in_owner = true
+position = Vector2(0, 0)
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -115.0
+offset_top = -335.0
+offset_right = 115.0
+offset_bottom = 32.0
+mouse_filter = 2
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -178)
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(24, -414)

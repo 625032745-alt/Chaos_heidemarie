@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://ck262c4051g7i"
+path="res://.godot/imported/step_player_arrive.skel-00f725b1848495ef9ed6b4a022769c33.spskel"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/effect/tongyong/step_player_arrive/step_player_arrive.skel"
+dest_files=["res://.godot/imported/step_player_arrive.skel-00f725b1848495ef9ed6b4a022769c33.spskel"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://d0ubvug1bt71"
+path="res://.godot/imported/step_target_move.skel-a77546249ec9c3d2822b07edc2e47703.spskel"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/effect/tongyong/step_target_move/step_target_move.skel"
+dest_files=["res://.godot/imported/step_target_move.skel-a77546249ec9c3d2822b07edc2e47703.spskel"]
+
+[params]
+

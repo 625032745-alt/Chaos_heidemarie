@@ -1,0 +1,12 @@
+{
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.title": "Heidemarie",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.titleObject": "Heidemarie",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.description": "A new playable character scaffold.",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounSubject": "she",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounObject": "her",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounPossessive": "hers",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.possessiveAdjective": "her",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.cardsModifierTitle": "Heidemarie Cards",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.cardsModifierDescription": "Cards from Heidemarie's card pool.",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.unlockText": "Unlocked by default."
+}

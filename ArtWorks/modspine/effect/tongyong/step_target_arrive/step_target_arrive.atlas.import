@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://5k7vg55ioutl"
+path="res://.godot/imported/step_target_arrive.atlas-4fb3fe1d4910d25c893918104e010bc9.spatlas"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/effect/tongyong/step_target_arrive/step_target_arrive.atlas"
+dest_files=["res://.godot/imported/step_target_arrive.atlas-4fb3fe1d4910d25c893918104e010bc9.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://ivjvbyhq6ysk"
+path="res://.godot/imported/deadcg_heidemarie.skel-d123543c4f427a7444c606205b4a4001.spskel"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/deadcg/deadcg_heidemarie/deadcg_heidemarie.skel"
+dest_files=["res://.godot/imported/deadcg_heidemarie.skel-d123543c4f427a7444c606205b4a4001.spskel"]
+
+[params]
+

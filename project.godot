@@ -1,0 +1,19 @@
+; Engine configuration file.
+; Format:
+;   [section]
+;   param=value
+
+config_version=5
+
+[application]
+
+config/name="Chaos Heidemarie"
+config/features=PackedStringArray("4.5", "C#")
+
+[dotnet]
+
+project/assembly_name="ChaosHeidemarie"
+
+[rendering]
+
+renderer/rendering_method="mobile"

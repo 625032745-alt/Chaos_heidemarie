@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddiiqu5slgobu"]
+
+[ext_resource type="SpineSkeletonDataResource" uid="uid://yybb5iax5red" path="res://ArtWorks/modspine/effect/tongyong/step_target_move/step_target_move_skel_data.tres" id="1_5dixr"]
+
+[node name="StepTargetMove" type="SpineSprite"]
+skeleton_data_res = ExtResource("1_5dixr")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0
+

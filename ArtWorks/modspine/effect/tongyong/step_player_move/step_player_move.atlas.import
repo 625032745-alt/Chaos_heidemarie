@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://uh2aoogwudx6"
+path="res://.godot/imported/step_player_move.atlas-c6b39a50dda56a7fa1d9c8e34be76ebf.spatlas"
+
+[deps]
+
+source_file="res://ArtWorks/modspine/effect/tongyong/step_player_move/step_player_move.atlas"
+dest_files=["res://.godot/imported/step_player_move.atlas-c6b39a50dda56a7fa1d9c8e34be76ebf.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"
