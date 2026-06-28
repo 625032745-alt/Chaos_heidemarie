@@ -3,7 +3,7 @@ param(
     [string] $SpineTemplateProject = "H:\Trae_home\ChaosMod\git\Chaos_XC_regent02\Chaos_XC_regent02_pck",
     [string] $BaseResourceRoot = "H:\Trae_home\ChaosMod\refer\Slay the Spire 2_pck_new6-10\pck",
     [string] $StageRoot = "H:\Trae_home\ChaosMod\pck_build\heidemarie_pure",
-    [string] $OutputPck = "H:\Trae_home\ChaosMod\git\Chaos_heidemarie\ChaosHeidemarie.pck",
+    [string] $OutputPck = "H:\Trae_home\ChaosMod\pck_build\artifacts\ChaosHeidemarie\ChaosHeidemarie.pck",
     [string] $PresetName = "Windows Desktop"
 )
 
