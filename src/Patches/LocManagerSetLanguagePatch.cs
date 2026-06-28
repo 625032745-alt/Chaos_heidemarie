@@ -19,8 +19,8 @@ internal sealed class LocManagerSetLanguagePatch : IPatchMethod
         ];
     }
 
-    public static void Postfix()
+    public static void Postfix(LocManager __instance)
     {
-        ModEntry.RegisterLocalizationFallback();
+        ModEntry.RegisterLocalizationFallback(__instance);
     }
 }

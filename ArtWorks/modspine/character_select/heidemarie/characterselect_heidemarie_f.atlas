@@ -1,7 +1,6 @@
 characterselect_heidemarie_f.png
 size:2048,512
 filter:Linear,Linear
-pma:true
 fx_02
 bounds:2,2,1321,413
 offsets:0,122,1486,750

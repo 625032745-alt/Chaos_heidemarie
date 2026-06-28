@@ -46,20 +46,20 @@ public static class ModEntry
             .Apply();
     }
 
-    public static void RegisterLocalizationFallback()
+    public static void RegisterLocalizationFallback(LocManager locManager)
     {
-        if (LocManager.Instance is null)
+        if (locManager is null)
             return;
 
         foreach (var table in new[] { "characters", "cards", "relics" })
         {
-            MergeLocalizationTable(table, "eng");
-            if (!string.Equals(LocManager.Instance.Language, "eng", StringComparison.OrdinalIgnoreCase))
-                MergeLocalizationTable(table, LocManager.Instance.Language);
+            MergeLocalizationTable(locManager, table, "eng");
+            if (!string.Equals(locManager.Language, "eng", StringComparison.OrdinalIgnoreCase))
+                MergeLocalizationTable(locManager, table, locManager.Language);
         }
     }
 
-    private static void MergeLocalizationTable(string table, string language)
+    private static void MergeLocalizationTable(LocManager locManager, string table, string language)
     {
         if (string.IsNullOrWhiteSpace(language))
             return;
@@ -78,7 +78,7 @@ public static class ModEntry
             if (entries is null || entries.Count == 0)
                 return;
 
-            LocManager.Instance.GetTable(table).MergeWith(entries);
+            locManager.GetTable(table).MergeWith(entries);
             Logger.Info($"[Localization] Merged {entries.Count} fallback entries from {language}/{table}.json.");
         }
         catch (Exception ex)

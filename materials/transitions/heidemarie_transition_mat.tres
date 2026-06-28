@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[sub_resource type="Shader" id="Shader_heidemarie_transition"]
+code = "shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0) = 0.0;
+uniform vec4 fill_color : source_color = vec4(0.36, 0.14, 0.50, 1.0);
+uniform float softness : hint_range(0.001, 0.5) = 0.08;
+
+void fragment() {
+	float edge = UV.x + (sin(UV.y * 18.0) * 0.035);
+	float mask = smoothstep(progress - softness, progress + softness, edge);
+	COLOR = vec4(fill_color.rgb, fill_color.a * (1.0 - mask));
+}
+"
+
+[resource]
+shader = SubResource("Shader_heidemarie_transition")
+shader_parameter/progress = 0.0
+shader_parameter/fill_color = Color(0.36, 0.14, 0.5, 1)
+shader_parameter/softness = 0.08
