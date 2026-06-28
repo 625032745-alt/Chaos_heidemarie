@@ -26,7 +26,7 @@ anchors_preset = 0
 offset_left = -115.0
 offset_top = -335.0
 offset_right = 115.0
-offset_bottom = 32.0
+offset_bottom = 0.0
 mouse_filter = 2
 
 [node name="CenterPos" type="Marker2D" parent="."]

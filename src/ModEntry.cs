@@ -24,7 +24,9 @@ public static class ModEntry
         ModTypeDiscoveryHub.RegisterModAssembly(ModInfo.Id, assembly);
 
         var patcher = RitsuLibFramework.CreatePatcher(ModInfo.Id, "main");
-        patcher.RegisterPatches(IPatchMethod.CreatePatchInfos<Patches.LocManagerSetLanguagePatch>());
+        patcher.RegisterPatch<Patches.LocManagerSetLanguagePatch>();
+        patcher.RegisterPatch<Patches.HeidemarieCharacterSelectAnimationLoopPatch>();
+        patcher.RegisterPatch<Patches.HeidemarieCombatInitialIdleBootstrapPatch>();
 
         RegisterContent();
 

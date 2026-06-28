@@ -7,6 +7,8 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <AssemblyName>ChaosHeidemarie</AssemblyName>
     <CopyToGame Condition="'$(CopyToGame)' == ''">true</CopyToGame>
+    <PckOutputDir Condition="'$(PckOutputDir)' == ''">H:\Trae_home\ChaosMod\pck_build\artifacts\ChaosHeidemarie</PckOutputDir>
+    <PckOutputPath>$(PckOutputDir)\$(MSBuildProjectName).pck</PckOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -32,7 +34,7 @@
   </Target>
 
   <Target Name="PackPck" Condition="'$(CopyToGame)' == 'true'">
-    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\tools\export-pure-resource-pck.ps1&quot; -OutputPck &quot;$(MSBuildProjectDirectory)\$(MSBuildProjectName).pck&quot;" />
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\tools\export-pure-resource-pck.ps1&quot; -OutputPck &quot;$(PckOutputPath)&quot;" />
   </Target>
 
   <Target Name="Copy Mod" AfterTargets="Build" DependsOnTargets="PackPck" Condition="'$(CopyToGame)' == 'true'">
@@ -45,6 +47,6 @@
     <Delete Files="$(ModInstallDir)\mod_manifest.json" Condition="Exists('$(ModInstallDir)\mod_manifest.json')" />
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModInstallDir)" />
     <Copy SourceFiles="mod_manifest.json" DestinationFiles="$(ModInstallDir)\$(MSBuildProjectName).json" />
-    <Copy SourceFiles="ChaosHeidemarie.pck" DestinationFolder="$(ModInstallDir)" Condition="Exists('ChaosHeidemarie.pck')" />
+    <Copy SourceFiles="$(PckOutputPath)" DestinationFolder="$(ModInstallDir)" Condition="Exists('$(PckOutputPath)')" />
   </Target>
 </Project>
