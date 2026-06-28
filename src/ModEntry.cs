@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text.Json;
+using HarmonyLib;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Modding;
@@ -15,6 +16,7 @@ namespace ChaosHeidemarie;
 public static class ModEntry
 {
     public static Logger Logger { get; private set; } = null!;
+    private static Harmony? _harmony;
 
     public static void Initialize()
     {
@@ -27,6 +29,8 @@ public static class ModEntry
         patcher.RegisterPatch<Patches.LocManagerSetLanguagePatch>();
         patcher.RegisterPatch<Patches.HeidemarieCharacterSelectAnimationLoopPatch>();
         patcher.RegisterPatch<Patches.HeidemarieCombatInitialIdleBootstrapPatch>();
+        _harmony ??= new Harmony($"{ModInfo.Id}.runtime");
+        _harmony.PatchAll(assembly);
 
         RegisterContent();
 
@@ -44,6 +48,9 @@ public static class ModEntry
             .Card<Content.HeidemarieCardPool, Cards.HeidemarieStrike>()
             .Card<Content.HeidemarieCardPool, Cards.HeidemarieDefend>()
             .Card<Content.HeidemarieCardPool, Cards.HeidemarieInsight>()
+            .Card<Content.HeidemarieCardPool, Cards.HeidemarieSweep>()
+            .Card<Content.HeidemarieCardPool, Cards.HeidemarieBarrage>()
+            .Card<Content.HeidemarieCardPool, Cards.HeidemarieResolve>()
             .Relic<Content.HeidemarieRelicPool, Relics.HeidemarieStarterRelic>()
             .Apply();
     }

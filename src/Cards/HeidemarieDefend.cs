@@ -10,7 +10,7 @@ namespace ChaosHeidemarie.Cards;
 public sealed class HeidemarieDefend : ModCardTemplate
 {
     public HeidemarieDefend()
-        : base(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
+        : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
     }
 

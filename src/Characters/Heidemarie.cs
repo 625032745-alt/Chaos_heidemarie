@@ -26,7 +26,7 @@ public sealed class Heidemarie : ModCharacterTemplate<HeidemarieCardPool, Heidem
     public override CharacterAssetProfile AssetProfile => new(
         Scenes: new CharacterSceneAssetSet(
             VisualsPath: "res://ArtWorks/scenes/creature_visuals/heidemarie.tscn",
-            EnergyCounterPath: "res://scenes/combat/energy_counters/heidemarie_energy_counter.tscn",
+            EnergyCounterPath: "res://scenes/combat/energy_counters/regent_energy_counter.tscn",
             MerchantAnimPath: "res://ArtWorks/scenes/merchant/characters/heidemarie_merchant.tscn",
             RestSiteAnimPath: "res://ArtWorks/scenes/rest_site/characters/heidemarie_rest_site.tscn"),
         Ui: new CharacterUiAssetSet(
@@ -42,12 +42,7 @@ public sealed class Heidemarie : ModCharacterTemplate<HeidemarieCardPool, Heidem
             TrailPath: "res://scenes/vfx/card_trail_heidemarie.tscn"),
         Spine: new CharacterSpineAssetSet(
             CombatSkeletonDataPath: "res://ArtWorks/modspine/characters/heidemarie/heidemarie_skel_data.tres"),
-        Audio: new CharacterAudioAssetSet(
-            CharacterSelectSfx: "event:/sfx/characters/heidemarie/heidemarie_select",
-            CharacterTransitionSfx: "event:/sfx/ui/wipe_heidemarie",
-            AttackSfx: "event:/sfx/characters/heidemarie/heidemarie_attack",
-            CastSfx: "event:/sfx/characters/heidemarie/heidemarie_cast",
-            DeathSfx: "event:/sfx/characters/heidemarie/heidemarie_die"));
+        Audio: null);
 
     public override List<string> GetArchitectAttackVfx()
     {

@@ -1,8 +1,14 @@
 {
   "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_STRIKE.title": "Heidemarie Strike",
   "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_STRIKE.description": "Deal {Damage} damage.",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_SWEEP.title": "Sweeping Step",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_SWEEP.description": "Deal {Damage} damage to all enemies.",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_BARRAGE.title": "Piercing Barrage",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_BARRAGE.description": "Deal {Damage} damage 2 times.",
   "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_DEFEND.title": "Heidemarie Defend",
   "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_DEFEND.description": "Gain {Block} Block.",
   "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_INSIGHT.title": "Quiet Insight",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_INSIGHT.description": "Gain {Block} Block. Draw {Cards} card."
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_INSIGHT.description": "Gain {Block} Block. Draw {Cards} card.",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_RESOLVE.title": "Gather Resolve",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_RESOLVE.description": "Gain {StrengthPower} Strength."
 }

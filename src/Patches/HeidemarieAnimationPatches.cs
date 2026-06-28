@@ -91,7 +91,7 @@ internal sealed class HeidemarieCharacterSelectAnimationLoopPatch : IPatchMethod
 internal sealed class HeidemarieCombatInitialIdleBootstrapPatch : IPatchMethod
 {
     private const string PrimeLoopAnimationName = "idle_loop";
-    private const string ReadyAnimationName = "b_idle";
+    private const string ReadyAnimationName = "battle_start";
     private const string IdleAnimationName = "idle";
 
     public static string PatchId => "chaos_heidemarie_combat_initial_idle_bootstrap";

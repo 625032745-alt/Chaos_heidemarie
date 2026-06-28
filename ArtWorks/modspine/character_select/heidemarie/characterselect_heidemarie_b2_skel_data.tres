@@ -1,7 +1,7 @@
-[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3 uid="uid://cq35ac1s6k73n"]
+[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3]
 
-[ext_resource type="SpineAtlasResource" uid="uid://uy46othc34bj" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_b2.atlas" id="1_7la4b"]
-[ext_resource type="SpineSkeletonFileResource" uid="uid://cdjrjvg2t8c78" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_b2.skel" id="2_sow48"]
+[ext_resource type="SpineAtlasResource" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_b2.atlas" id="1_7la4b"]
+[ext_resource type="SpineSkeletonFileResource" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_b2.skel" id="2_sow48"]
 
 [resource]
 atlas_res = ExtResource("1_7la4b")

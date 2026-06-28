@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg3l15m8r0bs1"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="SpineSkeletonDataResource" uid="uid://dnu4867v8nnui" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_skel_data.tres" id="1_bg"]
-[ext_resource type="SpineSkeletonDataResource" uid="uid://bqbp23qw830xn" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_b1_skel_data.tres" id="2_b1"]
-[ext_resource type="SpineSkeletonDataResource" uid="uid://cq35ac1s6k73n" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_b2_skel_data.tres" id="3_b2"]
-[ext_resource type="SpineSkeletonDataResource" uid="uid://dtib5d455p378" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_b3_skel_data.tres" id="4_b3"]
-[ext_resource type="SpineSkeletonDataResource" uid="uid://di5xqckhc6tlp" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_f_skel_data.tres" id="5_f"]
+[ext_resource type="SpineSkeletonDataResource" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_skel_data.tres" id="1_bg"]
+[ext_resource type="SpineSkeletonDataResource" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_b1_skel_data.tres" id="2_b1"]
+[ext_resource type="SpineSkeletonDataResource" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_b2_skel_data.tres" id="3_b2"]
+[ext_resource type="SpineSkeletonDataResource" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_b3_skel_data.tres" id="4_b3"]
+[ext_resource type="SpineSkeletonDataResource" path="res://ArtWorks/modspine/character_select/heidemarie/characterselect_heidemarie_f_skel_data.tres" id="5_f"]
 
 [node name="HeidemarieBg" type="Control"]
 layout_mode = 3

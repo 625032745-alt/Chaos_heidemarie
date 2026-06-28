@@ -1,8 +1,14 @@
 {
   "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_STRIKE.title": "海德玛丽打击",
   "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_STRIKE.description": "造成 {Damage} 点伤害。",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_SWEEP.title": "横扫式",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_SWEEP.description": "对所有敌人造成 {Damage} 点伤害。",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_BARRAGE.title": "连段刺击",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_BARRAGE.description": "造成 {Damage} 点伤害 2 次。",
   "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_DEFEND.title": "海德玛丽防御",
   "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_DEFEND.description": "获得 {Block} 点格挡。",
   "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_INSIGHT.title": "静默洞察",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_INSIGHT.description": "获得 {Block} 点格挡。抽 {Cards} 张牌。"
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_INSIGHT.description": "获得 {Block} 点格挡。抽 {Cards} 张牌。",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_RESOLVE.title": "战意凝聚",
+  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_RESOLVE.description": "获得 {StrengthPower} 点力量。"
 }

@@ -7,20 +7,19 @@ using STS2RitsuLib.Scaffolding.Content;
 
 namespace ChaosHeidemarie.Cards;
 
-public sealed class HeidemarieStrike : ModCardTemplate
+public sealed class HeidemarieBarrage : ModCardTemplate
 {
-    public HeidemarieStrike()
+    public HeidemarieBarrage()
         : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
     }
 
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     public override CardAssetProfile AssetProfile => new(
-        PortraitPath: "res://ArtWorks/images/cards/card_effects/card_ego_basic.png");
+        PortraitPath: "res://ArtWorks/images/cards/card_effects/card_ego_narcissism.png");
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(6m, ValueProp.Move)
+        new DamageVar(4m, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -28,6 +27,7 @@ public sealed class HeidemarieStrike : ModCardTemplate
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .WithHitCount(2)
             .FromCard(this)
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash", null, null)
@@ -36,6 +36,6 @@ public sealed class HeidemarieStrike : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Damage.UpgradeValueBy(1m);
     }
 }

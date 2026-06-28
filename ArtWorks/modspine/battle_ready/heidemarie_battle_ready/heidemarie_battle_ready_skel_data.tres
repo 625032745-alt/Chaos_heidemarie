@@ -1,7 +1,7 @@
-[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3 uid="uid://btoinuy3juwug"]
+[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3]
 
-[ext_resource type="SpineAtlasResource" uid="uid://dx1dq8tc6c5ss" path="res://ArtWorks/modspine/battle_ready/heidemarie_battle_ready/heidemarie_battle_ready.atlas" id="1_rj5u3"]
-[ext_resource type="SpineSkeletonFileResource" uid="uid://cfcdcb6lb33fn" path="res://ArtWorks/modspine/battle_ready/heidemarie_battle_ready/heidemarie_battle_ready.skel" id="2_qs0lc"]
+[ext_resource type="SpineAtlasResource" path="res://ArtWorks/modspine/battle_ready/heidemarie_battle_ready/heidemarie_battle_ready.atlas" id="1_rj5u3"]
+[ext_resource type="SpineSkeletonFileResource" path="res://ArtWorks/modspine/battle_ready/heidemarie_battle_ready/heidemarie_battle_ready.skel" id="2_qs0lc"]
 
 [resource]
 atlas_res = ExtResource("1_rj5u3")
