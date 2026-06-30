@@ -7,12 +7,14 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <AssemblyName>ChaosHeidemarie</AssemblyName>
     <CopyToGame Condition="'$(CopyToGame)' == ''">true</CopyToGame>
+    <ModsPath Condition="'$(ModsPath)' == ''">$(Sts2Dir)\mods\</ModsPath>
     <PckOutputDir Condition="'$(PckOutputDir)' == ''">H:\Trae_home\ChaosMod\pck_build\artifacts\ChaosHeidemarie</PckOutputDir>
     <PckOutputPath>$(PckOutputDir)\$(MSBuildProjectName).pck</PckOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="STS2.RitsuLib" Version="0.4.38" />
+    <PackageReference Include="FuYnAloft.Sts2.MinionLib" Version="0.5.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +27,13 @@
     <Content Include="mod_manifest.json" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="src\Localization\**\*.json" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="ArtWorks\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ChaosHeidemarie.Tests/**" />
+    <EmbeddedResource Remove="ChaosHeidemarie.Tests/**" />
+    <Content Remove="ChaosHeidemarie.Tests/**" />
+    <None Remove="ChaosHeidemarie.Tests/**" />
   </ItemGroup>
 
   <Target Name="ValidateSts2GameInstall" BeforeTargets="ResolveAssemblyReferences">

@@ -41,10 +41,7 @@ public static class ModEntry
     {
         RitsuLibFramework.CreateContentPack(ModInfo.Id)
             .Character<Characters.Heidemarie>(character => character
-                .AddStartingRelic<Relics.HeidemarieStarterRelic>(1, order: 0)
-                .AddStartingCard<Cards.HeidemarieStrike>(5, order: 10)
-                .AddStartingCard<Cards.HeidemarieDefend>(4, order: 20)
-                .AddStartingCard<Cards.HeidemarieInsight>(1, order: 30))
+                .AddStartingRelic<Relics.HeidemarieStarterRelic>(1, order: 0))
             .Card<Content.HeidemarieCardPool, Cards.HeidemarieStrike>()
             .Card<Content.HeidemarieCardPool, Cards.HeidemarieDefend>()
             .Card<Content.HeidemarieCardPool, Cards.HeidemarieInsight>()
@@ -60,7 +57,7 @@ public static class ModEntry
         if (locManager is null)
             return;
 
-        foreach (var table in new[] { "characters", "cards", "relics" })
+        foreach (var table in new[] { "characters", "cards", "relics", "powers" })
         {
             MergeLocalizationTable(locManager, table, "eng");
             if (!string.Equals(locManager.Language, "eng", StringComparison.OrdinalIgnoreCase))
