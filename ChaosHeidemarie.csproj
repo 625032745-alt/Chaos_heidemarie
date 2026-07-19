@@ -5,14 +5,15 @@
     <ImplicitUsings>true</ImplicitUsings>
     <Nullable>enable</Nullable>
     <EnableDynamicLoading>true</EnableDynamicLoading>
-    <AssemblyName>ChaosHeidemarie</AssemblyName>
+    <ArtifactName>Chaos_heidemarie</ArtifactName>
+    <AssemblyName>$(ArtifactName)</AssemblyName>
     <CopyToGame Condition="'$(CopyToGame)' == ''">true</CopyToGame>
-    <PckOutputDir Condition="'$(PckOutputDir)' == ''">H:\Trae_home\ChaosMod\pck_build\artifacts\ChaosHeidemarie</PckOutputDir>
-    <PckOutputPath>$(PckOutputDir)\$(MSBuildProjectName).pck</PckOutputPath>
+    <PckOutputDir Condition="'$(PckOutputDir)' == ''">H:\Trae_home\ChaosMod\pck_build\artifacts\$(ArtifactName)</PckOutputDir>
+    <PckOutputPath>$(PckOutputDir)\$(ArtifactName).pck</PckOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="STS2.RitsuLib" Version="0.4.38" />
+    <PackageReference Include="STS2.RitsuLib" Version="0.4.60" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,14 +40,14 @@
 
   <Target Name="Copy Mod" AfterTargets="Build" DependsOnTargets="PackPck" Condition="'$(CopyToGame)' == 'true'">
     <PropertyGroup>
-      <ModInstallDir>$(Sts2Dir)\mods\$(MSBuildProjectName)</ModInstallDir>
+      <ModInstallDir>$(Sts2Dir)\mods\$(ArtifactName)</ModInstallDir>
     </PropertyGroup>
     <MakeDir Directories="$(ModInstallDir)" />
     <RemoveDir Directories="$(ModInstallDir)\ArtWorks" Condition="Exists('$(ModInstallDir)\ArtWorks')" />
     <RemoveDir Directories="$(ModInstallDir)\localization" Condition="Exists('$(ModInstallDir)\localization')" />
     <Delete Files="$(ModInstallDir)\mod_manifest.json" Condition="Exists('$(ModInstallDir)\mod_manifest.json')" />
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModInstallDir)" />
-    <Copy SourceFiles="mod_manifest.json" DestinationFiles="$(ModInstallDir)\$(MSBuildProjectName).json" />
+    <Copy SourceFiles="mod_manifest.json" DestinationFiles="$(ModInstallDir)\$(ArtifactName).json" />
     <Copy SourceFiles="$(PckOutputPath)" DestinationFolder="$(ModInstallDir)" Condition="Exists('$(PckOutputPath)')" />
   </Target>
 </Project>

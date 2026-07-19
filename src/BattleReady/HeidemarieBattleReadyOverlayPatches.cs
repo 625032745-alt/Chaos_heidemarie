@@ -289,8 +289,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
 
         try
         {
-            if (creatureNode.SpineAnimation.SetAnimation("defend", loop: false) == null)
-                return;
+            creatureNode.SpineAnimation.SetAnimation("defend", loop: false);
         }
         catch
         {
@@ -299,7 +298,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
 
         try
         {
-            _ = creatureNode.SpineAnimation.AddAnimation("idle_loop", 0f, loop: true);
+            creatureNode.SpineAnimation.AddAnimation("idle_loop", 0f, loop: true);
         }
         catch
         {

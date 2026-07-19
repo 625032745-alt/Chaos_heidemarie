@@ -28,7 +28,7 @@ public sealed class HeidemarieBarrage : ModCardTemplate
 
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .WithHitCount(2)
-            .FromCard(this)
+            .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash", null, null)
             .Execute(choiceContext);

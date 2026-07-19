@@ -27,7 +27,7 @@ public sealed class HeidemarieSweep : ModCardTemplate
         ArgumentNullException.ThrowIfNull(CombatState);
 
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this, cardPlay)
             .TargetingAllOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash", null, null)
             .Execute(choiceContext);

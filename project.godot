@@ -15,7 +15,7 @@ config/features=PackedStringArray("4.5", "C#")
 
 [dotnet]
 
-project/assembly_name="ChaosHeidemarie"
+project/assembly_name="Chaos_heidemarie"
 
 [rendering]
 
