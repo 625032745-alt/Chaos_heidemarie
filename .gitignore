@@ -5,3 +5,6 @@ obj/
 local.props
 *.user
 *.suo
+export/Chaos_heidemarie/
+export/build_tools/.pck_stage/
+export/build_tools/*.pck

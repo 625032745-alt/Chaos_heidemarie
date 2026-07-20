@@ -1,0 +1,12 @@
+{
+  "CHAOS_HEIDEMARIE_KEYWORD_CONCLUDE.title": "Conclude",
+  "CHAOS_HEIDEMARIE_KEYWORD_CONCLUDE.description": "End your turn when this card is played.",
+  "CHAOS_HEIDEMARIE_KEYWORD_LINK.title": "Link",
+  "CHAOS_HEIDEMARIE_KEYWORD_LINK.description": "When played directly, discard all other Link cards in your hand.",
+  "CHAOS_HEIDEMARIE_KEYWORD_RECYCLE.title": "Recycle",
+  "CHAOS_HEIDEMARIE_KEYWORD_RECYCLE.description": "When this would move to the discard or Exhaust pile, return it to your hand. Remove Recycle when this triggers.",
+  "CHAOS_HEIDEMARIE_KEYWORD_REST.title": "Rest",
+  "CHAOS_HEIDEMARIE_KEYWORD_REST.description": "When this card is discarded, play it. It cannot return from the Exhaust pile to your hand this turn.",
+  "CHAOS_HEIDEMARIE_KEYWORD_UNIQUE.title": "Unique",
+  "CHAOS_HEIDEMARIE_KEYWORD_UNIQUE.description": "Only one copy of this card can be in your deck."
+}

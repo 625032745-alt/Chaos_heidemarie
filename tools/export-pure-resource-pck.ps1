@@ -1,20 +1,77 @@
 param(
-    [string] $GodotPath = "H:\Trae_home\ChaosMod\Godot_v4.5.1\Godot_v4.5.1-stable_mono_win64.exe",
-    [string] $SpineTemplateProject = "H:\Trae_home\ChaosMod\git\Chaos_XC_regent02\Chaos_XC_regent02_pck",
-    [string] $BaseResourceRoot = "H:\Trae_home\ChaosMod\refer\Slay the Spire 2_pck_new6-10\pck",
-    [string] $StageRoot = "H:\Trae_home\ChaosMod\pck_build\heidemarie_pure",
-    [string] $OutputPck = "H:\Trae_home\ChaosMod\pck_build\artifacts\Chaos_heidemarie\Chaos_heidemarie.pck",
+    [string] $GodotPath,
+    [string] $BaseResourceRoot,
+    [string] $StageRoot,
+    [string] $OutputPck,
     [string] $PresetName = "Windows Desktop"
 )
 
 $ErrorActionPreference = "Stop"
 
 $ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
+$ChaosModRoot = Split-Path -Parent (Split-Path -Parent $ProjectRoot)
+
+function Resolve-FirstExistingFile([string] $label, [string[]] $candidates) {
+    foreach ($candidate in $candidates) {
+        if ($candidate -and (Test-Path -LiteralPath $candidate -PathType Leaf)) {
+            return (Resolve-Path -LiteralPath $candidate).Path
+        }
+    }
+
+    throw "Could not locate $label. See export\build_tools\PATHS.md for configuration."
+}
+
+function Resolve-FirstExistingDirectory([string] $label, [string[]] $candidates) {
+    foreach ($candidate in $candidates) {
+        if ($candidate -and (Test-Path -LiteralPath $candidate -PathType Container)) {
+            return (Resolve-Path -LiteralPath $candidate).Path
+        }
+    }
+
+    throw "Could not locate $label. See export\build_tools\PATHS.md for configuration."
+}
+
+if (-not $GodotPath) {
+    $GodotPath = $env:CHAOS_GODOT_PATH
+}
+$godotCandidates = @(
+    $GodotPath,
+    (Join-Path $ChaosModRoot "Godot_v4.5.1\Godot_v4.5.1-stable_win64.exe"),
+    (Join-Path $ChaosModRoot "Godot_v4.5.1\Godot_v4.5.1-stable_mono_win64.exe")
+)
+$godotCommand = Get-Command "godot" -CommandType Application -ErrorAction SilentlyContinue
+if ($godotCommand) {
+    $godotCandidates += $godotCommand.Source
+}
+$GodotPath = Resolve-FirstExistingFile "Godot 4.5.1 executable" $godotCandidates
+
+if (-not $BaseResourceRoot) {
+    $BaseResourceRoot = $env:CHAOS_STS2_RESOURCE_ROOT
+}
+$BaseResourceRoot = Resolve-FirstExistingDirectory "extracted Slay the Spire 2 resource root" @(
+    $BaseResourceRoot,
+    (Join-Path $ChaosModRoot "refer\Slay the Spire 2_pck_new6-10\pck")
+)
+
+if (-not $StageRoot) {
+    $StageRoot = Join-Path $ProjectRoot "export\build_tools\.pck_stage"
+}
+$StageRoot = [System.IO.Path]::GetFullPath($StageRoot)
+$allowedStageParent = [System.IO.Path]::GetFullPath((Join-Path $ProjectRoot "export\build_tools"))
+if (-not $StageRoot.StartsWith($allowedStageParent + [System.IO.Path]::DirectorySeparatorChar, [System.StringComparison]::OrdinalIgnoreCase)) {
+    throw "Staging directory must stay inside export\build_tools: $StageRoot"
+}
+
+if (-not $OutputPck) {
+    $OutputPck = Join-Path $ProjectRoot "export\Chaos_heidemarie\Chaos_heidemarie.pck"
+}
+$OutputPck = [System.IO.Path]::GetFullPath($OutputPck)
+
 $stageProject = Join-Path $StageRoot "Slay the Spire 2"
 
 if (Test-Path -LiteralPath $StageRoot) {
     $resolvedStage = (Resolve-Path -LiteralPath $StageRoot).Path
-    if (-not $resolvedStage.StartsWith("H:\Trae_home\ChaosMod\pck_build", [System.StringComparison]::OrdinalIgnoreCase)) {
+    if (-not $resolvedStage.StartsWith($allowedStageParent + [System.IO.Path]::DirectorySeparatorChar, [System.StringComparison]::OrdinalIgnoreCase)) {
         throw "Refusing to remove unexpected staging directory: $resolvedStage"
     }
     Remove-Item -LiteralPath $resolvedStage -Recurse -Force
@@ -22,29 +79,10 @@ if (Test-Path -LiteralPath $StageRoot) {
 
 New-Item -ItemType Directory -Force -Path $stageProject | Out-Null
 
-foreach ($name in @("project.godot", "export_presets.cfg", "spine_godot_extension.gdextension", "spine_godot_extension.gdextension.uid", "windows")) {
-    $src = Join-Path $SpineTemplateProject $name
-    $dst = Join-Path $stageProject $name
-    if (Test-Path -LiteralPath $src -PathType Container) {
-        robocopy $src $dst /MIR /NFL /NDL /NJH /NJS /NP | Out-Null
-        if ($LASTEXITCODE -gt 7) {
-            throw "robocopy failed for $src with exit code $LASTEXITCODE"
-        }
-    } elseif (Test-Path -LiteralPath $src -PathType Leaf) {
-        Copy-Item -LiteralPath $src -Destination $dst -Force
-    }
-}
-
-$stageWindowsDir = Join-Path $stageProject "windows"
-if (Test-Path -LiteralPath $stageWindowsDir) {
-    Get-ChildItem -LiteralPath $stageWindowsDir -Force -File -Filter "~*" -ErrorAction SilentlyContinue |
-        ForEach-Object { Remove-Item -LiteralPath $_.FullName -Force }
-}
-
 Copy-Item -LiteralPath (Join-Path $ProjectRoot "project.godot") -Destination (Join-Path $stageProject "project.godot") -Force
 Copy-Item -LiteralPath (Join-Path $ProjectRoot "export_presets.cfg") -Destination (Join-Path $stageProject "export_presets.cfg") -Force
 
-foreach ($name in @("ArtWorks", "images", "materials", "scenes", "src", "mod_manifest.json")) {
+foreach ($name in @("ArtWorks", "src", "mod_manifest.json")) {
     $src = Join-Path $ProjectRoot $name
     $dst = Join-Path $stageProject $name
     if (Test-Path -LiteralPath $src -PathType Container) {
@@ -202,7 +240,6 @@ Get-ChildItem -LiteralPath $stageProject -Recurse -File -Filter "*.skel.import" 
 }
 
 $cacheFiles = @(
-    (Join-Path $stageProject ".godot\uid_cache.bin"),
     (Join-Path $stageProject ".godot\extension_list.cfg")
 )
 
@@ -212,15 +249,27 @@ foreach ($path in $cacheFiles) {
     }
 }
 
-# Godot 4 companion UID files are editor metadata only. Keeping them in the staging
-# project causes export-time resource resolution to attempt loading "*.uid" as real
-# resources, which breaks on shader includes and other imported assets.
-Get-ChildItem -LiteralPath $stageProject -Recurse -File -Filter "*.uid" -ErrorAction SilentlyContinue |
-    ForEach-Object { Remove-Item -LiteralPath $_.FullName -Force }
+# Keep the UID cache produced by this fresh import. Removing it makes export-pack
+# reimport the whole staging tree; on this Mono build that process can crash before
+# savepack. The only companion UID in the template belongs to the Spine extension
+# and is removed together with that extension below.
 
-# Keep the Spine extension/runtime files in the staging project for export-time loading.
-# The export preset already excludes these paths from the final PCK, and the post-export
-# validation below will fail if they still leak into the output.
+# The Spine extension is required for the import pass, but loading it again in the
+# export process crashes Godot 4.5.1 while hot-reloading the editor DLL.  The import
+# artifacts above are self-contained for packing, so use the established two-phase
+# flow: import with Spine present, then remove every editor-only extension file before
+# export-pack.  The preset excludes the same paths as a second line of defence.
+foreach ($path in @(
+    (Join-Path $stageProject "spine_godot_extension.gdextension"),
+    (Join-Path $stageProject "spine_godot_extension.gdextension.uid"),
+    (Join-Path $stageProject "windows"),
+    (Join-Path $stageProject "addons"),
+    (Join-Path $stageProject ".godot\\extension_list.cfg")
+)) {
+    if (Test-Path -LiteralPath $path) {
+        Remove-Item -LiteralPath $path -Recurse -Force
+    }
+}
 
 $outputDir = Split-Path -Parent $OutputPck
 if ($outputDir) {
@@ -233,8 +282,17 @@ $exportOutputPck = Join-Path (Split-Path -Parent $StageRoot) ([System.IO.Path]::
 Remove-Item -LiteralPath $exportLog -Force -ErrorAction SilentlyContinue
 Remove-Item -LiteralPath $exportOutputPck -Force -ErrorAction SilentlyContinue
 Remove-Item -LiteralPath $OutputPck -Force -ErrorAction SilentlyContinue
-& $GodotPath --headless --log-file $exportLog --path $stageProject --export-pack $PresetName $exportOutputPck --quit
+# --export-pack exits on its own.  Adding --quit races its pack writer on this
+# Godot Mono build, leaving a zero-byte temporary file instead of the PCK.
+& $GodotPath --headless --log-file $exportLog --path $stageProject --export-pack $PresetName $exportOutputPck
 if ($LASTEXITCODE -ne 0) {
+    # Godot 4.5.1 occasionally returns before the asynchronous pack writer has
+    # renamed its completed output.  Treat the actual fresh PCK as the source
+    # of truth, but wait briefly for that writer before reporting a failure.
+    for ($i = 0; $i -lt 300 -and -not (Test-Path -LiteralPath $exportOutputPck); $i++) {
+        Start-Sleep -Milliseconds 100
+    }
+
     if (-not (Test-Path -LiteralPath $exportOutputPck)) {
         throw "Godot export failed with exit code $LASTEXITCODE"
     }
@@ -268,9 +326,16 @@ function Test-FileContainsAscii([string] $path, [string] $needle) {
 
             [Array]::Copy($buffer, 0, $window, $carryLength, $read)
 
-            for ($i = 0; $i -le $window.Length - $needleBytes.Length; $i++) {
+            $maxIndex = $window.Length - $needleBytes.Length
+            $i = 0
+            while ($i -le $maxIndex) {
+                $i = [Array]::IndexOf($window, $needleBytes[0], $i)
+                if ($i -lt 0 -or $i -gt $maxIndex) {
+                    break
+                }
+
                 $matched = $true
-                for ($j = 0; $j -lt $needleBytes.Length; $j++) {
+                for ($j = 1; $j -lt $needleBytes.Length; $j++) {
                     if ($window[$i + $j] -ne $needleBytes[$j]) {
                         $matched = $false
                         break
@@ -280,6 +345,8 @@ function Test-FileContainsAscii([string] $path, [string] $needle) {
                 if ($matched) {
                     return $true
                 }
+
+                $i++
             }
 
             $carryLength = [Math]::Min($carry.Length, $window.Length)
@@ -303,6 +370,16 @@ if (Test-FileContainsAscii $exportOutputPck "spine_godot_extension") {
 }
 
 Copy-Item -LiteralPath $exportOutputPck -Destination $OutputPck -Force
+
+# The packer must write beside the staging directory first, but that PCK is
+# only an intermediate file.  Keep the requested output and remove the
+# intermediate so it cannot be mistaken for a second distributable artifact.
+if (-not [string]::Equals(
+        [System.IO.Path]::GetFullPath($exportOutputPck),
+        [System.IO.Path]::GetFullPath($OutputPck),
+        [System.StringComparison]::OrdinalIgnoreCase)) {
+    Remove-Item -LiteralPath $exportOutputPck -Force
+}
 
 Write-Host "Pure resource PCK export completed: $OutputPck"
 exit 0

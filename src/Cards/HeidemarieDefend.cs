@@ -3,14 +3,17 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
 namespace ChaosHeidemarie.Cards;
 
+[RegisterCard(typeof(Content.HeidemarieCardPool))]
+[RegisterCharacterStarterCard(typeof(Characters.Heidemarie), 4)]
 public sealed class HeidemarieDefend : ModCardTemplate
 {
     public HeidemarieDefend()
-        : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+        : base(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
     {
     }
 

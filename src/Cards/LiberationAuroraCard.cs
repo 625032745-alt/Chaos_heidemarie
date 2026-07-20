@@ -18,7 +18,7 @@ public class LiberationAuroraCard : ModCardTemplate
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(20, ValueProp.Move)];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://images/cards/{GetType().Name}.png");
+    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,UniqueKeyword.Unique];
 
     public LiberationAuroraCard() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)

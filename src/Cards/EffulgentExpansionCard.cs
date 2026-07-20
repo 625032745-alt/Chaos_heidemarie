@@ -16,7 +16,7 @@ namespace ChaosHeidemarie.Cards;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class EffulgentExpansionCard : ModCardTemplate
 {
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://images/cards/{GetType().Name}.png");
+    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
     public static bool RemainingCharges;
     private int _handCardCount;

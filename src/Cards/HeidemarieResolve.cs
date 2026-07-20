@@ -7,14 +7,17 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
+using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
 namespace ChaosHeidemarie.Cards;
 
+[RegisterCard(typeof(Content.HeidemarieCardPool))]
+[RegisterCharacterStarterCard(typeof(Characters.Heidemarie), 1)]
 public sealed class HeidemarieResolve : ModCardTemplate
 {
     public HeidemarieResolve()
-        : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+        : base(1, CardType.Power, CardRarity.Basic, TargetType.Self)
     {
     }
 

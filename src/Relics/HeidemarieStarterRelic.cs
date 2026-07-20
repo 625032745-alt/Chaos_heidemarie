@@ -4,10 +4,13 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Rooms;
+using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
 namespace ChaosHeidemarie.Relics;
 
+[RegisterRelic(typeof(Content.HeidemarieRelicPool))]
+[RegisterCharacterStarterRelic(typeof(Characters.Heidemarie))]
 public sealed class HeidemarieStarterRelic : ModRelicTemplate
 {
     public override RelicRarity Rarity => RelicRarity.Starter;

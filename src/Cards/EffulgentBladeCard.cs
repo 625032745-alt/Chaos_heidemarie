@@ -19,7 +19,7 @@ public class EffulgentBladeCard : ModCardTemplate
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(9, ValueProp.Move)];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link, CardKeyword.Exhaust];
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://images/cards/{GetType().Name}.png");
+    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public EffulgentBladeCard() : base(1, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
     {

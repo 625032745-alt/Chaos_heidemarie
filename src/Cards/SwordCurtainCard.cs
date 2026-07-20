@@ -12,13 +12,12 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace ChaosHeidemarie.Cards;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
-[RegisterCharacterStarterCard(typeof(Characters.Heidemarie))]
 public sealed class SwordCurtainCard : ModCardTemplate
 {
     public override bool GainsBlock => true;
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(7, ValueProp.Move)];
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://images/cards/{GetType().Name}.png");
+    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public SwordCurtainCard() : base(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
     {

@@ -24,25 +24,27 @@ public sealed class Heidemarie : ModCharacterTemplate<HeidemarieCardPool, Heidem
     public override Color RemoteTargetingLineColor => new("B37BE5FF");
     public override Color RemoteTargetingLineOutline => new("42245FFF");
 
-    public override string? PlaceholderCharacterId => null;
+    public override string? PlaceholderCharacterId => "ironclad";
+    // This character has no custom Epoch/Timeline registrations. Opt out of the
+    // vanilla-style unlock path so RitsuLib does not look up non-existent ids.
     public override bool RequiresEpochAndTimeline => false;
     public override CharacterAssetProfile AssetProfile => new(
         Scenes: new CharacterSceneAssetSet(
             VisualsPath: "res://ArtWorks/scenes/creature_visuals/heidemarie.tscn",
-            EnergyCounterPath: "res://scenes/combat/energy_counters/regent_energy_counter.tscn",
+            EnergyCounterPath: "res://ArtWorks/scenes/combat/energy_counters/heidemarie_energy_counter.tscn",
             MerchantAnimPath: "res://ArtWorks/scenes/merchant/characters/heidemarie_merchant.tscn",
             RestSiteAnimPath: "res://ArtWorks/scenes/rest_site/characters/heidemarie_rest_site.tscn"),
         Ui: new CharacterUiAssetSet(
             IconTexturePath: "res://ArtWorks/images/ui/top_panel/character_icon_heidemarie.png",
             IconOutlineTexturePath: "res://ArtWorks/images/ui/top_panel/character_icon_heidemarie_outline.png",
-            IconPath: "res://scenes/ui/character_icons/heidemarie_icon.tscn",
+            IconPath: "res://ArtWorks/scenes/ui/character_icons/heidemarie_icon.tscn",
             CharacterSelectBgPath: "res://ArtWorks/scenes/screens/char_select/char_select_bg_heidemarie.tscn",
             CharacterSelectIconPath: "res://ArtWorks/images/packed/character_select/char_select_heidemarie.png",
             CharacterSelectLockedIconPath: "res://ArtWorks/images/packed/character_select/char_select_heidemarie_locked.png",
-            CharacterSelectTransitionPath: "res://materials/transitions/heidemarie_transition_mat.tres",
-            MapMarkerPath: "res://images/packed/map/icons/map_marker_heidemarie.png"),
+            CharacterSelectTransitionPath: "res://ArtWorks/materials/transitions/heidemarie_transition_mat.tres",
+            MapMarkerPath: "res://ArtWorks/images/packed/map/icons/map_marker_heidemarie.png"),
         Vfx: new CharacterVfxAssetSet(
-            TrailPath: "res://scenes/vfx/card_trail_heidemarie.tscn"),
+            TrailPath: "res://ArtWorks/scenes/vfx/card_trail_heidemarie.tscn"),
         Spine: new CharacterSpineAssetSet(
             CombatSkeletonDataPath: "res://ArtWorks/modspine/characters/heidemarie/heidemarie_skel_data.tres"),
         Audio: null);

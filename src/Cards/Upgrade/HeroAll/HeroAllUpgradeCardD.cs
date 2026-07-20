@@ -17,7 +17,7 @@ namespace ChaosHeidemarie.Cards.Upgrade.HeroAll;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class HeroAllUpgradeCardD : ModCardTemplate
 {
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://images/cards/HeroAllCard.png");
+    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/HeroAllCard.png");
     private readonly HashSet<CardModel> _linkedCards = new();
 
     public HeroAllUpgradeCardD() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)

@@ -14,7 +14,7 @@ namespace ChaosHeidemarie.Cards;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class EffulgentCompressionCard : ModCardTemplate
 {
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://images/cards/{GetType().Name}.png");
+    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link, CardKeyword.Unplayable,RecycleKeywords.Recycle,UniqueKeyword.Unique];
     private int _count = 0;
 

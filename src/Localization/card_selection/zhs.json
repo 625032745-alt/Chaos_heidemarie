@@ -1,0 +1,4 @@
+{
+  "CHAOS_HEIDEMARIE_SELECT_FROM_DRAW_TO_HAND": "从抽牌堆中选择 {Amount} 张牌移入手牌。",
+  "CHAOS_HEIDEMARIE_SELECT_FROM_DISCARD_TO_HAND": "从弃牌堆中选择 {Amount} 张牌移入手牌。"
+}

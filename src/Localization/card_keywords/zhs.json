@@ -1,0 +1,12 @@
+{
+  "CHAOS_HEIDEMARIE_KEYWORD_CONCLUDE.title": "终结",
+  "CHAOS_HEIDEMARIE_KEYWORD_CONCLUDE.description": "使用此卡牌后回合结束。",
+  "CHAOS_HEIDEMARIE_KEYWORD_LINK.title": "连接",
+  "CHAOS_HEIDEMARIE_KEYWORD_LINK.description": "直接使用此牌时，丢弃手牌中所有其他连接卡牌。",
+  "CHAOS_HEIDEMARIE_KEYWORD_RECYCLE.title": "回收",
+  "CHAOS_HEIDEMARIE_KEYWORD_RECYCLE.description": "此牌将移动至弃牌堆或消耗堆时，改为回到手牌。触发后移除回收。",
+  "CHAOS_HEIDEMARIE_KEYWORD_REST.title": "安息",
+  "CHAOS_HEIDEMARIE_KEYWORD_REST.description": "此牌被丢弃时打出它。本回合内，它不会从消耗堆回到手牌。",
+  "CHAOS_HEIDEMARIE_KEYWORD_UNIQUE.title": "唯一",
+  "CHAOS_HEIDEMARIE_KEYWORD_UNIQUE.description": "牌组中至多只能有 1 张此牌。"
+}

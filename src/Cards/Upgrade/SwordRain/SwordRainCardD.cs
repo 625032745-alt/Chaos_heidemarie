@@ -18,7 +18,7 @@ public class SwordRainCardD : ModCardTemplate
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(30, ValueProp.Move)];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://images/cards/SwordRainCard.png");
+    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/SwordRainCard.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Retain,ConcludeKeywords.Conclude];
     
     public SwordRainCardD() : base(3, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)

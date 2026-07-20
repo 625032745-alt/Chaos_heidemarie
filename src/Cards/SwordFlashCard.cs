@@ -12,12 +12,11 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace ChaosHeidemarie.Cards;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
-[RegisterCharacterStarterCard(typeof(Characters.Heidemarie), 2)]
 public sealed class SwordFlashCard : ModCardTemplate
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(7, ValueProp.Move)];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://images/cards/{GetType().Name}.png");
+    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public SwordFlashCard() : base(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
     {

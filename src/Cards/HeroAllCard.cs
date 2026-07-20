@@ -19,7 +19,7 @@ namespace ChaosHeidemarie.Cards;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class HeroAllCard : TransformAtTurnStartCardBase
 {
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://images/cards/{GetType().Name}.png");
+    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     private readonly HashSet<CardModel> _linkedCards = new();
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
 

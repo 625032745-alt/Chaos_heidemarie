@@ -18,10 +18,10 @@ namespace ChaosHeidemarie.Cards.Upgrade.HeroAll;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class HeroAllUpgradeCardC : ModCardTemplate
 {
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://images/cards/HeroAllCard.png");
+    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/HeroAllCard.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-    public static readonly LocString SelectFromDrawToHand = new("card_selection", "KAREN_SELECT_FROM_DRAW_TO_HAND");
-    public static readonly LocString SelectFromDiscardToHand = new("card_selection", "KAREN_SELECT_FROM_DISCARD_TO_HAND");
+    public static readonly LocString SelectFromDrawToHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_DRAW_TO_HAND");
+    public static readonly LocString SelectFromDiscardToHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_DISCARD_TO_HAND");
 
     public HeroAllUpgradeCardC() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
