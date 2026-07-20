@@ -3,10 +3,12 @@ using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using ChaosHeidemarie.Content;
+using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Characters;
 
 namespace ChaosHeidemarie.Characters;
 
+[RegisterCharacter]
 public sealed class Heidemarie : ModCharacterTemplate<HeidemarieCardPool, HeidemarieRelicPool, HeidemariePotionPool>
 {
     public override CharacterGender Gender => CharacterGender.Feminine;
