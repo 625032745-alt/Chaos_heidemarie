@@ -92,17 +92,17 @@ internal static class HeidemarieCardVoicePatch
         if (!HeidemarieBattleReadyTarget.IsMineTargetCard(card))
             return;
 
-        if (card is HeidemarieDefend || card?.Id == ModelDb.GetId<HeidemarieDefend>())
+        if (card is SwordCurtainCard || card?.Id == ModelDb.GetId<SwordCurtainCard>())
         {
             HeidemarieVoicePlayer.PlayRandom(HeidemarieVoiceProfile.VoiceDefendCandidates);
             return;
         }
 
-        if (card is HeidemarieResolve || card?.Id == ModelDb.GetId<HeidemarieResolve>())
-        {
-            HeidemarieVoicePlayer.PlayRandom(HeidemarieVoiceProfile.VoicePowerCandidates);
-            return;
-        }
+        // if (card is HeidemarieResolve || card?.Id == ModelDb.GetId<HeidemarieResolve>())
+        // {
+        //     HeidemarieVoicePlayer.PlayRandom(HeidemarieVoiceProfile.VoicePowerCandidates);
+        //     return;
+        // }
 
         if (card!.Type == CardType.Attack)
         {

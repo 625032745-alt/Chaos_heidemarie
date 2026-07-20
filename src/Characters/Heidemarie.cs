@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Nodes.Vfx;

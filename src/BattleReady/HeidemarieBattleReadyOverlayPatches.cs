@@ -1,4 +1,3 @@
-using System;
 using ChaosHeidemarie.Cards;
 using Godot;
 using HarmonyLib;
@@ -264,7 +263,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
             CardModel? card = cardPlay.Card;
             if (!HeidemarieBattleReadyTarget.IsMineTargetCard(card))
                 return;
-            if (card is not HeidemarieDefend && card?.Id != ModelDb.GetId<HeidemarieDefend>())
+            if (card is not SwordCurtainCard && card?.Id != ModelDb.GetId<SwordCurtainCard>())
                 return;
 
             TryPlayDefendAnimation(card.Owner);
