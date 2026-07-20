@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Text.Json;
 using HarmonyLib;
@@ -7,7 +9,6 @@ using MegaCrit.Sts2.Core.Modding;
 using STS2RitsuLib;
 using STS2RitsuLib.Interop;
 using STS2RitsuLib.Patching.Core;
-using STS2RitsuLib.Patching.Models;
 using GodotFileAccess = Godot.FileAccess;
 
 namespace ChaosHeidemarie;
@@ -32,28 +33,28 @@ public static class ModEntry
         _harmony ??= new Harmony($"{ModInfo.Id}.runtime");
         _harmony.PatchAll(assembly);
 
-        RegisterContent();
+        // RegisterContent();
 
         RitsuLibFramework.ApplyRequiredPatcher(patcher, DisableMod);
     }
 
-    private static void RegisterContent()
-    {
-        RitsuLibFramework.CreateContentPack(ModInfo.Id)
-            .Character<Characters.Heidemarie>(character => character
-                .AddStartingRelic<Relics.HeidemarieStarterRelic>(1, order: 0)
-                .AddStartingCard<Cards.HeidemarieStrike>(5, order: 10)
-                .AddStartingCard<Cards.HeidemarieDefend>(4, order: 20)
-                .AddStartingCard<Cards.HeidemarieInsight>(1, order: 30))
-            .Card<Content.HeidemarieCardPool, Cards.HeidemarieStrike>()
-            .Card<Content.HeidemarieCardPool, Cards.HeidemarieDefend>()
-            .Card<Content.HeidemarieCardPool, Cards.HeidemarieInsight>()
-            .Card<Content.HeidemarieCardPool, Cards.HeidemarieSweep>()
-            .Card<Content.HeidemarieCardPool, Cards.HeidemarieBarrage>()
-            .Card<Content.HeidemarieCardPool, Cards.HeidemarieResolve>()
-            .Relic<Content.HeidemarieRelicPool, Relics.HeidemarieStarterRelic>()
-            .Apply();
-    }
+    // private static void RegisterContent()
+    // {
+    //     RitsuLibFramework.CreateContentPack(ModInfo.Id)
+    //         .Character<Characters.Heidemarie>(character => character
+    //             .AddStartingRelic<Relics.HeidemarieStarterRelic>(1, order: 0)
+    //             .AddStartingCard<Cards.HeidemarieStrike>(5, order: 10)
+    //             .AddStartingCard<Cards.HeidemarieDefend>(4, order: 20)
+    //             .AddStartingCard<Cards.HeidemarieInsight>(1, order: 30))
+    //         .Card<Content.HeidemarieCardPool, Cards.HeidemarieStrike>()
+    //         .Card<Content.HeidemarieCardPool, Cards.HeidemarieDefend>()
+    //         .Card<Content.HeidemarieCardPool, Cards.HeidemarieInsight>()
+    //         .Card<Content.HeidemarieCardPool, Cards.HeidemarieSweep>()
+    //         .Card<Content.HeidemarieCardPool, Cards.HeidemarieBarrage>()
+    //         .Card<Content.HeidemarieCardPool, Cards.HeidemarieResolve>()
+    //         .Relic<Content.HeidemarieRelicPool, Relics.HeidemarieStarterRelic>()
+    //         .Apply();
+    // }
 
     public static void RegisterLocalizationFallback(LocManager locManager)
     {
