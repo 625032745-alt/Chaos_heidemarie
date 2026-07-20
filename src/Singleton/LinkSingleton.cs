@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Models;
 
-namespace Heidemarie.Core.Models.Singleton;
+namespace ChaosHeidemarie.Singleton;
 
 [RegisterSingleton]
 public class LinkSingleton : HookedSingletonModel
