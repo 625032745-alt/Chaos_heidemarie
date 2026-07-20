@@ -212,19 +212,15 @@ foreach ($path in $cacheFiles) {
     }
 }
 
-$editorOnlyPaths = @(
-    (Join-Path $stageProject "spine_godot_extension.gdextension"),
-    (Join-Path $stageProject "spine_godot_extension.gdextension.uid"),
-    (Join-Path $stageProject "windows"),
-    (Join-Path $stageProject "addons"),
-    (Join-Path $stageProject ".godot\extension_list.cfg")
-)
+# Godot 4 companion UID files are editor metadata only. Keeping them in the staging
+# project causes export-time resource resolution to attempt loading "*.uid" as real
+# resources, which breaks on shader includes and other imported assets.
+Get-ChildItem -LiteralPath $stageProject -Recurse -File -Filter "*.uid" -ErrorAction SilentlyContinue |
+    ForEach-Object { Remove-Item -LiteralPath $_.FullName -Force }
 
-foreach ($path in $editorOnlyPaths) {
-    if (Test-Path -LiteralPath $path) {
-        Remove-Item -LiteralPath $path -Recurse -Force
-    }
-}
+# Keep the Spine extension/runtime files in the staging project for export-time loading.
+# The export preset already excludes these paths from the final PCK, and the post-export
+# validation below will fail if they still leak into the output.
 
 $outputDir = Split-Path -Parent $OutputPck
 if ($outputDir) {
