@@ -12,6 +12,7 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace ChaosHeidemarie.Cards;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
+[RegisterCharacterStarterCard(typeof(Characters.Heidemarie))]
 public sealed class SwordCurtainCard : ModCardTemplate
 {
     public override bool GainsBlock => true;

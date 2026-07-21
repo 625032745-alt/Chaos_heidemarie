@@ -16,6 +16,7 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace ChaosHeidemarie.Cards;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
+[RegisterCharacterStarterCard(typeof(Characters.Heidemarie))]
 public class SwordRainCard : TransformAtTurnStartCardBase
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move)];

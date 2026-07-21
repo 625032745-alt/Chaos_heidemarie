@@ -1,10 +1,4 @@
 {
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_STRIKE.title": "Test Strike",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_STRIKE.description": "Deal {Damage} damage.",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_DEFEND.title": "Test Defend",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_DEFEND.description": "Gain {Block} Block.",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_RESOLVE.title": "Test Power",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_RESOLVE.description": "Gain {StrengthPower} Strength.",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.title": "Effulgent Blade",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.description": "Deal {Damage} damage. When discarded, deal {Damage} damage to a random enemy.",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.title": "Condense Aurora",

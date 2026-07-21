@@ -1,16 +1,14 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using ChaosHeidemarie.Content;
-using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
 namespace ChaosHeidemarie.Cards.Upgrade.SwordRain;
 
-[RegisterCard(typeof(HeidemarieCardPool))]
+[RegisterCard(typeof(ColorlessCardPool))]
 public class SwordRainCardB : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/SwordRainCard.png");

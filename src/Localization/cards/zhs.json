@@ -1,10 +1,4 @@
 {
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_STRIKE.title": "测试打击",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_STRIKE.description": "造成 {Damage} 点伤害。",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_DEFEND.title": "测试防御",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_DEFEND.description": "获得 {Block} 点格挡。",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_RESOLVE.title": "测试能力",
-  "CHAOS_HEIDEMARIE_CARD_HEIDEMARIE_RESOLVE.description": "获得 {StrengthPower} 点力量。",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.title": "极光剑",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.description": "造成 {Damage} 点伤害。被丢弃时，随机对一名敌人造成 {Damage} 点伤害。",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.title": "凝聚极光",

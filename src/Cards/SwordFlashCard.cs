@@ -12,6 +12,7 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace ChaosHeidemarie.Cards;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
+[RegisterCharacterStarterCard(typeof(Characters.Heidemarie), 2)]
 public sealed class SwordFlashCard : ModCardTemplate
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(7, ValueProp.Move)];
