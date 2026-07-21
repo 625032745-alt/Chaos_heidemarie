@@ -1,9 +1,9 @@
 {
   "id": "Chaos_heidemarie",
   "pck_name": "Chaos_heidemarie",
-  "name": "Chaos Heidemarie",
+  "name": "卡厄斯梦境-海德玛丽",
   "author": "Chaos",
-  "description": "Adds Heidemarie as a new playable character.",
+  "description": "基于RitsuLib制作的海德玛丽卡组，参考卡厄斯梦境中的海德玛丽人物而制作的模组",
   "version": "0.1.0",
   "min_game_version": "0.107.1",
   "has_pck": true,
