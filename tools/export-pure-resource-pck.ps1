@@ -3,7 +3,12 @@ param(
     [string] $BaseResourceRoot,
     [string] $StageRoot,
     [string] $OutputPck,
-    [string] $PresetName = "Windows Desktop"
+    [string] $PresetName = "Windows Desktop",
+    # Keep the proven compatible exporter as the one-click default.  The
+    # experimental mod-only PCK path can be invoked explicitly with
+    # -IncludeBaseResources:$false while its imported-resource handling is
+    # being completed.
+    [switch] $IncludeBaseResources = $true
 )
 
 $ErrorActionPreference = "Stop"
@@ -81,6 +86,20 @@ New-Item -ItemType Directory -Force -Path $stageProject | Out-Null
 
 Copy-Item -LiteralPath (Join-Path $ProjectRoot "project.godot") -Destination (Join-Path $stageProject "project.godot") -Force
 Copy-Item -LiteralPath (Join-Path $ProjectRoot "export_presets.cfg") -Destination (Join-Path $stageProject "export_presets.cfg") -Force
+
+# The production PCK deliberately contains only this mod's files.  The copied
+# original-game resources below exist solely so Godot can import and validate
+# our scenes; at runtime their res:// paths are resolved from the base game.
+# Keep an opt-in compatibility path for diagnosing an old export issue.
+if ($IncludeBaseResources) {
+    $stagePreset = Join-Path $stageProject "export_presets.cfg"
+    $presetText = Get-Content -LiteralPath $stagePreset -Raw
+    $presetText = $presetText.Replace(
+        'include_filter="ArtWorks/**,ChaosHeidemarie/**,mod_manifest.json"',
+        'include_filter="ArtWorks/**,animations/**,fonts/**,images/**,materials/**,scenes/**,shaders/**,themes/**,ChaosHeidemarie/**,src/Localization/**,mod_manifest.json"')
+    [System.IO.File]::WriteAllText($stagePreset, $presetText, [System.Text.UTF8Encoding]::new($false))
+    Write-Warning "Compatibility export enabled: original-game resources will be included in this PCK."
+}
 
 foreach ($name in @("ArtWorks", "src", "mod_manifest.json")) {
     $src = Join-Path $ProjectRoot $name
@@ -274,6 +293,32 @@ foreach ($path in @(
 $outputDir = Split-Path -Parent $OutputPck
 if ($outputDir) {
     New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
+}
+
+if (-not $IncludeBaseResources) {
+    # Godot's normal exporter follows scene dependencies even when the export
+    # filters omit them.  Use PCKPacker instead: it writes exactly the paths we
+    # add below, while the staged base-game files remain available only during
+    # the import pass above.
+    $modOnlyPackerCommand = Join-Path $ProjectRoot "tools\pack-mod-only-pck.gd"
+
+    Remove-Item -LiteralPath $OutputPck -Force -ErrorAction SilentlyContinue
+    & $GodotPath --headless --path $stageProject --script $modOnlyPackerCommand -- $OutputPck
+    $packExitCode = $LASTEXITCODE
+    for ($i = 0; $i -lt 300 -and -not (Test-Path -LiteralPath $OutputPck); $i++) {
+        Start-Sleep -Milliseconds 100
+    }
+    if (-not (Test-Path -LiteralPath $OutputPck)) {
+        throw "Mod-only PCK export failed with exit code $packExitCode and did not produce output: $OutputPck"
+    }
+    if ((Get-Item -LiteralPath $OutputPck).Length -eq 0) {
+        throw "Mod-only PCK export produced an empty file: $OutputPck"
+    }
+    if ($packExitCode -ne 0) {
+        Write-Warning "Godot mod-only packer returned exit code $packExitCode after producing the PCK; continuing."
+    }
+    Write-Host "Mod-only resource PCK export completed: $OutputPck"
+    exit 0
 }
 
 $exportStartedAt = Get-Date
