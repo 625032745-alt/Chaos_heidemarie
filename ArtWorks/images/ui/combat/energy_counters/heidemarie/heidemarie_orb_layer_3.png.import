@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmfkypya3wfkn"
-path="res://.godot/imported/heidemarie_orb_layer_3.png-72afee004dde9b414dc11cef0cfe8fb5.ctex"
+path="res://.godot/imported/heidemarie_orb_layer_3.png-603e692dcd26f583c3a8476f31b9ee53.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://ArtWorks/images/ui/combat/energy_counters/heidemarie/heidemarie_orb_layer_3.png"
-dest_files=["res://.godot/imported/heidemarie_orb_layer_3.png-72afee004dde9b414dc11cef0cfe8fb5.ctex"]
+dest_files=["res://.godot/imported/heidemarie_orb_layer_3.png-603e692dcd26f583c3a8476f31b9ee53.ctex"]
 
 [params]
 

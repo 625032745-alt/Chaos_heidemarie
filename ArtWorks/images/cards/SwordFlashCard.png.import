@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpvtxkg5m03hk"
-path="res://.godot/imported/SwordFlashCard.png-6ae88517910d78b8f4b009c3a1da813e.ctex"
+path="res://.godot/imported/SwordFlashCard.png-3c26953056c3a4a23a9b16931c2a95d1.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://ArtWorks/images/cards/SwordFlashCard.png"
-dest_files=["res://.godot/imported/SwordFlashCard.png-6ae88517910d78b8f4b009c3a1da813e.ctex"]
+dest_files=["res://.godot/imported/SwordFlashCard.png-3c26953056c3a4a23a9b16931c2a95d1.ctex"]
 
 [params]
 

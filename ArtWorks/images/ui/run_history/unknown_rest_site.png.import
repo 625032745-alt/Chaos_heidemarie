@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clflnkqxntcv"
-path="res://.godot/imported/HeroAllCard.png-ccb1faa829c05b9e2101f3a9b6119981.ctex"
+uid="uid://dr6smebjnlyqi"
+path="res://.godot/imported/unknown_rest_site.png-20be715eeaf15e33a161bbbb428a6d07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtWorks/images/cards/HeroAllCard.png"
-dest_files=["res://.godot/imported/HeroAllCard.png-ccb1faa829c05b9e2101f3a9b6119981.ctex"]
+source_file="res://ArtWorks/images/ui/run_history/unknown_rest_site.png"
+dest_files=["res://.godot/imported/unknown_rest_site.png-20be715eeaf15e33a161bbbb428a6d07.ctex"]
 
 [params]
 

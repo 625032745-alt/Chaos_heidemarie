@@ -101,7 +101,15 @@ if ($IncludeBaseResources) {
     Write-Warning "Compatibility export enabled: original-game resources will be included in this PCK."
 }
 
-foreach ($name in @("ArtWorks", "src", "mod_manifest.json")) {
+foreach ($name in @(
+    "ArtWorks",
+    "src",
+    "addons",
+    "windows",
+    "spine_godot_extension.gdextension",
+    "spine_godot_extension.gdextension.uid",
+    "mod_manifest.json"
+)) {
     $src = Join-Path $ProjectRoot $name
     $dst = Join-Path $stageProject $name
     if (Test-Path -LiteralPath $src -PathType Container) {
@@ -112,6 +120,13 @@ foreach ($name in @("ArtWorks", "src", "mod_manifest.json")) {
     } elseif (Test-Path -LiteralPath $src -PathType Leaf) {
         Copy-Item -LiteralPath $src -Destination $dst -Force
     }
+}
+
+$extensionListSource = Join-Path $ProjectRoot ".godot\extension_list.cfg"
+if (Test-Path -LiteralPath $extensionListSource -PathType Leaf) {
+    $extensionListDestDir = Join-Path $stageProject ".godot"
+    New-Item -ItemType Directory -Force -Path $extensionListDestDir | Out-Null
+    Copy-Item -LiteralPath $extensionListSource -Destination (Join-Path $extensionListDestDir "extension_list.cfg") -Force
 }
 
 function Copy-BaseFile([string] $relativePath) {

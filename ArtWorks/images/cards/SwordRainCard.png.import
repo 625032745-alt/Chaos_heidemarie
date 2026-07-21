@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3ygd5glsfkmc"
-path="res://.godot/imported/SwordRainCard.png-0409a4e9691aec6de7d6efb1b3973411.ctex"
+path="res://.godot/imported/SwordRainCard.png-b24cede871f7ce29c31bf8e70f055e9a.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://ArtWorks/images/cards/SwordRainCard.png"
-dest_files=["res://.godot/imported/SwordRainCard.png-0409a4e9691aec6de7d6efb1b3973411.ctex"]
+dest_files=["res://.godot/imported/SwordRainCard.png-b24cede871f7ce29c31bf8e70f055e9a.ctex"]
 
 [params]
 

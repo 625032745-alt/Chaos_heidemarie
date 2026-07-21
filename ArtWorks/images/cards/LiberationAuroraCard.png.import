@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cljwbbxhbra3d"
-path="res://.godot/imported/LiberationAuroraCard.png-6cfe133801cb6241a345d8231128c86d.ctex"
+path="res://.godot/imported/LiberationAuroraCard.png-3a1b0ad7c7ec397b99a6969ae4c96ee8.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://ArtWorks/images/cards/LiberationAuroraCard.png"
-dest_files=["res://.godot/imported/LiberationAuroraCard.png-6cfe133801cb6241a345d8231128c86d.ctex"]
+dest_files=["res://.godot/imported/LiberationAuroraCard.png-3a1b0ad7c7ec397b99a6969ae4c96ee8.ctex"]
 
 [params]
 
