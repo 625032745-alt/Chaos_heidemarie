@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://f8n4bjj1kmaq"
-path="res://.godot/imported/EffulgentExpansionCard.png-dde95233dae73072d25f9860eb37b63f.ctex"
+path="res://.godot/imported/EffulgentExpansionCard.png-3929876d8aa670364424f90eb8e465d6.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://ArtWorks/images/cards/EffulgentExpansionCard.png"
-dest_files=["res://.godot/imported/EffulgentExpansionCard.png-dde95233dae73072d25f9860eb37b63f.ctex"]
+dest_files=["res://.godot/imported/EffulgentExpansionCard.png-3929876d8aa670364424f90eb8e465d6.ctex"]
 
 [params]
 

@@ -35,7 +35,7 @@
   </Target>
 
   <Target Name="PackPck" Condition="'$(CopyToGame)' == 'true'">
-    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\tools\export-pure-resource-pck.ps1&quot; -OutputPck &quot;$(PckOutputPath)&quot;" />
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\tools\export-pure-resource-pck-msbuild.ps1&quot; -OutputPck &quot;$(PckOutputPath)&quot;" />
   </Target>
 
   <Target Name="Copy Mod" AfterTargets="Build" DependsOnTargets="PackPck" Condition="'$(CopyToGame)' == 'true'">

@@ -31,9 +31,11 @@ internal static class HeidemarieBattleReadyOverlayPatches
             if (!HeidemarieBattleReadyTarget.IsTarget(me))
                 return;
 
+            HeidemarieBattleReadyBodyHoldController.NotifyCombatEnded();
             HeidemarieBattleReadyOverlay.Preload();
             HeidemarieBattleDeadOverlay.Preload();
             TryPlayCombatStartAnimation(me);
+            HeidemarieBattleReadyBodyHoldController.NotifyCombatStarted(me);
         }
         catch
         {
@@ -51,6 +53,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
                 return;
 
             HeidemarieBattleReadyOverlay.NotifyCombatEnded();
+            HeidemarieBattleReadyBodyHoldController.NotifyCombatEnded();
             TryPlayVictoryAnimation(me);
         }
         catch
@@ -133,7 +136,28 @@ internal static class HeidemarieBattleReadyOverlayPatches
             }
 
             HeidemarieBattleReadyOverlay.NotifyCombatEnded();
+            HeidemarieBattleReadyBodyHoldController.NotifyCombatEnded();
             HeidemarieBattleDeadOverlay.Play();
+        }
+        catch
+        {
+        }
+    }
+
+    [HarmonyPatch(typeof(Hook), nameof(Hook.AfterCurrentHpChanged))]
+    [HarmonyPostfix]
+    public static void AfterCurrentHpChanged(IRunState runState, object? combatState, Creature creature, decimal delta)
+    {
+        try
+        {
+            if (creature == null || !creature.IsPlayer)
+                return;
+            if (!LocalContext.IsMe(creature))
+                return;
+            if (!HeidemarieBattleReadyTarget.IsTarget(creature.Player))
+                return;
+
+            HeidemarieBattleReadyBodyHoldController.NotifyCurrentHpChanged(creature);
         }
         catch
         {
@@ -151,6 +175,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
                 return;
 
             HeidemarieBattleReadyOverlay.NotifyHovered(card!, hovered: true);
+            HeidemarieBattleReadyBodyHoldController.NotifyHovered(card!, hovered: true);
         }
         catch
         {
@@ -168,6 +193,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
                 return;
 
             HeidemarieBattleReadyOverlay.NotifyUiFocused(card!, focused: true);
+            HeidemarieBattleReadyBodyHoldController.NotifyUiFocused(card!, focused: true);
         }
         catch
         {
@@ -185,6 +211,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
                 return;
 
             HeidemarieBattleReadyOverlay.NotifyUiFocused(card!, focused: false);
+            HeidemarieBattleReadyBodyHoldController.NotifyUiFocused(card!, focused: false);
         }
         catch
         {
@@ -205,6 +232,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
                 return;
 
             HeidemarieBattleReadyOverlay.NotifyHovered(card!, hovered: true);
+            HeidemarieBattleReadyBodyHoldController.NotifyHovered(card!, hovered: true);
         }
         catch
         {
@@ -224,6 +252,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
             if (isHovered)
             {
                 HeidemarieBattleReadyOverlay.NotifyHovered(card!, hovered: true);
+                HeidemarieBattleReadyBodyHoldController.NotifyHovered(card!, hovered: true);
                 return;
             }
 
@@ -231,6 +260,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
                 return;
 
             HeidemarieBattleReadyOverlay.NotifyHovered(card!, hovered: false);
+            HeidemarieBattleReadyBodyHoldController.NotifyHovered(card!, hovered: false);
         }
         catch
         {
@@ -248,6 +278,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
                 return;
 
             HeidemarieBattleReadyOverlay.NotifyBeforeCardPlayed(cardPlay);
+            HeidemarieBattleReadyBodyHoldController.NotifyBeforeCardPlayed(cardPlay);
         }
         catch
         {
@@ -315,6 +346,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
                 return;
 
             HeidemarieBattleReadyOverlay.NotifyCanceled(card!);
+            HeidemarieBattleReadyBodyHoldController.NotifyCanceled(card!);
         }
         catch
         {
@@ -332,6 +364,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
                 return;
 
             HeidemarieBattleReadyOverlay.NotifyUiFocused(card!, focused: true);
+            HeidemarieBattleReadyBodyHoldController.NotifyUiFocused(card!, focused: true);
         }
         catch
         {
@@ -354,6 +387,7 @@ internal static class HeidemarieBattleReadyOverlayPatches
                 return;
 
             HeidemarieBattleReadyOverlay.NotifyCanceled(card!);
+            HeidemarieBattleReadyBodyHoldController.NotifyCanceled(card!);
         }
         catch
         {
