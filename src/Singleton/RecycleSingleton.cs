@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using ChaosHeidemarie.Keywords;
+﻿using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -25,7 +23,7 @@ public class RecycleSingleton : HookedSingletonModel
         var pile = player.Piles.FirstOrDefault(p => p.Cards.Contains(card));
         if (pile != null && (pile.Type == PileType.Discard || pile.Type == PileType.Exhaust))
         {
-            var pileCards = pile.Cards;
+            var pileCards = pile.Cards.ToList();
             foreach (var pileCard in pileCards)
             {
                 await CardPileCmd.Add(pileCard, PileType.Hand);

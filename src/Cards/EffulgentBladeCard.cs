@@ -2,6 +2,7 @@
 using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -30,18 +31,6 @@ public class EffulgentBladeCard : ModCardTemplate
         {
             card.RemoveKeyword(RecycleKeywords.Recycle);
         }
-        if (EffulgentExpansionCard.RemainingCharges)
-        {
-            var damage = DynamicVars.Damage.BaseValue;
-            damage += 2;
-            await DamageCmd.Attack(damage)
-                .FromCard(this, cardPlay)
-                .Targeting(cardPlay.Target)
-                .WithHitFx("vfx/vfx_attack_slash")
-                .Execute(choiceContext);
-            return;
-        }
-
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
@@ -57,19 +46,21 @@ public class EffulgentBladeCard : ModCardTemplate
         var combatState = player.Creature.CombatState;
         if (null == combatState)
             return;
-        var damage = DynamicVars.Damage.BaseValue;
-        if (EffulgentExpansionCard.RemainingCharges)
-        {
-            damage += 2;
-        }
-
-        await DamageCmd.Attack(damage)
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(card, null)
             .TargetingRandomOpponents(combatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
     }
     
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
+        CardPlay? cardPlay)
+    {
+        if (cardSource != this)
+            return 0M;
+        return EffulgentExpansionCard.RemainingCharges ? 2m : 0m;
+    }
+
     public override async Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel clonedBy)
     {
         if (card != this)
