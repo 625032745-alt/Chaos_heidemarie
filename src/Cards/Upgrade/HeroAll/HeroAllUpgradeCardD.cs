@@ -1,17 +1,17 @@
-﻿using ChaosHeidemarie.Keywords;
+﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.CardPools;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
 namespace ChaosHeidemarie.Cards.Upgrade.HeroAll;
 
-[RegisterCard(typeof(ColorlessCardPool))]
+[RegisterCard(typeof(HeidemarieCardPool))]
 public class HeroAllUpgradeCardD : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/HeroAllCard.png");
