@@ -14,7 +14,7 @@ public sealed class HeidemarieCardPool : TypeListCardPoolModel
     public override string EnergyColorName => "heidemarie";
     public override string? BigEnergyIconPath => "res://ArtWorks/images/ui/combat/energy_counters/heidemarie/heidemarie_orb_layer_1.png";
     public override string? TextEnergyIconPath => "res://ArtWorks/images/ui/combat/energy_counters/heidemarie/heidemarie_orb_layer_1.png";
-    public override string CardFrameMaterialPath => "card_frame_colorless";
+    public override string CardFrameMaterialPath => "card_frame_blue";
     public override Color DeckEntryCardColor => new("7A4F9AFF");
     public override bool IsColorless => false;
 
