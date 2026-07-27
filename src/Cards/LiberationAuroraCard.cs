@@ -21,7 +21,7 @@ public class LiberationAuroraCard : ModCardTemplate
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,UniqueKeyword.Unique];
 
-    public LiberationAuroraCard() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+    public LiberationAuroraCard() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
     {
     }
 

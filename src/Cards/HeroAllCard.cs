@@ -23,7 +23,7 @@ public class HeroAllCard : TransformAtTurnStartCardBase
     private readonly HashSet<CardModel> _linkedCards = new();
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
 
-    public HeroAllCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public HeroAllCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 

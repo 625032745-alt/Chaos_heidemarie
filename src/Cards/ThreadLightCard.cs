@@ -23,7 +23,7 @@ public class ThreadLightCard : ModCardTemplate
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
-    public ThreadLightCard() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+    public ThreadLightCard() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
     }
 

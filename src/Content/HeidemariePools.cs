@@ -1,4 +1,5 @@
 using ChaosHeidemarie.Cards;
+using ChaosHeidemarie.Cards.Upgrade.EffulgentExpansion;
 using ChaosHeidemarie.Cards.Upgrade.HeroAll;
 using ChaosHeidemarie.Cards.Upgrade.SwordRain;
 using Godot;
@@ -32,7 +33,10 @@ public sealed class HeidemarieCardPool : TypeListCardPoolModel
             typeof(SwordRainCardA),
             typeof(SwordRainCardB),
             typeof(SwordRainCardC),
-            typeof(SwordRainCardD)
+            typeof(SwordRainCardD),
+            typeof(EffulgentExpansionCardB),
+            typeof(EffulgentExpansionCardC),
+            typeof(EffulgentExpansionCardD)
         };
         return result.Where(card => !excludedCardTypes.Contains(card.GetType())).ToList();
     }

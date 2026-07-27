@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using ChaosHeidemarie.Keywords;
+﻿using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Models;
@@ -16,8 +15,6 @@ public class UniqueSingleton : HookedSingletonModel
     public override bool ShouldAddToDeck(CardModel card)
     {
         if (!card.Keywords.Contains(UniqueKeyword.Unique))
-            return true;
-        if (card == null || card.Id != card.Id)
             return true;
 
         var owner = card.Owner;

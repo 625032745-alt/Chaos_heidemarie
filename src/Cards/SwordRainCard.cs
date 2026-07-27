@@ -25,7 +25,7 @@ public class SwordRainCard : TransformAtTurnStartCardBase
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
 
-    public SwordRainCard() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+    public SwordRainCard() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
     }
 

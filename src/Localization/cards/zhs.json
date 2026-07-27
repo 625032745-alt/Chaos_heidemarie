@@ -5,7 +5,6 @@
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.description": "此牌被丢弃 3 次后，变为解放极光。",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD.title": "展开极光",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD.description": "生成 2 张极光剑。本回合内，极光剑额外造成 2 点伤害。",
-  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD.upgradeDescription": "依手牌中连接卡牌的数量生成极光剑。",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_CARD.title": "万人英雄",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_CARD.description": "抽 3 张牌。本回合将它们连接。",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_CARD.upgradeDescription": "抽 3 张牌。本回合将它们连接。获得连接。",
@@ -35,5 +34,11 @@
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_C.title": "万人英雄：回忆",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_C.description": "分别从抽牌堆与弃牌堆选择 1 张牌，移入手牌并连接。",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_D.title": "万人英雄：突击",
-  "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_D.description": "将抽牌堆中 2 张攻击牌移入手牌。本回合将手牌中所有攻击牌连接。"
+  "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_D.description": "将抽牌堆中 2 张攻击牌移入手牌。本回合将手牌中所有攻击牌连接。",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_B.title": "展开极光：蓄势",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_B.description": "依手牌连接卡牌的数量生成极光剑",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_C.title": "展开极光：凝芒",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_C.description": "在弃牌堆中生成 6 张极光剑",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.title": "展开极光：砺锋",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.description": "回合开始时生成 2 张极光剑，极光剑伤害+2"
 }

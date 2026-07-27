@@ -1,5 +1,6 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
+using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -58,7 +59,19 @@ public class EffulgentBladeCard : ModCardTemplate
     {
         if (cardSource != this)
             return 0M;
-        return EffulgentExpansionCard.RemainingCharges ? 2m : 0m;
+        decimal damage = 0m;
+        var hasPower = Owner.Creature.HasPower<EffulgentExpansionCardDPower>();
+        if (hasPower)
+        {
+            damage += 2m;
+        }
+
+        if (EffulgentExpansionCard.RemainingCharges)
+        {
+            damage += 2m;
+        }
+
+        return damage;
     }
 
     public override async Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel clonedBy)

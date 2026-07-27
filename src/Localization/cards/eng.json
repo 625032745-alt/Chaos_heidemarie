@@ -35,5 +35,11 @@
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_C.title": "Hero of All: Recall",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_C.description": "Choose a card from your draw pile and discard pile. Put them into your hand and Link them.",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_D.title": "Hero of All: Assault",
-  "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_D.description": "Put 2 Attacks from your draw pile into your hand. Link all Attacks in your hand this turn."
+  "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_D.description": "Put 2 Attacks from your draw pile into your hand. Link all Attacks in your hand this turn.",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_B.title": "Radiant Aurora Unfurl: Accumulate Momentum",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_B.description": "Generate Aurora Swords equal to the number of linked cards in your hand.",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_C.title": "Radiant Aurora Unfurl: Condense Radiance",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_C.description": "Create 6 Aurora Swords in your discard pile.",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.title": "Radiant Aurora Unfurl: Temper Blade",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.description": "At the start of your turn, generate 2 Aurora Swords, and all Aurora Swords gain +2 Damage."
 }
