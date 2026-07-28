@@ -1,6 +1,6 @@
 {
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.title": "Effulgent Blade",
-  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.description": "Deal {Damage:diff()} damage. When discarded, deal {Damage:diff()} damage to a random enemy.",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.description": "Deal {Damage:diff()} damage. When discarded, deal {Damage:diff()} damage to a random enemy.This card stays out of the draw pile during shuffles.",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.title": "Condense Aurora",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.description": "After this is discarded 3 times, transform it into Liberation Aurora.",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD.title": "Expand Aurora",

@@ -16,14 +16,18 @@ public class EffulgentExpansionCardDPower : ModPowerTemplate
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants,
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side,
+        IReadOnlyList<Creature> participants,
         ICombatState combatState)
     {
         var player = Owner.Player;
-        for (var i = 0; i < 2; i++)
+        if (side == CombatSide.Player)
         {
-            var newCard = combatState.CreateCard<EffulgentBladeCard>(player);
-            await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Hand, player);
+            for (var i = 0; i < 2; i++)
+            {
+                var newCard = combatState.CreateCard<EffulgentBladeCard>(player);
+                await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Hand, player);
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.title": "极光剑",
-  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.description": "造成 {Damage:diff()} 点伤害。被丢弃时，随机对一名敌人造成 {Damage:diff()} 点伤害。",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.description": "造成 {Damage:diff()} 点伤害。被丢弃时，随机对一名敌人造成 {Damage:diff()} 点伤害。此卡牌在洗牌时不会移动至抽牌堆",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.title": "凝聚极光",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.description": "此牌被丢弃 3 次后，变为解放极光。",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD.title": "展开极光",
