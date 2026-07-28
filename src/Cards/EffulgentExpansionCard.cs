@@ -49,7 +49,6 @@ public class EffulgentExpansionCard : TransformAtTurnStartCardBase
 
     protected override void OnUpgrade()
     {
-        CardCmd.RemoveKeyword(this, RestKeyword.REST);
         CardCmd.ApplyKeyword(this, LinkKeywords.Link);
     }
 
