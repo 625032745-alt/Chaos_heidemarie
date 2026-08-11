@@ -121,7 +121,8 @@ internal static class ChaosModSharedSettingsUiPatch
         if (resetButtonRoot != null)
             Callable.From(() => WireResetButtonWhenReady(vbox, resetButtonRoot, source, 0)).CallDeferred();
 
-        RefreshFocusNeighbors(voiceSliderRoot, portraitsTickboxRoot, scaleSliderRoot, offsetYSliderRoot, offsetXSliderRoot, resetButtonRoot);
+        RefreshFocusNeighbors(voiceSliderRoot, portraitsTickboxRoot, scaleSliderRoot, offsetYSliderRoot,
+            offsetXSliderRoot, resetButtonRoot);
     }
 
     private static void EnsureTickboxSection(
@@ -229,6 +230,7 @@ internal static class ChaosModSharedSettingsUiPatch
             label.AddThemeFontSizeOverride("normal_font_size", templateLabel.GetThemeFontSize("normal_font_size"));
             label.AddThemeFontSizeOverride("bold_font_size", templateLabel.GetThemeFontSize("bold_font_size"));
         }
+
         return label;
     }
 
@@ -277,6 +279,7 @@ internal static class ChaosModSharedSettingsUiPatch
             label.AddThemeFontOverride("font", templateLabel.GetThemeFont("normal_font"));
             label.AddThemeFontSizeOverride("font_size", templateLabel.GetThemeFontSize("normal_font_size"));
         }
+
         button.AddChild(label);
 
         return button;
@@ -621,7 +624,8 @@ internal static class ChaosModSharedSettingsUiPatch
             slider.Connect(NSlider.SignalName.MouseReleased, Callable.From<bool>(valueChanged =>
             {
                 if (valueChanged)
-                    ChaosModSharedSettings.SetBattleReadyOffsetY(ChaosModSharedSettings.BattleReadyOffsetY, persist: true);
+                    ChaosModSharedSettings.SetBattleReadyOffsetY(ChaosModSharedSettings.BattleReadyOffsetY,
+                        persist: true);
             }));
             sliderRoot.Connect(Control.SignalName.GuiInput, Callable.From<InputEvent>(input =>
             {
@@ -672,7 +676,8 @@ internal static class ChaosModSharedSettingsUiPatch
             slider.Connect(NSlider.SignalName.MouseReleased, Callable.From<bool>(valueChanged =>
             {
                 if (valueChanged)
-                    ChaosModSharedSettings.SetBattleReadyOffsetX(ChaosModSharedSettings.BattleReadyOffsetX, persist: true);
+                    ChaosModSharedSettings.SetBattleReadyOffsetX(ChaosModSharedSettings.BattleReadyOffsetX,
+                        persist: true);
             }));
             sliderRoot.Connect(Control.SignalName.GuiInput, Callable.From<InputEvent>(input =>
             {
@@ -803,8 +808,11 @@ internal static class ChaosModSharedSettingsUiPatch
 
         root.Connect(Control.SignalName.FocusEntered, Callable.From(() =>
         {
-            if (NControllerManager.Instance?.IsUsingController == true)
-                reticle.OnSelect();
+            if (NControllerManager.Instance != null)
+            {
+                if (NControllerManager.Instance.IsUsingDirectionalNavigation)
+                    reticle.OnSelect();
+            }
         }));
         root.Connect(Control.SignalName.FocusExited, Callable.From(reticle.OnDeselect));
     }
