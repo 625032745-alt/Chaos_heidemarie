@@ -34,6 +34,7 @@ public sealed class HeidemarieCardPool : TypeListCardPoolModel
             typeof(SwordRainCardB),
             typeof(SwordRainCardC),
             typeof(SwordRainCardD),
+            typeof(EffulgentExpansionCardA),
             typeof(EffulgentExpansionCardB),
             typeof(EffulgentExpansionCardC),
             typeof(EffulgentExpansionCardD)

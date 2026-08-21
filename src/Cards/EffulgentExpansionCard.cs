@@ -56,6 +56,7 @@ public class EffulgentExpansionCard : TransformAtTurnStartCardBase
     {
         return
         [
+            typeof(EffulgentExpansionCardA),
             typeof(EffulgentExpansionCardB),
             typeof(EffulgentExpansionCardC),
             typeof(EffulgentExpansionCardD)

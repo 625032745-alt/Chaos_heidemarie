@@ -27,7 +27,7 @@
   "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD_C.title": "Sword Rain: Reclaim",
   "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD_C.description": "Create 2 Effulgent Blades in your hand. They gain Recycle.",
   "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD_D.title": "Sword Rain: Finale",
-  "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD_D.description": "Exhaust all Liberation Auroras in your hand. Deal {Damage:diff()} damage to all enemies, plus 3 damage for each Effulgent Blade in your Exhaust pile.",
+  "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD_D.description": "Exhaust Liberation Auroras in your hand. Deal {Damage:diff()} damage to all enemies, plus 3 damage for each Effulgent Blade in your Exhaust pile.",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_A.title": "Hero of All: Rest",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_A.description": "Draw 1 card. Link all Rest cards in your hand this turn.",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_B.title": "Hero of All: Focus",
@@ -41,5 +41,7 @@
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_C.title": "Radiant Aurora Unfurl: Condense Radiance",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_C.description": "Create 6 Aurora Swords in your discard pile.",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.title": "Radiant Aurora Unfurl: Temper Blade",
-  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.description": "At the start of your turn, generate 2 Aurora Swords, and all Aurora Swords gain +2 Damage."
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.description": "At the start of your turn, generate 2 Aurora Swords, and all Aurora Swords gain +2 Damage.",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.title": "Radiant Aurora Unfurl: Twin Genesis",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.description": "Generate 2 Aurora Blades. The next {JGCount:diff()} Aurora Blade attacks deal +2 damage."
 }

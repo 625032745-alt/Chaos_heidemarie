@@ -28,6 +28,7 @@ public class EffulgentExpansionCardDPower : ModPowerTemplate
                 var newCard = combatState.CreateCard<EffulgentBladeCard>(player);
                 await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Hand, player);
             }
+            await PowerCmd.Remove(this);
         }
     }
 }

@@ -28,6 +28,10 @@
     <Content Include="ArtWorks\**\*" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ArtWorks\images\power\" />
+  </ItemGroup>
+
   <Target Name="ValidateSts2GameInstall" BeforeTargets="ResolveAssemblyReferences">
     <Error Condition="!Exists('$(Sts2DataDir)\sts2.dll')" Text="Could not find sts2.dll under '$(Sts2DataDir)'." />
     <Error Condition="!Exists('$(Sts2DataDir)\0Harmony.dll')" Text="Could not find 0Harmony.dll under '$(Sts2DataDir)'." />

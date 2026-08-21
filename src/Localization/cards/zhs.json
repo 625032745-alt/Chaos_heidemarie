@@ -26,7 +26,7 @@
   "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD_C.title": "剑雨：回收",
   "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD_C.description": "将 2 张极光剑加入手牌。它们获得回收。",
   "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD_D.title": "剑雨：终幕",
-  "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD_D.description": "消耗手牌中所有解放极光。对所有敌人造成 {Damage:diff()} 点伤害；消耗堆中每有 1 张极光剑，额外造成 3 点伤害。",
+  "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD_D.description": "消耗手牌中解放极光。对所有敌人造成 {Damage:diff()} 点伤害；消耗堆中每有 1 张极光剑，额外造成 3 点伤害。",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_A.title": "万人英雄：安息",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_A.description": "抽 1 张牌。本回合将手牌中所有安息卡牌连接。",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_UPGRADE_CARD_B.title": "万人英雄：聚焦",
@@ -40,5 +40,7 @@
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_C.title": "展开极光：凝芒",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_C.description": "在弃牌堆中生成 6 张极光剑",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.title": "展开极光：砺锋",
-  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.description": "回合开始时生成 2 张极光剑，极光剑伤害+2"
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.description": "回合开始时生成 2 张极光剑，极光剑伤害+2",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.title": "展开极光：双生",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.description": "生成 2 张极光剑，接下来 {JGCount:diff()} 次极光剑伤害+2"
 }
