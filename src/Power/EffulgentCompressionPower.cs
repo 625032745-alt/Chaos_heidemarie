@@ -15,8 +15,8 @@ public class EffulgentCompressionPower : ModPowerTemplate
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
     public override PowerAssetProfile AssetProfile => new(
-        IconPath: "res://ArtWorks/images/power/EffulgentCompressionPower.png",
-        BigIconPath: "res://ArtWorks/images/power/EffulgentCompressionPower.png"
+        IconPath: "res://ArtWorks/images/power/EffulgentCompressionPower_Small.png",
+        BigIconPath: "res://ArtWorks/images/power/EffulgentCompressionPower_Big.png"
     );
 
     public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)
