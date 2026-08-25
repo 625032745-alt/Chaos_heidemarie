@@ -41,7 +41,7 @@ public static class ModEntry
         if (locManager is null)
             return;
 
-        foreach (var table in new[] { "characters", "cards", "relics", "card_keywords", "card_selection", "power" })
+        foreach (var table in new[] { "characters", "cards", "relics", "card_keywords", "card_selection", "powers" })
         {
             MergeLocalizationTable(locManager, table, "eng");
             if (!string.Equals(locManager.Language, "eng", StringComparison.OrdinalIgnoreCase))
