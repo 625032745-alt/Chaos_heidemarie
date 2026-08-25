@@ -6,6 +6,6 @@
   "CHAOS_HEIDEMARIE_POWER_EFFULGENT_EXPANSION_CARD_A_POWER.description": "接下来 2 次极光剑伤害+2",
   "CHAOS_HEIDEMARIE_POWER_EFFULGENT_EXPANSION_CARD_A_POWER.smartDescription": "接下来 2 次极光剑伤害+2",
   "CHAOS_HEIDEMARIE_POWER_EFFULGENT_COMPRESSION_POWER.title": "凝聚极光",
-  "CHAOS_HEIDEMARIE_POWER_EFFULGENT_COMPRESSION_POWER.description": "凝聚极光被丢弃 {NJCount:diff()} 次后，变为解放极光。",
-  "CHAOS_HEIDEMARIE_POWER_EFFULGENT_COMPRESSION_POWER.smartDescription": "凝聚极光被丢弃 {NJCount:diff()} 次后，变为解放极光。"
+  "CHAOS_HEIDEMARIE_POWER_EFFULGENT_COMPRESSION_POWER.description": "凝聚极光被丢弃 {Amount} 次后，变为解放极光。",
+  "CHAOS_HEIDEMARIE_POWER_EFFULGENT_COMPRESSION_POWER.smartDescription": "凝聚极光被丢弃 {Amount} 次后，变为解放极光。"
 }
