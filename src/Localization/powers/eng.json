@@ -6,6 +6,6 @@
   "CHAOS_HEIDEMARIE_POWER_EFFULGENT_EXPANSION_CARD_A_POWER.description": "The next 2 Aurora Blade attacks deal +2 damage.",
   "CHAOS_HEIDEMARIE_POWER_EFFULGENT_EXPANSION_CARD_A_POWER.smartDescription": "The next 2 Aurora Blade attacks deal +2 damage.",
   "CHAOS_HEIDEMARIE_POWER_EFFULGENT_COMPRESSION_POWER.title": "Condensed Effulgence",
-  "CHAOS_HEIDEMARIE_POWER_EFFULGENT_COMPRESSION_POWER.description": "After Condensed Effulgence is discarded {NJCount:diff()} times, it becomes Liberated Effulgence.",
-  "CHAOS_HEIDEMARIE_POWER_EFFULGENT_COMPRESSION_POWER.smartDescription": "After Condensed Effulgence is discarded {NJCount:diff()} times, it becomes Liberated Effulgence."
+  "CHAOS_HEIDEMARIE_POWER_EFFULGENT_COMPRESSION_POWER.description": "After Condensed Effulgence is discarded {Amount} times, it becomes Liberated Effulgence.",
+  "CHAOS_HEIDEMARIE_POWER_EFFULGENT_COMPRESSION_POWER.smartDescription": "After Condensed Effulgence is discarded {Amount} times, it becomes Liberated Effulgence."
 }
