@@ -16,6 +16,10 @@ public class EffulgentExpansionCardAPower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerAssetProfile AssetProfile => new(
+        IconPath: "res://ArtWorks/images/power/EffulgentExpansionCardAPower_Small.png",
+        BigIconPath: "res://ArtWorks/images/power/EffulgentExpansionCardAPower_Big.png"
+    );
 
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
         CardModel? cardSource,

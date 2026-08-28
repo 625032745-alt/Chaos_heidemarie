@@ -15,6 +15,10 @@ public class EffulgentExpansionCardDPower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerAssetProfile AssetProfile => new(
+        IconPath: "res://ArtWorks/images/power/EffulgentExpansionCardDPower_Small.png",
+        BigIconPath: "res://ArtWorks/images/power/EffulgentExpansionCardDPower_Big.png"
+    );
 
     public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side,
         IReadOnlyList<Creature> participants,
