@@ -66,7 +66,8 @@ public class EffulgentBladeCard : ModCardTemplate
             damage += 2m;
         }
 
-        if (EffulgentExpansionCard.RemainingCharges)
+        var hasPower1 = Owner.Creature.HasPower<EffulgentExpansionPower>();
+        if (hasPower1)
         {
             damage += 2m;
         }

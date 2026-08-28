@@ -2,6 +2,7 @@
 using ChaosHeidemarie.Cards.Upgrade.EffulgentExpansion;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
+using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -17,10 +18,17 @@ public class EffulgentExpansionCard : TransformAtTurnStartCardBase
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
-    public static bool RemainingCharges;
 
     public EffulgentExpansionCard() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
+    }
+
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        if (Owner.Creature.GetPower<EffulgentExpansionPower>() != null)
+            return;
+        await PowerCmd.Apply<EffulgentExpansionPower>(choiceContext, Owner.Creature,
+            1m, Owner.Creature, this);
     }
 
     public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -32,19 +40,11 @@ public class EffulgentExpansionCard : TransformAtTurnStartCardBase
         var combatState = card.CombatState;
         if (combatState == null)
             return;
-        RemainingCharges = true;
         for (var i = 0; i < 2; i++)
         {
             var newCard = combatState.CreateCard<EffulgentBladeCard>(player);
             await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Hand, player);
         }
-    }
-
-    public override Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side,
-        IEnumerable<Creature> participants)
-    {
-        RemainingCharges = false;
-        return Task.CompletedTask;
     }
 
     protected override void OnUpgrade()
