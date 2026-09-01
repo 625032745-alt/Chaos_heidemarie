@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using ChaosHeidemarie.Content;
+﻿using ChaosHeidemarie.Content;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -9,7 +7,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards;
+namespace ChaosHeidemarie.Cards.Basic;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 [RegisterCharacterStarterCard(typeof(Characters.Heidemarie),3)]

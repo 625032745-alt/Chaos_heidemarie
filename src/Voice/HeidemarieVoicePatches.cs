@@ -1,5 +1,6 @@
 using ChaosHeidemarie.BattleReady;
 using ChaosHeidemarie.Cards;
+using ChaosHeidemarie.Cards.Basic;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;

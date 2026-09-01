@@ -11,7 +11,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards;
+namespace ChaosHeidemarie.Cards.Token;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class EffulgentBladeCard : ModCardTemplate

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using ChaosHeidemarie.Cards.Base;
+﻿using ChaosHeidemarie.Cards.Base;
 using ChaosHeidemarie.Cards.Upgrade.HeroAll;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
@@ -14,7 +11,7 @@ using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards;
+namespace ChaosHeidemarie.Cards.Uncommon;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class HeroAllCard : TransformAtTurnStartCardBase

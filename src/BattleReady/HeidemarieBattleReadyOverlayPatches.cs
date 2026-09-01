@@ -1,4 +1,5 @@
 using ChaosHeidemarie.Cards;
+using ChaosHeidemarie.Cards.Basic;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Context;

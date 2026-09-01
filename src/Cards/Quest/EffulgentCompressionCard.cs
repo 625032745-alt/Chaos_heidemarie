@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards;
+namespace ChaosHeidemarie.Cards.Quest;
 
 [RegisterCard(typeof(QuestCardPool))]
 public class EffulgentCompressionCard : ModCardTemplate

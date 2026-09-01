@@ -1,7 +1,10 @@
 using ChaosHeidemarie.Cards;
+using ChaosHeidemarie.Cards.Rare;
+using ChaosHeidemarie.Cards.Token;
 using ChaosHeidemarie.Cards.Upgrade.EffulgentExpansion;
 using ChaosHeidemarie.Cards.Upgrade.HeroAll;
 using ChaosHeidemarie.Cards.Upgrade.SwordRain;
+using ChaosHeidemarie.Cards.Upgrade.ThreadLight;
 using Godot;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Unlocks;
@@ -37,7 +40,8 @@ public sealed class HeidemarieCardPool : TypeListCardPoolModel
             typeof(EffulgentExpansionCardA),
             typeof(EffulgentExpansionCardB),
             typeof(EffulgentExpansionCardC),
-            typeof(EffulgentExpansionCardD)
+            typeof(EffulgentExpansionCardD),
+            typeof(ThreadLightCardA)
         };
         return result.Where(card => !excludedCardTypes.Contains(card.GetType())).ToList();
     }

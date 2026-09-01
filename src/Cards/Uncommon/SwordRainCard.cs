@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using ChaosHeidemarie.Cards.Base;
+﻿using ChaosHeidemarie.Cards.Base;
+using ChaosHeidemarie.Cards.Token;
 using ChaosHeidemarie.Cards.Upgrade.SwordRain;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
@@ -13,7 +11,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards;
+namespace ChaosHeidemarie.Cards.Uncommon;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 [RegisterCharacterStarterCard(typeof(Characters.Heidemarie))]
