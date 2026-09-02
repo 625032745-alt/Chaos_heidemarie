@@ -1,4 +1,6 @@
-﻿using ChaosHeidemarie.Content;
+﻿using ChaosHeidemarie.Cards.Base;
+using ChaosHeidemarie.Cards.Upgrade.ThreadLight;
+using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -13,7 +15,7 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace ChaosHeidemarie.Cards.Uncommon;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
-public class ThreadLightCard : ModCardTemplate
+public class ThreadLightCard : TransformAtTurnStartCardBase
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(10, ValueProp.Move)];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
@@ -53,5 +55,15 @@ public class ThreadLightCard : ModCardTemplate
 
         var bonusPerCard = cardSource.IsUpgraded ? 4 : 3;
         return linkCount * bonusPerCard;
+    }
+
+    protected override Type[] GetCandidateCardTypes()
+    {
+        return
+        [
+            typeof(ThreadLightCardA),
+            typeof(ThreadLightCardB),
+            typeof(ThreadLightCardC)
+        ];
     }
 }
