@@ -42,5 +42,7 @@
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.title": "展开极光：砺锋",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.description": "回合开始时生成 2 张极光剑，极光剑伤害+2",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.title": "展开极光：双生",
-  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.description": "生成 2 张极光剑，接下来 {JGCount:diff()} 次极光剑伤害+2"
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.description": "生成 2 张极光剑，接下来 {JGCount:diff()} 次极光剑伤害+2",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_A.title": "一缕光芒：织光",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_A.description": "造成 {Damage:diff()} 的伤害，若手牌连接卡牌数量为3张以上，造成3倍伤害"
 }

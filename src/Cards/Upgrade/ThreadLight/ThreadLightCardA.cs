@@ -40,6 +40,10 @@ public class ThreadLightCardA : ModCardTemplate
         Creature? dealer,
         CardModel? cardSource, CardPlay? cardPlay)
     {
+        if (cardSource != this)
+        {
+            return 1m;
+        }
         var combatState = Owner.PlayerCombatState;
         var count = combatState.Hand.Cards.Count(c => c.Keywords.Contains(LinkKeywords.Link));
         return count >= 3 ? 3m : 1m;

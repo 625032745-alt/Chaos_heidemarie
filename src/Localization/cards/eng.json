@@ -43,5 +43,7 @@
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.title": "Radiant Aurora Unfurl: Temper Blade",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.description": "At the start of your turn, generate 2 Aurora Swords, and all Aurora Swords gain +2 Damage.",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.title": "Radiant Aurora Unfurl: Twin Genesis",
-  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.description": "Generate 2 Aurora Blades. The next {JGCount:diff()} Aurora Blade attacks deal +2 damage."
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.description": "Generate 2 Aurora Blades. The next {JGCount:diff()} Aurora Blade attacks deal +2 damage.",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_A.title": "A Thread of Light: Lightweaver",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_A.description": "Deal {Damage:diff()} damage. If you have 3 or more linked cards in hand, deal triple damage."
 }
