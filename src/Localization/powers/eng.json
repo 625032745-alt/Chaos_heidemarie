@@ -10,5 +10,8 @@
   "CHAOS_HEIDEMARIE_POWER_EFFULGENT_COMPRESSION_POWER.smartDescription": "After Condensed Effulgence is discarded {Amount} times, it becomes Liberated Effulgence.",
   "CHAOS_HEIDEMARIE_POWER_EFFULGENT_EXPANSION_POWER.title": "Effulgent Expansion",
   "CHAOS_HEIDEMARIE_POWER_EFFULGENT_EXPANSION_POWER.description": "This turn, Aurora Sword deals 2 additional damage.",
-  "CHAOS_HEIDEMARIE_POWER_EFFULGENT_EXPANSION_POWER.smartDescription": "This turn, Aurora Sword deals 2 additional damage."
+  "CHAOS_HEIDEMARIE_POWER_EFFULGENT_EXPANSION_POWER.smartDescription": "This turn, Aurora Sword deals 2 additional damage.",
+  "CHAOS_HEIDEMARIE_POWER_THREAD_LIGHT_CARD_B_POWER.title": "Resonance",
+  "CHAOS_HEIDEMARIE_POWER_THREAD_LIGHT_CARD_B_POWER.description": "If this card is in your hand or discard pile, linked cards deal +2 damage.",
+  "CHAOS_HEIDEMARIE_POWER_THREAD_LIGHT_CARD_B_POWER.smartDescription": "If this card is in your hand or discard pile, linked cards deal +2 damage."
 }
