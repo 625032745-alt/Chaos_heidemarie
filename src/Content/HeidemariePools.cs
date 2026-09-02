@@ -1,6 +1,4 @@
-using ChaosHeidemarie.Cards;
 using ChaosHeidemarie.Cards.Rare;
-using ChaosHeidemarie.Cards.Token;
 using ChaosHeidemarie.Cards.Upgrade.EffulgentExpansion;
 using ChaosHeidemarie.Cards.Upgrade.HeroAll;
 using ChaosHeidemarie.Cards.Upgrade.SwordRain;
@@ -27,7 +25,6 @@ public sealed class HeidemarieCardPool : TypeListCardPoolModel
         var result = base.FilterThroughEpochs(unlockState, cards);
         var excludedCardTypes = new HashSet<Type>
         {
-            typeof(EffulgentBladeCard),
             typeof(LiberationAuroraCard),
             typeof(HeroAllUpgradeCardA),
             typeof(HeroAllUpgradeCardB),
@@ -41,7 +38,10 @@ public sealed class HeidemarieCardPool : TypeListCardPoolModel
             typeof(EffulgentExpansionCardB),
             typeof(EffulgentExpansionCardC),
             typeof(EffulgentExpansionCardD),
-            typeof(ThreadLightCardA)
+            typeof(ThreadLightCardA),
+            typeof(ThreadLightCardB),
+            typeof(ThreadLightCardC),
+            typeof(ThreadLightCardD)
         };
         return result.Where(card => !excludedCardTypes.Contains(card.GetType())).ToList();
     }
