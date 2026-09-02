@@ -29,7 +29,7 @@ public class ThreadLightCardC : ModCardTemplate
         _cards = combatState.Hand.Cards.Where(c => c.Keywords.Contains(LinkKeywords.Link)).ToList();
         foreach (var c in _cards)
         {
-            await CardCmd.AutoPlay(choiceContext, card, null);
+            await CardCmd.AutoPlay(choiceContext, c, null);
         }
     }
 
