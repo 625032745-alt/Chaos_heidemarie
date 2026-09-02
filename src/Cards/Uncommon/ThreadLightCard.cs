@@ -35,11 +35,6 @@ public class ThreadLightCard : TransformAtTurnStartCardBase
             .Execute(choiceContext);
     }
 
-    protected override void OnUpgrade()
-    {
-        DynamicVars.Damage.UpgradeValueBy(4);
-    }
-
     public override decimal ModifyDamageAdditive(Creature target, decimal amount, ValueProp props, Creature dealer, CardModel cardSource,
         CardPlay cardPlay)
     {
@@ -63,7 +58,8 @@ public class ThreadLightCard : TransformAtTurnStartCardBase
         [
             typeof(ThreadLightCardA),
             typeof(ThreadLightCardB),
-            typeof(ThreadLightCardC)
+            typeof(ThreadLightCardC),
+            typeof(ThreadLightCardD)
         ];
     }
 }
