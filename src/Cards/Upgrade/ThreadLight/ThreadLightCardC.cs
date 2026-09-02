@@ -33,11 +33,19 @@ public class ThreadLightCardC : ModCardTemplate
         }
     }
 
-    public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)
+    public override async Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel? clonedBy)
     {
+        if (!card.Keywords.Contains(LinkKeywords.Link))
+            return;
+        
+        var currentPile = card.Pile?.Type;
+        if (currentPile != PileType.Discard)
+            return;
+        
         if (_cards.Contains(card))
         {
-           await CardPileCmd.Add(card,PileType.Hand);
+            await CardPileCmd.Add(card,PileType.Hand);
         }
+        _cards.Clear();
     }
 }
