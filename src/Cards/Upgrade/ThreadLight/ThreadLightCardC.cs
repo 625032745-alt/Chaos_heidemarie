@@ -17,7 +17,7 @@ public class ThreadLightCardC : ModCardTemplate
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link, CardKeyword.Exhaust];
     private List<CardModel> _cards;
 
-    public ThreadLightCardC() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public ThreadLightCardC() : base(3, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 

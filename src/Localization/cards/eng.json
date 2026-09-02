@@ -47,5 +47,9 @@
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_A.title": "A Thread of Light: Lightweaver",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_A.description": "Deal {Damage:diff()} damage. If you have 3 or more linked cards in hand, deal triple damage.",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_B.title": "A Thread of Light: Resonance",
-  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_B.description": "Deal {Damage:diff()} damage. While this card is in your hand or discard pile, linked cards deal +2 damage."
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_B.description": "Deal {Damage:diff()} damage. While this card is in your hand or discard pile, linked cards deal +2 damage.",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_C.title": "A Thread of Light: Collective Bloom",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_C.description": "Activate all linked cards in hand. They are not discarded.",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.title": "A Thread of Light: Parting Blaze",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.description": "Deal {Damage:diff()} damage when played directly. When discarded, deal 24 damage to all enemies."
 }

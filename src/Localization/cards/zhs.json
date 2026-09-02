@@ -46,5 +46,9 @@
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_A.title": "一缕光芒：织光",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_A.description": "造成 {Damage:diff()} 的伤害，若手牌连接卡牌数量为3张以上，造成3倍伤害",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_B.title": "一缕光芒：共鸣",
-  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_B.description": "造成 {Damage:diff()} 的伤害，若此卡牌在手牌或者弃牌堆中，连接卡牌的伤害+2"
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_B.description": "造成 {Damage:diff()} 的伤害，若此卡牌在手牌或者弃牌堆中，连接卡牌的伤害+2",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_C.title": "一缕光芒：齐辉",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_C.description": "发动手牌中所有的连接卡牌且不丢弃",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.title": "一缕光芒：余烬",
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.description": "直接使用时造成 {Damage:diff()} 的伤害，被丢弃时对所有敌人造成 24 点伤害"
 }

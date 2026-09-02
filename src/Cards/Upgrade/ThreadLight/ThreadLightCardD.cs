@@ -37,7 +37,7 @@ public class ThreadLightCardD : ModCardTemplate
     {
         if (card != this)
             return;
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+        await DamageCmd.Attack(24)
             .FromCard(this,null)
             .TargetingAllOpponents(card.CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
