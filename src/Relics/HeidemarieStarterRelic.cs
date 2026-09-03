@@ -14,17 +14,20 @@ namespace ChaosHeidemarie.Relics;
 public sealed class HeidemarieStarterRelic : ModRelicTemplate
 {
     public override RelicRarity Rarity => RelicRarity.Starter;
+
     public override RelicAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/ui/top_panel/character_icon_heidemarie.png",
         IconOutlinePath: "res://ArtWorks/images/ui/top_panel/character_icon_heidemarie_outline.png");
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants,
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side,
+        IReadOnlyList<Creature> participants,
         ICombatState combatState)
     {
-        var power = Owner.Creature.GetPower<ScarletSwordPower>();
-        if (power != null && power.Amount <= 8)
-            return;
-        await PowerCmd.Apply<ScarletSwordPower>(choiceContext, Owner.Creature,
-            5m, Owner.Creature,null);
+        if (side == CombatSide.Player)
+        {
+            Flash();
+            await PowerCmd.Apply<ScarletSwordPower>(choiceContext, Owner.Creature,
+                5m, Owner.Creature, null);
+        }
     }
 }

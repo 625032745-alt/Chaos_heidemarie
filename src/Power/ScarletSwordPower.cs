@@ -1,6 +1,7 @@
 ﻿using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
@@ -46,5 +47,17 @@ public class ScarletSwordPower : ModPowerTemplate
                 .Execute(choiceContext);
             await PowerCmd.ModifyAmount(choiceContext, this, -1m, null, card);
         }
+    }
+    
+    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
+        CardModel? cardSource)
+    {
+        if (power is not ScarletSwordPower || amount <= 0)
+            return Task.CompletedTask;
+        if (power.Amount > 8)
+        {
+            SetAmount(8);
+        }
+        return Task.CompletedTask;
     }
 }
