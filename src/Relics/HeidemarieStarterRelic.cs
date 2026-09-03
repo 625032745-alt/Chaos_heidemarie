@@ -1,9 +1,9 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using ChaosHeidemarie.Power;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -18,17 +18,13 @@ public sealed class HeidemarieStarterRelic : ModRelicTemplate
         IconPath: "res://ArtWorks/images/ui/top_panel/character_icon_heidemarie.png",
         IconOutlinePath: "res://ArtWorks/images/ui/top_panel/character_icon_heidemarie_outline.png");
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [
-        new HealVar(4m)
-    ];
-
-    public override async Task AfterCombatVictory(CombatRoom room)
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants,
+        ICombatState combatState)
     {
-        if (Owner.Creature.IsDead)
+        var power = Owner.Creature.GetPower<ScarletSwordPower>();
+        if (power != null && power.Amount <= 8)
             return;
-
-        Flash();
-        await CreatureCmd.Heal(Owner.Creature, DynamicVars.Heal.BaseValue, true);
+        await PowerCmd.Apply<ScarletSwordPower>(choiceContext, Owner.Creature,
+            5m, Owner.Creature,null);
     }
 }
