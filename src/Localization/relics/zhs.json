@@ -1,5 +1,5 @@
 {
-  "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.title": "未完成的纪念物",
-  "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.description": "战斗结束时，回复 {Heal} 点生命。",
-  "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.flavor": "一件等待定稿的占位遗物。"
+  "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.title": "苏醒的记忆",
+  "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.description": "回合开始时，获得赤光剑5。\n赤光剑：直接使用或丢弃海德玛丽的连接卡牌时，随机对敌人造成 6 点伤害，发动时赤光剑减少1（最多叠加8层）",
+  "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.flavor": "强化战斗被动效果"
 }
