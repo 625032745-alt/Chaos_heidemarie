@@ -45,9 +45,8 @@ public class InherentMemoryPower : ModPowerTemplate
         Creature? applier,
         CardModel? cardSource)
     {
-        if (power is not InherentMemoryPower || amount <= 0 || power.Amount >= 10)
+        if (power is not InherentMemoryPower || amount <= 0)
             return;
-        await PowerCmd.ModifyAmount(choiceContext, this, 1m, null, cardSource);
         if (power.Amount > 10)
         {
             SetAmount(10);
