@@ -19,5 +19,8 @@
   "CHAOS_HEIDEMARIE_POWER_SCARLET_SWORD_POWER.smartDescription": "When you play or discard Heidemarie's Link Card directly, deal 6 damage to a random enemy. Scarlet Sword loses 1 stack each trigger. Max 8 stacks.",
   "CHAOS_HEIDEMARIE_POWER_INHERENT_MEMORY_POWER.title": "Aurora Chain",
   "CHAOS_HEIDEMARIE_POWER_INHERENT_MEMORY_POWER.description": "Heidemarie deals +3 damage. (Max 10 stacks.)",
-  "CHAOS_HEIDEMARIE_POWER_INHERENT_MEMORY_POWER.smartDescription": "Heidemarie deals +3 damage. (Max 10 stacks.)"
+  "CHAOS_HEIDEMARIE_POWER_INHERENT_MEMORY_POWER.smartDescription": "Heidemarie deals +3 damage. (Max 10 stacks.)",
+  "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.title": "Aurora",
+  "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.description": "Aurora Sword damage +2",
+  "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.smartDescription": "Aurora Sword damage +2"
 }

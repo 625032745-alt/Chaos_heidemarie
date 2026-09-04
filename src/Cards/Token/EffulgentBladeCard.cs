@@ -16,7 +16,7 @@ namespace ChaosHeidemarie.Cards.Token;
 [RegisterCard(typeof(TokenCardPool))]
 public class EffulgentBladeCard : ModCardTemplate
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(9, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(5, ValueProp.Move)];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link, CardKeyword.Exhaust];
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
@@ -68,6 +68,11 @@ public class EffulgentBladeCard : ModCardTemplate
 
         var hasPower1 = Owner.Creature.HasPower<EffulgentExpansionPower>();
         if (hasPower1)
+        {
+            damage += 2m;
+        }
+        var hasPower2 = Owner.Creature.HasPower<AuroraPower>();
+        if (hasPower2)
         {
             damage += 2m;
         }

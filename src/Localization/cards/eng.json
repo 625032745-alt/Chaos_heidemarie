@@ -51,5 +51,7 @@
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_C.title": "A Thread of Light: Collective Bloom",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_C.description": "Activate all linked cards in hand. They are not discarded.",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.title": "A Thread of Light: Parting Blaze",
-  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.description": "Deal {Damage:diff()} damage when played directly. When discarded, deal 24 damage to all enemies."
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.description": "Deal {Damage:diff()} damage when played directly. When discarded, deal 24 damage to all enemies.",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.title": "Aurora",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "Ability gained: Your Aurora Sword deals +2 damage. At the start of your turn, if this card is in your discard pile, shuffle it back into your draw pile."
 }

@@ -50,5 +50,7 @@
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_C.title": "一缕光芒：齐辉",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_C.description": "发动手牌中所有的连接卡牌且不丢弃",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.title": "一缕光芒：余烬",
-  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.description": "直接使用时造成 {Damage:diff()} 的伤害，被丢弃时对所有敌人造成 24 点伤害"
+  "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.description": "直接使用时造成 {Damage:diff()} 的伤害，被丢弃时对所有敌人造成 24 点伤害",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.title": "极光",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "获得能力：极光剑伤害+2。回合开始时，若此卡在弃牌堆，将其移回抽牌堆。"
 }
