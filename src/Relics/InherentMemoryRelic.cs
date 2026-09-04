@@ -27,7 +27,7 @@ public class InherentMemoryRelic : ModRelicTemplate
         {
             Flash();
             await PowerCmd.Apply<InherentMemoryPower>(choiceContext, Owner.Creature,
-                10m, Owner.Creature, null);
+                1m, Owner.Creature, null);
         }
     }
 }

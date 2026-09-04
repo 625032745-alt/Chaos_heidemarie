@@ -41,18 +41,17 @@ public class InherentMemoryPower : ModPowerTemplate
         }
     }
 
-    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount,
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount,
         Creature? applier,
         CardModel? cardSource)
     {
-        if (power is not InherentMemoryPower || amount <= 0)
-            return Task.CompletedTask;
+        if (power is not InherentMemoryPower || amount <= 0 || power.Amount >= 10)
+            return;
+        await PowerCmd.ModifyAmount(choiceContext, this, 1m, null, cardSource);
         if (power.Amount > 10)
         {
             SetAmount(10);
         }
-
-        return Task.CompletedTask;
     }
 
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
