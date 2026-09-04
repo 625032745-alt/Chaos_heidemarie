@@ -1,5 +1,8 @@
 {
   "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.title": "Awakened Memory",
   "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.description": "At the start of your turn, gain 5 Scarlet Sword.\nScarlet Sword: When you play or discard Heidemarie's Link Card directly, deal 6 damage to a random enemy. Lose 1 stack of Scarlet Sword when triggered. Max 8 stacks.",
-  "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.flavor": "Enhances combat passive effects"
+  "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.flavor": "Enhances combat passive effects",
+  "CHAOS_HEIDEMARIE_RELIC_INHERENT_MEMORY_RELIC.title": "Inherent Memory",
+  "CHAOS_HEIDEMARIE_RELIC_INHERENT_MEMORY_RELIC.description": "Gain 1 Aurora Chain when you play or discard Heidemarie's Link card.\nAurora Chain: Heidemarie deals +3 damage (max 10 stacks).",
+  "CHAOS_HEIDEMARIE_RELIC_INHERENT_MEMORY_RELIC.flavor": "Enhances combat passive effects"
 }

@@ -16,5 +16,8 @@
   "CHAOS_HEIDEMARIE_POWER_THREAD_LIGHT_CARD_B_POWER.smartDescription": "若此卡牌在手牌或者弃牌堆中，连接卡牌的伤害+2",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_SWORD_POWER.title": "赤光剑",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_SWORD_POWER.description": "直接使用或丢弃海德玛丽的连接卡牌时，随机对敌人造成 6 点伤害，发动时赤光剑减少1（最多叠加8层）",
-  "CHAOS_HEIDEMARIE_POWER_SCARLET_SWORD_POWER.smartDescription": "直接使用或丢弃海德玛丽的连接卡牌时，随机对敌人造成 6 点伤害，发动时赤光剑减少1（最多叠加8层）"
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_SWORD_POWER.smartDescription": "直接使用或丢弃海德玛丽的连接卡牌时，随机对敌人造成 6 点伤害，发动时赤光剑减少1（最多叠加8层）",
+  "CHAOS_HEIDEMARIE_POWER_INHERENT_MEMORY_POWER.title": "极光连锁",
+  "CHAOS_HEIDEMARIE_POWER_INHERENT_MEMORY_POWER.description": "海德玛丽的伤害量+3（最多叠加10层）",
+  "CHAOS_HEIDEMARIE_POWER_INHERENT_MEMORY_POWER.smartDescription": "海德玛丽的伤害量+3（最多叠加10层）"
 }
