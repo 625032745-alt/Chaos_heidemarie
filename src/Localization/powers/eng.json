@@ -22,5 +22,8 @@
   "CHAOS_HEIDEMARIE_POWER_INHERENT_MEMORY_POWER.smartDescription": "Heidemarie deals +3 damage. (Max 10 stacks.)",
   "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.title": "Aurora",
   "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.description": "Aurora Sword damage +2",
-  "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.smartDescription": "Aurora Sword damage +2"
+  "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.smartDescription": "Aurora Sword damage +2",
+  "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.title": "Fragmented Dawn",
+  "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.description": "For every 2 Aurora Swords or Crimson Light Swords discarded, gain {Amount} Energy.",
+  "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.smartDescription": "For every 2 Aurora Swords or Crimson Light Swords discarded, gain {Amount} Energy."
 }

@@ -16,7 +16,6 @@ public class EffulgentCompressionCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link, CardKeyword.Unplayable,RecycleKeywords.Recycle,UniqueKeyword.Unique];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("NJCount", 3m)];
 
     public EffulgentCompressionCard() : base(-1, CardType.Quest, CardRarity.Quest, TargetType.AnyEnemy)
     {
@@ -26,8 +25,7 @@ public class EffulgentCompressionCard : ModCardTemplate
     {
         if (Owner.Creature.GetPower<EffulgentCompressionPower>() != null)
             return;
-        var njCount = DynamicVars["NJCount"].BaseValue;
         await PowerCmd.Apply<EffulgentCompressionPower>(choiceContext, Owner.Creature,
-            njCount, Owner.Creature, this);
+            3m, Owner.Creature, this);
     }
 }

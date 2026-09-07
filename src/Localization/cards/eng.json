@@ -43,7 +43,7 @@
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.title": "Radiant Aurora Unfurl: Temper Blade",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_D.description": "At the start of your turn, generate 2 Aurora Swords, and all Aurora Swords gain +2 Damage.",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.title": "Radiant Aurora Unfurl: Twin Genesis",
-  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.description": "Generate 2 Aurora Blades. The next {JGCount:diff()} Aurora Blade attacks deal +2 damage.",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD_A.description": "Generate 2 Aurora Blades. The next 2 Aurora Blade attacks deal +2 damage.",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_A.title": "A Thread of Light: Lightweaver",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_A.description": "Deal {Damage:diff()} damage. If you have 3 or more linked cards in hand, deal triple damage.",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_B.title": "A Thread of Light: Resonance",
@@ -53,5 +53,7 @@
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.title": "A Thread of Light: Parting Blaze",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.description": "Deal {Damage:diff()} damage when played directly. When discarded, deal 24 damage to all enemies.",
   "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.title": "Aurora",
-  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "Ability gained: Your Aurora Sword deals +2 damage. At the start of your turn, if this card is in your discard pile, shuffle it back into your draw pile."
+  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "Ability gained: Your Aurora Sword deals +2 damage. At the start of your turn, if this card is in your discard pile, shuffle it back into your draw pile.",
+  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.title": "Fragmented Dawn",
+  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "For every 2 Aurora Swords or Crimson Light Swords discarded, gain {Energy:diff()} Energy."
 }

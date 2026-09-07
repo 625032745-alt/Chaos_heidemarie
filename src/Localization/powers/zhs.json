@@ -22,5 +22,8 @@
   "CHAOS_HEIDEMARIE_POWER_INHERENT_MEMORY_POWER.smartDescription": "海德玛丽的伤害量+3（最多叠加10层）",
   "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.title": "极光",
   "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.description": "极光剑伤害+2",
-  "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.smartDescription": "极光剑伤害+2"
+  "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.smartDescription": "极光剑伤害+2",
+  "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.title": "碎曦",
+  "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.description": "每丢弃 2 张极光剑或赤光剑，获得 {Amount} 点能量。",
+  "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.smartDescription": "每丢弃 2 张极光剑或赤光剑，获得 {Amount} 点能量。"
 }

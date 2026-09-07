@@ -14,7 +14,6 @@ namespace ChaosHeidemarie.Cards.Upgrade.EffulgentExpansion;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class EffulgentExpansionCardA : ModCardTemplate
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("JGCount", 2m)];
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/EffulgentExpansionCard.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
 
@@ -32,8 +31,7 @@ public class EffulgentExpansionCardA : ModCardTemplate
             var newCard = combatState.CreateCard<EffulgentBladeCard>(player);
             await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Hand, player);
         }
-        var jgCount = DynamicVars["JGCount"].BaseValue;
         await PowerCmd.Apply<EffulgentExpansionCardAPower>(choiceContext, Owner.Creature,
-            jgCount, Owner.Creature, this);
+            2m, Owner.Creature, this);
     }
 }
