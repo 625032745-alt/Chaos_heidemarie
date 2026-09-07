@@ -1,4 +1,12 @@
+using ChaosHeidemarie.Cards.Basic;
+using ChaosHeidemarie.Cards.Quest;
 using ChaosHeidemarie.Cards.Rare;
+using ChaosHeidemarie.Cards.Token;
+using ChaosHeidemarie.Cards.Uncommon;
+using ChaosHeidemarie.Cards.Upgrade.EffulgentExpansion;
+using ChaosHeidemarie.Cards.Upgrade.HeroAll;
+using ChaosHeidemarie.Cards.Upgrade.SwordRain;
+using ChaosHeidemarie.Cards.Upgrade.ThreadLight;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Nodes.Cards;
@@ -15,7 +23,31 @@ public static class HeidemarieAncientFramePatch
         var container = __instance.GetNode<Control>("CardContainer");
         if (container == null) return;
 
-        bool isOurCard = __instance.Model is LiberationAuroraCard;
+        bool isOurCard = __instance.Model is LiberationAuroraCard ||
+                         __instance.Model is SwordCurtainCard ||
+                         __instance.Model is SwordFlashCard ||
+                         __instance.Model is EffulgentCompressionCard ||
+                         __instance.Model is EffulgentBladeCard ||
+                         __instance.Model is EffulgentExpansionCard ||
+                         __instance.Model is HeroAllCard ||
+                         __instance.Model is SwordRainCard ||
+                         __instance.Model is ThreadLightCard ||
+                         __instance.Model is EffulgentExpansionCardA ||
+                         __instance.Model is EffulgentExpansionCardB ||
+                         __instance.Model is EffulgentExpansionCardC ||
+                         __instance.Model is EffulgentExpansionCardD ||
+                         __instance.Model is HeroAllUpgradeCardA ||
+                         __instance.Model is HeroAllUpgradeCardB ||
+                         __instance.Model is HeroAllUpgradeCardC ||
+                         __instance.Model is HeroAllUpgradeCardD ||
+                         __instance.Model is SwordRainCardA ||
+                         __instance.Model is SwordRainCardB ||
+                         __instance.Model is SwordRainCardC ||
+                         __instance.Model is SwordRainCardD ||
+                         __instance.Model is ThreadLightCardA ||
+                         __instance.Model is ThreadLightCardB ||
+                         __instance.Model is ThreadLightCardC ||
+                         __instance.Model is ThreadLightCardD;
 
         if (!isOurCard)
         {
