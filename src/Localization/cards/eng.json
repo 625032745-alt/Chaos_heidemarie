@@ -55,5 +55,7 @@
   "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.title": "Aurora",
   "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "Ability gained: Your Aurora Sword deals +2 damage. At the start of your turn, if this card is in your discard pile, shuffle it back into your draw pile.",
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.title": "Fragmented Dawn",
-  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "For every 2 Aurora Swords or Crimson Light Swords discarded, gain {Energy:diff()} Energy."
+  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "For every 2 Aurora Swords or Crimson Light Swords discarded, gain {Energy:diff()} Energy.",
+  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "Residual Dawn Link",
+  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "Choose 1 card(s) in your hand to gain [gold]Link[/gold]. If it is an Effulgent Blade, gain {Energy:diff()} Energy."
 }

@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Uncommon;
+namespace ChaosHeidemarie.Cards.Rare;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class FragmentedDawnCard : ModCardTemplate
@@ -15,7 +15,7 @@ public class FragmentedDawnCard : ModCardTemplate
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1)];
     
-    public FragmentedDawnCard() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+    public FragmentedDawnCard() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }
 
