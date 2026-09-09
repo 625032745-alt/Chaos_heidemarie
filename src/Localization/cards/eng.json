@@ -59,5 +59,7 @@
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "Residual Dawn Link",
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "Choose 1 card(s) in your hand to gain [gold]Link[/gold]. If it is an Effulgent Blade, gain {Energy:diff()} Energy.",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.title": "Aurora Bastion",
-  "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "Gain {Block:diff()} Block. For each Effulgent Blade in your exhaust pile, gain 3 additional Block."
+  "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "Gain {Block:diff()} Block. For each Effulgent Blade in your exhaust pile, gain 3 additional Block.",
+  "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.title": "Reforge",
+  "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.description": "Remove [gold]Link[/gold] from all cards in your hand. Choose 2 cards. They gain [gold]Link[/gold]."
 }
