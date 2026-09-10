@@ -6,13 +6,14 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
 namespace ChaosHeidemarie.Cards.Rare;
 
-[RegisterCard(typeof(HeidemarieCardPool))]
+[RegisterCard(typeof(TokenCardPool))]
 public class LiberationAuroraCard : ModCardTemplate
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(20, ValueProp.Move)];
@@ -20,7 +21,7 @@ public class LiberationAuroraCard : ModCardTemplate
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,UniqueKeyword.Unique];
 
-    public LiberationAuroraCard() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+    public LiberationAuroraCard() : base(2, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
     {
     }
 

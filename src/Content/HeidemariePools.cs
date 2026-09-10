@@ -25,7 +25,6 @@ public sealed class HeidemarieCardPool : TypeListCardPoolModel
         var result = base.FilterThroughEpochs(unlockState, cards);
         var excludedCardTypes = new HashSet<Type>
         {
-            typeof(LiberationAuroraCard),
             typeof(HeroAllUpgradeCardA),
             typeof(HeroAllUpgradeCardB),
             typeof(HeroAllUpgradeCardC),
