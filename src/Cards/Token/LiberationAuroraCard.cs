@@ -1,6 +1,4 @@
 ﻿using ChaosHeidemarie.Cards.Quest;
-using ChaosHeidemarie.Cards.Token;
-using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -11,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Rare;
+namespace ChaosHeidemarie.Cards.Token;
 
 [RegisterCard(typeof(TokenCardPool))]
 public class LiberationAuroraCard : ModCardTemplate
