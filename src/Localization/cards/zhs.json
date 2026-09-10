@@ -7,7 +7,6 @@
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD.description": "生成 2 张极光剑。本回合内，极光剑额外造成 2 点伤害。",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_CARD.title": "万人英雄",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_CARD.description": "抽 3 张牌。本回合将它们连接。",
-  "CHAOS_HEIDEMARIE_CARD_HERO_ALL_CARD.upgradeDescription": "抽 3 张牌。本回合将它们连接。获得连接。",
   "CHAOS_HEIDEMARIE_CARD_LIBERATION_AURORA_CARD.title": "解放极光",
   "CHAOS_HEIDEMARIE_CARD_LIBERATION_AURORA_CARD.description": "造成 {Damage:diff()} 点伤害。消耗手牌中所有极光剑；每以此法消耗 1 张，额外造成 5 点伤害。",
   "CHAOS_HEIDEMARIE_CARD_SWORD_CURTAIN_CARD.title": "剑幕",

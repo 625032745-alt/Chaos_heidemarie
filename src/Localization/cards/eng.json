@@ -8,7 +8,6 @@
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD.upgradeDescription": "Create an Effulgent Blade for each Linked card in your hand.",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_CARD.title": "Hero of All",
   "CHAOS_HEIDEMARIE_CARD_HERO_ALL_CARD.description": "Draw 3 cards. Link them this turn.",
-  "CHAOS_HEIDEMARIE_CARD_HERO_ALL_CARD.upgradeDescription": "Draw 3 cards. Link them this turn. Gain Link.",
   "CHAOS_HEIDEMARIE_CARD_LIBERATION_AURORA_CARD.title": "Liberation Aurora",
   "CHAOS_HEIDEMARIE_CARD_LIBERATION_AURORA_CARD.description": "Deal {Damage:diff()} damage. Exhaust all Effulgent Blades in your hand. Deal 5 additional damage for each exhausted this way.",
   "CHAOS_HEIDEMARIE_CARD_SWORD_CURTAIN_CARD.title": "Sword Curtain",

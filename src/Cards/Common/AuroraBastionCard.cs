@@ -22,7 +22,7 @@ public class AuroraBastionCard : ModCardTemplate
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(12, ValueProp.Move)];
 
-    public AuroraBastionCard() : base(2, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public AuroraBastionCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
     }
 

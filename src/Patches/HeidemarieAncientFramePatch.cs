@@ -1,4 +1,5 @@
 using ChaosHeidemarie.Cards.Basic;
+using ChaosHeidemarie.Cards.Common;
 using ChaosHeidemarie.Cards.Quest;
 using ChaosHeidemarie.Cards.Rare;
 using ChaosHeidemarie.Cards.Token;
