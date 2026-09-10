@@ -1,5 +1,5 @@
-﻿using ChaosHeidemarie.Cards.Token;
-using ChaosHeidemarie.Content;
+﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -20,7 +20,7 @@ public class AuroraBastionCard : ModCardTemplate
 
     public override bool GainsBlock => true;
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(4, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(12, ValueProp.Move)];
 
     public AuroraBastionCard() : base(2, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
@@ -36,8 +36,11 @@ public class AuroraBastionCard : ModCardTemplate
     {
         if (cardSource != this)
             return 0;
-        CardPile pile = PileType.Exhaust.GetPile(Owner);
-        var count = pile.Cards.Count(c => c is EffulgentBladeCard);
-        return count * 3;
+        var power = Owner.Creature.GetPower<InherentMemoryPower>();
+        if (power != null)
+        {
+            return power.Amount * 3;
+        }
+        return 0;
     }
 }
