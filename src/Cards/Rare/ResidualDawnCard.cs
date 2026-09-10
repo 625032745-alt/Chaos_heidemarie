@@ -1,6 +1,7 @@
 ﻿using ChaosHeidemarie.Cards.Token;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
+using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -16,20 +17,20 @@ namespace ChaosHeidemarie.Cards.Rare;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class ResidualDawnCard : ModCardTemplate
 {
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
+    public override CardAssetProfile AssetProfile =>
+        new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1)];
-    public static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND");
+    private static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND");
 
 
     public ResidualDawnCard() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
 
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay) =>
         await SelectFromHandPile(choiceContext, cardPlay.Card.Owner);
-    }
 
     protected override void OnUpgrade()
     {
@@ -40,7 +41,8 @@ public class ResidualDawnCard : ModCardTemplate
     {
         var pile = PileType.Hand.GetPile(player);
         var selectFrom = (from c in pile.Cards orderby c.Rarity, c.Id select c).ToList();
-        var selected = await CardSelectCmd.FromSimpleGrid(ctx, selectFrom, player, new CardSelectorPrefs(SelectFromHand, 1));
+        var selected =
+            await CardSelectCmd.FromSimpleGrid(ctx, selectFrom, player, new CardSelectorPrefs(SelectFromHand, 1));
         foreach (var card in selected)
         {
             if (card is EffulgentBladeCard)
@@ -51,7 +53,16 @@ public class ResidualDawnCard : ModCardTemplate
 
             if (card.Keywords.Contains(LinkKeywords.Link))
             {
-                await CardPileCmd.Draw(ctx, player);
+                var power = Owner.Creature.GetPower<InherentMemoryPower>();
+                if (power != null)
+                {
+                    await PowerCmd.ModifyAmount(ctx, power, 1m, null, this);
+                }
+                else
+                {
+                    await PowerCmd.Apply<InherentMemoryPower>(ctx, Owner.Creature, 1m, Owner.Creature, this);
+                }
+
                 break;
             }
             card.AddKeyword(LinkKeywords.Link);

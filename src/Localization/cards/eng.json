@@ -56,7 +56,7 @@
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.title": "Fragmented Dawn",
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "For every 2 Aurora Swords or Crimson Light Swords discarded, gain {Energy:diff()} Energy.",
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "Residual Dawn Link",
-  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "Choose 1 card from your hand. It gains [gold]Link[/gold]. If it is an Effulgent Blade, gain {Energy:diff()} Energy. If it is already Linked, draw 1 card.",
+  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "Choose 1 card from your hand and give it [gold]Link[/gold]. If it is an Aurora Blade, gain {Energy:diff()} Energy. If it already has [gold]Link[/gold], gain 1 stack of Aurora Chain.",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.title": "Aurora Bastion",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "Gain {Block:diff()} Block. Gain 3 additional Block for each [b]Aurora Chain[/b].",
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.title": "Reforge",
