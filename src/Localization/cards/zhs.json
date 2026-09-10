@@ -56,7 +56,7 @@
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.title": "碎曦",
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "每丢弃 2 张极光剑或赤光剑，获得 {Energy:diff()} 点能量。",
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "残曦附络",
-  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "从手牌中选择 1 张牌给予 [gold]连接[/gold]。若该牌为极光剑，获得 {Energy:diff()} 点能量",
+  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "从手牌中选择 1 张牌给予 [gold]连接[/gold]。若该牌为极光剑，获得 {Energy:diff()} 点能量。若该牌为连接牌，则抽取 1 张牌",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.title": "极光壁垒",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "获得 {Block:diff()} 点格挡，消耗堆里每有 1 张极光剑令格挡额外+3",
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.title": "重锻",

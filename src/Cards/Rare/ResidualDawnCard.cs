@@ -11,7 +11,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Uncommon;
+namespace ChaosHeidemarie.Cards.Rare;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class ResidualDawnCard : ModCardTemplate
@@ -22,7 +22,7 @@ public class ResidualDawnCard : ModCardTemplate
     public static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND");
 
 
-    public ResidualDawnCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public ResidualDawnCard() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
 
@@ -46,6 +46,12 @@ public class ResidualDawnCard : ModCardTemplate
             if (card is EffulgentBladeCard)
             {
                 await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, player);
+                break;
+            }
+
+            if (card.Keywords.Contains(LinkKeywords.Link))
+            {
+                await CardPileCmd.Draw(ctx, player);
                 break;
             }
             card.AddKeyword(LinkKeywords.Link);
