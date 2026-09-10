@@ -2,5 +2,6 @@
   "CHAOS_HEIDEMARIE_SELECT_FROM_DRAW_TO_HAND": "Choose {Amount} card from your draw pile to put into your hand.",
   "CHAOS_HEIDEMARIE_SELECT_FROM_DISCARD_TO_HAND": "Choose {Amount} card from your discard pile to put into your hand.",
   "CHAOS_HEIDEMARIE_SELECT_FROM_HAND": "Choose {Amount} card(s) gain to [gold]Link[/gold]. If it is an Effulgent Blade, gain {Energy:diff()} Energy.",
-  "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_LINK": "Choose {Amount} card(s) gain to [gold]Link[/gold]."
+  "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_LINK": "Choose {Amount} card(s) gain to [gold]Link[/gold].",
+  "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_DISCARD": "Choose {Amount} card(s) discard."
 }

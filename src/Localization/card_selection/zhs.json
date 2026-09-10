@@ -2,5 +2,6 @@
   "CHAOS_HEIDEMARIE_SELECT_FROM_DRAW_TO_HAND": "从抽牌堆中选择 {Amount} 张牌移入手牌。",
   "CHAOS_HEIDEMARIE_SELECT_FROM_DISCARD_TO_HAND": "从弃牌堆中选择 {Amount} 张牌移入手牌。",
   "CHAOS_HEIDEMARIE_SELECT_FROM_HAND": "选择 {Amount} 张牌给予 [gold]连接[/gold]。若该牌为极光剑，获得 {Energy:diff()} 点能量",
-  "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_LINK": "选择 {Amount} 张牌给予 [gold]连接[/gold]"
+  "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_LINK": "选择 {Amount} 张牌给予 [gold]连接[/gold]",
+  "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_DISCARD": "选择 {Amount} 张牌弃置"
 }

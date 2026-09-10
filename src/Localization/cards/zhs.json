@@ -62,5 +62,7 @@
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.title": "重锻",
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.description": "移除所有手牌的 [gold]连接[/gold]。重新选择 2 张手牌赋予 [gold]连接[/gold]。",
   "CHAOS_HEIDEMARIE_CARD_BLADE_PARADISE_CARD.title": "剑之乐园",
-  "CHAOS_HEIDEMARIE_CARD_BLADE_PARADISE_CARD.description": "造成 {Damage:diff()} 点伤害，本场战斗每丢弃 1 张卡牌，即可使伤害+5"
+  "CHAOS_HEIDEMARIE_CARD_BLADE_PARADISE_CARD.description": "造成 {Damage:diff()} 点伤害，本场战斗每丢弃 1 张卡牌，即可使伤害+5",
+  "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.title": "残息抽取",
+  "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.description": "抽 {DrawDiscards:diff()} 张牌。丢弃 {DrawDiscards:diff()} 张牌。"
 }
