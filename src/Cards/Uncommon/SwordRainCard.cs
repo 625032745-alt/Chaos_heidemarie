@@ -11,7 +11,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Common;
+namespace ChaosHeidemarie.Cards.Uncommon;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 [RegisterCharacterStarterCard(typeof(Characters.Heidemarie))]
@@ -23,7 +23,7 @@ public class SwordRainCard : TransformAtTurnStartCardBase
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
 
-    public SwordRainCard() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+    public SwordRainCard() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
     }
 

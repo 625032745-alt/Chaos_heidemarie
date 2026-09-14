@@ -3,30 +3,29 @@ using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Rare;
+namespace ChaosHeidemarie.Cards.Uncommon;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
-public class FragmentedDawnCard : ModCardTemplate
+public class AuroraCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1)];
     
-    public FragmentedDawnCard() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
+    public AuroraCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<FragmentedDawnPower>(choiceContext, Owner.Creature,
-            DynamicVars.Energy.IntValue, Owner.Creature, this);
-    }
-
-    protected override void OnUpgrade()
-    {
-        DynamicVars.Energy.UpgradeValueBy(1m);
+        var power = Owner.Creature.GetPower<AuroraPower>();
+        if (power != null)
+        {
+            await PowerCmd.ModifyAmount(choiceContext, power, 1m, null, this);
+            return;
+        }
+        await PowerCmd.Apply<AuroraPower>(choiceContext, Owner.Creature,
+            1m, Owner.Creature, this);
     }
 }

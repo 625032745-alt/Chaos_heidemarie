@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Uncommon;
+namespace ChaosHeidemarie.Cards.Rare;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class EffulgentExpansionCard : TransformAtTurnStartCardBase
@@ -18,7 +18,7 @@ public class EffulgentExpansionCard : TransformAtTurnStartCardBase
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
 
-    public EffulgentExpansionCard() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public EffulgentExpansionCard() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
 
