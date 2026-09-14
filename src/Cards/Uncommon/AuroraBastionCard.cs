@@ -43,4 +43,9 @@ public class AuroraBastionCard : ModCardTemplate
         }
         return 0;
     }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Block.UpgradeValueBy(3);
+    }
 }

@@ -20,7 +20,7 @@ public class ResidualDawnCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("ResidualDawn", 1)];
     private static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND");
 
 
@@ -33,15 +33,16 @@ public class ResidualDawnCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Energy.UpgradeValueBy(1m);
+        DynamicVars["ResidualDawn"].UpgradeValueBy(1m);
     }
 
     private async Task SelectFromHandPile(PlayerChoiceContext ctx, Player player)
     {
         var pile = PileType.Hand.GetPile(player);
         var selectFrom = (from c in pile.Cards orderby c.Rarity, c.Id select c).ToList();
+        var selectCount = DynamicVars["ResidualDawn"].IntValue;
         var selected =
-            await CardSelectCmd.FromSimpleGrid(ctx, selectFrom, player, new CardSelectorPrefs(SelectFromHand, 1));
+            await CardSelectCmd.FromSimpleGrid(ctx, selectFrom, player, new CardSelectorPrefs(SelectFromHand, selectCount));
         foreach (var card in selected)
         {
             if (card.Keywords.Contains(LinkKeywords.Link))
