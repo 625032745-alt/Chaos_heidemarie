@@ -53,15 +53,15 @@
   "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.title": "极光",
   "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "获得能力：极光剑伤害+2。回合开始时，若此卡在弃牌堆，将其移回抽牌堆。",
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.title": "碎曦",
-  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "每丢弃 2 张极光剑或赤光剑，获得 {Energy:diff()} 点能量。",
+  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "每当你丢弃1张连接牌,获得1点能量。每回合最多触发 {CFCount:diff()} 次",
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "残曦附络",
-  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "从手牌中选择 1 张牌给予 [gold]连接[/gold]。若该牌为极光剑，获得 {Energy:diff()} 点能量。若该牌为连接牌，获得 1 层极光连锁",
+  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "从手牌中选择 1 张牌给予 [gold]连接[/gold]。若该牌为连接牌，获得 1 层极光连锁",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.title": "极光壁垒",
-  "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "获得 {Block:diff()} 点格挡，每层[b]极光连锁[/b]额外获得3点格挡。",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "获得 {Block:diff()} 点格挡，每层[gold]极光连锁[/gold]额外获得3点格挡。",
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.title": "重锻",
-  "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.description": "移除所有手牌的 [gold]连接[/gold]。重新选择 2 张手牌赋予 [gold]连接[/gold]。",
+  "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.description": "移除所有手牌的 [gold]连接[/gold]。重新选择 {ChooseLink:diff()} 张手牌赋予 [gold]连接[/gold]。每选择连接1张，获得1层极光连锁。",
   "CHAOS_HEIDEMARIE_CARD_BLADE_PARADISE_CARD.title": "剑之乐园",
   "CHAOS_HEIDEMARIE_CARD_BLADE_PARADISE_CARD.description": "造成 {Damage:diff()} 点伤害，本场战斗每丢弃 1 张卡牌，即可使伤害+5",
   "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.title": "残息抽取",
-  "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.description": "抽 {DrawDiscards:diff()} 张牌。丢弃 {DrawDiscards:diff()} 张牌。"
+  "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.description": "抽 {Draw:diff()} 张牌。丢弃 1 张牌。若丢弃的是连接牌，获得1层极光连锁。"
 }

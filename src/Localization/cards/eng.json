@@ -54,15 +54,15 @@
   "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.title": "Aurora",
   "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "Ability gained: Your Aurora Sword deals +2 damage. At the start of your turn, if this card is in your discard pile, shuffle it back into your draw pile.",
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.title": "Fragmented Dawn",
-  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "For every 2 Aurora Swords or Crimson Light Swords discarded, gain {Energy:diff()} Energy.",
+  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "Whenever you discard a [gold]Link[/gold] card, gain 1 Energy. Triggers up to {CFCount:diff()} times each turn.",
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "Residual Dawn Link",
-  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "Choose 1 card from your hand and give it [gold]Link[/gold]. If it is an Aurora Blade, gain {Energy:diff()} Energy. If it already has [gold]Link[/gold], gain 1 stack of Aurora Chain.",
+  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "Choose 1 card from your hand and give it [gold]Link[/gold]. If it already has [gold]Link[/gold], gain 1 stack of Aurora Chain.",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.title": "Aurora Bastion",
-  "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "Gain {Block:diff()} Block. Gain 3 additional Block for each [b]Aurora Chain[/b].",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "Gain {Block:diff()} Block. Gain 3 additional Block for each [gold]Aurora Chain[/gold].",
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.title": "Reforge",
-  "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.description": "Remove [gold]Link[/gold] from all cards in your hand. Choose 2 cards. They gain [gold]Link[/gold].",
+  "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.description": "Remove [gold]Link[/gold] from all cards in your hand. Choose {ChooseLink:diff()} cards in your hand to gain [gold]Link[/gold]. For each card with [gold]Link[/gold] selected, gain 1 stack of Aurora Chain.",
   "CHAOS_HEIDEMARIE_CARD_BLADE_PARADISE_CARD.title": "Blade Paradise",
   "CHAOS_HEIDEMARIE_CARD_BLADE_PARADISE_CARD.description": "Deal {Damage:diff()} damage. This card gains +5 damage permanently for each card discarded this combat.",
   "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.title": "Lingering Breath Extraction",
-  "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.description": "Draw {DrawDiscards:diff()} cards, then discard {DrawDiscards:diff()} cards."
+  "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.description": "Draw {Draw:diff()} cards, then discard 1 cards.If the discarded card is a Link card, gain 1 [gold]Aurora Chain[/gold]."
 }

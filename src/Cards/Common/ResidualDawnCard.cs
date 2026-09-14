@@ -1,5 +1,4 @@
-﻿using ChaosHeidemarie.Cards.Token;
-using ChaosHeidemarie.Content;
+﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.CardSelection;
@@ -12,7 +11,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Uncommon;
+namespace ChaosHeidemarie.Cards.Common;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class ResidualDawnCard : ModCardTemplate
@@ -25,7 +24,7 @@ public class ResidualDawnCard : ModCardTemplate
     private static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND");
 
 
-    public ResidualDawnCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public ResidualDawnCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
     }
 
@@ -45,12 +44,6 @@ public class ResidualDawnCard : ModCardTemplate
             await CardSelectCmd.FromSimpleGrid(ctx, selectFrom, player, new CardSelectorPrefs(SelectFromHand, 1));
         foreach (var card in selected)
         {
-            if (card is EffulgentBladeCard)
-            {
-                await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, player);
-                break;
-            }
-
             if (card.Keywords.Contains(LinkKeywords.Link))
             {
                 var power = Owner.Creature.GetPower<InherentMemoryPower>();
