@@ -63,5 +63,9 @@
   "CHAOS_HEIDEMARIE_CARD_BLADE_PARADISE_CARD.title": "剑之乐园",
   "CHAOS_HEIDEMARIE_CARD_BLADE_PARADISE_CARD.description": "造成 {Damage:diff()} 点伤害，本场战斗每丢弃 1 张卡牌，即可使伤害+5",
   "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.title": "残息抽取",
-  "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.description": "抽 {SlumberDraw:diff()} 张牌。丢弃 1 张牌。若丢弃的是连接牌，获得1层极光连锁。"
+  "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.description": "抽 {SlumberDraw:diff()} 张牌。丢弃 1 张牌。若丢弃的是连接牌，获得1层极光连锁。",
+  "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.title": "链纹初醒",
+  "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.description": "获得 {ChainmarkAwakening:diff()} 层极光连锁",
+  "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.title": "微光牵引",
+  "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.description": "将 {GlimmeringTether:diff()} 张手牌连接。抽 1 张牌。"
 }
