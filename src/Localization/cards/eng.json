@@ -68,5 +68,7 @@
   "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.title": "Chainmark Awakening",
   "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.description": "Gain {ChainmarkAwakening:diff()} stacks of Aurora Chain.",
   "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.title": "Glimmer Tether",
-  "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.description": "Link {GlimmeringTether:diff()} cards in your hand. Draw 1 card."
+  "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.description": "Link {GlimmeringTether:diff()} cards in your hand. Draw 1 card.",
+  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.title": "Chainlight Revival",
+  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.description": "Return {ChainlightRevival:diff()} exhausted cards to your hand. If they have Link, gain 2 stacks of Aurora Chain."
 }

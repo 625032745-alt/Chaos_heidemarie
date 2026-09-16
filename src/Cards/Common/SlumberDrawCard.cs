@@ -1,6 +1,7 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
+using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -37,15 +38,7 @@ public class SlumberDrawCard : ModCardTemplate
         {
             await CardCmd.Discard(choiceContext, cardModel);
             if (!cardModel.Keywords.Contains(LinkKeywords.Link)) continue;
-            var power = Owner.Creature.GetPower<InherentMemoryPower>();
-            if (power != null)
-            {
-                await PowerCmd.ModifyAmount(choiceContext, power, 1m, null, this);
-            }
-            else
-            {
-                await PowerCmd.Apply<InherentMemoryPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
-            }
+            await CommonUtils.AddOrModifyPower<InherentMemoryPower>(choiceContext, Owner.Creature, 1m, this);
         }
     }
 

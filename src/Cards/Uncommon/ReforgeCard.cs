@@ -1,6 +1,7 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
+using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -51,15 +52,7 @@ public class ReforgeCard : ModCardTemplate
         {
             card.AddKeyword(LinkKeywords.Link);
         }
-        var power = Owner.Creature.GetPower<InherentMemoryPower>();
-        if (power != null)
-        {
-            await PowerCmd.ModifyAmount(ctx, power, selected.Count(), null, this);
-        }
-        else
-        {
-            await PowerCmd.Apply<InherentMemoryPower>(ctx, Owner.Creature, selected.Count(), Owner.Creature, this);
-        }
+        await CommonUtils.AddOrModifyPower<InherentMemoryPower>(ctx, Owner.Creature, selected.Count(), this);
     }
 
     protected override void OnUpgrade()

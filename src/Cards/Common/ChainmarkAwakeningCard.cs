@@ -1,5 +1,6 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Power;
+using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -24,15 +25,7 @@ public class ChainmarkAwakeningCard : ModCardTemplate
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var amount = DynamicVars["ChainmarkAwakening"].BaseValue;
-        var power = Owner.Creature.GetPower<InherentMemoryPower>();
-        if (power != null)
-        {
-            await PowerCmd.ModifyAmount(choiceContext, power, amount, null, this);
-        }
-        else
-        {
-            await PowerCmd.Apply<InherentMemoryPower>(choiceContext, Owner.Creature, amount, Owner.Creature, this);
-        }
+        await CommonUtils.AddOrModifyPower<InherentMemoryPower>(choiceContext, Owner.Creature, amount, this);
     }
 
     protected override void OnUpgrade()

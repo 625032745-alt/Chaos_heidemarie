@@ -67,5 +67,7 @@
   "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.title": "链纹初醒",
   "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.description": "获得 {ChainmarkAwakening:diff()} 层极光连锁",
   "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.title": "微光牵引",
-  "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.description": "将 {GlimmeringTether:diff()} 张手牌连接。抽 1 张牌。"
+  "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.description": "将 {GlimmeringTether:diff()} 张手牌连接。抽 1 张牌。",
+  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.title": "链光复苏",
+  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.description": "将 {ChainlightRevival:diff()} 张已消耗牌移回手牌。若它有连接，获得2层极光连锁。"
 }

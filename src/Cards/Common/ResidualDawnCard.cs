@@ -1,6 +1,7 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
+using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -47,16 +48,7 @@ public class ResidualDawnCard : ModCardTemplate
         {
             if (card.Keywords.Contains(LinkKeywords.Link))
             {
-                var power = Owner.Creature.GetPower<InherentMemoryPower>();
-                if (power != null)
-                {
-                    await PowerCmd.ModifyAmount(ctx, power, 1m, null, this);
-                }
-                else
-                {
-                    await PowerCmd.Apply<InherentMemoryPower>(ctx, Owner.Creature, 1m, Owner.Creature, this);
-                }
-
+                await CommonUtils.AddOrModifyPower<InherentMemoryPower>(ctx, Owner.Creature, 1m, this);
                 break;
             }
             card.AddKeyword(LinkKeywords.Link);
