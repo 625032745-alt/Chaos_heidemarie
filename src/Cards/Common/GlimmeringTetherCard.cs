@@ -1,6 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
-using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -42,5 +41,10 @@ public class GlimmeringTetherCard : ModCardTemplate
         {
             card.AddKeyword(LinkKeywords.Link);
         }
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars["GlimmeringTether"].UpgradeValueBy(1);
     }
 }
