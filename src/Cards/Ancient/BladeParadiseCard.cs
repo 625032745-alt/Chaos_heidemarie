@@ -52,4 +52,9 @@ public class BladeParadiseCard : ModCardTemplate
         }
         return 5 * _discardedCount;
     }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Damage.UpgradeValueBy(5m);
+    }
 }
