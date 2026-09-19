@@ -1,14 +1,13 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Power;
 using ChaosHeidemarie.Utils;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Common;
+namespace ChaosHeidemarie.Cards.Uncommon;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class ChainmarkAwakeningCard : ModCardTemplate
@@ -18,7 +17,7 @@ public class ChainmarkAwakeningCard : ModCardTemplate
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("ChainmarkAwakening", 1)];
 
-    public ChainmarkAwakeningCard() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public ChainmarkAwakeningCard() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 

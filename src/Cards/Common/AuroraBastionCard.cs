@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Uncommon;
+namespace ChaosHeidemarie.Cards.Common;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class AuroraBastionCard : ModCardTemplate
@@ -22,7 +22,7 @@ public class AuroraBastionCard : ModCardTemplate
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(12, ValueProp.Move)];
 
-    public AuroraBastionCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public AuroraBastionCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
     }
 
