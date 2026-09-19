@@ -1,11 +1,10 @@
-﻿using ChaosHeidemarie.Cards.Common;
-using ChaosHeidemarie.Cards.Uncommon;
+﻿using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -15,7 +14,7 @@ namespace ChaosHeidemarie.Power;
 public class AuroraPower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Counter;
+    public override PowerStackType StackType => PowerStackType.Single;
 
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/AuroraPower_Small.png",
@@ -28,18 +27,16 @@ public class AuroraPower : ModPowerTemplate
     {
         if (side == CombatSide.Player)
         {
-            var player = Owner.Player;
-            if (player == null) return;
-            var playerCombatState = player.PlayerCombatState;
-            if (playerCombatState == null) return;
-            var cards = playerCombatState.DiscardPile.Cards.Where(c => c is AuroraCard).ToList();
-            if (cards.Count > 0)
-            {
-                foreach (var card in cards)
-                {
-                    await CardPileCmd.Add(card, PileType.Draw);
-                }
-            }
+            await CommonUtils.AddOrModifyPower<InherentMemoryPower>(choiceContext, Owner,1m,null);
+        }
+    }
+
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
+        CardModel? cardSource)
+    {
+        if (power is InherentMemoryPower && amount > 0)
+        {
+            await CardPileCmd.Draw(choiceContext, Owner.Player);
         }
     }
 }

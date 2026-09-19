@@ -51,7 +51,7 @@
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.title": "一缕光芒：余烬",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.description": "直接使用时造成 {Damage:diff()} 的伤害，被丢弃时对所有敌人造成 24 点伤害",
   "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.title": "极光",
-  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "获得能力：极光剑伤害+2。回合开始时，若此卡在弃牌堆，将其移回抽牌堆。",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "回合开始时，获得 1 层极光连锁。每当你获得极光连锁，抽 1 张牌",
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.title": "碎曦",
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "每当你丢弃 1 张连接牌,获得 1 点能量。每回合最多触发 {CFCount:diff()} 次",
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "残曦附络",

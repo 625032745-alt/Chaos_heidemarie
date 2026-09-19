@@ -52,7 +52,7 @@
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.title": "A Thread of Light: Parting Blaze",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.description": "Deal {Damage:diff()} damage when played directly. When discarded, deal 24 damage to all enemies.",
   "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.title": "Aurora",
-  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "Ability gained: Your Aurora Sword deals +2 damage. At the start of your turn, if this card is in your discard pile, shuffle it back into your draw pile.",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "At the start of your turn, gain 1 Aurora Chain. Whenever you gain Aurora Chain, draw 1 card.",
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.title": "Fragmented Dawn",
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "Whenever you discard a [gold]Link[/gold] card, gain 1 Energy. Triggers up to {CFCount:diff()} times each turn.",
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "Residual Dawn Link",
