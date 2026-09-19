@@ -57,6 +57,6 @@ public class InherentMemoryPower : ModPowerTemplate
         CardModel? cardSource,
         CardPlay? cardPlay)
     {
-        return Owner.GetPower<InherentMemoryPower>() != null ? 3m : 0m;
+        return Owner.GetPower<InherentMemoryPower>() != null ? Amount * 2m : 0m;
     }
 }
