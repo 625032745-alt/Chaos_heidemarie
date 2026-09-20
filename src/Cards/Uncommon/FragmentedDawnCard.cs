@@ -15,7 +15,7 @@ public class FragmentedDawnCard : ModCardTemplate
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("CFCount", 3)];
     
-    public FragmentedDawnCard() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+    public FragmentedDawnCard() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
