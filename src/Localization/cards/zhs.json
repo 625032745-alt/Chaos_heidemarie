@@ -71,5 +71,7 @@
   "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.title": "链光复苏",
   "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.description": "将 {ChainlightRevival:diff()} 张已消耗牌移回手牌。若它有连接，获得2层[gold]极光连锁[/gold]",
   "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.title": "绸光",
-  "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.description": "本回合每抽 1 张牌，获得 {SilkenLight:diff()} 层极光连锁"
+  "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.description": "本回合每抽 1 张牌，获得 {SilkenLight:diff()} 层极光连锁",
+  "CHAOS_HEIDEMARIE_CARD_DAWN_GUIDANCE_CARD.title": "曦引",
+  "CHAOS_HEIDEMARIE_CARD_DAWN_GUIDANCE_CARD.description": "本回合每打出 1 张攻击牌，获得 {DawnGuidance:diff()} 层[gold]极光连锁[/gold]"
 }

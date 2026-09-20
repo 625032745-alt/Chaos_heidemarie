@@ -27,6 +27,9 @@
   "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.description": "For every 2 Aurora Swords or Crimson Light Swords discarded, gain {Amount} Energy.",
   "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.smartDescription": "For every 2 Aurora Swords or Crimson Light Swords discarded, gain {Amount} Energy.",
   "CHAOS_HEIDEMARIE_POWER_SILKEN_LIGHT_POWER.title": "Silken Light",
-  "CHAOS_HEIDEMARIE_POWER_SILKEN_LIGHT_POWER.description": "Whenever you draw a card this turn, gain {Amount} [gold]Aurora Chain[/gold].",
-  "CHAOS_HEIDEMARIE_POWER_SILKEN_LIGHT_POWER.smartDescription": "Whenever you draw a card this turn, gain {Amount} [gold]Aurora Chain[/gold]."
+  "CHAOS_HEIDEMARIE_POWER_SILKEN_LIGHT_POWER.description": "Whenever you draw a card this turn, gain {Amount} Aurora Chain.",
+  "CHAOS_HEIDEMARIE_POWER_SILKEN_LIGHT_POWER.smartDescription": "Whenever you draw a card this turn, gain {Amount} Aurora Chain.",
+  "CHAOS_HEIDEMARIE_POWER_DAWN_GUIDANCE_POWER.title": "Dawn's Guidance",
+  "CHAOS_HEIDEMARIE_POWER_DAWN_GUIDANCE_POWER.description": "Whenever you play an Attack this turn, gain {Amount} Aurora Chain.",
+  "CHAOS_HEIDEMARIE_POWER_DAWN_GUIDANCE_POWER.smartDescription": "Whenever you play an Attack this turn, gain {Amount} Aurora Chain."
 }

@@ -72,5 +72,7 @@
   "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.title": "Chainlight Revival",
   "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.description": "Return {ChainlightRevival:diff()} exhausted cards to your hand. If they have Link, gain 2 stacks of [gold]Aurora Chain[/gold].",
   "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.title": "Silken Light",
-  "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.description": "Whenever you draw a card this turn, gain {SilkenLight:diff()} [gold]Aurora Chain[/gold]."
+  "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.description": "Whenever you draw a card this turn, gain {SilkenLight:diff()} [gold]Aurora Chain[/gold].",
+  "CHAOS_HEIDEMARIE_CARD_DAWN_GUIDANCE_CARD.title": "Dawn's Guidance",
+  "CHAOS_HEIDEMARIE_CARD_DAWN_GUIDANCE_CARD.description": "Whenever you play an Attack this turn, gain {DawnGuidance:diff()} [gold]Aurora Chain[/gold]."
 }
