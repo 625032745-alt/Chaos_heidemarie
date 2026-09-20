@@ -52,11 +52,11 @@
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.title": "A Thread of Light: Parting Blaze",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.description": "Deal {Damage:diff()} damage when played directly. When discarded, deal 24 damage to all enemies.",
   "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.title": "Aurora",
-  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "At the start of your turn, gain 1 Aurora Chain. Whenever you gain Aurora Chain, draw 1 card.",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "At the start of your turn, gain 1 [gold]Aurora Chain[/gold]. Whenever you gain [gold]Aurora Chain[/gold], draw 1 card.",
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.title": "Fragmented Dawn",
-  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "Whenever you discard a [gold]Link[/gold] card, gain 1 Energy. Triggers up to {CFCount:diff()} times each turn.",
+  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "Whenever you discard a [gold]Link[/gold] card, gain{Energy:energyIcons()}. Triggers up to {CFCount:diff()} times each turn.",
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "Residual Dawn Link",
-  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "Choose {ResidualDawn:diff()} card from your hand and give it [gold]Link[/gold]. If it already has [gold]Link[/gold], gain 1 stack of Aurora Chain.",
+  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "Choose {ResidualDawn:diff()} card from your hand and give it [gold]Link[/gold]. If it already has [gold]Link[/gold], gain 1 stack of [gold]Aurora Chain[/gold].",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.title": "Aurora Bastion",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "Gain {Block:diff()} Block. Gain 3 additional Block for each [gold]Aurora Chain[/gold].",
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.title": "Reforge",
@@ -66,9 +66,11 @@
   "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.title": "Lingering Breath Extraction",
   "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.description": "Draw {SlumberDraw:diff()} cards, then discard 1 cards.If the discarded card is a Link card, gain 1 [gold]Aurora Chain[/gold].",
   "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.title": "Chainmark Awakening",
-  "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.description": "Gain {ChainmarkAwakening:diff()} stacks of Aurora Chain.",
+  "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.description": "Gain {ChainmarkAwakening:diff()} stacks of [gold]Aurora Chain[/gold].",
   "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.title": "Glimmer Tether",
   "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.description": "Link {GlimmeringTether:diff()} cards in your hand. Draw 1 card.",
   "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.title": "Chainlight Revival",
-  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.description": "Return {ChainlightRevival:diff()} exhausted cards to your hand. If they have Link, gain 2 stacks of Aurora Chain."
+  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.description": "Return {ChainlightRevival:diff()} exhausted cards to your hand. If they have Link, gain 2 stacks of [gold]Aurora Chain[/gold].",
+  "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.title": "Silken Light",
+  "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.description": "Whenever you draw a card this turn, gain {SilkenLight:diff()} [gold]Aurora Chain[/gold]."
 }

@@ -44,6 +44,7 @@ public class HeroAllCard : TransformAtTurnStartCardBase
     public override Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side,
         IEnumerable<Creature> participants)
     {
+        if (side != CombatSide.Player) return Task.CompletedTask;
         foreach (var card in _linkedCards)
         {
             if (card != null && card.Keywords.Contains(LinkKeywords.Link))

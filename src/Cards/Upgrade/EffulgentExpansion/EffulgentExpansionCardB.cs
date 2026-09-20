@@ -56,6 +56,7 @@ public class EffulgentExpansionCardB : ModCardTemplate
     public override Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side,
         IEnumerable<Creature> participants)
     {
+        if (side != CombatSide.Player) return Task.CompletedTask;
         _handCardCount = 0;
         return Task.CompletedTask;
     }

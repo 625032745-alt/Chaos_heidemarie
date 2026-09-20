@@ -25,5 +25,8 @@
   "CHAOS_HEIDEMARIE_POWER_AURORA_POWER.smartDescription": "回合开始时，获得 1 层极光连锁。每当你获得极光连锁，抽 1 张牌",
   "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.title": "碎曦",
   "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.description": "每丢弃 2 张极光剑或赤光剑，获得 {Amount} 点能量。",
-  "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.smartDescription": "每丢弃 2 张极光剑或赤光剑，获得 {Amount} 点能量。"
+  "CHAOS_HEIDEMARIE_POWER_FRAGMENTED_DAWN_POWER.smartDescription": "每丢弃 2 张极光剑或赤光剑，获得 {Amount} 点能量。",
+  "CHAOS_HEIDEMARIE_POWER_SILKEN_LIGHT_POWER.title": "绸光",
+  "CHAOS_HEIDEMARIE_POWER_SILKEN_LIGHT_POWER.description": "本回合每抽 1 张牌，获得 {Amount} 层极光连锁",
+  "CHAOS_HEIDEMARIE_POWER_SILKEN_LIGHT_POWER.smartDescription": "本回合每抽 1 张牌，获得 {Amount} 层极光连锁"
 }

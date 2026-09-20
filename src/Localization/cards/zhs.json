@@ -51,11 +51,11 @@
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.title": "一缕光芒：余烬",
   "CHAOS_HEIDEMARIE_CARD_THREAD_LIGHT_CARD_D.description": "直接使用时造成 {Damage:diff()} 的伤害，被丢弃时对所有敌人造成 24 点伤害",
   "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.title": "极光",
-  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "回合开始时，获得 1 层极光连锁。每当你获得极光连锁，抽 1 张牌",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_CARD.description": "回合开始时，获得 1 层[gold]极光连锁[/gold]。每当你获得极光连锁，抽 1 张牌",
   "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.title": "碎曦",
-  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "每当你丢弃 1 张连接牌,获得 1 点能量。每回合最多触发 {CFCount:diff()} 次",
+  "CHAOS_HEIDEMARIE_CARD_FRAGMENTED_DAWN_CARD.description": "每当你丢弃 1 张[gold]连接[/gold]牌,获得{Energy:energyIcons()}。每回合最多触发 {CFCount:diff()} 次",
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "残曦附络",
-  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "从手牌中选择 {ResidualDawn:diff()} 张牌给予 [gold]连接[/gold]。若该牌为连接牌，获得 1 层极光连锁",
+  "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "从手牌中选择 {ResidualDawn:diff()} 张牌给予 [gold]连接[/gold]。若该牌为连接牌，获得 1 层[gold]极光连锁[/gold]",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.title": "极光壁垒",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "获得 {Block:diff()} 点格挡，每层[gold]极光连锁[/gold]额外获得3点格挡。",
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.title": "重锻",
@@ -65,9 +65,11 @@
   "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.title": "残息抽取",
   "CHAOS_HEIDEMARIE_CARD_SLUMBER_DRAW_CARD.description": "抽 {SlumberDraw:diff()} 张牌。丢弃 1 张牌。若丢弃的是连接牌，获得1层极光连锁。",
   "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.title": "链纹初醒",
-  "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.description": "获得 {ChainmarkAwakening:diff()} 层极光连锁",
+  "CHAOS_HEIDEMARIE_CARD_CHAINMARK_AWAKENING_CARD.description": "获得 {ChainmarkAwakening:diff()} 层[gold]极光连锁[/gold]",
   "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.title": "微光牵引",
   "CHAOS_HEIDEMARIE_CARD_GLIMMERING_TETHER_CARD.description": "将 {GlimmeringTether:diff()} 张手牌连接。抽 1 张牌。",
   "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.title": "链光复苏",
-  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.description": "将 {ChainlightRevival:diff()} 张已消耗牌移回手牌。若它有连接，获得2层极光连锁。"
+  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVIVAL_CARD.description": "将 {ChainlightRevival:diff()} 张已消耗牌移回手牌。若它有连接，获得2层[gold]极光连锁[/gold]",
+  "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.title": "绸光",
+  "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.description": "本回合每抽 1 张牌，获得 {SilkenLight:diff()} 层极光连锁"
 }

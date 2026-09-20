@@ -21,6 +21,9 @@ public class EffulgentExpansionPower : ModPowerTemplate
     public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side,
         IEnumerable<Creature> participants)
     {
-        await PowerCmd.Remove(this);
+        if (side == CombatSide.Player)
+        {
+            await PowerCmd.Remove(this);
+        }
     }
 }
