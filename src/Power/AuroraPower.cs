@@ -14,7 +14,7 @@ namespace ChaosHeidemarie.Power;
 public class AuroraPower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerStackType StackType => PowerStackType.Counter;
 
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/AuroraPower_Small.png",
@@ -27,7 +27,7 @@ public class AuroraPower : ModPowerTemplate
     {
         if (side == CombatSide.Player)
         {
-            await CommonUtils.AddOrModifyPower<InherentMemoryPower>(choiceContext, Owner,1m,null);
+            await CommonUtils.AddOrModifyPower<InherentMemoryPower>(choiceContext, Owner,Amount,null);
         }
     }
 

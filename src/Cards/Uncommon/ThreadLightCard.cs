@@ -52,6 +52,11 @@ public class ThreadLightCard : TransformAtTurnStartCardBase
         return linkCount * bonusPerCard;
     }
 
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Damage.UpgradeValueBy(2);
+    }
+
     protected override Type[] GetCandidateCardTypes()
     {
         return
