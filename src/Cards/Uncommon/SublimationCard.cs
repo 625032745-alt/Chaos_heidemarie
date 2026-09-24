@@ -13,7 +13,7 @@ public class SublimationCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     
-    public SublimationCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public SublimationCard() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
@@ -25,5 +25,10 @@ public class SublimationCard : ModCardTemplate
         
         await PlayerCmd.GainEnergy(power.Amount, Owner);
         await PowerCmd.Remove(power);
+    }
+
+    protected override void OnUpgrade()
+    {
+        CardCmd.ApplyKeyword(this,CardKeyword.Retain);
     }
 }

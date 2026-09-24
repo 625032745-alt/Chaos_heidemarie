@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Uncommon;
+namespace ChaosHeidemarie.Cards.Rare;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class ChainBurstCard : ModCardTemplate
@@ -37,5 +37,10 @@ public class ChainBurstCard : ModCardTemplate
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
+    }
+    
+    protected override void OnUpgrade()
+    {
+        CardCmd.ApplyKeyword(this,CardKeyword.Retain);
     }
 }
