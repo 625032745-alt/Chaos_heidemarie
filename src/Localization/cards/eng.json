@@ -74,5 +74,9 @@
   "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.title": "Silken Light",
   "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.description": "Whenever you draw a card this turn, gain {SilkenLight:diff()} [gold]Aurora Chain[/gold].",
   "CHAOS_HEIDEMARIE_CARD_DAWN_GUIDANCE_CARD.title": "Dawn's Guidance",
-  "CHAOS_HEIDEMARIE_CARD_DAWN_GUIDANCE_CARD.description": "Whenever you play an Attack this turn, gain {DawnGuidance:diff()} [gold]Aurora Chain[/gold]."
+  "CHAOS_HEIDEMARIE_CARD_DAWN_GUIDANCE_CARD.description": "Whenever you play an Attack this turn, gain {DawnGuidance:diff()} [gold]Aurora Chain[/gold].",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_BURST_CARD.title": "Chain Burst",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_BURST_CARD.description": "Lose all Aurora Chain. Deal {Damage:diff()} damage. For each stack of [gold]Aurora Chain[/gold] lost, this card deals 4 additional damage.",
+  "CHAOS_HEIDEMARIE_CARD_SUBLIMATION_CARD.title": "Sublimation",
+  "CHAOS_HEIDEMARIE_CARD_SUBLIMATION_CARD.description": "Lose all Aurora Chain. Gain 1 Energy for each stack lost."
 }

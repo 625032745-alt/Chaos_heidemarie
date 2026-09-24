@@ -73,5 +73,9 @@
   "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.title": "绸光",
   "CHAOS_HEIDEMARIE_CARD_SILKEN_LIGHT_CARD.description": "本回合每抽 1 张牌，获得 {SilkenLight:diff()} 层极光连锁",
   "CHAOS_HEIDEMARIE_CARD_DAWN_GUIDANCE_CARD.title": "曦引",
-  "CHAOS_HEIDEMARIE_CARD_DAWN_GUIDANCE_CARD.description": "本回合每打出 1 张攻击牌，获得 {DawnGuidance:diff()} 层[gold]极光连锁[/gold]"
+  "CHAOS_HEIDEMARIE_CARD_DAWN_GUIDANCE_CARD.description": "本回合每打出 1 张攻击牌，获得 {DawnGuidance:diff()} 层[gold]极光连锁[/gold]",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_BURST_CARD.title": "链爆",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_BURST_CARD.description": "失去所有极光连锁。造成 {Damage:diff()} 点伤害，每失去一层[gold]极光连锁[/gold]此牌伤害+4",
+  "CHAOS_HEIDEMARIE_CARD_SUBLIMATION_CARD.title": "凝华",
+  "CHAOS_HEIDEMARIE_CARD_SUBLIMATION_CARD.description": "失去所有极光连锁。每失去 1 层，获得 1 点能量"
 }

@@ -18,7 +18,6 @@ namespace ChaosHeidemarie.Cards.Uncommon;
 public class ReforgeCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
     private static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_LINK");
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("ChooseLink", 2)];
 
