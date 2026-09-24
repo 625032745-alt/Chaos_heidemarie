@@ -31,5 +31,8 @@
   "CHAOS_HEIDEMARIE_POWER_SILKEN_LIGHT_POWER.smartDescription": "Whenever you draw a card this turn, gain {Amount} Aurora Chain.",
   "CHAOS_HEIDEMARIE_POWER_DAWN_GUIDANCE_POWER.title": "Dawn's Guidance",
   "CHAOS_HEIDEMARIE_POWER_DAWN_GUIDANCE_POWER.description": "Whenever you play an Attack this turn, gain {Amount} Aurora Chain.",
-  "CHAOS_HEIDEMARIE_POWER_DAWN_GUIDANCE_POWER.smartDescription": "Whenever you play an Attack this turn, gain {Amount} Aurora Chain."
+  "CHAOS_HEIDEMARIE_POWER_DAWN_GUIDANCE_POWER.smartDescription": "Whenever you play an Attack this turn, gain {Amount} Aurora Chain.",
+  "CHAOS_HEIDEMARIE_POWER_CHAIN_RESONANCE_POWER.title": "Chain Resonance",
+  "CHAOS_HEIDEMARIE_POWER_CHAIN_RESONANCE_POWER.description": "Your next Attack deals 4 additional damage.",
+  "CHAOS_HEIDEMARIE_POWER_CHAIN_RESONANCE_POWER.smartDescription": "Your next Attack deals 4 additional damage."
 }

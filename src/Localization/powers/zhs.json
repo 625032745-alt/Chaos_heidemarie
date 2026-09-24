@@ -31,5 +31,8 @@
   "CHAOS_HEIDEMARIE_POWER_SILKEN_LIGHT_POWER.smartDescription": "本回合每抽 1 张牌，获得 {Amount} 层极光连锁",
   "CHAOS_HEIDEMARIE_POWER_DAWN_GUIDANCE_POWER.title": "曦引",
   "CHAOS_HEIDEMARIE_POWER_DAWN_GUIDANCE_POWER.description": "本回合每打出 1 张攻击牌，获得 {Amount} 层极光连锁",
-  "CHAOS_HEIDEMARIE_POWER_DAWN_GUIDANCE_POWER.smartDescription": "本回合每打出 1 张攻击牌，获得 {Amount} 层极光连锁"
+  "CHAOS_HEIDEMARIE_POWER_DAWN_GUIDANCE_POWER.smartDescription": "本回合每打出 1 张攻击牌，获得 {Amount} 层极光连锁",
+  "CHAOS_HEIDEMARIE_POWER_CHAIN_RESONANCE_POWER.title": "链鸣",
+  "CHAOS_HEIDEMARIE_POWER_CHAIN_RESONANCE_POWER.description": "下一张攻击牌额外造成 4 点伤害",
+  "CHAOS_HEIDEMARIE_POWER_CHAIN_RESONANCE_POWER.smartDescription": "下一张攻击牌额外造成 4 点伤害"
 }

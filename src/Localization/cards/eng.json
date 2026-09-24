@@ -82,5 +82,7 @@
   "CHAOS_HEIDEMARIE_CARD_CHAIN_AWAKENING_CARD.title": "Chain Awakening",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_AWAKENING_CARD.description": "If you have {ChainAwakening:diff()} or more [gold]Aurora Chain[/gold], gain {ChainAwakeningEnergy:diff()} Energy.",
   "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.title": "Radiance",
-  "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.description": "Deal {Damage:diff()} damage. If you have {Radiance:diff()} or more [gold]Aurora Chain[/gold], deal double damage."
+  "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.description": "Deal {Damage:diff()} damage. If you have {Radiance:diff()} or more [gold]Aurora Chain[/gold], deal double damage.",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_RESONANCE_CARD.title": "Chain Resonance",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_RESONANCE_CARD.description": "If you have {ChainResonance:diff()} or more [gold]Aurora Chain[/gold], the next Attack you play this turn deals 4 additional damage."
 }
