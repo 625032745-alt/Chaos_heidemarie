@@ -78,5 +78,9 @@
   "CHAOS_HEIDEMARIE_CARD_CHAIN_BURST_CARD.title": "Chain Burst",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_BURST_CARD.description": "Lose all Aurora Chain. Deal {Damage:diff()} damage. For each stack of [gold]Aurora Chain[/gold] lost, this card deals 4 additional damage.",
   "CHAOS_HEIDEMARIE_CARD_SUBLIMATION_CARD.title": "Sublimation",
-  "CHAOS_HEIDEMARIE_CARD_SUBLIMATION_CARD.description": "Lose all Aurora Chain. Gain 1 Energy for each stack lost."
+  "CHAOS_HEIDEMARIE_CARD_SUBLIMATION_CARD.description": "Lose all Aurora Chain. Gain 1 Energy for each stack lost.",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_AWAKENING_CARD.title": "Chain Awakening",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_AWAKENING_CARD.description": "If you have {ChainAwakening:diff()} or more [gold]Aurora Chain[/gold], gain {ChainAwakeningEnergy:diff()} Energy.",
+  "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.title": "Radiance",
+  "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.description": "Deal {Damage:diff()} damage. If you have {Radiance:diff()} or more [gold]Aurora Chain[/gold], deal double damage."
 }

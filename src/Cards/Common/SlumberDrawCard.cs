@@ -20,6 +20,7 @@ public class SlumberDrawCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("SlumberDraw", 2)];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
     private static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_DISCARD");
 
     public SlumberDrawCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
