@@ -22,12 +22,10 @@ public class ChainResonancePower : ModPowerTemplate
         CardModel? cardSource,
         CardPlay? cardPlay)
     {
-        var card = cardPlay.Card;
-        if (card.Type != CardType.Attack)
+        if (cardSource.Type != CardType.Attack)
             return 0;
         var power = Owner.GetPower<InherentMemoryPower>();
-        var baseValue = DynamicVars["ChainResonance"].BaseValue;
-        if (power != null && power.Amount >= baseValue)
+        if (power != null && power.Amount >= Amount)
         {
             return 4;
         }

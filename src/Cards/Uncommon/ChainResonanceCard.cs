@@ -22,8 +22,9 @@ public class ChainResonanceCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        var baseValue = DynamicVars["ChainResonance"].BaseValue;
         await PowerCmd.Apply<ChainResonancePower>(choiceContext, Owner.Creature,
-            1m, Owner.Creature, this);
+            baseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
