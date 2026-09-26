@@ -94,5 +94,7 @@
   "CHAOS_HEIDEMARIE_CARD_AURORA_GLEAM_CARD.title": "Aurora Gleam",
   "CHAOS_HEIDEMARIE_CARD_AURORA_GLEAM_CARD.description": "Deal {Damage:diff()} damage a number of times equal to your [gold]Aurora Chain[/gold] stacks.",
   "CHAOS_HEIDEMARIE_CARD_RADIANT_SHIELD_CARD.title": "Radiant Shield",
-  "CHAOS_HEIDEMARIE_CARD_RADIANT_SHIELD_CARD.description": "Gain {Block:diff()} Block, plus additional Block equal to your [gold]Aurora Chain[/gold] stacks."
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_SHIELD_CARD.description": "Gain {Block:diff()} Block, plus additional Block equal to your [gold]Aurora Chain[/gold] stacks.",
+  "CHAOS_HEIDEMARIE_CARD_POLAR_DAY_CARD.title": "Polar Day",
+  "CHAOS_HEIDEMARIE_CARD_POLAR_DAY_CARD.description": "Increase the maximum [gold]Aurora Chain[/gold] stacks by {PolarDay:diff()}. At the start of each turn, if you have 10 or more [gold]Aurora Chain[/gold], gain 1 Energy."
 }

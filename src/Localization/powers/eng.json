@@ -37,5 +37,7 @@
   "CHAOS_HEIDEMARIE_POWER_CHAIN_RESONANCE_POWER.smartDescription": "Your next Attack deals 4 additional damage.",
   "CHAOS_HEIDEMARIE_POWER_DAWNSHATTER_POWER.title": "Dawnshatter",
   "CHAOS_HEIDEMARIE_POWER_DAWNSHATTER_POWER.description": "Whenever [gold]Aurora Chain[/gold] reaches 10 stacks, deal {Amount} damage to all enemies.",
-  "CHAOS_HEIDEMARIE_POWER_DAWNSHATTER_POWER.smartDescription": "Whenever [gold]Aurora Chain[/gold] reaches 10 stacks, deal {Amount} damage to all enemies."
+  "CHAOS_HEIDEMARIE_POWER_DAWNSHATTER_POWER.smartDescription": "Whenever [gold]Aurora Chain[/gold] reaches 10 stacks, deal {Amount} damage to all enemies.",
+  "CHAOS_HEIDEMARIE_CARD_POLAR_DAY_POWER.title": "Polar Day",
+  "CHAOS_HEIDEMARIE_CARD_POLAR_DAY_POWER.description": "Increase the maximum [gold]Aurora Chain[/gold] stacks by {Amount}. At the start of each turn, if you have 10 or more [gold]Aurora Chain[/gold], gain 1 Energy."
 }

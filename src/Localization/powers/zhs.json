@@ -37,5 +37,7 @@
   "CHAOS_HEIDEMARIE_POWER_CHAIN_RESONANCE_POWER.smartDescription": "下一张攻击牌额外造成 4 点伤害",
   "CHAOS_HEIDEMARIE_POWER_DAWNSHATTER_POWER.title": "曦裂",
   "CHAOS_HEIDEMARIE_POWER_DAWNSHATTER_POWER.description": "每当[gold]极光连锁[/gold]达到 10 层时，对所有敌人造成 {Amount} 点伤害",
-  "CHAOS_HEIDEMARIE_POWER_DAWNSHATTER_POWER.smartDescription": "每当[gold]极光连锁[/gold]达到 10 层时，对所有敌人造成 {Amount} 点伤害"
+  "CHAOS_HEIDEMARIE_POWER_DAWNSHATTER_POWER.smartDescription": "每当[gold]极光连锁[/gold]达到 10 层时，对所有敌人造成 {Amount} 点伤害",
+  "CHAOS_HEIDEMARIE_CARD_POLAR_DAY_POWER.title": "极昼",
+  "CHAOS_HEIDEMARIE_CARD_POLAR_DAY_POWER.description": "[gold]极光连锁[/gold]上限+{Amount},每回合开始时，若[gold]极光连锁[/gold]大于等于10 层，获得 1 点能量"
 }

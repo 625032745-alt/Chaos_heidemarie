@@ -47,9 +47,15 @@ public class InherentMemoryPower : ModPowerTemplate
     {
         if (power is not InherentMemoryPower || amount <= 0)
             return;
-        if (power.Amount > 10)
+        var powerAmount = 10;
+        var polarDayPower = Owner.GetPower<PolarDayPower>();
+        if (polarDayPower != null)
         {
-            SetAmount(10);
+            powerAmount += polarDayPower.Amount;
+        }
+        if (power.Amount > powerAmount)
+        {
+            SetAmount(powerAmount);
         }
     }
 

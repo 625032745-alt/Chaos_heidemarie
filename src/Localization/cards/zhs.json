@@ -93,5 +93,7 @@
   "CHAOS_HEIDEMARIE_CARD_AURORA_GLEAM_CARD.title": "极芒",
   "CHAOS_HEIDEMARIE_CARD_AURORA_GLEAM_CARD.description": "造成 {Damage:diff()} 伤害。此牌打击次数等于极光连锁层数",
   "CHAOS_HEIDEMARIE_CARD_RADIANT_SHIELD_CARD.title": "光辉之盾",
-  "CHAOS_HEIDEMARIE_CARD_RADIANT_SHIELD_CARD.description": "获取 {Block:diff()} 格挡，额外获得等同于[gold]极光连锁[/gold]层数的格挡"
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_SHIELD_CARD.description": "获取 {Block:diff()} 格挡，额外获得等同于[gold]极光连锁[/gold]层数的格挡",
+  "CHAOS_HEIDEMARIE_CARD_POLAR_DAY_CARD.title": "极昼",
+  "CHAOS_HEIDEMARIE_CARD_POLAR_DAY_CARD.description": "[gold]极光连锁[/gold]上限+{PolarDay:diff()},每回合开始时，若[gold]极光连锁[/gold]大于等于10 层，获得 1 点能量"
 }
