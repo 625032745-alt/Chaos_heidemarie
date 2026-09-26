@@ -92,5 +92,7 @@
   "CHAOS_HEIDEMARIE_CARD_CHAIN_SLASH_CARD.title": "Chain Slash",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_SLASH_CARD.description": "Deal {Damage:diff()} damage. If you have [gold]Aurora Chain[/gold], deal additional damage equal to its stacks.",
   "CHAOS_HEIDEMARIE_CARD_AURORA_GLEAM_CARD.title": "Aurora Gleam",
-  "CHAOS_HEIDEMARIE_CARD_AURORA_GLEAM_CARD.description": "Deal {Damage:diff()} damage a number of times equal to your [gold]Aurora Chain[/gold] stacks."
+  "CHAOS_HEIDEMARIE_CARD_AURORA_GLEAM_CARD.description": "Deal {Damage:diff()} damage a number of times equal to your [gold]Aurora Chain[/gold] stacks.",
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_SHIELD_CARD.title": "Radiant Shield",
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_SHIELD_CARD.description": "Gain {Block:diff()} Block, plus additional Block equal to your [gold]Aurora Chain[/gold] stacks."
 }
