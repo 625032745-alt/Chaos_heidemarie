@@ -89,5 +89,7 @@
   "CHAOS_HEIDEMARIE_CARD_DAWNGLOW_CARD.title": "曦华",
   "CHAOS_HEIDEMARIE_CARD_DAWNGLOW_CARD.description": "造成 {Damage:diff()} 点伤害，若存在[gold]极光连锁[/gold]额外造成层数的5倍伤害",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_SLASH_CARD.title": "链斩",
-  "CHAOS_HEIDEMARIE_CARD_CHAIN_SLASH_CARD.description": "造成 {Damage:diff()} 点伤害。若存在[gold]极光连锁[/gold]额外造成等于极光连锁层数的伤害"
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_SLASH_CARD.description": "造成 {Damage:diff()} 点伤害。若存在[gold]极光连锁[/gold]额外造成等于极光连锁层数的伤害",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_GLEAM_CARD.title": "极芒",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_GLEAM_CARD.description": "造成 {Damage:diff()} 伤害。此牌打击次数等于极光连锁层数"
 }
