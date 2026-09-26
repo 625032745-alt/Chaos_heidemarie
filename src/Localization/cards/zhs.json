@@ -83,5 +83,7 @@
   "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.title": "辉耀",
   "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.description": "造成 {Damage:diff()} 伤害。若[gold]极光连锁[/gold]大于等于 {Radiance:diff()} 层，造成双倍的伤害",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_RESONANCE_CARD.title": "链鸣",
-  "CHAOS_HEIDEMARIE_CARD_CHAIN_RESONANCE_CARD.description": "若[gold]极光连锁[/gold]大于等于 {ChainResonance:diff()} 层，本回合打出的下一张攻击牌额外造成 4 点伤害"
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_RESONANCE_CARD.description": "若[gold]极光连锁[/gold]大于等于 {ChainResonance:diff()} 层，本回合打出的下一张攻击牌额外造成 4 点伤害",
+  "CHAOS_HEIDEMARIE_CARD_DAWNSHATTER_CARD.title": "曦裂",
+  "CHAOS_HEIDEMARIE_CARD_DAWNSHATTER_CARD.description": "每当[gold]极光连锁[/gold]达到 10 层时，对所有敌人造成 {Damage:diff()} 点伤害"
 }
