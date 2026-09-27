@@ -97,5 +97,9 @@
   "CHAOS_HEIDEMARIE_CARD_POLAR_DAY_CARD.title": "极昼",
   "CHAOS_HEIDEMARIE_CARD_POLAR_DAY_CARD.description": "[gold]极光连锁[/gold]上限+{PolarDay:diff()},每回合开始时，若[gold]极光连锁[/gold]大于等于10 层，获得 1 点能量",
   "CHAOS_HEIDEMARIE_CARD_RADIANT_EROSION_CARD.title": "辉蚀",
-  "CHAOS_HEIDEMARIE_CARD_RADIANT_EROSION_CARD.description": "给予目标 {RadiantErosion:diff()} 层虚弱\n{RadiantErosion:diff()} 层易伤\n给予自己 {RadiantErosion:diff()} 层力量"
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_EROSION_CARD.description": "给予目标 {RadiantErosion:diff()} 层虚弱\n{RadiantErosion:diff()} 层易伤\n给予自己 {RadiantErosion:diff()} 层力量",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_DEVOUR_CARD.title": "链噬",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_DEVOUR_CARD.description": "造成 {Damage:diff()} 伤害。若此牌击杀目标，获得 {ChainDevour:diff()} 层[gold]极光连锁[/gold]",
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_REFLECTION_CARD.title": "辉映",
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_REFLECTION_CARD.description": "获得 {StrengthPowerStar:diff()} 层力量，根据[gold]极光连锁[/gold]的层数额外获得 {StrengthPower:diff()} 层力量"
 }
