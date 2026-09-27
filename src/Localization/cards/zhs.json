@@ -101,5 +101,7 @@
   "CHAOS_HEIDEMARIE_CARD_CHAIN_DEVOUR_CARD.title": "链噬",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_DEVOUR_CARD.description": "造成 {Damage:diff()} 伤害。若此牌击杀目标，获得 {ChainDevour:diff()} 层[gold]极光连锁[/gold]",
   "CHAOS_HEIDEMARIE_CARD_RADIANT_REFLECTION_CARD.title": "辉映",
-  "CHAOS_HEIDEMARIE_CARD_RADIANT_REFLECTION_CARD.description": "获得 {StrengthPowerStar:diff()} 层力量，每有 3 层[gold]极光连锁[/gold]额外获得 {StrengthPower:diff()} 层力量"
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_REFLECTION_CARD.description": "获得 {StrengthPowerStar:diff()} 层力量，每有 3 层[gold]极光连锁[/gold]额外获得 {StrengthPower:diff()} 层力量",
+  "CHAOS_HEIDEMARIE_CARD_CHAINWEAVE_CARD.title": "链织",
+  "CHAOS_HEIDEMARIE_CARD_CHAINWEAVE_CARD.description": "本回合内，你造成的所有伤害额外增加等于[gold]极光连锁[/gold]层数x{Chainweave:diff()}的伤害"
 }
