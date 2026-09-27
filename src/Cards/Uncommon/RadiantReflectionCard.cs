@@ -28,7 +28,8 @@ public class RadiantReflectionCard : ModCardTemplate
             {
                 var baseValue = card.DynamicVars["StrengthPowerStar"].BaseValue;
                 var power = card.Owner?.Creature.GetPowerAmount<InherentMemoryPower>() ?? 0;
-                return baseValue + power;
+                int amount = power / 3;
+                return baseValue + amount;
             }),
     ];
 

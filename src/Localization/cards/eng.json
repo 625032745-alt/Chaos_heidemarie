@@ -102,5 +102,5 @@
   "CHAOS_HEIDEMARIE_CARD_CHAIN_DEVOUR_CARD.title": "Chain Devour",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_DEVOUR_CARD.description": "Deal {Damage:diff()} damage. If this card kills the target, gain {ChainDevour:diff()} stacks of [gold]Aurora Chain[/gold].",
   "CHAOS_HEIDEMARIE_CARD_RADIANT_REFLECTION_CARD.title": "Radiant Reflection",
-  "CHAOS_HEIDEMARIE_CARD_RADIANT_REFLECTION_CARD.description": "Gain {StrengthPowerStar:diff()} Strength. Gain an additional {StrengthPower:diff()} Strength based on your [gold]Aurora Chain[/gold] stacks."
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_REFLECTION_CARD.description": "Gain {StrengthPowerStar:diff()} Strength. Gain an additional {StrengthPower:diff()} Strength for every 3 stacks of [gold]Aurora Chain[/gold]."
 }
