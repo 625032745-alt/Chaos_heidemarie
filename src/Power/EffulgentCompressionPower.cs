@@ -30,7 +30,7 @@ public class EffulgentCompressionPower : ModPowerTemplate
         var combatState = card.CombatState;
         if (combatState == null)
             return;
-        await PowerCmd.ModifyAmount(choiceContext, this, -1m, null, card);
+        await PowerCmd.Decrement(this);
         if (Amount <= 0)
         {
             var targetCard = combatState.CreateCard<LiberationAuroraCard>(player);

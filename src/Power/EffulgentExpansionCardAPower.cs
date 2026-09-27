@@ -40,7 +40,7 @@ public class EffulgentExpansionCardAPower : ModPowerTemplate
         if (card is EffulgentBladeCard)
         {
             Flash();
-            await PowerCmd.ModifyAmount(choiceContext, this, -1m, null, card);
+            await PowerCmd.Decrement(this);
         }
     }
 
@@ -49,7 +49,7 @@ public class EffulgentExpansionCardAPower : ModPowerTemplate
         if (card is EffulgentBladeCard)
         {
             Flash();
-            await PowerCmd.ModifyAmount(choiceContext, this, -1m, null, card);
+            await PowerCmd.Decrement(this);
         }
     }
 }

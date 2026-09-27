@@ -23,7 +23,7 @@ public class FragmentedDawnPower : ModPowerTemplate
         if (card.Keywords.Contains(LinkKeywords.Link))
         {
             await PlayerCmd.GainEnergy(1, Owner.Player);
-            await PowerCmd.ModifyAmount(choiceContext, this, -1m, null, null);
+            await PowerCmd.Decrement(this);
         }
     }
 }

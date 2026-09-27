@@ -45,7 +45,7 @@ public class ScarletSwordPower : ModPowerTemplate
                 .TargetingRandomOpponents(combatState)
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
-            await PowerCmd.ModifyAmount(choiceContext, this, -1m, null, card);
+            await PowerCmd.Decrement(this);
         }
     }
     
