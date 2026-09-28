@@ -15,20 +15,26 @@ public class SilkenLightPower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
-    
+
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/SilkenLightPower_Small.png",
         BigIconPath: "res://ArtWorks/images/power/SilkenLightPower_Big.png"
     );
 
-    public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
+    private bool _pendingPower = true;
+
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
+        decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (!fromHandDraw)
-            return;
-        await CommonUtils.AddOrModifyPower<InherentMemoryPower>(choiceContext, Owner,Amount,null);
+        if (!_pendingPower) return;
+        if (amount > 0)
+        {
+            _pendingPower = false;
+            await CommonUtils.AddOrModifyPower<InherentMemoryPower>(choiceContext, Owner, Amount, cardSource);
+        }
     }
 
-    public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side == CombatSide.Player)
         {
