@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Uncommon;
+namespace ChaosHeidemarie.Cards.Rare;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class AuroraCard : ModCardTemplate
@@ -16,7 +16,7 @@ public class AuroraCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("Aurora", 1)];
 
-    public AuroraCard() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+    public AuroraCard() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }
 

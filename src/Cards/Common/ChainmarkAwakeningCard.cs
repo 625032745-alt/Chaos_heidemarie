@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Uncommon;
+namespace ChaosHeidemarie.Cards.Common;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class ChainmarkAwakeningCard : ModCardTemplate
@@ -17,7 +17,7 @@ public class ChainmarkAwakeningCard : ModCardTemplate
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("ChainmarkAwakening", 1)];
 
-    public ChainmarkAwakeningCard() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public ChainmarkAwakeningCard() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
     }
 
