@@ -104,5 +104,7 @@
   "CHAOS_HEIDEMARIE_CARD_RADIANT_REFLECTION_CARD.title": "Radiant Reflection",
   "CHAOS_HEIDEMARIE_CARD_RADIANT_REFLECTION_CARD.description": "Gain {StrengthPowerStar:diff()} Strength. Gain an additional {StrengthPower:diff()} Strength for every 3 stacks of [gold]Aurora Chain[/gold].",
   "CHAOS_HEIDEMARIE_CARD_CHAINWEAVE_CARD.title": "Chainweave",
-  "CHAOS_HEIDEMARIE_CARD_CHAINWEAVE_CARD.description": "For the rest of this turn, all damage you deal is increased by your [gold]Aurora Chain[/gold] stacks × {Chainweave:diff()}."
+  "CHAOS_HEIDEMARIE_CARD_CHAINWEAVE_CARD.description": "For the rest of this turn, all damage you deal is increased by your [gold]Aurora Chain[/gold] stacks × {Chainweave:diff()}.",
+  "CHAOS_HEIDEMARIE_CARD_FIRST_LIGHT_CARD.title": "First Light",
+  "CHAOS_HEIDEMARIE_CARD_FIRST_LIGHT_CARD.description": "Look at the top {FirstLight:diff()} cards of your draw pile. Choose 1 to add to your hand."
 }
