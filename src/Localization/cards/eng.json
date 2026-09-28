@@ -58,7 +58,7 @@
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "Residual Dawn Link",
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "Choose {ResidualDawn:diff()} card from your hand and give it [gold]Link[/gold]. If it already has [gold]Link[/gold], gain 1 stack of [gold]Aurora Chain[/gold].",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.title": "Aurora Bastion",
-  "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "Gain {Block:diff()} Block. Gain 3 additional Block for each [gold]Aurora Chain[/gold].",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "Gain {Block:diff()} Block. If you have at least 5 stacks of [gold]Aurora Chain[/gold], your [gold]Block[/gold] is not removed at the start of your turn.",
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.title": "Reforge",
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.description": "Remove [gold]Link[/gold] from all cards in your hand. Choose {ChooseLink:diff()} cards in your hand to gain [gold]Link[/gold]. For each card with [gold]Link[/gold] selected, gain 1 stack of Aurora Chain.",
   "CHAOS_HEIDEMARIE_CARD_BLADE_PARADISE_CARD.title": "Blade Paradise",

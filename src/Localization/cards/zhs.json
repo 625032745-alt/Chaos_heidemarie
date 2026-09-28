@@ -57,7 +57,7 @@
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.title": "残曦附络",
   "CHAOS_HEIDEMARIE_CARD_RESIDUAL_DAWN_CARD.description": "从手牌中选择 {ResidualDawn:diff()} 张牌给予 [gold]连接[/gold]。若该牌为连接牌，获得 1 层[gold]极光连锁[/gold]",
   "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.title": "极光壁垒",
-  "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "获得 {Block:diff()} 点格挡，每层[gold]极光连锁[/gold]额外获得3点格挡。",
+  "CHAOS_HEIDEMARIE_CARD_AURORA_BASTION_CARD.description": "获得 {Block:diff()} 点格挡，若你拥有至少 5层[gold]极光连锁[/gold]，[gold]格挡[/gold]不会在你的回合开始时被移除。",
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.title": "重锻",
   "CHAOS_HEIDEMARIE_CARD_REFORGE_CARD.description": "移除所有手牌的 [gold]连接[/gold]。重新选择 {ChooseLink:diff()} 张手牌赋予 [gold]连接[/gold]。每选择连接1张，获得1层极光连锁。",
   "CHAOS_HEIDEMARIE_CARD_BLADE_PARADISE_CARD.title": "剑之乐园",
