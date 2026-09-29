@@ -18,20 +18,7 @@ public class RadiantReflectionCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [
-        ModCardVars.Int("StrengthPowerStar", 1),
-        ModCardVars.ComputedPowerAmountGiven<StrengthPower>(
-            "StrengthPower",
-            DynamicVars["StrengthPowerStar"].BaseValue,
-            static (card, _) =>
-            {
-                var baseValue = card.DynamicVars["StrengthPowerStar"].BaseValue;
-                var power = card.Owner?.Creature.GetPowerAmount<InherentMemoryPower>() ?? 0;
-                int amount = power / 3;
-                return baseValue + amount;
-            }),
-    ];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("StrengthPower", 1)];
 
     public RadiantReflectionCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
@@ -39,12 +26,18 @@ public class RadiantReflectionCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        var baseValue = DynamicVars["StrengthPower"].BaseValue;
+        var power = Owner.Creature.GetPower<InherentMemoryPower>();
+        if (power != null && power.Amount >= 3)
+        {
+            baseValue += power.Amount / 3;
+        }
         await CommonUtils.AddOrModifyPower<StrengthPower>(choiceContext, Owner.Creature,
-            DynamicVars.GetComputedValue("StrengthPower"), this);
+            baseValue, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["StrengthPowerStar"].UpgradeValueBy(1);
+        DynamicVars["StrengthPower"].UpgradeValueBy(1);
     }
 }
