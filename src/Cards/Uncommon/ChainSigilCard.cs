@@ -16,7 +16,7 @@ public class ChainSigilCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Unpowered)];
 
     public ChainSigilCard() : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
@@ -26,5 +26,10 @@ public class ChainSigilCard : ModCardTemplate
     {
         await PowerCmd.Apply<ChainSigilPower>(choiceContext, Owner.Creature,
             DynamicVars.Damage.BaseValue, Owner.Creature, this);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Damage.UpgradeValueBy(4);
     }
 }

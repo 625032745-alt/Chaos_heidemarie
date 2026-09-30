@@ -12,7 +12,7 @@ namespace ChaosHeidemarie.Relics;
 [RegisterRelic(typeof(Content.HeidemarieRelicPool))]
 public class InherentMemoryRelic : ModRelicTemplate
 {
-    public override RelicRarity Rarity => RelicRarity.Uncommon;
+    public override RelicRarity Rarity => RelicRarity.Rare;
 
     public override RelicAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/relic/InherentMemoryRelic_Small.png",

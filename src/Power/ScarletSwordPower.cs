@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -40,11 +41,9 @@ public class ScarletSwordPower : ModPowerTemplate
             var combatState = player.Creature.CombatState;
             if (null == combatState)
                 return;
-            await DamageCmd.Attack(6m)
-                .FromCard(card, null)
-                .TargetingRandomOpponents(combatState)
-                .WithHitFx("vfx/vfx_attack_slash")
-                .Execute(choiceContext);
+            var enemy = combatState.RunState.Rng.CombatTargets.NextItem(combatState.HittableEnemies);
+            if(enemy == null) return;
+            await CreatureCmd.Damage(choiceContext, enemy, 6, ValueProp.Unpowered, Owner, card, null);
             await PowerCmd.Decrement(this);
         }
     }
