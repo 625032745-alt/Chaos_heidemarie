@@ -13,7 +13,7 @@ namespace ChaosHeidemarie.Cards.Rare;
 public class FragmentedDawnCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("CFCount", 3)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("FragmentedDawn", 3)];
     
     public FragmentedDawnCard() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
@@ -22,11 +22,11 @@ public class FragmentedDawnCard : ModCardTemplate
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<FragmentedDawnPower>(choiceContext, Owner.Creature,
-            DynamicVars["CFCount"].BaseValue, Owner.Creature, this);
+            DynamicVars["FragmentedDawn"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["CFCount"].UpgradeValueBy(2m);
+        DynamicVars["FragmentedDawn"].UpgradeValueBy(2m);
     }
 }
