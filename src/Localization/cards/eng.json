@@ -110,5 +110,7 @@
   "CHAOS_HEIDEMARIE_CARD_RESILIENT_CHAIN_CARD.title": "Resilient Chain",
   "CHAOS_HEIDEMARIE_CARD_RESILIENT_CHAIN_CARD.description": "Whenever you lose [gold]Aurora Chain[/gold], gain {Block:diff()} Block.",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_SIGIL_CARD.title": "Chain Sigil",
-  "CHAOS_HEIDEMARIE_CARD_CHAIN_SIGIL_CARD.description": "At the start of your turn, if you have at least 5 stacks of [gold]Aurora Chain[/gold], deal {Damage:diff()} damage to a random enemy."
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_SIGIL_CARD.description": "At the start of your turn, if you have at least 5 stacks of [gold]Aurora Chain[/gold], deal {Damage:diff()} damage to a random enemy.",
+  "CHAOS_HEIDEMARIE_CARD_DAWNFLOW_CARD.title": "Dawnflow",
+  "CHAOS_HEIDEMARIE_CARD_DAWNFLOW_CARD.description": "Lose 2 stacks of [gold]Aurora Chain[/gold]. Draw 2 cards. If this causes your Aurora Chain to fall below 5 stacks, draw 1 additional card."
 }

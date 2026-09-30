@@ -17,7 +17,7 @@ public class CommonUtils
         var power = creature.GetPower<TPower>();
         if (power != null)
         {
-            await PowerCmd.ModifyAmount(ctx, power, amount, null, source);
+            await PowerCmd.ModifyAmount(ctx, power, amount, creature, source);
         }
         else
         {

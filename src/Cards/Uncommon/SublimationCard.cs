@@ -24,7 +24,7 @@ public class SublimationCard : ModCardTemplate
             return;
         
         await PlayerCmd.GainEnergy(power.Amount, Owner);
-        await PowerCmd.ModifyAmount(choiceContext,power, -power.Amount, null, this);
+        await PowerCmd.ModifyAmount(choiceContext,power, -power.Amount, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

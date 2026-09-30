@@ -109,5 +109,7 @@
   "CHAOS_HEIDEMARIE_CARD_RESILIENT_CHAIN_CARD.title": "韧链",
   "CHAOS_HEIDEMARIE_CARD_RESILIENT_CHAIN_CARD.description": "每当你失去极光连锁时，获得 {Block:diff()} 点格挡",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_SIGIL_CARD.title": "链印",
-  "CHAOS_HEIDEMARIE_CARD_CHAIN_SIGIL_CARD.description": "回合开始时，若[gold]极光连锁[/gold]大于等于 5 层，对一名随机敌人造成 {Damage:diff()} 点伤害"
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_SIGIL_CARD.description": "回合开始时，若[gold]极光连锁[/gold]大于等于 5 层，对一名随机敌人造成 {Damage:diff()} 点伤害",
+  "CHAOS_HEIDEMARIE_CARD_DAWNFLOW_CARD.title": "曦流",
+  "CHAOS_HEIDEMARIE_CARD_DAWNFLOW_CARD.description": "失去2层[gold]极光连锁[/gold]。抽2张牌。若因此使极光连锁低于5层，额外抽1张牌。"
 }
