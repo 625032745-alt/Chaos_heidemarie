@@ -1,4 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -18,6 +19,7 @@ public class RadiantShieldCard : ModCardTemplate
     public override bool GainsBlock => true;
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(7, ValueProp.Move)];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     
     public RadiantShieldCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)

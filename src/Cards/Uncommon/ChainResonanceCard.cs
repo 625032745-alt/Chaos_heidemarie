@@ -1,4 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -15,7 +16,7 @@ public class ChainResonanceCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("ChainResonance", 7)];
-    
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
     public ChainResonanceCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }

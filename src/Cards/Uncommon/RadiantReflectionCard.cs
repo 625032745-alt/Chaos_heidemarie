@@ -1,4 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -17,7 +18,7 @@ public class RadiantReflectionCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,RestKeyword.REST];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("RadiantReflection", 1)];
 
     public RadiantReflectionCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)

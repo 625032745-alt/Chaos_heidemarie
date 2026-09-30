@@ -1,4 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -19,6 +20,7 @@ public class ChainBurstCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move)];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
 
     public ChainBurstCard() : base(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)

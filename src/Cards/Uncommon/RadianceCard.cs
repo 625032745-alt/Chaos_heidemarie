@@ -1,4 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -18,6 +19,7 @@ public class RadianceCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move), new("Radiance", 8)];
 
     public RadianceCard() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)

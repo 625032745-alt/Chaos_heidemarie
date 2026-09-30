@@ -1,4 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -16,6 +17,7 @@ public class SilkenLightCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("SilkenLight", 1)];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
 
     public SilkenLightCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {

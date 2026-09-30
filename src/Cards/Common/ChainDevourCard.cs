@@ -1,4 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.Commands;
@@ -18,6 +19,7 @@ public class ChainDevourCard : ModCardTemplate
         [new DamageVar(10, ValueProp.Move), new("ChainDevour", 3)];
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
