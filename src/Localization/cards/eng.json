@@ -108,5 +108,7 @@
   "CHAOS_HEIDEMARIE_CARD_FIRST_LIGHT_CARD.title": "First Light",
   "CHAOS_HEIDEMARIE_CARD_FIRST_LIGHT_CARD.description": "Look at the top {FirstLight:diff()} cards of your draw pile. Choose 1 to add to your hand.",
   "CHAOS_HEIDEMARIE_CARD_RESILIENT_CHAIN_CARD.title": "Resilient Chain",
-  "CHAOS_HEIDEMARIE_CARD_RESILIENT_CHAIN_CARD.description": "Whenever you lose [gold]Aurora Chain[/gold], gain {Block:diff()} Block."
+  "CHAOS_HEIDEMARIE_CARD_RESILIENT_CHAIN_CARD.description": "Whenever you lose [gold]Aurora Chain[/gold], gain {Block:diff()} Block.",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_SIGIL_CARD.title": "Chain Sigil",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_SIGIL_CARD.description": "At the start of your turn, if you have at least 5 stacks of [gold]Aurora Chain[/gold], deal {Damage:diff()} damage to a random enemy."
 }
