@@ -106,5 +106,7 @@
   "CHAOS_HEIDEMARIE_CARD_CHAINWEAVE_CARD.title": "Chainweave",
   "CHAOS_HEIDEMARIE_CARD_CHAINWEAVE_CARD.description": "For the rest of this turn, all damage you deal is increased by your [gold]Aurora Chain[/gold] stacks × {Chainweave:diff()}.",
   "CHAOS_HEIDEMARIE_CARD_FIRST_LIGHT_CARD.title": "First Light",
-  "CHAOS_HEIDEMARIE_CARD_FIRST_LIGHT_CARD.description": "Look at the top {FirstLight:diff()} cards of your draw pile. Choose 1 to add to your hand."
+  "CHAOS_HEIDEMARIE_CARD_FIRST_LIGHT_CARD.description": "Look at the top {FirstLight:diff()} cards of your draw pile. Choose 1 to add to your hand.",
+  "CHAOS_HEIDEMARIE_CARD_RESILIENT_CHAIN_CARD.title": "Resilient Chain",
+  "CHAOS_HEIDEMARIE_CARD_RESILIENT_CHAIN_CARD.description": "Whenever you lose [gold]Aurora Chain[/gold], gain {Block:diff()} Block."
 }

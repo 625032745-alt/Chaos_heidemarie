@@ -105,5 +105,7 @@
   "CHAOS_HEIDEMARIE_CARD_CHAINWEAVE_CARD.title": "链织",
   "CHAOS_HEIDEMARIE_CARD_CHAINWEAVE_CARD.description": "本回合内，你造成的所有伤害额外增加等于[gold]极光连锁[/gold]层数x{Chainweave:diff()}的伤害",
   "CHAOS_HEIDEMARIE_CARD_FIRST_LIGHT_CARD.title": "微曦",
-  "CHAOS_HEIDEMARIE_CARD_FIRST_LIGHT_CARD.description": "查看抽牌堆顶 {FirstLight:diff()} 张牌，选择其中1张加入手牌。"
+  "CHAOS_HEIDEMARIE_CARD_FIRST_LIGHT_CARD.description": "查看抽牌堆顶 {FirstLight:diff()} 张牌，选择其中1张加入手牌。",
+  "CHAOS_HEIDEMARIE_CARD_RESILIENT_CHAIN_CARD.title": "韧链",
+  "CHAOS_HEIDEMARIE_CARD_RESILIENT_CHAIN_CARD.description": "每当你失去极光连锁时，获得 {Block:diff()} 点格挡"
 }
