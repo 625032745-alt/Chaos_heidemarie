@@ -24,9 +24,17 @@ public class ResilientChainPower : ModPowerTemplate
         decimal amount, Creature? applier,
         CardModel? cardSource)
     {
-        if (amount < 0)
-        {
-            await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Move, null);
-        }
+        if (power is not InherentMemoryPower)
+            return;
+
+        // 不是自己的极光连锁
+        if (power.Owner != Owner)
+            return;
+
+        // amount < 0 代表这次极光连锁减少
+        if (amount >= 0)
+            return;
+
+        await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Move, null);
     }
 }

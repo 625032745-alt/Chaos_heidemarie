@@ -26,6 +26,8 @@ public class SilkenLightPower : ModPowerTemplate
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
         decimal amount, Creature? applier, CardModel? cardSource)
     {
+        if (power is not InherentMemoryPower)
+            return;
         if (!_pendingPower) return;
         if (amount > 0)
         {

@@ -33,7 +33,7 @@ public class ChainBurstCard : ModCardTemplate
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         var power = Owner.Creature.GetPower<InherentMemoryPower>();
-        if(power != null) await PowerCmd.Remove(power);
+        if (power != null) await PowerCmd.ModifyAmount(choiceContext, power, -power.Amount, null, this);
     }
     
     protected override void OnUpgrade()

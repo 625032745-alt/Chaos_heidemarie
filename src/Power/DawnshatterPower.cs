@@ -22,6 +22,8 @@ public class DawnshatterPower : ModPowerTemplate
         decimal amount, Creature? applier,
         CardModel? cardSource)
     {
+        if (power is not InherentMemoryPower)
+            return;
         if (power.Amount == 10)
         {
             await DamageCmd.Attack(Amount)
