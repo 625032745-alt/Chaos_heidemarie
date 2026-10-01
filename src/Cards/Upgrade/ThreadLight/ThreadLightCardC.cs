@@ -13,9 +13,11 @@ namespace ChaosHeidemarie.Cards.Upgrade.ThreadLight;
 public class ThreadLightCardC : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
-        new(PortraitPath: $"res://ArtWorks/images/cards/ThreadLightCard.png");
+        new(PortraitPath: "res://ArtWorks/images/cards/ThreadLightCard.png");
+
+    private List<CardModel> _cards = new();
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link, CardKeyword.Exhaust];
-    private List<CardModel> _cards;
 
     public ThreadLightCardC() : base(3, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
@@ -23,29 +25,30 @@ public class ThreadLightCardC : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var card = cardPlay.Card;
-        var player = card.Owner;
+        var thisCard = cardPlay.Card;
+        var player = thisCard.Owner;
         var combatState = player.PlayerCombatState;
-        _cards = combatState.Hand.Cards.Where(c => c.Keywords.Contains(LinkKeywords.Link)).ToList();
-        foreach (var c in _cards)
+        var cardsToPlay = combatState.Hand.Cards
+            .Where(c => c != thisCard && c.Keywords.Contains(LinkKeywords.Link)).ToList();
+        foreach (var card in cardsToPlay)
         {
-            await CardCmd.AutoPlay(choiceContext, c, null);
+            _cards.Add(card);
+            await CardCmd.AutoPlay(choiceContext, card, null);
         }
     }
 
-    public override async Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel? clonedBy)
+
+    public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (!card.Keywords.Contains(LinkKeywords.Link))
-            return;
-        
-        var currentPile = card.Pile?.Type;
-        if (currentPile != PileType.Discard)
-            return;
-        
-        if (_cards.Contains(card))
+        var cardModel = cardPlay.Card;
+        if (cardModel != this) return;
+        if (_cards.Count > 0)
         {
-            await CardPileCmd.Add(card,PileType.Hand);
+            foreach (var card in _cards)
+            {
+                await CardPileCmd.Add(card, PileType.Hand);
+            }
+            _cards.Clear();
         }
-        _cards.Clear();
     }
 }
