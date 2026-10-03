@@ -20,6 +20,7 @@ public class RadianceCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
+    protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move), new("Radiance", 8)];
 
     public RadianceCard() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)

@@ -112,5 +112,11 @@
   "CHAOS_HEIDEMARIE_CARD_CHAIN_SIGIL_CARD.title": "Chain Sigil",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_SIGIL_CARD.description": "At the start of your turn, if you have at least 5 stacks of [gold]Aurora Chain[/gold], deal {Damage:diff()} damage to a random enemy.",
   "CHAOS_HEIDEMARIE_CARD_DAWNFLOW_CARD.title": "Dawnflow",
-  "CHAOS_HEIDEMARIE_CARD_DAWNFLOW_CARD.description": "Lose 2 stacks of [gold]Aurora Chain[/gold]. Draw 2 cards. If this causes your Aurora Chain to fall below 5 stacks, draw 1 additional card."
+  "CHAOS_HEIDEMARIE_CARD_DAWNFLOW_CARD.description": "Lose 2 stacks of [gold]Aurora Chain[/gold]. Draw 2 cards. If this causes your Aurora Chain to fall below 5 stacks, draw 1 additional card.",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_FLASH_CARD.title": "Scarlet Wind",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_FLASH_CARD.description": "Deal {Damage:diff()} damage. If you discarded a card this turn, gain 1 stack of [gold]Scarlet Sword[/gold].",
+  "CHAOS_HEIDEMARIE_CARD_SUNDERED_GLOW_CARD.title": "Sundered Glow",
+  "CHAOS_HEIDEMARIE_CARD_SUNDERED_GLOW_CARD.description": "Deal {Damage:diff()} damage. Choose 1 card in your hand to discard. If it is a [gold]Link[/gold] card, deal 6 additional damage.",
+  "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.title": "Chasing Light",
+  "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.description": "Deal {Damage:diff()} damage. If you have [gold]Scarlet Sword[/gold], draw 1 card."
 }
