@@ -63,6 +63,10 @@ public class InherentMemoryPower : ModPowerTemplate
         CardModel? cardSource,
         CardPlay? cardPlay)
     {
-        return Owner.GetPower<InherentMemoryPower>() != null ? Amount * 2m : 0m;
+        if (dealer != Owner || !props.IsPoweredAttack())
+        {
+            return 0m;
+        }
+        return Owner.HasPower<InherentMemoryPower>() ? Amount * 2m : 0m;
     }
 }

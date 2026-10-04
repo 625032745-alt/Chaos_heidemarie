@@ -46,6 +46,10 @@ public class ChainBurstCard : ModCardTemplate
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
         CardPlay? cardPlay)
     {
+        if (dealer != Owner.Creature || !props.IsPoweredAttack())
+        {
+            return 0m;
+        }
         if (cardSource != this) return 0;
         var power = Owner.Creature.GetPower<InherentMemoryPower>();
         return power != null  ? power.Amount * 4 : 0;

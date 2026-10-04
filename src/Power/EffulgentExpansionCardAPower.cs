@@ -26,6 +26,10 @@ public class EffulgentExpansionCardAPower : ModPowerTemplate
         CardModel? cardSource,
         CardPlay? cardPlay)
     {
+        if (dealer != Owner || !props.IsPoweredAttack())
+        {
+            return 0m;
+        }
         if (cardSource is not EffulgentBladeCard)
         {
             return 0m;

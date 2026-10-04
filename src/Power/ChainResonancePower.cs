@@ -26,6 +26,10 @@ public class ChainResonancePower : ModPowerTemplate
         CardModel? cardSource,
         CardPlay? cardPlay)
     {
+        if (dealer != Owner || !props.IsPoweredAttack())
+        {
+            return 0m;
+        }
         if (cardSource.Type != CardType.Attack) return 0;
         if (cardSource.Owner.Creature != Owner) return 0;
         if (!_pendingAddDamage) return 0;
