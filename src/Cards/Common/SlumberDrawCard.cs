@@ -1,13 +1,13 @@
-﻿using ChaosHeidemarie.Content;
+﻿using ChaosHeidemarie.Cards.Base;
+using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using ChaosHeidemarie.Utils;
-using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Localization;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -31,10 +31,8 @@ public class SlumberDrawCard : ModCardTemplate
     {
         var baseValue = DynamicVars["SlumberDraw"].IntValue;
         await CardPileCmd.Draw(choiceContext, baseValue, Owner);
-        var pile = PileType.Hand.GetPile(Owner);
-        var selectFrom = (from c in pile.Cards orderby c.Rarity, c.Id select c).ToList();
-        var selected = await CardSelectCmd.FromSimpleGrid(choiceContext, selectFrom, Owner,
-            new CardSelectorPrefs(SelectFromHand, 1));
+        var selected = await CardSelectionHelper.SelectFromPile(
+            choiceContext, Owner, PileType.Hand, SelectFromHand, 1);
         foreach (var cardModel in selected)
         {
             await CardCmd.Discard(choiceContext, cardModel);

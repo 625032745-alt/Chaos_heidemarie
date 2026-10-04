@@ -44,7 +44,10 @@ public class ThreadLightCardA : ModCardTemplate
         {
             return 1m;
         }
-        var combatState = Owner.PlayerCombatState;
+        var combatState = Owner?.PlayerCombatState;
+        if (combatState == null)
+            return 1m;
+
         var count = combatState.Hand.Cards.Count(c => c.Keywords.Contains(LinkKeywords.Link));
         return count >= 3 ? 3m : 1m;
     }

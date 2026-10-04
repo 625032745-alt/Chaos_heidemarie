@@ -1,14 +1,14 @@
-﻿using ChaosHeidemarie.Content;
+﻿using ChaosHeidemarie.Cards.Base;
+using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using ChaosHeidemarie.Utils;
-using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Localization;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -41,12 +41,9 @@ public class ChainlightRevivalCard : ModCardTemplate
 
     private async Task SelectFromExhaustPile(PlayerChoiceContext ctx, Player player)
     {
-        var pile = PileType.Exhaust.GetPile(player);
-        var selectFrom = (from c in pile.Cards orderby c.Rarity, c.Id select c).ToList();
         var selectCount = DynamicVars["ChainlightRevival"].IntValue;
-        var selected =
-            await CardSelectCmd.FromSimpleGrid(ctx, selectFrom, player,
-                new CardSelectorPrefs(SelectFromExhaust, selectCount));
+        var selected = await CardSelectionHelper.SelectFromPile(
+            ctx, player, PileType.Exhaust, SelectFromExhaust, selectCount);
         foreach (var card in selected)
         {
             await CardPileCmd.Add(card, PileType.Hand);

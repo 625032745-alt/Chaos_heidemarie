@@ -1,12 +1,14 @@
 ﻿using ChaosHeidemarie.Cards.Base;
-using ChaosHeidemarie.Cards.Token;
 using ChaosHeidemarie.Cards.Upgrade.SwordRain;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
@@ -17,11 +19,13 @@ namespace ChaosHeidemarie.Cards.Uncommon;
 [RegisterCharacterStarterCard(typeof(Characters.Heidemarie))]
 public class SwordRainCard : TransformAtTurnStartCardBase
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move), new("SwordRain", 1)];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
+    public override CardAssetProfile AssetProfile =>
+        new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
+
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
     public SwordRainCard() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
@@ -30,6 +34,7 @@ public class SwordRainCard : TransformAtTurnStartCardBase
     protected override void OnUpgrade()
     {
         CardCmd.ApplyKeyword(this, RestKeyword.REST);
+        DynamicVars["SwordRain"].UpgradeValueBy(1);
     }
 
     public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -37,7 +42,6 @@ public class SwordRainCard : TransformAtTurnStartCardBase
         var card = cardPlay.Card;
         if (card != this)
             return;
-        var player = card.Owner;
         var combatState = card.CombatState;
         if (null == combatState)
             return;
@@ -46,22 +50,15 @@ public class SwordRainCard : TransformAtTurnStartCardBase
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-        var count = card.IsUpgraded ? 2 : 1;
-        for (var i = 0; i < count; i++)
-        {
-            var newCard = combatState.CreateCard<EffulgentBladeCard>(player);
-            await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Hand, player);
-        }
+        var baseValue = DynamicVars["SwordRain"].IntValue;
+        await CardGenerationHelper.GenerateEffulgentBlades(this, baseValue);
     }
-
-    protected override Type[] GetCandidateCardTypes()
-    {
-        return
-        [
-            typeof(SwordRainCardA),
-            typeof(SwordRainCardB),
-            typeof(SwordRainCardC),
-            typeof(SwordRainCardD)
-        ];
-    }
+    
+    protected override IReadOnlyList<Func<ICombatState, Player, CardModel>> CandidateCardFactories =>
+    [
+        static (combatState, player) => combatState.CreateCard<SwordRainCardA>(player),
+        static (combatState, player) => combatState.CreateCard<SwordRainCardB>(player),
+        static (combatState, player) => combatState.CreateCard<SwordRainCardC>(player),
+        static (combatState, player) => combatState.CreateCard<SwordRainCardD>(player)
+    ];
 }

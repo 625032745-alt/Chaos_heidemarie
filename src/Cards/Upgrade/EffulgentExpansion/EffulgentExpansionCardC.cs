@@ -1,4 +1,4 @@
-﻿using ChaosHeidemarie.Cards.Token;
+﻿using ChaosHeidemarie.Cards.Base;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
@@ -14,7 +14,7 @@ public class EffulgentExpansionCardC : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/EffulgentExpansionCard.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link,RestKeyword.REST];
-    
+
     public EffulgentExpansionCardC() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
@@ -22,14 +22,9 @@ public class EffulgentExpansionCardC : ModCardTemplate
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var card = cardPlay.Card;
-        var player = card.Owner;
         var combatState = card.CombatState;
         if (combatState == null)
             return;
-        for (var i = 0; i < 6; i++)
-        {
-            var newCard = combatState.CreateCard<EffulgentBladeCard>(player);
-            await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Discard, player);
-        }
+        await CardGenerationHelper.GenerateEffulgentBlades(this, 6, PileType.Discard);
     }
 }

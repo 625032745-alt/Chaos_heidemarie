@@ -1,12 +1,14 @@
 ﻿using ChaosHeidemarie.Cards.Base;
-using ChaosHeidemarie.Cards.Token;
 using ChaosHeidemarie.Cards.Upgrade.EffulgentExpansion;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -35,30 +37,22 @@ public class EffulgentExpansionCard : TransformAtTurnStartCardBase
         var card = cardPlay.Card;
         if (card != this)
             return;
-        var player = card.Owner;
         var combatState = card.CombatState;
         if (combatState == null)
             return;
-        for (var i = 0; i < 2; i++)
-        {
-            var newCard = combatState.CreateCard<EffulgentBladeCard>(player);
-            await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Hand, player);
-        }
+        await CardGenerationHelper.GenerateEffulgentBlades(this, 2);
     }
 
     protected override void OnUpgrade()
     {
         CardCmd.ApplyKeyword(this, LinkKeywords.Link);
     }
-
-    protected override Type[] GetCandidateCardTypes()
-    {
-        return
-        [
-            typeof(EffulgentExpansionCardA),
-            typeof(EffulgentExpansionCardB),
-            typeof(EffulgentExpansionCardC),
-            typeof(EffulgentExpansionCardD)
-        ];
-    }
+    
+    protected override IReadOnlyList<Func<ICombatState, Player, CardModel>> CandidateCardFactories => 
+    [
+        static (combatState, player) => combatState.CreateCard<EffulgentExpansionCardA>(player),
+        static (combatState, player) => combatState.CreateCard<EffulgentExpansionCardB>(player),
+        static (combatState, player) => combatState.CreateCard<EffulgentExpansionCardC>(player),
+        static (combatState, player) => combatState.CreateCard<EffulgentExpansionCardD>(player)
+    ];
 }

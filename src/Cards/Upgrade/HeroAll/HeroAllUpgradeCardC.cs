@@ -1,12 +1,11 @@
-﻿using ChaosHeidemarie.Content;
+﻿using ChaosHeidemarie.Cards.Base;
+using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
-using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
-using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -35,13 +34,11 @@ public class HeroAllUpgradeCardC : ModCardTemplate
     /// </summary>
     /// <param name="ctx">玩家选择上下文</param>
     /// <param name="player">玩家</param>
-    /// <param name="count">选择数量</param>
     /// <returns></returns>
     public async Task SelectFromDrawPileToHand(PlayerChoiceContext ctx, Player player)
     {
-        var pile = PileType.Draw.GetPile(player);
-        var selectFrom = (from c in pile.Cards orderby c.Rarity, c.Id select c).ToList();
-        IEnumerable<CardModel> selected = await CardSelectCmd.FromSimpleGrid(ctx, selectFrom, player, new CardSelectorPrefs(SelectFromDrawToHand, 1));
+        var selected = await CardSelectionHelper.SelectFromPile(
+            ctx, player, PileType.Draw, SelectFromDrawToHand, 1);
         foreach (var card in selected)
         {
             card.AddKeyword(LinkKeywords.Link);
@@ -54,13 +51,11 @@ public class HeroAllUpgradeCardC : ModCardTemplate
     /// </summary>
     /// <param name="ctx">玩家选择上下文</param>
     /// <param name="player">玩家</param>
-    /// <param name="count">选择数量</param>
     /// <returns></returns>
     public async Task SelectFromDiscardPileToHand(PlayerChoiceContext ctx, Player player)
     {
-        var pile = PileType.Discard.GetPile(player);
-        var selectFrom = (from c in pile.Cards orderby c.Rarity, c.Id select c).ToList();
-        IEnumerable<CardModel> selected = await CardSelectCmd.FromSimpleGrid(ctx, selectFrom, player, new CardSelectorPrefs(SelectFromDiscardToHand, 1));
+        var selected = await CardSelectionHelper.SelectFromPile(
+            ctx, player, PileType.Discard, SelectFromDiscardToHand, 1);
         foreach (var card in selected)
         {
             card.AddKeyword(LinkKeywords.Link);

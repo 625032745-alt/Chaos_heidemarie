@@ -1,6 +1,4 @@
-﻿using ChaosHeidemarie.Cards;
-using ChaosHeidemarie.Cards.Quest;
-using ChaosHeidemarie.Cards.Rare;
+﻿using ChaosHeidemarie.Cards.Quest;
 using ChaosHeidemarie.Cards.Token;
 using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
@@ -16,7 +14,7 @@ namespace ChaosHeidemarie.Power;
 public class EffulgentCompressionPower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerStackType StackType => PowerStackType.Counter;
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/EffulgentCompressionPower_Small.png",
         BigIconPath: "res://ArtWorks/images/power/EffulgentCompressionPower_Big.png"
@@ -36,7 +34,6 @@ public class EffulgentCompressionPower : ModPowerTemplate
             var targetCard = combatState.CreateCard<LiberationAuroraCard>(player);
             card.RemoveKeyword(RecycleKeywords.Recycle);
             await CardCmd.Transform(card, targetCard);
-            await PowerCmd.Remove(this);
         }
     }
 }

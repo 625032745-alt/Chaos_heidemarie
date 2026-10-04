@@ -1,14 +1,14 @@
-﻿using ChaosHeidemarie.Content;
+﻿using ChaosHeidemarie.Cards.Base;
+using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using ChaosHeidemarie.Utils;
-using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Localization;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -42,16 +42,15 @@ public class ReforgeCard : ModCardTemplate
 
     private async Task SelectFromHandPileToLink(PlayerChoiceContext ctx, Player player)
     {
-        var pile = PileType.Hand.GetPile(player);
-        var selectFrom = (from c in pile.Cards orderby c.Rarity, c.Id select c).ToList();
         var baseValue = DynamicVars["ChooseLink"].IntValue;
-        var selected =
-            await CardSelectCmd.FromSimpleGrid(ctx, selectFrom, player, new CardSelectorPrefs(SelectFromHand, baseValue));
+        var selected = await CardSelectionHelper.SelectFromPile(
+            ctx, player, PileType.Hand, SelectFromHand, baseValue);
         foreach (var card in selected)
         {
             card.AddKeyword(LinkKeywords.Link);
         }
-        await CommonUtils.AddOrModifyPower<InherentMemoryPower>(ctx, Owner.Creature, selected.Count(), this);
+        if (selected.Count > 0)
+            await CommonUtils.AddOrModifyPower<InherentMemoryPower>(ctx, Owner.Creature, selected.Count, this);
     }
 
     protected override void OnUpgrade()

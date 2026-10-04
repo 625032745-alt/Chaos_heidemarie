@@ -1,4 +1,5 @@
-﻿using ChaosHeidemarie.Cards.Token;
+﻿using ChaosHeidemarie.Cards.Base;
+using ChaosHeidemarie.Cards.Token;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
@@ -28,7 +29,6 @@ public class SwordRainCardA : ModCardTemplate
         var card = cardPlay.Card;
         if (card != this)
             return;
-        var player = card.Owner;
         var combatState = card.CombatState;
         if (null == combatState)
             return;
@@ -42,8 +42,6 @@ public class SwordRainCardA : ModCardTemplate
             .WithHitCount(count)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-        
-        var newCard = combatState.CreateCard<EffulgentBladeCard>(player);
-        await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Hand, player);
+        await CardGenerationHelper.GenerateEffulgentBlades(this, 1);
     }
 }

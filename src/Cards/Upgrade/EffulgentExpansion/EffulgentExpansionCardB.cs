@@ -1,4 +1,4 @@
-﻿using ChaosHeidemarie.Cards.Token;
+﻿using ChaosHeidemarie.Cards.Base;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Combat;
@@ -17,18 +17,17 @@ public class EffulgentExpansionCardB : ModCardTemplate
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/EffulgentExpansionCard.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
     private int _handCardCount;
-    
+
     public EffulgentExpansionCardB() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
-    
+
     public override Task BeforeCardPlayed(CardPlay cardPlay)
     {
         var card = cardPlay.Card;
         if (card != this)
             return Task.CompletedTask;
-        var player = card.Owner;
-        var playerCombatState = player.PlayerCombatState;
+        var playerCombatState = card.Owner.PlayerCombatState;
         if (null != playerCombatState)
         {
             _handCardCount = playerCombatState.Hand.Cards.Count(c => c.Keywords.Contains(LinkKeywords.Link));
@@ -42,17 +41,12 @@ public class EffulgentExpansionCardB : ModCardTemplate
         var card = cardPlay.Card;
         if (card != this)
             return;
-        var player = card.Owner;
         var combatState = card.CombatState;
         if (combatState == null)
             return;
-        for (var i = 0; i < _handCardCount; i++)
-        {
-            var newCard = combatState.CreateCard<EffulgentBladeCard>(player);
-            await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Hand, player);
-        }
+        await CardGenerationHelper.GenerateEffulgentBlades(this, _handCardCount);
     }
-    
+
     public override Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side,
         IEnumerable<Creature> participants)
     {

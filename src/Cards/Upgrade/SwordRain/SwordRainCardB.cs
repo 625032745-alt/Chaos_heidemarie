@@ -2,7 +2,6 @@
 using ChaosHeidemarie.Content;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
@@ -20,13 +19,19 @@ public class SwordRainCardB : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        CardPile pile = PileType.Exhaust.GetPile(Owner);
-        var cards = pile.Cards.Where(c => c is EffulgentBladeCard).ToList();
-        for (int i = 0; i < cards.Count; i++)
+        var combatState = CombatState;
+        if (combatState == null)
+            return;
+
+        var cards = PileType.Exhaust.GetPile(Owner).Cards
+            .OfType<EffulgentBladeCard>().Take(5).ToList();
+        foreach (var card in cards)
         {
-            var card = cards[i];
-            if (i >= 5) break;
-            Creature target = Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
+            var enemies = combatState.HittableEnemies.ToList();
+            if (enemies.Count == 0)
+                break;
+
+            var target = Owner.RunState.Rng.CombatTargets.NextItem(enemies);
             await CardCmd.AutoPlay(choiceContext, card, target);
         }
     }

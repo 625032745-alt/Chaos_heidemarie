@@ -1,5 +1,4 @@
-﻿using ChaosHeidemarie.Cards.Rare;
-using ChaosHeidemarie.Cards.Token;
+﻿using ChaosHeidemarie.Cards.Token;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
@@ -43,8 +42,8 @@ public class SwordRainCardD : ModCardTemplate
             .Execute(choiceContext);
     }
     
-    public override decimal ModifyDamageAdditive(Creature target, decimal amount, ValueProp props, Creature dealer, CardModel cardSource,
-        CardPlay cardPlay)
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
+        CardPlay? cardPlay)
     {
         if (dealer != Owner.Creature || !props.IsPoweredAttack())
         {
