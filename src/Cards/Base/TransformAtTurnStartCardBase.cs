@@ -43,8 +43,7 @@ public abstract class TransformAtTurnStartCardBase : TemporaryLinkCardBase
         var combatState = CombatState;
         if (!PendingUpgrade || player != Owner || combatState == null)
             return;
-        PendingUpgrade = false;
-        var rng = Owner.RunState.Rng.CombatCardSelection;
+        var rng = player.RunState.Rng.CombatCardSelection;
         var candidateCards = CandidateCardFactories
             .OrderBy(_ => rng.NextFloat())
             .Take(4)
@@ -56,10 +55,11 @@ public abstract class TransformAtTurnStartCardBase : TemporaryLinkCardBase
             Cancelable = true,
             RequireManualConfirmation = true
         };
-        var selected = await CardSelectCmd.FromSimpleGrid(choiceContext, candidateCards, Owner, prefs);
+        var selected = await CardSelectCmd.FromSimpleGrid(choiceContext, candidateCards, player, prefs);
         var picked = selected.FirstOrDefault();
         if (picked != null)
         {
+            PendingUpgrade = false;
             await CardCmd.Transform(this, picked);
         }
     }
