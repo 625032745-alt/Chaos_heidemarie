@@ -1,5 +1,6 @@
-﻿using System.Threading.Tasks;
-using ChaosHeidemarie.Keywords;
+﻿using ChaosHeidemarie.Keywords;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -35,6 +36,17 @@ public class RestSingleton : HookedSingletonModel
         
         if (currentPile != PileType.Hand)
             return;
+        
+        if (!DiscardedThisTurn(card))
+            return;
         await CardPileCmd.Add(card, PileType.Discard);
+    }
+    
+    private bool DiscardedThisTurn(CardModel card)
+    {
+        var state = card.CombatState ?? card.Owner.Creature.CombatState;
+        return CombatManager.Instance.History.Entries
+            .OfType<CardDiscardedEntry>()
+            .Any(e => e.Card == card && e.HappenedThisTurn(state));
     }
 }
