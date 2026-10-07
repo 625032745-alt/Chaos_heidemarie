@@ -19,15 +19,6 @@ public class RecycleSingleton : HookedSingletonModel
     {
         if (!card.Keywords.Contains(RecycleKeywords.Recycle))
             return;
-        var player = card.Owner;
-        var pile = player.Piles.FirstOrDefault(p => p.Cards.Contains(card));
-        if (pile != null && (pile.Type == PileType.Discard || pile.Type == PileType.Exhaust))
-        {
-            var pileCards = pile.Cards.ToList();
-            foreach (var pileCard in pileCards)
-            {
-                await CardPileCmd.Add(pileCard, PileType.Hand);
-            }
-        }
+        await CardPileCmd.Add(card, PileType.Hand);
     }
 }
