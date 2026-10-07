@@ -59,14 +59,12 @@ public class InherentMemoryPower : ModPowerTemplate
         }
     }
 
-    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
-        CardModel? cardSource,
-        CardPlay? cardPlay)
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props,
+        Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
     {
-        if (dealer != Owner || !props.IsPoweredAttack())
-        {
-            return 0m;
-        }
+        if (!props.IsPoweredAttack()) return 0m;
+        if (dealer != Owner) return 0m;
+        if (cardSource == null) return 0m;
         return Owner.HasPower<InherentMemoryPower>() ? Amount * 2m : 0m;
     }
 }
