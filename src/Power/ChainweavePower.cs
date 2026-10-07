@@ -24,10 +24,9 @@ public class ChainweavePower : ModPowerTemplate
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
         CardPlay? cardPlay)
     {
-        if (dealer != Owner || !props.IsPoweredAttack())
-        {
-            return 0m;
-        }
+        if (!props.IsPoweredAttack()) return 0m;
+        if (dealer != Owner) return 0m;
+        if (cardSource == null) return 0m;
         var powerAmount = Owner.GetPowerAmount<InherentMemoryPower>();
         return powerAmount * Amount;
     }

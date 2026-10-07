@@ -25,14 +25,12 @@ public class ThreadLightCardBPower : ModPowerTemplate
         CardModel? cardSource,
         CardPlay? cardPlay)
     {
-        if (dealer != Owner || !props.IsPoweredAttack())
-        {
-            return 0m;
-        }
+        if (!props.IsPoweredAttack()) return 0m;
+        if (dealer != Owner) return 0m;
         if (cardSource == null) return 0m;
         if (!cardSource.Keywords.Contains(LinkKeywords.Link))
             return 0m;
-        if(cardPlay == null) return 0m;
+        if (cardPlay == null) return 0m;
         var player = cardPlay.Player;
         var combatState = player.PlayerCombatState;
         if (combatState == null) return 0m;

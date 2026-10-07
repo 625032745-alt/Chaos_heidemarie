@@ -26,16 +26,10 @@ public class EffulgentExpansionCardAPower : ModPowerTemplate
         CardModel? cardSource,
         CardPlay? cardPlay)
     {
-        if (dealer != Owner || !props.IsPoweredAttack())
-        {
-            return 0m;
-        }
-        if (cardSource is not EffulgentBladeCard)
-        {
-            return 0m;
-        }
-
-        return 2m;
+        if (!props.IsPoweredAttack()) return 0m;
+        if (dealer != Owner) return 0m;
+        if (cardSource == null) return 0m;
+        return cardSource is not EffulgentBladeCard ? 0m : 2m;
     }
 
     public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)

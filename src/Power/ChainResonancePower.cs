@@ -26,12 +26,10 @@ public class ChainResonancePower : ModPowerTemplate
         CardModel? cardSource,
         CardPlay? cardPlay)
     {
-        if (dealer != Owner || !props.IsPoweredAttack())
-        {
-            return 0m;
-        }
+        if (!props.IsPoweredAttack()) return 0m;
+        if (dealer != Owner) return 0m;
+        if (cardSource == null) return 0m;
         if (cardSource.Type != CardType.Attack) return 0;
-        if (cardSource.Owner.Creature != Owner) return 0;
         if (!_pendingAddDamage) return 0;
         var power = Owner.GetPower<InherentMemoryPower>();
         if (power != null && power.Amount >= Amount)
