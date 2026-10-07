@@ -8,7 +8,7 @@ namespace ChaosHeidemarie.Singleton;
 [RegisterSingleton]
 public class UniqueSingleton : HookedSingletonModel
 {
-    public UniqueSingleton() : base(HookType.Combat)
+    public UniqueSingleton() : base(HookType.Run)
     {
     }
 
@@ -17,7 +17,6 @@ public class UniqueSingleton : HookedSingletonModel
         if (!card.Keywords.Contains(UniqueKeyword.Unique))
             return true;
 
-        var owner = card.Owner;
-        return owner.Piles.SelectMany(p => p.Cards).All(c => c.Id.Entry != card.Id.Entry);
+        return card.Owner.Deck.Cards.All(c => c == card || c.Id.Entry != card.Id.Entry);
     }
 }
