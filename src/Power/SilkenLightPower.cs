@@ -26,9 +26,9 @@ public class SilkenLightPower : ModPowerTemplate
         decimal amount, Creature? applier, out decimal modifiedAmount)
     {
         modifiedAmount = amount;
-        if (_usedThisTurn || canonicalPower is not SilkenLightPower) return false;
+        if (_usedThisTurn || canonicalPower is not InherentMemoryPower) return false;
         if (target != Owner || amount <= 0m) return false;
-        modifiedAmount = amount + DynamicVars["SilkenLight"].BaseValue;
+        modifiedAmount = amount + Amount;
         return true;
     }
 
