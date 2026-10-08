@@ -1,5 +1,4 @@
-﻿using ChaosHeidemarie.Utils;
-using MegaCrit.Sts2.Core.Combat;
+﻿using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -21,25 +20,30 @@ public class SilkenLightPower : ModPowerTemplate
         BigIconPath: "res://ArtWorks/images/power/SilkenLightPower_Big.png"
     );
 
-    private bool _pendingPower = true;
+    private bool _usedThisTurn;
 
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
-        decimal amount, Creature? applier, CardModel? cardSource)
+    public override bool TryModifyPowerAmountReceived(PowerModel canonicalPower, Creature target,
+        decimal amount, Creature? applier, out decimal modifiedAmount)
     {
-        if (power is not InherentMemoryPower)
-            return;
-        if (!_pendingPower) return;
-        if (amount > 0)
-        {
-            _pendingPower = false;
-            await CommonUtils.AddOrModifyPower<InherentMemoryPower>(choiceContext, Owner, Amount, cardSource);
-        }
+        modifiedAmount = amount;
+        if (_usedThisTurn || canonicalPower is not SilkenLightPower) return false;
+        if (target != Owner || amount <= 0m) return false;
+        modifiedAmount = amount + DynamicVars["SilkenLight"].BaseValue;
+        return true;
     }
 
-    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+    public override Task AfterModifyingPowerAmountReceived(PowerModel power)
     {
-        if (side == CombatSide.Player)
+        _usedThisTurn = true;
+        return Task.CompletedTask;
+    }
+
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side,
+        IEnumerable<Creature> participants)
+    {
+        if (participants.Contains(Owner) && side == CombatSide.Player)
         {
+            _usedThisTurn = false;
             await PowerCmd.Remove(this);
         }
     }
