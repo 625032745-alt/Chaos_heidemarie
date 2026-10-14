@@ -117,5 +117,7 @@
   "CHAOS_HEIDEMARIE_CARD_SUNDERED_GLOW_CARD.title": "Sundered Glow",
   "CHAOS_HEIDEMARIE_CARD_SUNDERED_GLOW_CARD.description": "Deal {Damage:diff()} damage. Choose 1 card in your hand to discard. If it is a [gold]Link[/gold] card, deal 6 additional damage.",
   "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.title": "Chasing Light",
-  "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.description": "Deal {Damage:diff()} damage. If you have [gold]Scarlet Sword[/gold], draw 1 card."
+  "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.description": "Deal {Damage:diff()} damage. If you have [gold]Scarlet Sword[/gold], draw 1 card.",
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.title": "Crimson Blade",
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.description": "Deal {Damage:diff()} damage 2 times. If you have consumed [gold]Scarlet Sword[/gold] this turn, deal 3 additional damage."
 }
