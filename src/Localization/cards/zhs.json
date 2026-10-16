@@ -118,5 +118,7 @@
   "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.title": "逐光",
   "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.description": "造成 {Damage:diff()} 点伤害。若拥有[gold]赤光剑[/gold]，抽1张牌",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.title": "绯刃",
-  "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.description": "造成 {Damage:diff()} 点伤害 2 次。若本回合消耗过[gold]赤光剑[/gold]，额外造成 3 点伤害"
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.description": "造成 {Damage:diff()} 点伤害 2 次。若本回合消耗过[gold]赤光剑[/gold]，额外造成 3 点伤害",
+  "CHAOS_HEIDEMARIE_CARD_FADING_RADIANCE_CARD.title": "落辉",
+  "CHAOS_HEIDEMARIE_CARD_FADING_RADIANCE_CARD.description": "造成 {Damage:diff()} 点伤害。选择 1 张手牌丢弃"
 }
