@@ -43,10 +43,8 @@ public class CrimsonBladeCard : ModCardTemplate
     {
         if (cardSource != this) return 0;
         if (dealer != Owner.Creature || !props.IsPoweredAttack()) return 0m;
-        bool lostThisTurn = CombatManager.Instance.History.Entries
-            .OfType<PowerReceivedEntry>()
-            .Any(e => e.HappenedThisTurn(CombatState)
-                      && e.Power is ScarletSwordPower && e.Amount < 0);
+        bool lostThisTurn = CombatManager.Instance.History.Entries.OfType<PowerReceivedEntry>()
+            .Any(e => e.HappenedThisTurn(CombatState) && e.Actor == Owner.Creature && e.Power is ScarletSwordPower && e.Amount < 0);
         return lostThisTurn ? 3 : 0;
     }
 

@@ -14,7 +14,7 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace ChaosHeidemarie.Cards.Common;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
-public class ScarletFlashCard : ModCardTemplate
+public class ScarletWindCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
@@ -22,7 +22,7 @@ public class ScarletFlashCard : ModCardTemplate
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(7, ValueProp.Move)];
     private bool WasDiscardAppliedThisTurn => CombatManager.Instance.History.Entries.OfType<CardDiscardedEntry>().Any(e => e.HappenedThisTurn(CombatState) && e.Card.Owner.Creature == Owner.Creature);
     
-    public ScarletFlashCard() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+    public ScarletWindCard() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
     }
 

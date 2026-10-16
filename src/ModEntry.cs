@@ -1,15 +1,17 @@
-using System;
-using System.Collections.Generic;
 using System.Reflection;
 using System.Text.Json;
+using ChaosHeidemarie.Keywords;
+using Godot;
 using HarmonyLib;
-using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Modding;
+using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib;
 using STS2RitsuLib.Interop;
 using STS2RitsuLib.Patching.Core;
+using STS2RitsuLib.Scaffolding.Cards.HandOutline;
 using GodotFileAccess = Godot.FileAccess;
+using Logger = MegaCrit.Sts2.Core.Logging.Logger;
 
 namespace ChaosHeidemarie;
 
@@ -34,6 +36,10 @@ public static class ModEntry
         _harmony.PatchAll(assembly);
 
         RitsuLibFramework.ApplyRequiredPatcher(patcher, DisableMod);
+        
+        ModCardHandOutlineRegistry.Register(typeof(CardModel), ModCardHandOutlineRules.Switch(
+            card => card.Keywords.Contains(LinkKeywords.Link) ? Colors.Blue : null,
+            visibleWhenUnplayable: true));
     }
 
     public static void RegisterLocalizationFallback(LocManager locManager)

@@ -37,6 +37,7 @@ public class InherentMemoryPower : ModPowerTemplate
     {
         if (card.Keywords.Contains(LinkKeywords.Link))
         {
+            Flash();
             await PowerCmd.ModifyAmount(choiceContext, this, 1m, null, card);
         }
     }
