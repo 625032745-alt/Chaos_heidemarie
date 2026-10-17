@@ -3,6 +3,7 @@ using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using ChaosHeidemarie.Utils;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -21,7 +22,6 @@ public class SlumberDrawCard : ModCardTemplate
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("SlumberDraw", 2)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
-    private static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_DISCARD");
 
     public SlumberDrawCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
@@ -32,7 +32,7 @@ public class SlumberDrawCard : ModCardTemplate
         var baseValue = DynamicVars["SlumberDraw"].IntValue;
         await CardPileCmd.Draw(choiceContext, baseValue, Owner);
         var selected = await CardSelectionHelper.SelectFromPile(
-            choiceContext, Owner, PileType.Hand, SelectFromHand, 1);
+            choiceContext, Owner, PileType.Hand, CardSelectorPrefs.DiscardSelectionPrompt, 1);
         foreach (var cardModel in selected)
         {
             await CardCmd.Discard(choiceContext, cardModel);

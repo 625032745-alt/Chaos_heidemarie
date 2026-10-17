@@ -1,5 +1,6 @@
 ﻿using ChaosHeidemarie.Cards.Base;
 using ChaosHeidemarie.Content;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -21,9 +22,6 @@ public class FadingRadianceCard : ModCardTemplate
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(4, ValueProp.Move)];
 
-    private static readonly LocString SelectFromHand =
-        new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_DISCARD");
-
     public FadingRadianceCard() : base(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
     }
@@ -41,7 +39,7 @@ public class FadingRadianceCard : ModCardTemplate
     private async Task SelectFromHandPile(PlayerChoiceContext ctx, Player player)
     {
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, PileType.Hand, SelectFromHand, 1);
+            ctx, player, PileType.Hand, CardSelectorPrefs.DiscardSelectionPrompt, 1);
         var picked = selected.FirstOrDefault();
         if (picked != null)
         {

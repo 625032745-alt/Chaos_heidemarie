@@ -1,6 +1,7 @@
 ﻿using ChaosHeidemarie.Cards.Base;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -22,9 +23,6 @@ public class SunderedGlowCard : ModCardTemplate
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move)];
 
-    private static readonly LocString SelectFromHand =
-        new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_DISCARD");
-
     public SunderedGlowCard() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
     }
@@ -42,7 +40,7 @@ public class SunderedGlowCard : ModCardTemplate
     private async Task SelectFromHandPile(PlayerChoiceContext ctx, Player player, CardPlay cardPlay)
     {
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, PileType.Hand, SelectFromHand, 1);
+            ctx, player, PileType.Hand, CardSelectorPrefs.DiscardSelectionPrompt, 1);
         var picked = selected.FirstOrDefault();
         if (picked != null)
         {

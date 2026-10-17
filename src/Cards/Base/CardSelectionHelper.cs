@@ -11,9 +11,11 @@ namespace ChaosHeidemarie.Cards.Base;
 internal static class CardSelectionHelper
 {
     public static async Task<IReadOnlyList<CardModel>> SelectFromPile(PlayerChoiceContext context,
-        Player player, PileType pileType, LocString prompt, int count)
+        Player player, PileType pileType, LocString prompt, int count,
+        Func<CardModel, bool>? predicate = null, int mixCount = 0)
     {
         var candidates = pileType.GetPile(player).Cards
+            .Where(predicate ?? (_ => true))
             .OrderBy(card => card.Rarity)
             .ThenBy(card => card.Id)
             .ToList();
@@ -21,8 +23,12 @@ internal static class CardSelectionHelper
         if (selectCount <= 0)
             return Array.Empty<CardModel>();
 
-        var selected = await CardSelectCmd.FromSimpleGrid(context, candidates, player,
-            new CardSelectorPrefs(prompt, selectCount));
+        var prefs = new CardSelectorPrefs(prompt, mixCount, count)
+        {
+            Cancelable = true,
+            RequireManualConfirmation = true
+        };
+        var selected = await CardSelectCmd.FromSimpleGrid(context, candidates, player, prefs);
         return selected.ToList();
     }
 }
