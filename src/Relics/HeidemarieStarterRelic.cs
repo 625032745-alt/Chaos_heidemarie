@@ -30,4 +30,6 @@ public sealed class HeidemarieStarterRelic : ModRelicTemplate
                 5m, Owner.Creature, null);
         }
     }
+
+    public void TriggerOnce() => Flash();
 }

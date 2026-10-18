@@ -39,10 +39,9 @@ public class ScarletSwordPower : ModPowerTemplate
         {
             var player = card.Owner;
             var combatState = player.Creature.CombatState;
-            if (null == combatState)
-                return;
+            if (null == combatState) return;
             var enemy = combatState.RunState.Rng.CombatTargets.NextItem(combatState.HittableEnemies);
-            if(enemy == null) return;
+            if (enemy == null) return;
             Flash();
             await CreatureCmd.Damage(choiceContext, enemy, 6, ValueProp.Unpowered, Owner, card, null);
             await PowerCmd.Decrement(this);
