@@ -25,7 +25,7 @@ public class BladeBurialCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var selected = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Draw,
+        var selected = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
             CardSelectorPrefs.DiscardSelectionPrompt, 3, 1);
         foreach (var card in selected)
         {
