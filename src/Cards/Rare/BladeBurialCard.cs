@@ -30,7 +30,7 @@ public class BladeBurialCard : ModCardTemplate
         foreach (var card in selected)
         {
             await CardCmd.Discard(choiceContext, card);
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue * selected.Count)
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
                 .FromCard(this, cardPlay)
                 .TargetingRandomOpponents(CombatState)
                 .WithHitFx("vfx/vfx_attack_slash")

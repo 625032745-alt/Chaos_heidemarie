@@ -1,7 +1,7 @@
 {
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.title": "极光剑",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.description": "造成 {Damage:diff()} 点伤害。被丢弃时，随机对一名敌人造成 {Damage:diff()} 点伤害。此卡牌在洗牌时不会移动至抽牌堆",
-  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.title": "极光之光",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.title": "凝聚极光",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.description": "极光之光为3时，将[gold]凝聚极光[/gold]变为[gold]解放极光[/gold]",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD.title": "展开极光",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD.description": "生成 2 张极光剑。本回合内，极光剑额外造成 2 点伤害。",
@@ -132,5 +132,7 @@
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_REVERSAL_CARD.title": "绯返",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_REVERSAL_CARD.description": "造成 {Damage:diff()} 点伤害。直接使用时获得 1 层[gold]赤光剑[/gold],被丢弃时，若拥有[gold]赤光剑[gold]，额外发动 1 次[gold]赤光剑[/gold]",
   "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.title": "葬剑",
-  "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.description": "选择至多 3 张手牌丢弃。每丢弃 1 张牌，对随机敌人造成 {Damage:diff()} 点伤害"
+  "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.description": "选择至多 3 张手牌丢弃。每丢弃 1 张牌，对随机敌人造成 {Damage:diff()} 点伤害",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.title": "赤昼终斩",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.description": "造成 {Damage:diff()} 点伤害。消耗所有[gold]赤光剑[/gold]，每消耗 1 层，额外造成 6 点伤害"
 }

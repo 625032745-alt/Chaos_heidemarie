@@ -1,7 +1,7 @@
 {
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.title": "Effulgent Blade",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_BLADE_CARD.description": "Deal {Damage:diff()} damage. When discarded, deal {Damage:diff()} damage to a random enemy.This card stays out of the draw pile during shuffles.",
-  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.title": "Aurora Light",
+  "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.title": "Effulgent Compression",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_COMPRESSION_CARD.description": "When [gold]Aurora Light[/gold] reaches 3, transform [gold]Effulgent Compression[/gold] into [gold]Liberation Aurora[/gold].",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD.title": "Expand Aurora",
   "CHAOS_HEIDEMARIE_CARD_EFFULGENT_EXPANSION_CARD.description": "Create 2 Effulgent Blades. This turn, they deal 2 additional damage.",
@@ -131,5 +131,7 @@
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_REVERSAL_CARD.title": "Crimson Reversal",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_REVERSAL_CARD.description": "Deal {Damage:diff()} damage. When played directly, gain 1 stack of [gold]Scarlet Sword[/gold]. When discarded, if you have [gold]Scarlet Sword[/gold], trigger [gold]Scarlet Sword[/gold] 1 additional time.",
   "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.title": "Blade Burial",
-  "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.description": "Choose up to 3 cards in your hand to discard. For each card discarded, deal {Damage:diff()} damage to a random enemy."
+  "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.description": "Choose up to 3 cards in your hand to discard. For each card discarded, deal {Damage:diff()} damage to a random enemy.",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.title": "Scarlet Daybreak: Final Slash",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.description": "Deal {Damage:diff()} damage. Consume all stacks of [gold]Scarlet Sword[/gold]. Deal 6 additional damage for each stack consumed."
 }
