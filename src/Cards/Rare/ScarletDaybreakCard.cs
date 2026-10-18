@@ -1,6 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Power;
-using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -32,14 +31,16 @@ public class ScarletDaybreakCard : ModCardTemplate
         var power = Owner.Creature.GetPower<ScarletSwordPower>();
         if (power != null)
         {
-            for (int i = 0; i < power.Amount; i++)
+            int hits = power.Amount;
+            for (int i = 0; i < hits; i++)
             {
-                await PowerCmd.Decrement(power);
                 await DamageCmd.Attack(6)
                     .FromCard(this, cardPlay)
                     .Targeting(cardPlay.Target)
                     .WithHitFx("vfx/vfx_attack_slash")
                     .Execute(choiceContext);
+                if (power.Amount <= 0) break;
+                await PowerCmd.Decrement(power);
             }
         }
     }
