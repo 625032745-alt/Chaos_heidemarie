@@ -43,13 +43,9 @@ public class EffulgentBladeCard : ModCardTemplate
     {
         if (card != this)
             return;
-        var player = card.Owner;
-        var combatState = player.Creature.CombatState;
-        if (null == combatState)
-            return;
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(card, null)
-            .TargetingRandomOpponents(combatState)
+            .TargetingRandomOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
     }
