@@ -39,7 +39,7 @@ public class FadingRadianceCard : ModCardTemplate
     private async Task SelectFromHandPile(PlayerChoiceContext ctx, Player player)
     {
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, PileType.Hand, CardSelectorPrefs.DiscardSelectionPrompt, 1);
+            ctx, player, PileType.Hand, CardSelectorPrefs.DiscardSelectionPrompt, 1,1);
         var picked = selected.FirstOrDefault();
         if (picked != null)
         {

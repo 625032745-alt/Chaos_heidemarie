@@ -11,8 +11,8 @@ namespace ChaosHeidemarie.Cards.Base;
 internal static class CardSelectionHelper
 {
     public static async Task<IReadOnlyList<CardModel>> SelectFromPile(PlayerChoiceContext context,
-        Player player, PileType pileType, LocString prompt, int count,
-        Func<CardModel, bool>? predicate = null, int mixCount = 0)
+        Player player, PileType pileType, LocString prompt, int count, int mixCount,
+        Func<CardModel, bool>? predicate = null)
     {
         var candidates = pileType.GetPile(player).Cards
             .Where(predicate ?? (_ => true))

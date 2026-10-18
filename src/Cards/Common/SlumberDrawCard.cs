@@ -32,7 +32,7 @@ public class SlumberDrawCard : ModCardTemplate
         var baseValue = DynamicVars["SlumberDraw"].IntValue;
         await CardPileCmd.Draw(choiceContext, baseValue, Owner);
         var selected = await CardSelectionHelper.SelectFromPile(
-            choiceContext, Owner, PileType.Hand, CardSelectorPrefs.DiscardSelectionPrompt, 1);
+            choiceContext, Owner, PileType.Hand, CardSelectorPrefs.DiscardSelectionPrompt, 1,1);
         foreach (var cardModel in selected)
         {
             await CardCmd.Discard(choiceContext, cardModel);

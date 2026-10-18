@@ -40,7 +40,7 @@ public class FirstLightCard : ModCardTemplate
     {
         var baseValue = DynamicVars["FirstLight"].IntValue;
         var selected =
-            await CardSelectionHelper.SelectFromPile(ctx, player, PileType.Draw, SelectFromDrawToHand, baseValue);
+            await CardSelectionHelper.SelectFromPile(ctx, player, PileType.Draw, SelectFromDrawToHand, baseValue,1);
         foreach (var card in selected)
         {
             await CardPileCmd.Add(card, PileType.Hand);

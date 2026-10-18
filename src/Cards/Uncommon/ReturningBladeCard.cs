@@ -43,7 +43,7 @@ public class ReturningBladeCard : ModCardTemplate
     private async Task SelectFromHandPile(PlayerChoiceContext ctx, Player player)
     {
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, PileType.Discard, SelectFromHand, 1, card => card.Keywords.Contains(LinkKeywords.Link));
+            ctx, player, PileType.Discard, SelectFromHand, 1, 1,card => card.Keywords.Contains(LinkKeywords.Link));
         var card = selected.FirstOrDefault();
         await CardPileCmd.Add(card, PileType.Hand);
     }
