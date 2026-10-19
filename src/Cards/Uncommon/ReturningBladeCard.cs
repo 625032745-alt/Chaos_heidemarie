@@ -44,6 +44,7 @@ public class ReturningBladeCard : ModCardTemplate
     {
         var selected = await CardSelectionHelper.SelectFromPile(
             ctx, player, PileType.Discard, SelectFromHand, 1, 1,card => card.Keywords.Contains(LinkKeywords.Link));
+        if (selected.Count <= 0) return;
         var card = selected.FirstOrDefault();
         await CardPileCmd.Add(card, PileType.Hand);
     }
