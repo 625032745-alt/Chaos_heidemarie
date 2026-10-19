@@ -45,10 +45,10 @@ public class CrimsonReversalCard : ModCardTemplate
         var relic = Owner.GetRelic<HeidemarieStarterRelic>();
         if (power != null && relic != null)
         {
-            relic.TriggerOnce();
             if (CombatState == null) return;
             var enemy = CombatState.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
             if (enemy == null) return;
+            relic.TriggerOnce();
             await CreatureCmd.Damage(choiceContext, enemy, 6, ValueProp.Unpowered, this, null);
             await PowerCmd.Decrement(power);
         }

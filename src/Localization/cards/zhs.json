@@ -116,7 +116,7 @@
   "CHAOS_HEIDEMARIE_CARD_SUNDERED_GLOW_CARD.title": "断霞",
   "CHAOS_HEIDEMARIE_CARD_SUNDERED_GLOW_CARD.description": "造成 {Damage:diff()} 点伤害，选择1张手牌丢弃。若丢弃的是[gold]连接[/gold]牌，再造成6点伤害。",
   "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.title": "逐光",
-  "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.description": "造成 {Damage:diff()} 点伤害，若拥有[gold]赤光剑[/gold]，抽1张牌",
+  "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.description": "造成 {Damage:diff()} 点伤害，若拥有至少2层[gold]赤光剑[/gold]，抽1张牌",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.title": "绯刃",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.description": "造成 {Damage:diff()} 点伤害 2 次，若本回合消耗过[gold]赤光剑[/gold]，额外造成 3 点伤害",
   "CHAOS_HEIDEMARIE_CARD_FADING_RADIANCE_CARD.title": "落辉",
@@ -134,5 +134,15 @@
   "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.title": "葬剑",
   "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.description": "选择至多 3 张手牌丢弃。每丢弃 1 张牌，对随机敌人造成 {Damage:diff()} 点伤害",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.title": "赤昼终斩",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.description": "造成 {Damage:diff()} 点伤害。消耗所有[gold]赤光剑[/gold]，每消耗 1 层，额外造成 6 点伤害"
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.description": "造成 {Damage:diff()} 点伤害。消耗所有[gold]赤光剑[/gold]，每消耗 1 层，额外造成 6 点伤害",
+  "CHAOS_HEIDEMARIE_CARD_FORSAKEN_DAWN_CARD.title": "拂晓弃行",
+  "CHAOS_HEIDEMARIE_CARD_FORSAKEN_DAWN_CARD.description": "选择 {ForsakenDawn:diff()} 张手牌丢弃。抽 {ForsakenDawn:diff()} 张牌",
+  "CHAOS_HEIDEMARIE_CARD_GATHERING_LIGHT_CARD.title": "拾光",
+  "CHAOS_HEIDEMARIE_CARD_GATHERING_LIGHT_CARD.description": "获得 {Block:diff()} 点格挡，从弃牌堆选择 1 张牌加入手牌",
+  "CHAOS_HEIDEMARIE_CARD_HIDDEN_EDGE_CARD.title": "藏锋",
+  "CHAOS_HEIDEMARIE_CARD_HIDDEN_EDGE_CARD.description": "获得 {Block:diff()} 点格挡，选择 1 张手牌丢弃；若丢弃的是攻击牌，再获得 {Block:diff()} 点格挡。",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.title": "赤光凝形",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.description": "获得 {ScarletManifestation:diff()} 层[gold]赤光剑[/gold]",
+  "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.title": "流转",
+  "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.description": "选择 1 张手牌丢弃，若丢弃的是连接牌，本次丢弃不触发[gold]赤光剑[/gold]攻击，改为获得 {FlowingCycle:diff()} 层赤光剑。抽 1 张牌。"
 }

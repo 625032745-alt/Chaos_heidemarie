@@ -1,4 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -16,6 +17,7 @@ public class ChasingLightCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move)];
     
     public ChasingLightCard() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
@@ -30,7 +32,7 @@ public class ChasingLightCard : ModCardTemplate
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         var power = Owner.Creature.GetPower<ScarletSwordPower>();
-        if (power != null)
+        if (power != null && power.Amount >= 2)
         {
             await CardPileCmd.Draw(choiceContext, Owner);
         }

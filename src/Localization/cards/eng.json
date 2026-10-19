@@ -117,7 +117,7 @@
   "CHAOS_HEIDEMARIE_CARD_SUNDERED_GLOW_CARD.title": "Sundered Glow",
   "CHAOS_HEIDEMARIE_CARD_SUNDERED_GLOW_CARD.description": "Deal {Damage:diff()} damage. Choose 1 card in your hand to discard. If it is a [gold]Link[/gold] card, deal 6 additional damage.",
   "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.title": "Chasing Light",
-  "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.description": "Deal {Damage:diff()} damage. If you have [gold]Scarlet Sword[/gold], draw 1 card.",
+  "CHAOS_HEIDEMARIE_CARD_CHASING_LIGHT_CARD.description": "Deal {Damage:diff()} damage. If you have at least 2 stacks of [gold]Scarlet Sword[/gold], draw 1 card.",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.title": "Crimson Blade",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.description": "Deal {Damage:diff()} damage 2 times. If you have consumed [gold]Scarlet Sword[/gold] this turn, deal 3 additional damage.",
   "CHAOS_HEIDEMARIE_CARD_FADING_RADIANCE_CARD.title": "Fading Radiance",
@@ -133,5 +133,15 @@
   "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.title": "Blade Burial",
   "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.description": "Choose up to 3 cards in your hand to discard. For each card discarded, deal {Damage:diff()} damage to a random enemy.",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.title": "Scarlet Daybreak: Final Slash",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.description": "Deal {Damage:diff()} damage. Consume all stacks of [gold]Scarlet Sword[/gold]. Deal 6 additional damage for each stack consumed."
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.description": "Deal {Damage:diff()} damage. Consume all stacks of [gold]Scarlet Sword[/gold]. Deal 6 additional damage for each stack consumed.",
+  "CHAOS_HEIDEMARIE_CARD_FORSAKEN_DAWN_CARD.title": "Forsaken Dawn",
+  "CHAOS_HEIDEMARIE_CARD_FORSAKEN_DAWN_CARD.description": "Choose {ForsakenDawn:diff()} cards from your hand to discard. Draw {ForsakenDawn:diff()} cards.",
+  "CHAOS_HEIDEMARIE_CARD_GATHERING_LIGHT_CARD.title": "Gathering Light",
+  "CHAOS_HEIDEMARIE_CARD_GATHERING_LIGHT_CARD.description": "Gain {Block:diff()} Block. Choose 1 card from your discard pile and add it to your hand.",
+  "CHAOS_HEIDEMARIE_CARD_HIDDEN_EDGE_CARD.title": "Hidden Edge",
+  "CHAOS_HEIDEMARIE_CARD_HIDDEN_EDGE_CARD.description": "Gain {Block:diff()} Block. Choose 1 card from your hand to discard. If the discarded card is an Attack, gain {Block:diff()} additional Block.",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.title": "Scarlet Manifestation",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.description": "Gain {ScarletManifestation:diff()} stacks of [gold]Scarlet Sword[/gold].",
+  "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.title": "Flowing Cycle",
+  "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.description": "Choose 1 card from your hand to discard. If it is a [gold]Link[/gold] card, this discard does not trigger a [gold]Scarlet Sword[/gold] attack. Instead, gain {FlowingCycle:diff()} stacks of [gold]Scarlet Sword[/gold]. Draw 1 card."
 }

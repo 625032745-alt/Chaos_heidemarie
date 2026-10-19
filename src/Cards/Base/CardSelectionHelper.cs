@@ -11,7 +11,7 @@ namespace ChaosHeidemarie.Cards.Base;
 internal static class CardSelectionHelper
 {
     public static async Task<IReadOnlyList<CardModel>> SelectFromPile(PlayerChoiceContext context,
-        Player player, PileType pileType, LocString prompt, int count, int mixCount,
+        Player player, PileType pileType, LocString prompt, int count, int minCount,
         Func<CardModel, bool>? predicate = null)
     {
         var candidates = pileType.GetPile(player).Cards
@@ -23,7 +23,7 @@ internal static class CardSelectionHelper
         if (selectCount <= 0)
             return Array.Empty<CardModel>();
 
-        var prefs = new CardSelectorPrefs(prompt, mixCount, count)
+        var prefs = new CardSelectorPrefs(prompt, minCount, count)
         {
             Cancelable = true,
             RequireManualConfirmation = true
