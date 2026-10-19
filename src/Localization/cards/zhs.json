@@ -126,7 +126,7 @@
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_PURSUIT_CARD.title": "残光追斩",
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_PURSUIT_CARD.description": "造成 {Damage:diff()} 点伤害，本回合每丢弃过 1 张牌，额外造成 {AfterglowPursuit:diff()} 点伤害",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_RAIN_CARD.title": "赤雨",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_RAIN_CARD.description": "随机造成 {Damage:diff()} 点伤害 4 次，每拥有 2 层[gold]赤光剑[/gold]，额外攻击 1 次",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_RAIN_CARD.description": "随机造成 {Damage:diff()} 点伤害 {Repeat:diff()} 次，每拥有 2 层[gold]赤光剑[/gold]，额外攻击 1 次",
   "CHAOS_HEIDEMARIE_CARD_RETURNING_BLADE_CARD.title": "返刃",
   "CHAOS_HEIDEMARIE_CARD_RETURNING_BLADE_CARD.description": "造成 {Damage:diff()} 点伤害，从弃牌堆选择 1 张[gold]连接[/gold]牌加入手牌",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_REVERSAL_CARD.title": "绯返",
