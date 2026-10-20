@@ -145,5 +145,11 @@
   "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.title": "Flowing Cycle",
   "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.description": "Choose 1 card from your hand to discard. If it is a [gold]Link[/gold] card, this discard does not trigger a [gold]Scarlet Sword[/gold] attack. Instead, gain {FlowingCycle:diff()} stacks of [gold]Scarlet Sword[/gold]. Draw 1 card.",
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_TETHER_CARD.title": "Afterglow Tether",
-  "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_TETHER_CARD.description": "Draw 2 cards, then choose 1 other card from your hand to discard. If the discarded card was drawn by this effect, gain {AfterglowTether:diff()} stacks of [gold]Scarlet Sword[/gold]."
+  "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_TETHER_CARD.description": "Draw 2 cards, then choose 1 other card from your hand to discard. If the discarded card was drawn by this effect, gain {AfterglowTether:diff()} stacks of [gold]Scarlet Sword[/gold].",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_CHAIN_RESERVE_CARD.title": "Scarlet Chain Reserve",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_CHAIN_RESERVE_CARD.description": "If you have at least 3 stacks of [gold]Scarlet Sword[/gold], choose up to 2 cards from your hand to discard. For each non-[gold]Link[/gold] card discarded, gain {ScarletChainReserve:diff()} stacks of [gold]Scarlet Sword[/gold].",
+  "CHAOS_HEIDEMARIE_CARD_REVERSAL_CARD.title": "Reversal",
+  "CHAOS_HEIDEMARIE_CARD_REVERSAL_CARD.description": "Choose 1 card from your hand to discard. If it is a [gold]Link[/gold] card, return it from your discard pile to your hand.",
+  "CHAOS_HEIDEMARIE_CARD_EMBER_RETRIEVAL_CARD.title": "Ember Retrieval",
+  "CHAOS_HEIDEMARIE_CARD_EMBER_RETRIEVAL_CARD.description": "Gain {Block:diff()} Block. You may consume 1 stack of [gold]Scarlet Sword[/gold]. If you do, gain {Block:diff()} additional Block."
 }
