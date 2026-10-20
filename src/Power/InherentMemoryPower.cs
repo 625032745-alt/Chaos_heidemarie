@@ -14,6 +14,7 @@ namespace ChaosHeidemarie.Power;
 [RegisterPower]
 public class InherentMemoryPower : ModPowerTemplate
 {
+    private const decimal BaseMaxAmount = 10m;
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
 
@@ -21,6 +22,28 @@ public class InherentMemoryPower : ModPowerTemplate
         IconPath: "res://ArtWorks/images/power/InherentMemoryPower_Small.png",
         BigIconPath: "res://ArtWorks/images/power/InherentMemoryPower_Big.png"
     );
+    
+    private decimal GetMaxAmount()
+    {
+        var polarDayPower = Owner.GetPower<PolarDayPower>();
+        return BaseMaxAmount + (polarDayPower?.Amount ?? 0m);
+    }
+    
+    private decimal GetRemainingAmount()
+    {
+        return Math.Max(0m, GetMaxAmount() - Amount);
+    }
+    
+    private async Task AddAmountWithLimit(PlayerChoiceContext choiceContext, decimal gainAmount, CardModel? cardSource = null)
+    {
+        if (gainAmount <= 0m)
+            return;
+
+        var actualGain = Math.Min(gainAmount, GetRemainingAmount());
+        if (actualGain <= 0m)
+            return;
+        await PowerCmd.ModifyAmount(choiceContext, this, actualGain, Owner, cardSource);
+    }
 
     public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -35,35 +58,27 @@ public class InherentMemoryPower : ModPowerTemplate
 
     private async Task ApplyPower(PlayerChoiceContext choiceContext, CardModel card)
     {
-        if (card.Keywords.Contains(LinkKeywords.Link))
-        {
-            Flash();
-            await PowerCmd.ModifyAmount(choiceContext, this, 1m, null, card);
-        }
+        if (!card.Keywords.Contains(LinkKeywords.Link))
+            return;
+        if (GetRemainingAmount() <= 0m)
+            return;
+        Flash();
+        await AddAmountWithLimit(choiceContext, 1m, card);
     }
+    
 
-    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount,
-        Creature? applier,
-        CardModel? cardSource)
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
+        CardModel? cardSource, CardPlay? cardPlay)
     {
-        if (power is not InherentMemoryPower || amount <= 0)
-            return Task.CompletedTask;
-        var powerAmount = 10;
-        var polarDayPower = Owner.GetPower<PolarDayPower>();
-        if (polarDayPower != null)
-        {
-            powerAmount += polarDayPower.Amount;
-        }
-        SetAmount(powerAmount);
-        return Task.CompletedTask;
-    }
+        if (!props.IsPoweredAttack())
+            return 0m;
 
-    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props,
-        Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
-    {
-        if (!props.IsPoweredAttack()) return 0m;
-        if (dealer != Owner) return 0m;
-        if (cardSource == null) return 0m;
-        return Owner.HasPower<InherentMemoryPower>() ? Amount * 2m : 0m;
+        if (dealer != Owner)
+            return 0m;
+
+        if (cardSource == null)
+            return 0m;
+
+        return Amount * 2m;
     }
 }
