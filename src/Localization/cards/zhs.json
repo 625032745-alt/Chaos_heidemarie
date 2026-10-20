@@ -154,5 +154,5 @@
   "CHAOS_HEIDEMARIE_CARD_EMBER_RETRIEVAL_CARD.title": "余烬回收",
   "CHAOS_HEIDEMARIE_CARD_EMBER_RETRIEVAL_CARD.description": "获得 {Block:diff()} 点格挡。你可以消耗 1 层[gold]赤光剑[/gold]若如此做，再获得 {Block:diff()} 点格挡",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.title": "赤光屏障",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.description": "获得 {Block:diff()} 点格挡。本回合每通过卡牌效果主动选择丢弃 1 张牌，额外获得 3 点格挡，最多额外获得 9 点"
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.description": "获得 {Block:diff()} 点格挡。本回合每丢弃 1 张牌，额外获得 3 点格挡，最多额外获得 9 点"
 }

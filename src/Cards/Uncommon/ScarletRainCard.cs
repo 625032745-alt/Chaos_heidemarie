@@ -17,13 +17,13 @@ public class ScarletRainCard : ModCardTemplate
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(4, ValueProp.Move),
-        ModCardVars.Computed("Repeat", 4m, ctx =>
+        ModCardVars.Computed("Repeat", static ctx =>
         {
-            if (ctx == null) return 4m;
-            var powerAmount = ctx.Owner.Creature.GetPowerAmount<ScarletSwordPower>();
-            if (powerAmount <= 0) return 4m;
-            return powerAmount / 2 + 4m;
-        })
+            var baseValue = ctx.BaseValue;
+            if (!ctx.HasSourceCreature) return baseValue;
+            var amount = ctx.SourceCreature!.GetPowerAmount<ScarletSwordPower>();
+            return amount <= 0 ? baseValue : amount / 2 + baseValue;
+        }, 4m)
     ];
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
@@ -39,7 +39,7 @@ public class ScarletRainCard : ModCardTemplate
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
-            .WithHitCount((int)DynamicVars.ComputeDynamicValue("Repeat", 4m, cardPlay.Target))
+            .WithHitCount((int)DynamicVars.EvaluateValueOrDefault("Repeat", 4m, cardPlay.Target))
             .TargetingRandomOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);

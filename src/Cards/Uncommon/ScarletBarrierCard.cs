@@ -25,16 +25,13 @@ public class ScarletBarrierCard : ModCardTemplate
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        ModCardVars.ComputedBlock("Block", 6m, static ctx =>
-        {
-            if (ctx == null)
-                return 6m;
-            var discardCount = CombatManager.Instance.History.Entries
-                .OfType<CardDiscardedEntry>()
-                .Count(e => e.HappenedThisTurn(ctx.CombatState) && e.Actor == ctx.Owner.Creature);
-
-            return 6m + Math.Min(3m * discardCount, 9m);
-        })
+        ModCardVars.ComputedBlock("Block",
+            static ctx => ctx.HasCombatState && ctx.HasSourceCreature
+                ? ctx.BaseValue + Math.Min(3m * CombatManager.Instance.History.Entries
+                    .OfType<CardDiscardedEntry>()
+                    .Count(e => e.HappenedThisTurn(ctx.CombatState) && e.Actor == ctx.SourceCreature), 9m)
+                : ctx.BaseValue,
+            baseValue: 6m)
     ];
 
     public ScarletBarrierCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
@@ -43,7 +40,7 @@ public class ScarletBarrierCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.ComputeDynamicValue("Block", 6m),
+        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.EvaluateValueOrDefault("Block", 6m),
             ValueProp.Move, cardPlay);
     }
 
