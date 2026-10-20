@@ -1,6 +1,6 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Power;
-using ChaosHeidemarie.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -22,7 +22,8 @@ public class AuroraCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CommonUtils.AddOrModifyPower<AuroraPower>(choiceContext, Owner.Creature, DynamicVars["Aurora"].BaseValue, this);
+        await PowerCmd.Apply<AuroraPower>(choiceContext, Owner.Creature, DynamicVars["Aurora"].BaseValue,
+            Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

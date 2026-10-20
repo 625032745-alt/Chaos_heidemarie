@@ -1,5 +1,4 @@
-﻿using ChaosHeidemarie.Utils;
-using MegaCrit.Sts2.Core.Combat;
+﻿using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -27,11 +26,12 @@ public class AuroraPower : ModPowerTemplate
     {
         if (side == CombatSide.Player)
         {
-            await CommonUtils.AddOrModifyPower<InherentMemoryPower>(choiceContext, Owner,Amount,null);
+            await PowerCmd.Apply<InherentMemoryPower>(choiceContext, Owner, Amount, Owner, null);
         }
     }
 
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
+        decimal amount, Creature? applier,
         CardModel? cardSource)
     {
         if (power is InherentMemoryPower && amount > 0)

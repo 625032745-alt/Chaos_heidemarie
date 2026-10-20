@@ -2,7 +2,6 @@
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
-using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -43,13 +42,13 @@ public class ChainlightRevivalCard : ModCardTemplate
     {
         var selectCount = DynamicVars["ChainlightRevival"].IntValue;
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, PileType.Exhaust, SelectFromExhaust, selectCount,1);
+            ctx, player, PileType.Exhaust, SelectFromExhaust, selectCount, 1);
         foreach (var card in selected)
         {
             await CardPileCmd.Add(card, PileType.Hand);
             if (card.Keywords.Contains(LinkKeywords.Link))
             {
-                await CommonUtils.AddOrModifyPower<InherentMemoryPower>(ctx, Owner.Creature, 2m, this);
+                await PowerCmd.Apply<InherentMemoryPower>(ctx, Owner.Creature, 2m, Owner.Creature, this);
             }
         }
     }

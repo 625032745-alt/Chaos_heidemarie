@@ -144,5 +144,7 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.title": "赤光凝形",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.description": "获得 {ScarletManifestation:diff()} 层[gold]赤光剑[/gold]",
   "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.title": "流转",
-  "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.description": "选择 1 张手牌丢弃，若丢弃的是连接牌，本次丢弃不触发[gold]赤光剑[/gold]攻击，改为获得 {FlowingCycle:diff()} 层赤光剑。抽 1 张牌。"
+  "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.description": "选择 1 张手牌丢弃，若丢弃的是连接牌，本次丢弃不触发[gold]赤光剑[/gold]攻击，改为获得 {FlowingCycle:diff()} 层赤光剑。抽 1 张牌。",
+  "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_TETHER_CARD.title": "余辉牵引",
+  "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_TETHER_CARD.description": "抽 2 张牌，然后选择 1 张其他手牌丢弃。若丢弃的是本次抽到的牌，获得 {AfterglowTether:diff()} 层[gold]赤光剑[/gold]"
 }

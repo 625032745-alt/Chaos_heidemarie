@@ -2,7 +2,6 @@
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using ChaosHeidemarie.Relics;
-using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -35,7 +34,7 @@ public class CrimsonReversalCard : ModCardTemplate
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-        await CommonUtils.AddOrModifyPower<ScarletSwordPower>(choiceContext, Owner.Creature, 1, this);
+        await PowerCmd.Apply<ScarletSwordPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 
     public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)

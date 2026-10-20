@@ -2,7 +2,6 @@
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
-using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -36,7 +35,7 @@ public class FlowingCycleCard : ModCardTemplate
             {
                 await CardPileCmd.Add(card, PileType.Discard);
                 var baseValue = DynamicVars["FlowingCycle"].BaseValue;
-                await CommonUtils.AddOrModifyPower<ScarletSwordPower>(choiceContext, Owner.Creature, baseValue, this);
+                await PowerCmd.Apply<ScarletSwordPower>(choiceContext, Owner.Creature, baseValue, Owner.Creature, this);
             }
             else
             {

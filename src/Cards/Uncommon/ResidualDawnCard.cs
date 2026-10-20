@@ -2,7 +2,7 @@
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
-using ChaosHeidemarie.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -39,12 +39,12 @@ public class ResidualDawnCard : ModCardTemplate
     {
         var selectCount = DynamicVars["ResidualDawn"].IntValue;
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, PileType.Hand, SelectFromHand, selectCount,1);
+            ctx, player, PileType.Hand, SelectFromHand, selectCount, 1);
         foreach (var card in selected)
         {
             if (card.Keywords.Contains(LinkKeywords.Link))
             {
-                await CommonUtils.AddOrModifyPower<InherentMemoryPower>(ctx, Owner.Creature, 1m, this);
+                await PowerCmd.Apply<InherentMemoryPower>(ctx, Owner.Creature, 1m, Owner.Creature, this);
                 continue;
             }
             card.AddKeyword(LinkKeywords.Link);

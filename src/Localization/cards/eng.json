@@ -143,5 +143,7 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.title": "Scarlet Manifestation",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.description": "Gain {ScarletManifestation:diff()} stacks of [gold]Scarlet Sword[/gold].",
   "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.title": "Flowing Cycle",
-  "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.description": "Choose 1 card from your hand to discard. If it is a [gold]Link[/gold] card, this discard does not trigger a [gold]Scarlet Sword[/gold] attack. Instead, gain {FlowingCycle:diff()} stacks of [gold]Scarlet Sword[/gold]. Draw 1 card."
+  "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.description": "Choose 1 card from your hand to discard. If it is a [gold]Link[/gold] card, this discard does not trigger a [gold]Scarlet Sword[/gold] attack. Instead, gain {FlowingCycle:diff()} stacks of [gold]Scarlet Sword[/gold]. Draw 1 card.",
+  "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_TETHER_CARD.title": "Afterglow Tether",
+  "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_TETHER_CARD.description": "Draw 2 cards, then choose 1 other card from your hand to discard. If the discarded card was drawn by this effect, gain {AfterglowTether:diff()} stacks of [gold]Scarlet Sword[/gold]."
 }

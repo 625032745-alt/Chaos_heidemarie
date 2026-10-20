@@ -1,5 +1,4 @@
-﻿using ChaosHeidemarie.Utils;
-using MegaCrit.Sts2.Core.Combat;
+﻿using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -15,6 +14,7 @@ public class DawnGuidancePower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
+
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/DawnGuidancePower_Small.png",
         BigIconPath: "res://ArtWorks/images/power/DawnGuidancePower_Big.png"
@@ -25,11 +25,12 @@ public class DawnGuidancePower : ModPowerTemplate
         var card = cardPlay.Card;
         if (card.Type == CardType.Attack)
         {
-            await CommonUtils.AddOrModifyPower<InherentMemoryPower>(choiceContext, Owner,Amount,null);
+            await PowerCmd.Apply<InherentMemoryPower>(choiceContext, Owner, Amount, Owner, null);
         }
     }
-    
-    public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+
+    public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side,
+        IEnumerable<Creature> participants)
     {
         if (side == CombatSide.Player)
         {

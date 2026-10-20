@@ -1,6 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Power;
-using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -26,7 +25,7 @@ public class ScarletManifestationCard : ModCardTemplate
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var baseValue = DynamicVars["ScarletManifestation"].BaseValue;
-        await CommonUtils.AddOrModifyPower<ScarletSwordPower>(choiceContext, Owner.Creature, baseValue, this);
+        await PowerCmd.Apply<ScarletSwordPower>(choiceContext, Owner.Creature, baseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

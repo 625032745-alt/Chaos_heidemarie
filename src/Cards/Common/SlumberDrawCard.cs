@@ -2,13 +2,11 @@
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
-using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Localization;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -32,12 +30,12 @@ public class SlumberDrawCard : ModCardTemplate
         var baseValue = DynamicVars["SlumberDraw"].IntValue;
         await CardPileCmd.Draw(choiceContext, baseValue, Owner);
         var selected = await CardSelectionHelper.SelectFromPile(
-            choiceContext, Owner, PileType.Hand, CardSelectorPrefs.DiscardSelectionPrompt, 1,1);
+            choiceContext, Owner, PileType.Hand, CardSelectorPrefs.DiscardSelectionPrompt, 1, 1);
         foreach (var cardModel in selected)
         {
             await CardCmd.Discard(choiceContext, cardModel);
             if (!cardModel.Keywords.Contains(LinkKeywords.Link)) continue;
-            await CommonUtils.AddOrModifyPower<InherentMemoryPower>(choiceContext, Owner.Creature, 1m, this);
+            await PowerCmd.Apply<InherentMemoryPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
         }
     }
 

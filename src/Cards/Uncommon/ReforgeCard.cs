@@ -2,7 +2,6 @@
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
-using ChaosHeidemarie.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -17,8 +16,12 @@ namespace ChaosHeidemarie.Cards.Uncommon;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class ReforgeCard : ModCardTemplate
 {
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    private static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_LINK");
+    public override CardAssetProfile AssetProfile =>
+        new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
+
+    private static readonly LocString SelectFromHand =
+        new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_LINK");
+
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("ChooseLink", 2)];
 
     public ReforgeCard() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
@@ -44,13 +47,13 @@ public class ReforgeCard : ModCardTemplate
     {
         var baseValue = DynamicVars["ChooseLink"].IntValue;
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, PileType.Hand, SelectFromHand, baseValue,1);
+            ctx, player, PileType.Hand, SelectFromHand, baseValue, 1);
         foreach (var card in selected)
         {
             card.AddKeyword(LinkKeywords.Link);
         }
         if (selected.Count > 0)
-            await CommonUtils.AddOrModifyPower<InherentMemoryPower>(ctx, Owner.Creature, selected.Count, this);
+            await PowerCmd.Apply<InherentMemoryPower>(ctx, Owner.Creature, selected.Count, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
