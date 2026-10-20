@@ -42,22 +42,20 @@ public class InherentMemoryPower : ModPowerTemplate
         }
     }
 
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount,
+    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount,
         Creature? applier,
         CardModel? cardSource)
     {
         if (power is not InherentMemoryPower || amount <= 0)
-            return;
+            return Task.CompletedTask;
         var powerAmount = 10;
         var polarDayPower = Owner.GetPower<PolarDayPower>();
         if (polarDayPower != null)
         {
             powerAmount += polarDayPower.Amount;
         }
-        if (power.Amount > powerAmount)
-        {
-            SetAmount(powerAmount);
-        }
+        SetAmount(powerAmount);
+        return Task.CompletedTask;
     }
 
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props,

@@ -151,5 +151,7 @@
   "CHAOS_HEIDEMARIE_CARD_REVERSAL_CARD.title": "Reversal",
   "CHAOS_HEIDEMARIE_CARD_REVERSAL_CARD.description": "Choose 1 card from your hand to discard. If it is a [gold]Link[/gold] card, return it from your discard pile to your hand.",
   "CHAOS_HEIDEMARIE_CARD_EMBER_RETRIEVAL_CARD.title": "Ember Retrieval",
-  "CHAOS_HEIDEMARIE_CARD_EMBER_RETRIEVAL_CARD.description": "Gain {Block:diff()} Block. You may consume 1 stack of [gold]Scarlet Sword[/gold]. If you do, gain {Block:diff()} additional Block."
+  "CHAOS_HEIDEMARIE_CARD_EMBER_RETRIEVAL_CARD.description": "Gain {Block:diff()} Block. You may consume 1 stack of [gold]Scarlet Sword[/gold]. If you do, gain {Block:diff()} additional Block.",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.title": "Scarlet Barrier",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.description": "Gain {Block:diff()} Block. This turn, whenever you manually choose a card to discard through a card effect, gain 3 additional Block, up to a maximum of 9 additional Block."
 }
