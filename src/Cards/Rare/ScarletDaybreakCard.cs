@@ -15,7 +15,7 @@ public class ScarletDaybreakCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-
+    protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(12, ValueProp.Unpowered)];
     public ScarletDaybreakCard() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
     {
