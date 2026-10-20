@@ -153,5 +153,7 @@
   "CHAOS_HEIDEMARIE_CARD_EMBER_RETRIEVAL_CARD.title": "Ember Retrieval",
   "CHAOS_HEIDEMARIE_CARD_EMBER_RETRIEVAL_CARD.description": "Gain {Block:diff()} Block. You may consume 1 stack of [gold]Scarlet Sword[/gold]. If you do, gain {Block:diff()} additional Block.",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.title": "Scarlet Barrier",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.description": "Gain {Block:diff()} Block. This turn, whenever you discard a card, gain 3 additional Block, up to a maximum of 9 additional Block."
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.description": "Gain {Block:diff()} Block. This turn, whenever you discard a card, gain 3 additional Block, up to a maximum of 9 additional Block.",
+  "CHAOS_HEIDEMARIE_CARD_BLADES_READY_CARD.title": "Blades at the Ready",
+  "CHAOS_HEIDEMARIE_CARD_BLADES_READY_CARD.description": "Gain {Block:diff()} Block. If you have at least 4 stacks of [gold]Scarlet Sword[/gold] when you play this card, gain 7 additional Block."
 }

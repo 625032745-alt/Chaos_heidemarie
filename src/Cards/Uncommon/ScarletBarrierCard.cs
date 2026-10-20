@@ -20,7 +20,7 @@ public class ScarletBarrierCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public override bool GainsBlock => true;
-
+    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

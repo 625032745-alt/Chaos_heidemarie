@@ -16,7 +16,7 @@ public class EmberRetrievalCard : ModCardTemplate
     public override bool GainsBlock => true;
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-
+    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(6, ValueProp.Move)];
 
     public EmberRetrievalCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
