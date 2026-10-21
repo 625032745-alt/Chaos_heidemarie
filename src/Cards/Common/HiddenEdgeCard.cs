@@ -36,6 +36,7 @@ public class HiddenEdgeCard : ModCardTemplate
         var card = selected.FirstOrDefault();
         if (card != null && card.Type == CardType.Attack)
         {
+            await CardCmd.Discard(choiceContext, card);
             await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         }
     }
