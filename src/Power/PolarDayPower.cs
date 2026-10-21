@@ -22,7 +22,7 @@ public class PolarDayPower : ModPowerTemplate
         ICombatState combatState)
     {
         var power = Owner.GetPower<InherentMemoryPower>();
-        if (power != null && power.Amount >= 10)
+        if (power != null && power.Amount >= 5)
         {
             await PlayerCmd.GainEnergy(1, Owner.Player);
         }

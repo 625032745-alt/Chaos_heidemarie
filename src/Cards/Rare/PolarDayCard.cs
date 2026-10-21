@@ -14,7 +14,7 @@ public class PolarDayCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("PolarDay", 5)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("PolarDay", 3)];
     
     public PolarDayCard() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
@@ -28,6 +28,6 @@ public class PolarDayCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        DynamicVars["PolarDay"].UpgradeValueBy(5);
+        DynamicVars["PolarDay"].UpgradeValueBy(2);
     }
 }
