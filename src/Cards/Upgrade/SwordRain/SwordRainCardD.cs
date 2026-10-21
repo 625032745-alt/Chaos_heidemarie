@@ -21,7 +21,7 @@ public class SwordRainCardD : ModCardTemplate
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/SwordRainCard.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Retain,ConcludeKeywords.Conclude];
     
-    public SwordRainCardD() : base(3, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
+    public SwordRainCardD() : base(3, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies)
     {
     }
 

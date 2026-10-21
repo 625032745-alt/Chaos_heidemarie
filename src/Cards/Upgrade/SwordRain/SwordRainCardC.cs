@@ -14,7 +14,7 @@ public class SwordRainCardC : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/SwordRainCard.png");
 
-    public SwordRainCardC() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public SwordRainCardC() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
