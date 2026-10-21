@@ -1,6 +1,8 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -21,6 +23,8 @@ public class ChainSlashCard : ModCardTemplate
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(7, ValueProp.Move)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
+    private bool WasDiscardAppliedThisTurn => CombatManager.Instance.History.Entries.OfType<CardDiscardedEntry>()
+        .Any(e => e.HappenedThisTurn(CombatState) && e.Actor == Owner.Creature);
     
     public ChainSlashCard() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
@@ -43,17 +47,8 @@ public class ChainSlashCard : ModCardTemplate
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
         CardPlay? cardPlay)
     {
-        if (dealer != Owner.Creature || !props.IsPoweredAttack())
-        {
-            return 0m;
-        }
+        if (dealer != Owner.Creature || !props.IsPoweredAttack()) return 0m;
         if (cardSource != this) return 0;
-        var power = Owner.Creature.GetPower<InherentMemoryPower>();
-        if (power != null)
-        {
-            return power.Amount;
-        }
-
-        return 0;
+        return WasDiscardAppliedThisTurn ? 3 : 0;
     }
 }

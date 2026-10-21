@@ -21,7 +21,7 @@ public class ScarletWindCard : ModCardTemplate
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(7, ValueProp.Move)];
 
     private bool WasDiscardAppliedThisTurn => CombatManager.Instance.History.Entries.OfType<CardDiscardedEntry>()
-        .Any(e => e.HappenedThisTurn(CombatState) && e.Card.Owner.Creature == Owner.Creature);
+        .Any(e => e.HappenedThisTurn(CombatState) && e.Actor == Owner.Creature);
 
     public ScarletWindCard() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
