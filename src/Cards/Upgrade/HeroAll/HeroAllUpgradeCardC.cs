@@ -23,7 +23,7 @@ public class HeroAllUpgradeCardC : ModCardTemplate
     private static readonly LocString SelectFromDiscardToHand =
         new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_DISCARD_TO_HAND");
 
-    public HeroAllUpgradeCardC() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public HeroAllUpgradeCardC() : base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
 

@@ -14,7 +14,7 @@ public class HeroAllUpgradeCardD : TemporaryLinkCardBase
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/HeroAllCard.png");
 
-    public HeroAllUpgradeCardD() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public HeroAllUpgradeCardD() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
 

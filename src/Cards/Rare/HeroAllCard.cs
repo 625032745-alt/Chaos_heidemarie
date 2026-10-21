@@ -11,7 +11,7 @@ using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Uncommon;
+namespace ChaosHeidemarie.Cards.Rare;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class HeroAllCard : TransformAtTurnStartCardBase
@@ -21,7 +21,7 @@ public class HeroAllCard : TransformAtTurnStartCardBase
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
 
-    public HeroAllCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public HeroAllCard() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
 
