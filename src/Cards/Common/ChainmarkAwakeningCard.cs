@@ -15,6 +15,7 @@ public class ChainmarkAwakeningCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("ChainmarkAwakening", 1)];
 
     public ChainmarkAwakeningCard() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)

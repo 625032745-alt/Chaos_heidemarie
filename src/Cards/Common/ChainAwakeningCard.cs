@@ -14,6 +14,7 @@ public class ChainAwakeningCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
         [new("ChainAwakening", 5), new("ChainAwakeningEnergy", 2)];
