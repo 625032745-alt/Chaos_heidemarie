@@ -32,6 +32,5 @@ public class RadiantErosionCard : ModCardTemplate
     protected override void OnUpgrade()
     {
         DynamicVars["RadiantErosion"].UpgradeValueBy(1);
-        CardCmd.RemoveKeyword(this,CardKeyword.Exhaust);
     }
 }

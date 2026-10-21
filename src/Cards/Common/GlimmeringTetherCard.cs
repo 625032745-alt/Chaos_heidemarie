@@ -25,8 +25,8 @@ public class GlimmeringTetherCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CardPileCmd.Draw(choiceContext, Owner);
         await SelectFromHandPile(choiceContext, Owner);
+        await CardPileCmd.Draw(choiceContext, Owner);
     }
 
     private async Task SelectFromHandPile(PlayerChoiceContext ctx, Player player)

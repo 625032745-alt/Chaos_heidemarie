@@ -32,7 +32,7 @@ public class RadiantShieldCard : ModCardTemplate
         })
     ];
 
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST,LinkKeywords.Link];
 
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");

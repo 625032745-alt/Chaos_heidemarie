@@ -13,23 +13,13 @@ namespace ChaosHeidemarie.Power;
 public class AuroraPower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Counter;
+    public override PowerStackType StackType => PowerStackType.Single;
     private int _lastGainTurn = -1;
 
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/AuroraPower_Small.png",
         BigIconPath: "res://ArtWorks/images/power/AuroraPower_Big.png"
     );
-
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side,
-        IReadOnlyList<Creature> participants,
-        ICombatState combatState)
-    {
-        if (side == CombatSide.Player)
-        {
-            await PowerCmd.Apply<InherentMemoryPower>(choiceContext, Owner, Amount, Owner, null);
-        }
-    }
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext,
         PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)

@@ -60,12 +60,6 @@ public class EffulgentBladeCard : ModCardTemplate
         if (cardSource != this)
             return 0M;
         decimal damage = 0m;
-        var hasPower = Owner.Creature.HasPower<EffulgentExpansionCardDPower>();
-        if (hasPower)
-        {
-            damage += 2m;
-        }
-
         var hasPower1 = Owner.Creature.HasPower<EffulgentExpansionPower>();
         if (hasPower1)
         {

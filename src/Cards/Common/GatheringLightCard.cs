@@ -16,8 +16,10 @@ public class GatheringLightCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
+
     private static readonly LocString SelectFromDiscardToHand =
         new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_DISCARD_TO_HAND");
+
     public override bool GainsBlock => true;
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(6, ValueProp.Move)];
@@ -29,7 +31,13 @@ public class GatheringLightCard : ModCardTemplate
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
-        await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Discard, SelectFromDiscardToHand, 1, 1);
+        var selected =
+            await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Discard, SelectFromDiscardToHand, 1,
+                1);
+        foreach (var card in selected)
+        {
+            await CardPileCmd.Add(card, PileType.Hand);
+        }
     }
 
     protected override void OnUpgrade()

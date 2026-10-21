@@ -20,7 +20,7 @@ public class AuroraCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<AuroraPower>(choiceContext, Owner.Creature, DynamicVars["Aurora"].BaseValue,
+        await PowerCmd.Apply<AuroraPower>(choiceContext, Owner.Creature, 1m,
             Owner.Creature, this);
     }
 

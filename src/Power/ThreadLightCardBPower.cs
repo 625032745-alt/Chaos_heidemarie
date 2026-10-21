@@ -30,9 +30,7 @@ public class ThreadLightCardBPower : ModPowerTemplate
         if (cardSource == null) return 0m;
         if (!cardSource.Keywords.Contains(LinkKeywords.Link))
             return 0m;
-        if (cardPlay == null) return 0m;
-        var player = cardPlay.Player;
-        var combatState = player.PlayerCombatState;
+        var combatState = Owner.Player.PlayerCombatState;
         if (combatState == null) return 0m;
         var discard = combatState.DiscardPile.Cards.Where(c => c is ThreadLightCardB).ToList();
         var hands = combatState.Hand.Cards.Where(c => c is ThreadLightCardB).ToList();

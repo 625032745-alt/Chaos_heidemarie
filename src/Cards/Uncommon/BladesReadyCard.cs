@@ -1,4 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -19,7 +20,7 @@ public class BladesReadyCard : ModCardTemplate
     public override bool GainsBlock => true;
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(6, ValueProp.Move)];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,RestKeyword.REST];
 
     public BladesReadyCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {

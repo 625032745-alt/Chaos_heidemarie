@@ -21,6 +21,7 @@ public class PolarDayPower : ModPowerTemplate
     public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants,
         ICombatState combatState)
     {
+        if (!participants.Contains(Owner)) return;
         var power = Owner.GetPower<InherentMemoryPower>();
         if (power != null && power.Amount >= 5)
         {

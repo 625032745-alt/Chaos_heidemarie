@@ -1,11 +1,12 @@
-﻿using ChaosHeidemarie.Cards;
-using ChaosHeidemarie.Cards.Token;
+﻿using ChaosHeidemarie.Cards.Token;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -35,5 +36,15 @@ public class EffulgentExpansionCardDPower : ModPowerTemplate
             }
             await PowerCmd.Remove(this);
         }
+    }
+
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
+        CardPlay? cardPlay)
+    {
+        if (dealer != Owner || !props.IsPoweredAttack())
+            return 0m;
+        if (cardSource == null)
+            return 0M;
+        return cardSource is not EffulgentBladeCard ? 0m : 2m;
     }
 }

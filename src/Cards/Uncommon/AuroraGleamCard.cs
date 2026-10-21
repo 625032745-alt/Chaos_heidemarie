@@ -28,7 +28,7 @@ public class AuroraGleamCard : ModCardTemplate
                 if (!ctx.HasSourceCreature || !ctx.HasCombatState) return baseValue;
                 var amount = CombatManager.Instance.History.Entries.OfType<CardDiscardedEntry>().Count(e =>
                     e.HappenedThisTurn(ctx.CombatState) && e.Actor == ctx.SourceCreature);
-                return Math.Min(amount, baseValue);
+                return Math.Max(amount, 4m);
             }, 1m)
     ];
 

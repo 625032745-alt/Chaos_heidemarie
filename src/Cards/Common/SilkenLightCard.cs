@@ -17,7 +17,7 @@ public class SilkenLightCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("SilkenLight", 1)];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST,LinkKeywords.Link];
 
     public SilkenLightCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
