@@ -16,7 +16,7 @@ public class ChainResonanceCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("ChainResonance", 7)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("ChainResonance", 5)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
     public ChainResonanceCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
