@@ -34,9 +34,7 @@ public class AuroraPower : ModPowerTemplate
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext,
         PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (power != this || amount <= 0m)
-            return;
-        if (power is not InherentMemoryPower) return;
+        if (power is not InherentMemoryPower || amount <= 0m) return;
 
         var combatState = Owner.Player?.PlayerCombatState;
         if (combatState == null || combatState.TurnNumber == _lastGainTurn)
