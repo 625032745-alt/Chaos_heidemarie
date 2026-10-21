@@ -37,7 +37,7 @@ public class SwordRainCardD : ModCardTemplate
         }
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
-            .TargetingAllOpponents(card.CombatState)
+            .TargetingAllOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
     }
