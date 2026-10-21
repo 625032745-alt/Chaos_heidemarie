@@ -58,6 +58,7 @@ public class InherentMemoryPower : ModPowerTemplate
 
     private async Task ApplyPower(PlayerChoiceContext choiceContext, CardModel card)
     {
+        if (card.Owner != Owner.Player) return;
         if (!card.Keywords.Contains(LinkKeywords.Link))
             return;
         if (GetRemainingAmount() <= 0m)
