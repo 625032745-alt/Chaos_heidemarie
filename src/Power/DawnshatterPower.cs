@@ -24,13 +24,10 @@ public class DawnshatterPower : ModPowerTemplate
     {
         if (power is not InherentMemoryPower)
             return;
-        if (power.Amount == 10)
+        if (power.Amount >= 3)
         {
-            await DamageCmd.Attack(Amount)
-                .FromCard(cardSource, null)
-                .TargetingAllOpponents(cardSource.CombatState)
-                .WithHitFx("vfx/vfx_attack_slash")
-                .Execute(choiceContext);
+            await CardPileCmd.Draw(choiceContext, Owner.Player);
+            await PowerCmd.Decrement(this);
         }
     }
 }

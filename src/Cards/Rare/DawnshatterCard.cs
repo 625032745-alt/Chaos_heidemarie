@@ -15,7 +15,7 @@ public class DawnshatterCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(15, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("Dawnshatter", 2)];
     
     public DawnshatterCard() : base(3, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
@@ -23,12 +23,13 @@ public class DawnshatterCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        var baseValue = DynamicVars["Dawnshatter"].BaseValue;
         await PowerCmd.Apply<DawnshatterPower>(choiceContext, Owner.Creature,
-            DynamicVars.Damage.BaseValue, Owner.Creature, null);
+            baseValue, Owner.Creature, null);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(7);
+        DynamicVars["Dawnshatter"].UpgradeValueBy(1);
     }
 }
