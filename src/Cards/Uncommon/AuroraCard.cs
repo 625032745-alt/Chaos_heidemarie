@@ -3,20 +3,18 @@ using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Rare;
+namespace ChaosHeidemarie.Cards.Uncommon;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class AuroraCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("Aurora", 1)];
 
-    public AuroraCard() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
+    public AuroraCard() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
@@ -28,6 +26,6 @@ public class AuroraCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Aurora"].UpgradeValueBy(1);
+        EnergyCost.UpgradeBy(-1);
     }
 }

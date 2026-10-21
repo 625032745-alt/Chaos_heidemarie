@@ -14,6 +14,7 @@ public class AuroraPower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
+    private int _lastGainTurn = -1;
 
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/AuroraPower_Small.png",
@@ -30,13 +31,19 @@ public class AuroraPower : ModPowerTemplate
         }
     }
 
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
-        decimal amount, Creature? applier,
-        CardModel? cardSource)
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext,
+        PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (power is InherentMemoryPower && amount > 0)
-        {
-            await CardPileCmd.Draw(choiceContext, Owner.Player);
-        }
+        if (power != this || amount <= 0m)
+            return;
+        if (power is not InherentMemoryPower) return;
+
+        var combatState = Owner.Player?.PlayerCombatState;
+        if (combatState == null || combatState.TurnNumber == _lastGainTurn)
+            return;
+
+        _lastGainTurn = combatState.TurnNumber;
+        Flash();
+        await CardPileCmd.Draw(choiceContext, Owner.Player);
     }
 }

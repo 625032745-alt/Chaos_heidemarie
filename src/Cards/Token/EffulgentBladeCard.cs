@@ -71,11 +71,6 @@ public class EffulgentBladeCard : ModCardTemplate
         {
             damage += 2m;
         }
-        var hasPower2 = Owner.Creature.HasPower<AuroraPower>();
-        if (hasPower2)
-        {
-            damage += 2m;
-        }
 
         return damage;
     }
