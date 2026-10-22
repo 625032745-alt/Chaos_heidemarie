@@ -1,7 +1,6 @@
 ﻿using ChaosHeidemarie.Cards.Base;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using STS2RitsuLib.Interop.AutoRegistration;
@@ -24,6 +23,6 @@ public class SwordRainCardC : ModCardTemplate
         var combatState = card.CombatState;
         if (null == combatState)
             return;
-        await CardGenerationHelper.GenerateEffulgentBlades(this, 2, keyword: RecycleKeywords.Recycle);
+        await CardGenerationHelper.GenerateEffulgentBlades(Owner, 2, keyword: RecycleKeywords.Recycle);
     }
 }

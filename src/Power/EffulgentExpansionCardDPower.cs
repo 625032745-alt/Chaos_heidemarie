@@ -1,6 +1,6 @@
-﻿using ChaosHeidemarie.Cards.Token;
+﻿using ChaosHeidemarie.Cards.Base;
+using ChaosHeidemarie.Cards.Token;
 using MegaCrit.Sts2.Core.Combat;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -17,6 +17,7 @@ public class EffulgentExpansionCardDPower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
+
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/EffulgentExpansionCardDPower_Small.png",
         BigIconPath: "res://ArtWorks/images/power/EffulgentExpansionCardDPower_Big.png"
@@ -26,19 +27,14 @@ public class EffulgentExpansionCardDPower : ModPowerTemplate
         IReadOnlyList<Creature> participants,
         ICombatState combatState)
     {
-        var player = Owner.Player;
         if (side == CombatSide.Player)
         {
-            for (var i = 0; i < 2; i++)
-            {
-                var newCard = combatState.CreateCard<EffulgentBladeCard>(player);
-                await CardPileCmd.AddGeneratedCardToCombat(newCard, PileType.Hand, player);
-            }
-            await PowerCmd.Remove(this);
+            if (Owner.Player is { } player) await CardGenerationHelper.GenerateEffulgentBlades(player, 2);
         }
     }
 
-    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
+        CardModel? cardSource,
         CardPlay? cardPlay)
     {
         if (dealer != Owner || !props.IsPoweredAttack())

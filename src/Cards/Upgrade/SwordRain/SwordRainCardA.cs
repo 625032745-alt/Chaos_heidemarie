@@ -51,6 +51,6 @@ public class SwordRainCardA : ModCardTemplate
 
     public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CardGenerationHelper.GenerateEffulgentBlades(this, 1);
+        await CardGenerationHelper.GenerateEffulgentBlades(Owner, 1);
     }
 }

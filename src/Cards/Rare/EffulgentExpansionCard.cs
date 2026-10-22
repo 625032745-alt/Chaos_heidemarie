@@ -40,7 +40,7 @@ public class EffulgentExpansionCard : TransformAtTurnStartCardBase
         var combatState = card.CombatState;
         if (combatState == null)
             return;
-        await CardGenerationHelper.GenerateEffulgentBlades(this, 2);
+        await CardGenerationHelper.GenerateEffulgentBlades(Owner, 2);
     }
 
     protected override void OnUpgrade()

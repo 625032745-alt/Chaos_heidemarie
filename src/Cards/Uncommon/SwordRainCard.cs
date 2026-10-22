@@ -51,7 +51,7 @@ public class SwordRainCard : TransformAtTurnStartCardBase
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         var baseValue = DynamicVars["SwordRain"].IntValue;
-        await CardGenerationHelper.GenerateEffulgentBlades(this, baseValue);
+        await CardGenerationHelper.GenerateEffulgentBlades(Owner, baseValue);
     }
     
     protected override IReadOnlyList<Func<ICombatState, Player, CardModel>> CandidateCardFactories =>

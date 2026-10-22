@@ -1,7 +1,6 @@
 ﻿using ChaosHeidemarie.Cards.Base;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using STS2RitsuLib.Interop.AutoRegistration;
@@ -25,6 +24,6 @@ public class EffulgentExpansionCardC : ModCardTemplate
         var combatState = card.CombatState;
         if (combatState == null)
             return;
-        await CardGenerationHelper.GenerateEffulgentBlades(this, 6, PileType.Discard);
+        await CardGenerationHelper.GenerateEffulgentBlades(Owner, 6, PileType.Discard);
     }
 }

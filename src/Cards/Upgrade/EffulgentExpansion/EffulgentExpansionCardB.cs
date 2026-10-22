@@ -2,7 +2,6 @@
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Combat;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -44,7 +43,7 @@ public class EffulgentExpansionCardB : ModCardTemplate
         var combatState = card.CombatState;
         if (combatState == null)
             return;
-        await CardGenerationHelper.GenerateEffulgentBlades(this, _handCardCount);
+        await CardGenerationHelper.GenerateEffulgentBlades(Owner, _handCardCount);
     }
 
     public override Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side,
