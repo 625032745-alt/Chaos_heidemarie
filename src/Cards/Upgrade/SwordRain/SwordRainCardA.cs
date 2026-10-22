@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Cards.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -15,33 +16,41 @@ namespace ChaosHeidemarie.Cards.Upgrade.SwordRain;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class SwordRainCardA : ModCardTemplate
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(13, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new DamageVar(13, ValueProp.Move), ModCardVars.Computed("Repeat",
+            static ctx =>
+            {
+                if (!ctx.HasPlayer || ctx.Player.PlayerCombatState is not { } pcs)
+                    return ctx.BaseValue;
+                var count = pcs.Hand.Cards.Count(c => c != ctx.Card && c is EffulgentBladeCard);
+                return ctx.BaseValue + count;
+            }, 1m)
+    ];
+
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/SwordRainCard.png");
+
+    public override CardAssetProfile AssetProfile =>
+        new(PortraitPath: $"res://ArtWorks/images/cards/SwordRainCard.png");
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link, RestKeyword.REST];
 
     public SwordRainCardA() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
     }
 
-    public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var card = cardPlay.Card;
-        if (card != this)
-            return;
-        var combatState = card.CombatState;
-        if (null == combatState)
-            return;
-        var playerCombatState = card.Owner.PlayerCombatState;
-        if (playerCombatState == null)
-            return;
-        var count = playerCombatState.Hand.Cards.Count(c => c is EffulgentBladeCard);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
-            .WithHitCount(count)
+            .WithHitCount((int)DynamicVars.EvaluateValueOrDefault("Repeat", 1m, cardPlay.Target))
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
+    }
+
+    public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
         await CardGenerationHelper.GenerateEffulgentBlades(this, 1);
     }
 }

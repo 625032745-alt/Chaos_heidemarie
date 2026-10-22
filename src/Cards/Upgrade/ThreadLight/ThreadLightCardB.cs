@@ -40,7 +40,7 @@ public class ThreadLightCardB : ModCardTemplate
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props,
         Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
     {
-        if (Pile?.Type != PileType.Hand || Pile?.Type != PileType.Discard) return 0m;
+        if (Pile?.Type != PileType.Hand && Pile?.Type != PileType.Discard) return 0m;
         if (!props.IsPoweredAttack()) return 0m;
         if (cardSource == null) return 0m;
         if (dealer != Owner.Creature) return 0m;
