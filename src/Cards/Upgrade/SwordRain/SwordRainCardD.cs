@@ -3,11 +3,9 @@ using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Cards.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -16,11 +14,27 @@ namespace ChaosHeidemarie.Cards.Upgrade.SwordRain;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class SwordRainCardD : ModCardTemplate
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(30, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        ModCardVars.ComputedDamage("BladeDamage",
+            static ctx =>
+            {
+                var baseValue = ctx.BaseValue;
+                if (!ctx.HasPlayer || ctx.Player.PlayerCombatState is not { } pcs)
+                    return ctx.BaseValue;
+                var count = pcs.ExhaustPile.Cards.Count(c => c is EffulgentBladeCard);
+                return baseValue + count * 3;
+            }, 30m)
+    ];
+
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/SwordRainCard.png");
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Retain,ConcludeKeywords.Conclude];
-    
+
+    public override CardAssetProfile AssetProfile =>
+        new(PortraitPath: $"res://ArtWorks/images/cards/SwordRainCard.png");
+
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+        [CardKeyword.Exhaust, CardKeyword.Retain, ConcludeKeywords.Conclude];
+
     public SwordRainCardD() : base(3, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies)
     {
     }
@@ -33,26 +47,13 @@ public class SwordRainCardD : ModCardTemplate
         var cards = playerCombatState.Hand.Cards.Where(c => c is LiberationAuroraCard).ToList();
         foreach (var cardModel in cards)
         {
-           await CardCmd.Exhaust(choiceContext,cardModel);
+            await CardCmd.Exhaust(choiceContext, cardModel);
         }
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+
+        await DamageCmd.Attack(DynamicVars.EvaluateValueOrDefault("BladeDamage", 30m, cardPlay.Target))
             .FromCard(this, cardPlay)
             .TargetingAllOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-    }
-    
-    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
-        CardPlay? cardPlay)
-    {
-        if (dealer != Owner.Creature || !props.IsPoweredAttack())
-        {
-            return 0m;
-        }
-        if (cardSource != this)
-            return 0M;
-        CardPile pile = PileType.Exhaust.GetPile(Owner);
-        var cardsCount = pile.Cards.Count(c => c is EffulgentBladeCard);
-        return cardsCount * 3;
     }
 }
