@@ -3,8 +3,10 @@ using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
@@ -33,9 +35,16 @@ public class ThreadLightCardB : ModCardTemplate
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-        if (Owner.Creature.GetPower<ThreadLightCardBPower>() != null)
-            return;
-        await PowerCmd.Apply<ThreadLightCardBPower>(choiceContext, Owner.Creature,
-            1m, Owner.Creature, this);
+    }
+
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props,
+        Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
+    {
+        if (Pile?.Type != PileType.Hand || Pile?.Type != PileType.Discard) return 0m;
+        if (!props.IsPoweredAttack()) return 0m;
+        if (cardSource == null) return 0m;
+        if (dealer != Owner.Creature) return 0m;
+        if (!cardSource.Keywords.Contains(LinkKeywords.Link)) return 0m;
+        return 2m;
     }
 }
