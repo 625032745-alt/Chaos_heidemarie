@@ -1,7 +1,6 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
-using ChaosHeidemarie.Relics;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -41,13 +40,11 @@ public class CrimsonReversalCard : ModCardTemplate
     {
         if (card != this) return;
         var power = Owner.Creature.GetPower<ScarletSwordPower>();
-        var relic = Owner.GetRelic<HeidemarieStarterRelic>();
-        if (power != null && relic != null)
+        if (power != null)
         {
             if (CombatState == null) return;
             var enemy = CombatState.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
             if (enemy == null) return;
-            relic.TriggerOnce();
             await CreatureCmd.Damage(choiceContext, enemy, 6, ValueProp.Unpowered, this, null);
             await PowerCmd.Decrement(power);
         }

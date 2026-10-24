@@ -1,4 +1,5 @@
 ﻿using ChaosHeidemarie.Keywords;
+using ChaosHeidemarie.Relics;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -27,7 +28,7 @@ public class InherentMemoryPower : ModPowerTemplate
 
     // 上限 = 10 + 极昼层数。首次施加时 Owner 还是 null，所以按参数里的生物去算。
     private static decimal GetMaxAmountFor(Creature creature)
-        => BaseMaxAmount + (creature.GetPower<PolarDayPower>()?.Amount ?? 0m);
+        => BaseMaxAmount + (creature.GetPower<PolarDayPower>()?.Amount ?? 0m) + (creature.Player?.GetRelic<InherentMemoryRelic>() != null ? 2m : 0m);
 
     private decimal GetMaxAmount()
         => Owner == null ? BaseMaxAmount : GetMaxAmountFor(Owner);
