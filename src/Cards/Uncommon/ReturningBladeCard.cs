@@ -24,7 +24,7 @@ public class ReturningBladeCard : ModCardTemplate
     protected override IEnumerable<DynamicVar> CanonicalVars =>
         [new DamageVar(10, ValueProp.Move)];
 
-    private static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND");
+    private static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_DISCARD_TO_HAND");
 
     public ReturningBladeCard() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {

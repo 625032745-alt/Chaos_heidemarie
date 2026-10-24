@@ -16,7 +16,7 @@ namespace ChaosHeidemarie.Cards.Common;
 public class GlimmeringTetherCard : ModCardTemplate
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("GlimmeringTether", 1)];
-    private static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND");
+    private static readonly LocString SelectFromHand = new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_HAND_TO_LINK");
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public GlimmeringTetherCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
