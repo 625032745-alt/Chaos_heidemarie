@@ -10,7 +10,7 @@
   "CHAOS_HEIDEMARIE_CARD_LIBERATION_AURORA_CARD.title": "解放极光",
   "CHAOS_HEIDEMARIE_CARD_LIBERATION_AURORA_CARD.description": "造成 {Damage:diff()} 点伤害。消耗手牌中所有极光剑；每以此法消耗 1 张，额外造成 5 点伤害。",
   "CHAOS_HEIDEMARIE_CARD_SWORD_CURTAIN_CARD.title": "剑幕",
-  "CHAOS_HEIDEMARIE_CARD_SWORD_CURTAIN_CARD.description": "获得 {Block} 点格挡。",
+  "CHAOS_HEIDEMARIE_CARD_SWORD_CURTAIN_CARD.description": "获得 {Block:diff()} 点格挡。",
   "CHAOS_HEIDEMARIE_CARD_SWORD_FLASH_CARD.title": "剑光",
   "CHAOS_HEIDEMARIE_CARD_SWORD_FLASH_CARD.description": "对一名敌人造成 {Damage:diff()} 点伤害。",
   "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD.title": "剑雨",

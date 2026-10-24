@@ -10,7 +10,7 @@
   "CHAOS_HEIDEMARIE_CARD_LIBERATION_AURORA_CARD.title": "Liberation Aurora",
   "CHAOS_HEIDEMARIE_CARD_LIBERATION_AURORA_CARD.description": "Deal {Damage:diff()} damage. Exhaust all Aurora Swords in your hand. Deal 5 additional damage for each card exhausted this way.",
   "CHAOS_HEIDEMARIE_CARD_SWORD_CURTAIN_CARD.title": "Sword Curtain",
-  "CHAOS_HEIDEMARIE_CARD_SWORD_CURTAIN_CARD.description": "Gain {Block} Block.",
+  "CHAOS_HEIDEMARIE_CARD_SWORD_CURTAIN_CARD.description": "Gain {Block:diff()} Block.",
   "CHAOS_HEIDEMARIE_CARD_SWORD_FLASH_CARD.title": "Sword Flash",
   "CHAOS_HEIDEMARIE_CARD_SWORD_FLASH_CARD.description": "Deal {Damage:diff()} damage to an enemy.",
   "CHAOS_HEIDEMARIE_CARD_SWORD_RAIN_CARD.title": "Sword Rain",
