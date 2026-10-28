@@ -44,11 +44,16 @@ public class ScarletSwordPower : ModPowerTemplate
             if (enemy == null) return;
             Flash();
             await CreatureCmd.Damage(choiceContext, enemy, 6, ValueProp.Unpowered, Owner, card, null);
+            if (Owner.GetPower<ScarletResonancePower>() is { } resonancePower)
+            {
+                await resonancePower.OnScarletSwordAttack();
+            }
             await PowerCmd.Decrement(this);
         }
     }
-    
-    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
+
+    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount,
+        Creature? applier,
         CardModel? cardSource)
     {
         if (power is not ScarletSwordPower || amount <= 0)

@@ -42,5 +42,8 @@
   "CHAOS_HEIDEMARIE_POWER_RESILIENT_CHAIN_POWER.smartDescription": "Whenever you lose [gold]Aurora Chain[/gold], gain {Amount} Block.",
   "CHAOS_HEIDEMARIE_POWER_CHAIN_SIGIL_POWER.title": "Chain Sigil",
   "CHAOS_HEIDEMARIE_POWER_CHAIN_SIGIL_POWER.description": "At the start of your turn, if you have at least 5 stacks of [gold]Aurora Chain[/gold], deal {Amount} damage to a random enemy.",
-  "CHAOS_HEIDEMARIE_POWER_CHAIN_SIGIL_POWER.smartDescription": "At the start of your turn, if you have at least 5 stacks of [gold]Aurora Chain[/gold], deal {Amount} damage to a random enemy."
+  "CHAOS_HEIDEMARIE_POWER_CHAIN_SIGIL_POWER.smartDescription": "At the start of your turn, if you have at least 5 stacks of [gold]Aurora Chain[/gold], deal {Amount} damage to a random enemy.",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_RESONANCE_POWER.title": "Resonance",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_RESONANCE_POWER.description": "This turn, whenever [gold]Scarlet Sword[/gold] triggers an attack, gain {Amount} Block.",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_RESONANCE_POWER.smartDescription": "This turn, whenever [gold]Scarlet Sword[/gold] triggers an attack, gain {Amount} Block."
 }

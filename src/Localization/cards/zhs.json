@@ -158,5 +158,7 @@
   "CHAOS_HEIDEMARIE_CARD_BLADES_READY_CARD.title": "剑群待命",
   "CHAOS_HEIDEMARIE_CARD_BLADES_READY_CARD.description": "获得 {Block:diff()} 点格挡。若使用此牌时拥有至少 4 层[gold]赤光剑[/gold]再获得 7 点格挡",
   "CHAOS_HEIDEMARIE_CARD_RADIANCE_CONVERSION_CARD.title": "弃光换能",
-  "CHAOS_HEIDEMARIE_CARD_RADIANCE_CONVERSION_CARD.description": "失去 2 层[gold]赤光剑[/gold]，获得 {RadianceConversion:diff()} 点能量"
+  "CHAOS_HEIDEMARIE_CARD_RADIANCE_CONVERSION_CARD.description": "失去 2 层[gold]赤光剑[/gold]，获得 {RadianceConversion:diff()} 点能量",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_RESONANCE_CARD.title": "赤剑共鸣",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_RESONANCE_CARD.description": "选择至多 3 张手牌丢弃。每丢弃 1 张[gold]连接[/gold]牌，获得 1 层[gold]赤光剑[/gold]。本回合每当[gold]赤光剑[/gold]发动攻击时，获得 {ScarletResonance:diff()} 点格挡。"
 }
