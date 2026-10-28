@@ -156,5 +156,7 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.title": "赤光屏障",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.description": "获得 {Block:diff()} 点格挡。本回合每丢弃 1 张牌，额外获得 3 点格挡，最多额外获得 9 点",
   "CHAOS_HEIDEMARIE_CARD_BLADES_READY_CARD.title": "剑群待命",
-  "CHAOS_HEIDEMARIE_CARD_BLADES_READY_CARD.description": "获得 {Block:diff()} 点格挡。若使用此牌时拥有至少 4 层[gold]赤光剑[/gold]再获得 7 点格挡"
+  "CHAOS_HEIDEMARIE_CARD_BLADES_READY_CARD.description": "获得 {Block:diff()} 点格挡。若使用此牌时拥有至少 4 层[gold]赤光剑[/gold]再获得 7 点格挡",
+  "CHAOS_HEIDEMARIE_CARD_RADIANCE_CONVERSION_CARD.title": "弃光换能",
+  "CHAOS_HEIDEMARIE_CARD_RADIANCE_CONVERSION_CARD.description": "失去 2 层[gold]赤光剑[/gold]，获得 {RadianceConversion:diff()} 点能量"
 }

@@ -156,5 +156,7 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.title": "Scarlet Barrier",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_BARRIER_CARD.description": "Gain {Block:diff()} Block. This turn, whenever you discard a card, gain 3 additional Block, up to a maximum of 9 additional Block.",
   "CHAOS_HEIDEMARIE_CARD_BLADES_READY_CARD.title": "Blades at the Ready",
-  "CHAOS_HEIDEMARIE_CARD_BLADES_READY_CARD.description": "Gain {Block:diff()} Block. If you have at least 4 stacks of [gold]Scarlet Sword[/gold] when you play this card, gain 7 additional Block."
+  "CHAOS_HEIDEMARIE_CARD_BLADES_READY_CARD.description": "Gain {Block:diff()} Block. If you have at least 4 stacks of [gold]Scarlet Sword[/gold] when you play this card, gain 7 additional Block.",
+  "CHAOS_HEIDEMARIE_CARD_RADIANCE_CONVERSION_CARD.title": "Radiance Conversion",
+  "CHAOS_HEIDEMARIE_CARD_RADIANCE_CONVERSION_CARD.description": "Lose 2 stacks of [gold]Scarlet Sword[/gold]. Gain {RadianceConversion:diff()} Energy."
 }
