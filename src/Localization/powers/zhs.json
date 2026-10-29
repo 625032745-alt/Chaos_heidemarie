@@ -48,5 +48,8 @@
   "CHAOS_HEIDEMARIE_POWER_SCARLET_RESONANCE_POWER.smartDescription": "本回合每当[gold]赤光剑[/gold]发动攻击时，获得 {Amount} 点格挡",
   "CHAOS_HEIDEMARIE_POWER_BLADES_AFTERGLOW_POWER.title": "万辉",
   "CHAOS_HEIDEMARIE_POWER_BLADES_AFTERGLOW_POWER.description": "每回合赤光剑累计发动 3 次攻击后，对所有敌人造成 {Amount} 点伤害",
-  "CHAOS_HEIDEMARIE_POWER_BLADES_AFTERGLOW_POWER.smartDescription": "每回合赤光剑累计发动 3 次攻击后，对所有敌人造成 {Amount} 点伤害"
+  "CHAOS_HEIDEMARIE_POWER_BLADES_AFTERGLOW_POWER.smartDescription": "每回合赤光剑累计发动 3 次攻击后，对所有敌人造成 {Amount} 点伤害",
+  "CHAOS_HEIDEMARIE_POWER_CRIMSON_CHAIN_POWER.title": "绯红连锁",
+  "CHAOS_HEIDEMARIE_POWER_CRIMSON_CHAIN_POWER.description": "每回合首次赤光剑攻击后，施加 2 层易伤，并使下一张攻击额外造成 {Amount} 点伤害",
+  "CHAOS_HEIDEMARIE_POWER_CRIMSON_CHAIN_POWER.smartDescription": "每回合首次赤光剑攻击后，施加 2 层易伤，并使下一张攻击额外造成 {Amount} 点伤害"
 }

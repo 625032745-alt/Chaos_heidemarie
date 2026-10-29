@@ -162,5 +162,7 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_RESONANCE_CARD.title": "Scarlet Resonance",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_RESONANCE_CARD.description": "Choose up to 3 cards from your hand to discard. For each [gold]Link[/gold] card discarded, gain 1 stack of [gold]Scarlet Sword[/gold]. This turn, whenever [gold]Scarlet Sword[/gold] triggers an attack, gain {ScarletResonance:diff()} Block.",
   "CHAOS_HEIDEMARIE_CARD_BLADES_AFTERGLOW_CARD.title": "Thousand Blades",
-  "CHAOS_HEIDEMARIE_CARD_BLADES_AFTERGLOW_CARD.description": "After [gold]Scarlet Sword[/gold] has triggered 3 attacks in total each turn, deal {BladesAfterglow:diff()} damage to ALL enemies."
+  "CHAOS_HEIDEMARIE_CARD_BLADES_AFTERGLOW_CARD.description": "After [gold]Scarlet Sword[/gold] has triggered 3 attacks in total each turn, deal {BladesAfterglow:diff()} damage to ALL enemies.",
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_CHAIN_CARD.title": "Crimson Chain",
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_CHAIN_CARD.description": "The first time [gold]Scarlet Sword[/gold] hits an enemy each turn, apply 2 Vulnerable and cause your next Attack to deal {VigorAmount:diff()} additional damage."
 }

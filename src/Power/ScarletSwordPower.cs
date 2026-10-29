@@ -52,6 +52,10 @@ public class ScarletSwordPower : ModPowerTemplate
             {
                 await bladesAfterglowPower.OnScarletSwordAttack(choiceContext);
             }
+            if (Owner.GetPower<CrimsonChainPower>() is { } crimsonChainPower)
+            {
+                await crimsonChainPower.OnScarletSwordAttack(choiceContext, enemy);
+            }
             await PowerCmd.Decrement(this);
         }
     }

@@ -45,5 +45,8 @@
   "CHAOS_HEIDEMARIE_POWER_CHAIN_SIGIL_POWER.smartDescription": "At the start of your turn, if you have at least 5 stacks of [gold]Aurora Chain[/gold], deal {Amount} damage to a random enemy.",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_RESONANCE_POWER.title": "Resonance",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_RESONANCE_POWER.description": "This turn, whenever [gold]Scarlet Sword[/gold] triggers an attack, gain {Amount} Block.",
-  "CHAOS_HEIDEMARIE_POWER_SCARLET_RESONANCE_POWER.smartDescription": "This turn, whenever [gold]Scarlet Sword[/gold] triggers an attack, gain {Amount} Block."
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_RESONANCE_POWER.smartDescription": "This turn, whenever [gold]Scarlet Sword[/gold] triggers an attack, gain {Amount} Block.",
+  "CHAOS_HEIDEMARIE_POWER_CRIMSON_CHAIN_POWER.title": "Crimson Chain",
+  "CHAOS_HEIDEMARIE_POWER_CRIMSON_CHAIN_POWER.description": "The first time [gold]Scarlet Sword[/gold] attacks each turn, apply 2 Vulnerable and cause your next Attack to deal {Amount} additional damage.",
+  "CHAOS_HEIDEMARIE_POWER_CRIMSON_CHAIN_POWER.smartDescription": "The first time [gold]Scarlet Sword[/gold] attacks each turn, apply 2 Vulnerable and cause your next Attack to deal {Amount} additional damage."
 }
