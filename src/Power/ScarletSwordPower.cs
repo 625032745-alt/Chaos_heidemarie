@@ -48,6 +48,10 @@ public class ScarletSwordPower : ModPowerTemplate
             {
                 await resonancePower.OnScarletSwordAttack();
             }
+            if (Owner.GetPower<BladesAfterglowPower>() is { } bladesAfterglowPower)
+            {
+                await bladesAfterglowPower.OnScarletSwordAttack(choiceContext);
+            }
             await PowerCmd.Decrement(this);
         }
     }
