@@ -51,5 +51,8 @@
   "CHAOS_HEIDEMARIE_POWER_BLADES_AFTERGLOW_POWER.smartDescription": "每回合赤光剑累计发动 3 次攻击后，对所有敌人造成 {Amount} 点伤害",
   "CHAOS_HEIDEMARIE_POWER_CRIMSON_CHAIN_POWER.title": "绯红连锁",
   "CHAOS_HEIDEMARIE_POWER_CRIMSON_CHAIN_POWER.description": "每回合首次赤光剑攻击后，施加 2 层易伤，并使下一张攻击额外造成 {Amount} 点伤害",
-  "CHAOS_HEIDEMARIE_POWER_CRIMSON_CHAIN_POWER.smartDescription": "每回合首次赤光剑攻击后，施加 2 层易伤，并使下一张攻击额外造成 {Amount} 点伤害"
+  "CHAOS_HEIDEMARIE_POWER_CRIMSON_CHAIN_POWER.smartDescription": "每回合首次赤光剑攻击后，施加 2 层易伤，并使下一张攻击额外造成 {Amount} 点伤害",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_ARRAY_POWER.title": "赤剑阵",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_ARRAY_POWER.description": "本回合接下来 {Amount} 次赤光剑攻击各额外发动 1 次",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_ARRAY_POWER.smartDescription": "本回合接下来 {Amount} 次赤光剑攻击各额外发动 1 次"
 }
