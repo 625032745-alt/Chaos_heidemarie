@@ -44,6 +44,7 @@ public class ScarletSwordPower : ModPowerTemplate
             if (enemy == null) return;
             Flash();
             await CreatureCmd.Damage(choiceContext, enemy, 6, ValueProp.Unpowered, Owner, card, null);
+            await PowerCmd.Decrement(this);
             if (Owner.GetPower<ScarletResonancePower>() is { } resonancePower)
             {
                 await resonancePower.OnScarletSwordAttack();
@@ -56,12 +57,10 @@ public class ScarletSwordPower : ModPowerTemplate
             {
                 await crimsonChainPower.OnScarletSwordAttack(choiceContext, enemy);
             }
-
             if (Owner.GetPower<ScarletArrayPower>() is {} scarletArrayPower)
             {
                 await scarletArrayPower.OnScarletSwordAttack(choiceContext);
             }
-            await PowerCmd.Decrement(this);
         }
     }
 

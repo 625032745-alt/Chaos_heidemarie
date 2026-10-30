@@ -164,7 +164,7 @@
   "CHAOS_HEIDEMARIE_CARD_BLADES_AFTERGLOW_CARD.title": "万辉",
   "CHAOS_HEIDEMARIE_CARD_BLADES_AFTERGLOW_CARD.description": "每回合赤光剑累计发动 3 次攻击后，对所有敌人造成 {BladesAfterglow:diff()} 点伤害",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_CHAIN_CARD.title": "绯红连锁",
-  "CHAOS_HEIDEMARIE_CARD_CRIMSON_CHAIN_CARD.description": "每回合首次赤光剑攻击命中后，施加2层易伤，并使下一张攻击额外造成 {VigorAmount:diff()} 点伤害",
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_CHAIN_CARD.description": "每回合首次赤光剑攻击后，施加 2 层易伤，并使下一张攻击额外造成 {VigorAmount:diff()} 点伤害",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_ARRAY_CARD.title": "赤剑阵",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_ARRAY_CARD.description": "每回合第一次[gold]赤光剑[/gold]攻击发动后，若你至少拥有2层[gold]赤光剑[/gold]，则消失去2层。使本回合接下来 {ScarletArray:diff()} 次[gold]赤光剑[/gold]攻击各额外发动 1 次"
 }
