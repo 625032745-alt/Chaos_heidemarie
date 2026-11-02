@@ -166,5 +166,7 @@
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_CHAIN_CARD.title": "Crimson Chain",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_CHAIN_CARD.description": "The first time [gold]Scarlet Sword[/gold] attacks each turn, apply 2 Vulnerable and cause your next Attack to deal {VigorAmount:diff()} additional damage.",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_ARRAY_CARD.title": "Scarlet Formation",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_ARRAY_CARD.description": "The first time [gold]Scarlet Sword[/gold] attacks each turn, if you have at least 2 stacks of [gold]Scarlet Sword[/gold], lose 2 stacks. The next {ScarletArray:diff()} [gold]Scarlet Sword[/gold] attacks this turn each trigger 1 additional attack."
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_ARRAY_CARD.description": "The first time [gold]Scarlet Sword[/gold] attacks each turn, if you have at least 2 stacks of [gold]Scarlet Sword[/gold], lose 2 stacks. The next {ScarletArray:diff()} [gold]Scarlet Sword[/gold] attacks this turn each trigger 1 additional attack.",
+  "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_CARD.title": "Afterglow",
+  "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_CARD.description": "The first time you play a non-[gold]Link[/gold] Attack each turn, consume 1 stack of [gold]Scarlet Sword[/gold] to trigger that Attack an additional time."
 }

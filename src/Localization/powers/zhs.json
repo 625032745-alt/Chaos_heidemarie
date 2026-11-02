@@ -54,5 +54,8 @@
   "CHAOS_HEIDEMARIE_POWER_CRIMSON_CHAIN_POWER.smartDescription": "每回合首次赤光剑攻击后，施加 2 层易伤，并使下一张攻击额外造成 {Amount} 点伤害",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_ARRAY_POWER.title": "赤剑阵",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_ARRAY_POWER.description": "本回合接下来 {Amount} 次赤光剑攻击各额外发动 1 次",
-  "CHAOS_HEIDEMARIE_POWER_SCARLET_ARRAY_POWER.smartDescription": "本回合接下来 {Amount} 次赤光剑攻击各额外发动 1 次"
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_ARRAY_POWER.smartDescription": "本回合接下来 {Amount} 次赤光剑攻击各额外发动 1 次",
+  "CHAOS_HEIDEMARIE_POWER_AFTERGLOW_POWER.title": "残光",
+  "CHAOS_HEIDEMARIE_POWER_AFTERGLOW_POWER.description": "每回合第一次打出非[gold]连接[/gold]攻击牌时，消耗1层[gold]赤光剑[/gold]，使该攻击牌额外触发 {Amount} 次",
+  "CHAOS_HEIDEMARIE_POWER_AFTERGLOW_POWER.smartDescription": "每回合第一次打出非[gold]连接[/gold]攻击牌时，消耗1层[gold]赤光剑[/gold]，使该攻击牌额外触发 {Amount} 次"
 }

@@ -48,18 +48,22 @@ public class ScarletSwordPower : ModPowerTemplate
             {
                 await resonancePower.OnScarletSwordAttack();
             }
+
             if (Owner.GetPower<BladesAfterglowPower>() is { } bladesAfterglowPower)
             {
                 await bladesAfterglowPower.OnScarletSwordAttack(choiceContext);
             }
+
             if (Owner.GetPower<CrimsonChainPower>() is { } crimsonChainPower)
             {
                 await crimsonChainPower.OnScarletSwordAttack(choiceContext, enemy);
             }
-            if (Owner.GetPower<ScarletArrayPower>() is {} scarletArrayPower)
+
+            if (Owner.GetPower<ScarletArrayPower>() is { } scarletArrayPower)
             {
                 await scarletArrayPower.OnScarletSwordAttack(choiceContext);
             }
+
             await PowerCmd.Decrement(this);
         }
     }
@@ -74,6 +78,7 @@ public class ScarletSwordPower : ModPowerTemplate
         {
             SetAmount(8);
         }
+
         return Task.CompletedTask;
     }
 }
