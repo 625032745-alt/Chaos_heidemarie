@@ -32,6 +32,7 @@ public class BladesAfterglowPower : ModPowerTemplate
             return;
         Flash();
         await CreatureCmd.Damage(choiceContext, CombatState.HittableEnemies, Amount, ValueProp.Unpowered, Owner);
+        _attackCount = 0;
     }
 
     // 每回合结束时重置计数
