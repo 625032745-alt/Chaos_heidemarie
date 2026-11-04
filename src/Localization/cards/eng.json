@@ -82,7 +82,7 @@
   "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.title": "Radiance",
   "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.description": "Deal {Damage:diff()} damage. If you have at least {Radiance:diff()} stacks of [gold]Aurora Chain[/gold], deal double damage.",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_RESONANCE_CARD.title": "Chain Resonance",
-  "CHAOS_HEIDEMARIE_CARD_CHAIN_RESONANCE_CARD.description": "If you have at least {ChainResonance:diff()} stacks of [gold]Aurora Chain[/gold], your next Attack this turn deals 4 additional damage.",
+  "CHAOS_HEIDEMARIE_CARD_CHAIN_RESONANCE_CARD.description": "If you have at least {ChainResonance:diff()} stacks of [gold]Aurora Chain[/gold], your next Attack this turn deals 8 additional damage.",
   "CHAOS_HEIDEMARIE_CARD_DAWNSHATTER_CARD.title": "Dawnshatter",
   "CHAOS_HEIDEMARIE_CARD_DAWNSHATTER_CARD.description": "Whenever you reach 3 stacks of [gold]Aurora Chain[/gold], draw 1 card. Triggers up to {Dawnshatter:diff()} times per turn.",
   "CHAOS_HEIDEMARIE_CARD_DAWNGLOW_CARD.title": "Dawnglow",
