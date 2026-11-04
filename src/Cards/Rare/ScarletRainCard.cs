@@ -39,7 +39,7 @@ public class ScarletRainCard : ModCardTemplate
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
-            .WithHitCount((int)DynamicVars.EvaluateValueOrDefault("Repeat", 4m, cardPlay.Target))
+            .WithHitCount((int)DynamicVars.EvaluateValueOrDefault("Repeat", 3m, cardPlay.Target))
             .TargetingRandomOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
