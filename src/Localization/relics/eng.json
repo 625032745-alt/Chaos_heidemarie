@@ -6,7 +6,7 @@
   "CHAOS_HEIDEMARIE_RELIC_INHERENT_MEMORY_RELIC.description": "Increase the base maximum stacks of [gold]Aurora Chain[/gold] by 2. At the start of each turn, gain 1 stack of [gold]Aurora Chain[/gold].",
   "CHAOS_HEIDEMARIE_RELIC_INHERENT_MEMORY_RELIC.flavor": "Enhances combat passive effects",
   "CHAOS_HEIDEMARIE_RELIC_CRACKED_SILVER_COIN_RELIC.title": "Cracked Silver Coin",
-  "CHAOS_HEIDEMARIE_RELIC_CRACKED_SILVER_COIN_RELIC.description": "Whenever you play your 5th card each turn, draw 1 card.",
+  "CHAOS_HEIDEMARIE_RELIC_CRACKED_SILVER_COIN_RELIC.description": "The first time you play your 5th card each turn, draw 1 card.",
   "CHAOS_HEIDEMARIE_RELIC_CRACKED_SILVER_COIN_RELIC.flavor": "A faint light lingers within its cracks, as though it could prolong an action about to end.",
   "CHAOS_HEIDEMARIE_RELIC_LINGERING_HOURGLASS_RELIC.title": "Lingering Hourglass",
   "CHAOS_HEIDEMARIE_RELIC_LINGERING_HOURGLASS_RELIC.description": "Whenever you play a 0-cost card, gain 2 [gold]Block[/gold]. Up to 3 times per turn.",

@@ -13,7 +13,7 @@ namespace ChaosHeidemarie.Relics;
 [RegisterRelic(typeof(HeidemarieRelicPool))]
 public sealed class CrackedSilverCoinRelic : ModRelicTemplate
 {
-    public override RelicRarity Rarity => RelicRarity.Rare;
+    public override RelicRarity Rarity => RelicRarity.Uncommon;
 
     public override RelicAssetProfile AssetProfile => new(
         IconPath:
