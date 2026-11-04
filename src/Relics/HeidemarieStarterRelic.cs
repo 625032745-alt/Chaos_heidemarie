@@ -17,8 +17,9 @@ public sealed class HeidemarieStarterRelic : ModRelicTemplate
     private int _lastTriggerTurn;
 
     public override RelicAssetProfile AssetProfile => new(
-        IconPath: "res://ArtWorks/images/ui/top_panel/character_icon_heidemarie.png",
-        IconOutlinePath: "res://ArtWorks/images/ui/top_panel/character_icon_heidemarie_outline.png");
+        IconPath: "res://ArtWorks/images/relic/HeidemarieStarterRelic_Small.png",
+        IconOutlinePath: "res://ArtWorks/images/relic/HeidemarieStarterRelic_Outline.png",
+        BigIconPath: "res://ArtWorks/images/relic/HeidemarieStarterRelic_Big.png");
 
     public override async Task BeforeCombatStart()
     {
