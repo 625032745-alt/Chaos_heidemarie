@@ -168,5 +168,7 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_ARRAY_CARD.title": "赤剑阵",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_ARRAY_CARD.description": "每回合第一次[gold]赤光剑[/gold]攻击发动后，若你至少拥有2层[gold]赤光剑[/gold]，则消失去2层。使本回合接下来 {ScarletArray:diff()} 次[gold]赤光剑[/gold]攻击各额外发动 1 次",
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_CARD.title": "残光",
-  "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_CARD.description": "每回合第一次打出非[gold]连接[/gold]攻击牌时，消耗1层[gold]赤光剑[/gold]，使该攻击牌额外触发 {Afterglow:diff()} 次"
+  "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_CARD.description": "每回合第一次打出非[gold]连接[/gold]攻击牌时，消耗1层[gold]赤光剑[/gold]，使该攻击牌额外触发 {Afterglow:diff()} 次",
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_ECHO_CARD.title": "绯光回响",
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_ECHO_CARD.description": "每回合第一次失去赤光剑层数时，抽 {CrimsonEcho:diff()} 张牌"
 }
