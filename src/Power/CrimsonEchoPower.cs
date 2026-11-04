@@ -19,13 +19,15 @@ public class CrimsonEchoPower : ModPowerTemplate
         IconPath: "res://ArtWorks/images/power/CrimsonEchoPower_Small.png",
         BigIconPath: "res://ArtWorks/images/power/CrimsonEchoPower_Big.png"
     );
-    
+
     private int _lastTriggerTurn = -1;
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
         decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (power is not ScarletSwordPower)
+            return;
+        if (power.Owner != Owner)
             return;
         if (amount >= 0m)
             return;

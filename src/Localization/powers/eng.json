@@ -56,6 +56,6 @@
   "CHAOS_HEIDEMARIE_POWER_AFTERGLOW_POWER.description": "The first time you play a non-[gold]Link[/gold] Attack card each turn, consume 1 stack of [gold]Scarlet Sword[/gold] to trigger that Attack {Amount} additional times.",
   "CHAOS_HEIDEMARIE_POWER_AFTERGLOW_POWER.smartDescription": "The first time you play a non-[gold]Link[/gold] Attack card each turn, consume 1 stack of [gold]Scarlet Sword[/gold] to trigger that Attack {Amount} additional times.",
   "CHAOS_HEIDEMARIE_POWER_CRIMSON_ECHO_POWER.title": "Crimson Echo",
-  "CHAOS_HEIDEMARIE_POWER_CRIMSON_ECHO_POWER.description": "The first time you consume [gold]Scarlet Sword[/gold] each turn, draw {Amount} card(s).",
-  "CHAOS_HEIDEMARIE_POWER_CRIMSON_ECHO_POWER.smartDescription": "The first time you consume [gold]Scarlet Sword[/gold] each turn, draw {Amount} card(s)."
+  "CHAOS_HEIDEMARIE_POWER_CRIMSON_ECHO_POWER.description": "The first time you lose stacks of [gold]Scarlet Sword[/gold] each turn, draw {Amount} card(s).",
+  "CHAOS_HEIDEMARIE_POWER_CRIMSON_ECHO_POWER.smartDescription": "The first time you lose stacks of [gold]Scarlet Sword[/gold] each turn, draw {Amount} card(s)."
 }

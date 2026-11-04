@@ -59,6 +59,6 @@
   "CHAOS_HEIDEMARIE_POWER_AFTERGLOW_POWER.description": "每回合第一次打出非[gold]连接[/gold]攻击牌时，消耗1层[gold]赤光剑[/gold]，使该攻击牌额外触发 {Amount} 次",
   "CHAOS_HEIDEMARIE_POWER_AFTERGLOW_POWER.smartDescription": "每回合第一次打出非[gold]连接[/gold]攻击牌时，消耗1层[gold]赤光剑[/gold]，使该攻击牌额外触发 {Amount} 次",
   "CHAOS_HEIDEMARIE_POWER_CRIMSON_ECHO_POWER.title": "绯光回响",
-  "CHAOS_HEIDEMARIE_POWER_CRIMSON_ECHO_POWER.description": "每回合第一次消耗[gold]赤光剑[/gold]时，抽 {Amount} 张牌",
-  "CHAOS_HEIDEMARIE_POWER_CRIMSON_ECHO_POWER.smartDescription": "每回合第一次消耗[gold]赤光剑[/gold]时，抽 {Amount} 张牌"
+  "CHAOS_HEIDEMARIE_POWER_CRIMSON_ECHO_POWER.description": "每回合第一次失去[gold]赤光剑[/gold]时，抽 {Amount} 张牌",
+  "CHAOS_HEIDEMARIE_POWER_CRIMSON_ECHO_POWER.smartDescription": "每回合第一次失去[gold]赤光剑[/gold]时，抽 {Amount} 张牌"
 }
