@@ -35,7 +35,7 @@ public class ScarletSwordPower : ModPowerTemplate
 
     private async Task ApplyPower(PlayerChoiceContext choiceContext, CardModel card)
     {
-        if (card.Owner?.Creature != Owner) return;
+        if (card.Owner.Creature != Owner) return;
         if (card.Keywords.Contains(LinkKeywords.Link))
         {
             var player = card.Owner;
