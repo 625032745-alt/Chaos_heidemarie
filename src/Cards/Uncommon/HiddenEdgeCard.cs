@@ -1,5 +1,6 @@
 ﻿using ChaosHeidemarie.Cards.Base;
 using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -9,37 +10,39 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Rare;
+namespace ChaosHeidemarie.Cards.Uncommon;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
-public class BladeBurialCard : ModCardTemplate
+public class HiddenEdgeCard : ModCardTemplate
 {
+    public override bool GainsBlock => true;
+
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(4, ValueProp.Unpowered)];
+    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(7, ValueProp.Move)];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
-    public BladeBurialCard() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
+    public HiddenEdgeCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         var selected = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
-            CardSelectorPrefs.DiscardSelectionPrompt, 3, 1);
-        foreach (var card in selected)
+            CardSelectorPrefs.DiscardSelectionPrompt, 1, 1);
+        var card = selected.FirstOrDefault();
+        if (card != null && card.Type == CardType.Attack)
         {
             await CardCmd.Discard(choiceContext, card);
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this, cardPlay)
-                .TargetingRandomOpponents(CombatState)
-                .WithHitFx("vfx/vfx_attack_slash")
-                .Execute(choiceContext);
+            await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(2);
+        DynamicVars.Block.UpgradeValueBy(3);
     }
 }

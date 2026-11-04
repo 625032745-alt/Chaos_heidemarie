@@ -20,7 +20,7 @@ namespace ChaosHeidemarie.Cards.Uncommon;
 public class ThreadLightCard : TransformAtTurnStartCardBase
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [new DamageVar(10, ValueProp.Move), new("ThreadLight", 3)];
+        [new DamageVar(8, ValueProp.Move), new("ThreadLight", 2)];
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
 

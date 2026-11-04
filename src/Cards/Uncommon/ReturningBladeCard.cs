@@ -50,4 +50,9 @@ public class ReturningBladeCard : ModCardTemplate
             await CardPileCmd.Add(card, PileType.Hand);
         }
     }
+    
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Damage.UpgradeValueBy(3);
+    }
 }

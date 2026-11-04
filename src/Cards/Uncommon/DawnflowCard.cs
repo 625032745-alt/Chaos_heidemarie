@@ -16,7 +16,7 @@ public class DawnflowCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,RestKeyword.REST];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("Dawnflow", 2)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("Dawnflow", 3)];
 
     public DawnflowCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
@@ -30,6 +30,6 @@ public class DawnflowCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Dawnflow"].UpgradeValueBy(1);
+        CardCmd.RemoveKeyword(this, CardKeyword.Exhaust);
     }
 }

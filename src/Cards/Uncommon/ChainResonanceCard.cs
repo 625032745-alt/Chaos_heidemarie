@@ -29,7 +29,7 @@ public class ChainResonanceCard : ModCardTemplate
         if (powerAmount >= baseValue)
         {
             await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature,
-                4m, Owner.Creature, this);
+                8m, Owner.Creature, this);
         }
     }
 

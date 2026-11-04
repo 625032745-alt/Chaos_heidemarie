@@ -24,7 +24,7 @@ public class ReforgeCard : ModCardTemplate
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("ChooseLink", 2)];
 
-    public ReforgeCard() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public ReforgeCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
