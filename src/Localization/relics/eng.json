@@ -10,5 +10,8 @@
   "CHAOS_HEIDEMARIE_RELIC_CRACKED_SILVER_COIN_RELIC.flavor": "A faint light lingers within its cracks, as though it could prolong an action about to end.",
   "CHAOS_HEIDEMARIE_RELIC_LINGERING_HOURGLASS_RELIC.title": "Lingering Hourglass",
   "CHAOS_HEIDEMARIE_RELIC_LINGERING_HOURGLASS_RELIC.description": "Whenever you play a 0-cost card, gain 2 [gold]Block[/gold]. Up to 3 times per turn.",
-  "CHAOS_HEIDEMARIE_RELIC_LINGERING_HOURGLASS_RELIC.flavor": "As the sand slowly falls, each swift action earns a fleeting moment of respite."
+  "CHAOS_HEIDEMARIE_RELIC_LINGERING_HOURGLASS_RELIC.flavor": "As the sand slowly falls, each swift action earns a fleeting moment of respite.",
+  "CHAOS_HEIDEMARIE_RELIC_BROKEN_RADIANCE_HILT_RELIC.title": "Broken Radiance Hilt",
+  "CHAOS_HEIDEMARIE_RELIC_BROKEN_RADIANCE_HILT_RELIC.description": "The first time you discard an [gold]Aurora Blade[/gold] each turn, it attacks 1 additional time.",
+  "CHAOS_HEIDEMARIE_RELIC_BROKEN_RADIANCE_HILT_RELIC.flavor": "Though its blade has long since shattered, the lingering radiance still answers the will of its wielder."
 }

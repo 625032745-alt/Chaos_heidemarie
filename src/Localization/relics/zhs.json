@@ -10,5 +10,8 @@
   "CHAOS_HEIDEMARIE_RELIC_CRACKED_SILVER_COIN_RELIC.flavor": "裂纹中残留着微弱的光芒，仿佛能够延续即将中断的行动",
   "CHAOS_HEIDEMARIE_RELIC_LINGERING_HOURGLASS_RELIC.title": "余时沙漏",
   "CHAOS_HEIDEMARIE_RELIC_LINGERING_HOURGLASS_RELIC.description": "每回合打出0费牌后，获得 2 点格挡（每回合最多 3 次）",
-  "CHAOS_HEIDEMARIE_RELIC_LINGERING_HOURGLASS_RELIC.flavor": "流沙缓缓落下，为每一次迅捷的行动留下片刻喘息"
+  "CHAOS_HEIDEMARIE_RELIC_LINGERING_HOURGLASS_RELIC.flavor": "流沙缓缓落下，为每一次迅捷的行动留下片刻喘息",
+  "CHAOS_HEIDEMARIE_RELIC_BROKEN_RADIANCE_HILT_RELIC.title": "断辉剑柄",
+  "CHAOS_HEIDEMARIE_RELIC_BROKEN_RADIANCE_HILT_RELIC.description": "每回合第一次丢弃[gold]极光剑[/gold]时，使其额外发动1次攻击。",
+  "CHAOS_HEIDEMARIE_RELIC_BROKEN_RADIANCE_HILT_RELIC.flavor": "剑刃早已断裂，但残留的光辉仍会回应挥剑之人的意志。"
 }
