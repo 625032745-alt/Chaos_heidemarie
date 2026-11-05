@@ -19,7 +19,7 @@ internal static class CardGenerationHelper
             var card = combatState.CreateCard<EffulgentBladeCard>(player);
             if (keyword is { } extraKeyword)
                 card.AddKeyword(extraKeyword);
-            await CardPileCmd.AddGeneratedCardToCombat(card, pileType, player);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, pileType, player));
         }
     }
 }
