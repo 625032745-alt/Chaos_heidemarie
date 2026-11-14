@@ -18,7 +18,6 @@ namespace ChaosHeidemarie.Cards.Uncommon;
 public class RadiantShieldCard : ModCardTemplate
 {
     public override bool GainsBlock => true;
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

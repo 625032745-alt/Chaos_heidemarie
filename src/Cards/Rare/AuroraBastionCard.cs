@@ -18,7 +18,6 @@ public class AuroraBastionCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public override bool GainsBlock => true;
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(12, ValueProp.Move)];
 
     public AuroraBastionCard() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)

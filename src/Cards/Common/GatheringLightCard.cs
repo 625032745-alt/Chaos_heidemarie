@@ -21,7 +21,6 @@ public class GatheringLightCard : ModCardTemplate
         new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_DISCARD_TO_HAND");
 
     public override bool GainsBlock => true;
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(6, ValueProp.Move)];
 
     public GatheringLightCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
