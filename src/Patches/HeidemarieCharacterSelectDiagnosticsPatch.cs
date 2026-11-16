@@ -13,7 +13,7 @@ internal static class HeidemarieCharacterSelectDiagnosticsPatch
         Exception? __exception,
         NCharacterSelectButton charSelectButton)
     {
-        if (__exception == null)
+        if (__exception == null || !HeidemarieAnimationPatchHelper.IsTarget(charSelectButton.Character))
             return __exception;
 
         try
