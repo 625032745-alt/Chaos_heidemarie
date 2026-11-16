@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-using System.Reflection;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Models;
@@ -14,11 +11,9 @@ internal static class HeidemarieCharacterSelectDiagnosticsPatch
     [HarmonyFinalizer]
     private static Exception? Finalizer(
         Exception? __exception,
-        NCharacterSelectScreen __instance,
-        NCharacterSelectButton charSelectButton,
-        CharacterModel characterModel)
+        NCharacterSelectButton charSelectButton)
     {
-        if (__exception == null || !HeidemarieAnimationPatchHelper.IsTarget(characterModel))
+        if (__exception == null)
             return __exception;
 
         try
@@ -48,7 +43,7 @@ internal static class HeidemarieCharacterSelectDiagnosticsPatch
             string energyPath = "<n/a>";
             string energyExists = "<n/a>";
 
-            if (characterModel is Characters.Heidemarie heidemarie)
+            if (charSelectButton is { Character: Characters.Heidemarie heidemarie })
             {
                 bgPath = heidemarie.AssetProfile.Ui?.CharacterSelectBgPath ?? "<null>";
                 bgExists = ResourceLoader.Exists(bgPath).ToString();
