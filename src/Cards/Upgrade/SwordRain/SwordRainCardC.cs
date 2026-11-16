@@ -12,7 +12,7 @@ namespace ChaosHeidemarie.Cards.Upgrade.SwordRain;
 public class SwordRainCardC : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/SwordRainCard.png");
-
+    public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
     public SwordRainCardC() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }

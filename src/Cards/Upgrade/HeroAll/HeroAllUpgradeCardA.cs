@@ -13,6 +13,7 @@ namespace ChaosHeidemarie.Cards.Upgrade.HeroAll;
 public class HeroAllUpgradeCardA : TemporaryLinkCardBase
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/HeroAllCard.png");
+    public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
 
     public HeroAllUpgradeCardA() : base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {

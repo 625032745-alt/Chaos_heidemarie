@@ -19,6 +19,7 @@ public class EffulgentExpansionCard : TransformAtTurnStartCardBase
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
+    public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
 
     public EffulgentExpansionCard() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {

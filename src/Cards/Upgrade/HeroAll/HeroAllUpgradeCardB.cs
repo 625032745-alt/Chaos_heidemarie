@@ -14,6 +14,7 @@ public class HeroAllUpgradeCardB : TemporaryLinkCardBase
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/HeroAllCard.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
+    public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
 
     public HeroAllUpgradeCardB() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {

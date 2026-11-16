@@ -42,10 +42,9 @@ internal sealed class HeidemarieCharacterSelectAnimationLoopPatch : IPatchMethod
 
     public static void Postfix(
         NCharacterSelectScreen __instance,
-        NCharacterSelectButton charSelectButton,
-        CharacterModel characterModel)
+        NCharacterSelectButton charSelectButton)
     {
-        if (charSelectButton.IsLocked || !HeidemarieAnimationPatchHelper.IsTarget(characterModel))
+        if (charSelectButton.IsLocked || !HeidemarieAnimationPatchHelper.IsTarget(charSelectButton.Character))
             return;
 
         var bgContainer = __instance.GetNodeOrNull<Control>(BgContainerNodeName);

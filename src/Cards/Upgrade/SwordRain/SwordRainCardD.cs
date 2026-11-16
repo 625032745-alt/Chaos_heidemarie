@@ -14,6 +14,7 @@ namespace ChaosHeidemarie.Cards.Upgrade.SwordRain;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class SwordRainCardD : ModCardTemplate
 {
+    public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         ModCardVars.ComputedDamage("BladeDamage",

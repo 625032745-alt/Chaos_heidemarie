@@ -20,6 +20,7 @@ public class HeroAllCard : TransformAtTurnStartCardBase
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
+    public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
 
     public HeroAllCard() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {

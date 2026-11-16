@@ -14,6 +14,7 @@ namespace ChaosHeidemarie.Cards.Quest;
 [RegisterCard(typeof(QuestCardPool))]
 public class EffulgentCompressionCard : ModCardTemplate
 {
+    public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link, CardKeyword.Unplayable,RecycleKeywords.Recycle,UniqueKeyword.Unique];
 

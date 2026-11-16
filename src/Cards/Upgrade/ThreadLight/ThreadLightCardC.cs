@@ -16,6 +16,7 @@ public class ThreadLightCardC : ModCardTemplate
         new(PortraitPath: "res://ArtWorks/images/cards/ThreadLightCard.png");
 
     private List<CardModel> _cards = new();
+    public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link, CardKeyword.Exhaust];
 
