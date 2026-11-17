@@ -25,9 +25,9 @@ public class DawnglowCard : ModCardTemplate
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var power = Owner.Creature.GetPower<InherentMemoryPower>();
-        int stacks = power?.Amount ?? 0;
+        var stacks = power?.Amount ?? 0;
         if (power != null)
-            await PowerCmd.Remove(power);
+            await power.ConsumeAsync(choiceContext, stacks, Owner.Creature, this);
         if (stacks <= 0)
             return;
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)

@@ -26,12 +26,13 @@ public class SublimationCard : ModCardTemplate
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var power = Owner.Creature.GetPower<InherentMemoryPower>();
+        var stacks = power?.Amount ?? 0;
         if (power == null)
             return;
         var baseValue = DynamicVars["Sublimation"].BaseValue;
-        var amount = Math.Min(power.Amount / 2, baseValue);
+        var amount = Math.Min(stacks / 2, baseValue);
         await PlayerCmd.GainEnergy(amount, Owner);
-        await PowerCmd.Remove(power);
+        await power.ConsumeAsync(choiceContext, stacks, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

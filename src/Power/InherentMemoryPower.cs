@@ -125,4 +125,14 @@ public class InherentMemoryPower : ModPowerTemplate
 
         return Amount * 2m;
     }
+    
+    public async Task ConsumeAsync(PlayerChoiceContext ctx, decimal count,
+        Creature? applier, CardModel? cardSource)
+    {
+        var used = Math.Min(Amount, Math.Max(0m, count));
+        if (used <= 0m)
+            return;
+        // 扣到 0 时框架会自己 Remove（ShouldRemoveDueToAmount），别手动 Remove
+        await PowerCmd.ModifyAmount(ctx, this, -used, applier ?? Owner, cardSource);
+    }
 }

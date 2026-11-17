@@ -13,5 +13,8 @@
   "CHAOS_HEIDEMARIE_RELIC_LINGERING_HOURGLASS_RELIC.flavor": "As the sand slowly falls, each swift action earns a fleeting moment of respite.",
   "CHAOS_HEIDEMARIE_RELIC_BROKEN_RADIANCE_HILT_RELIC.title": "Broken Radiance Hilt",
   "CHAOS_HEIDEMARIE_RELIC_BROKEN_RADIANCE_HILT_RELIC.description": "The first time you discard an [gold]Aurora Blade[/gold] each turn, it attacks 1 additional time.",
-  "CHAOS_HEIDEMARIE_RELIC_BROKEN_RADIANCE_HILT_RELIC.flavor": "Though its blade has long since shattered, the lingering radiance still answers the will of its wielder."
+  "CHAOS_HEIDEMARIE_RELIC_BROKEN_RADIANCE_HILT_RELIC.flavor": "Though its blade has long since shattered, the lingering radiance still answers the will of its wielder.",
+  "CHAOS_HEIDEMARIE_RELIC_AURORA_EMBER_RELIC.title": "Aurora Ember",
+  "CHAOS_HEIDEMARIE_RELIC_AURORA_EMBER_RELIC.description": "The first time you consume stacks of [gold]Aurora Chain[/gold] each turn, gain Block equal to the number of stacks consumed, up to a maximum of 12 Block.",
+  "CHAOS_HEIDEMARIE_RELIC_AURORA_EMBER_RELIC.flavor": "The first time you consume stacks of [gold]Aurora Chain[/gold] each turn, gain Block equal to the number of stacks consumed, up to a maximum of 12 Block."
 }
