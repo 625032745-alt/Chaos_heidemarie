@@ -170,5 +170,9 @@
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_CARD.title": "Afterglow",
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_CARD.description": "The first time you play a non-[gold]Link[/gold] Attack card each turn, consume 1 stack of [gold]Scarlet Sword[/gold] to trigger that Attack {Afterglow:diff()} additional times.",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_ECHO_CARD.title": "Crimson Echo",
-  "CHAOS_HEIDEMARIE_CARD_CRIMSON_ECHO_CARD.description": "The first time you lose stacks of [gold]Scarlet Sword[/gold] each turn, draw {CrimsonEcho:diff()} cards."
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_ECHO_CARD.description": "The first time you lose stacks of [gold]Scarlet Sword[/gold] each turn, draw {CrimsonEcho:diff()} cards.",
+  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVERSAL_CARD.title": "Chainlight Reversal",
+  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_REVERSAL_CARD.description": "Deal {Damage:diff()} damage. Consume 2 stacks of [gold]Aurora Chain[/gold] to draw 2 cards.",
+  "CHAOS_HEIDEMARIE_CARD_DAWNLIGHT_VIGIL_CARD.title": "Dawnlight Vigil",
+  "CHAOS_HEIDEMARIE_CARD_DAWNLIGHT_VIGIL_CARD.description": "Gain {Block:diff()} Block. Draw 1 card. If you have [gold]Aurora Chain[/gold], consume 1 stack to draw 1 additional card."
 }
