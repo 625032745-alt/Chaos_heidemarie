@@ -15,7 +15,7 @@ namespace ChaosHeidemarie.Cards.Common;
 public class ChainDevourCard : ModCardTemplate
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [new DamageVar(10, ValueProp.Move), new("ChainDevour", 3)];
+        [new DamageVar(10, ValueProp.Move), new("ChainDevour", 1)];
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
@@ -40,6 +40,6 @@ public class ChainDevourCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        DynamicVars["ChainDevour"].UpgradeValueBy(2);
+        DynamicVars["ChainDevour"].UpgradeValueBy(1);
     }
 }

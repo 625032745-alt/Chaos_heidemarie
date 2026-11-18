@@ -18,7 +18,7 @@ public class AuroraBastionCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public override bool GainsBlock => true;
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(12, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(10, ValueProp.Move)];
 
     public AuroraBastionCard() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
@@ -28,7 +28,7 @@ public class AuroraBastionCard : ModCardTemplate
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         var power = Owner.Creature.GetPowerAmount<InherentMemoryPower>();
-        if (power >= 5)
+        if (power >= 8)
         {
             await PowerCmd.Apply<BarricadePower>(choiceContext, Owner.Creature,
                 1m, Owner.Creature, this);

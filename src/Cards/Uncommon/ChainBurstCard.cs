@@ -26,7 +26,10 @@ public class ChainBurstCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var cards = PileType.Hand.GetPile(Owner).Cards.Where(card => card.Keywords.Contains(LinkKeywords.Link)).ToList();
+        var cards = PileType.Hand.GetPile(Owner).Cards
+            .Where(card => card.Keywords.Contains(LinkKeywords.Link))
+            .Take(2)
+            .ToList();
         foreach (var card in cards)
         {
             await CardCmd.Discard(choiceContext, card);

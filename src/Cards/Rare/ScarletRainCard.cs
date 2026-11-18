@@ -16,13 +16,13 @@ public class ScarletRainCard : ModCardTemplate
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(3, ValueProp.Move),
+        new DamageVar(2, ValueProp.Move),
         ModCardVars.Computed("Repeat", static ctx =>
         {
             var baseValue = ctx.BaseValue;
             if (!ctx.HasSourceCreature) return baseValue;
             var amount = ctx.SourceCreature!.GetPowerAmount<ScarletSwordPower>();
-            return amount <= 0 ? baseValue : amount / 2 + baseValue;
+            return Math.Min(amount / 2 + baseValue, 5m);
         }, 3m)
     ];
 
@@ -47,6 +47,6 @@ public class ScarletRainCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(2);
+        DynamicVars.Damage.UpgradeValueBy(1);
     }
 }

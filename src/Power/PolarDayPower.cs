@@ -23,7 +23,7 @@ public class PolarDayPower : ModPowerTemplate
     {
         if (!participants.Contains(Owner)) return;
         var power = Owner.GetPower<InherentMemoryPower>();
-        if (power != null && power.Amount >= 5)
+        if (power != null && power.Amount >= 7)
         {
             await PlayerCmd.GainEnergy(1, Owner.Player);
         }

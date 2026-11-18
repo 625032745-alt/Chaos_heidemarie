@@ -123,7 +123,7 @@ public class InherentMemoryPower : ModPowerTemplate
         if (cardSource == null)
             return 0m;
 
-        return Amount * 2m;
+        return Amount;
     }
     
     public async Task ConsumeAsync(PlayerChoiceContext ctx, decimal count,

@@ -21,7 +21,7 @@ public class RadianceCard : ModCardTemplate
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move), new("Radiance", 8)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move), new("Radiance", 10)];
 
     public RadianceCard() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
