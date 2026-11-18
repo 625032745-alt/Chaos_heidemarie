@@ -39,12 +39,8 @@ public sealed class HeidemarieStarterRelic : ModRelicTemplate
             var turn = pcs.TurnNumber;
             if (_lastTriggerTurn == turn) return;
             _lastTriggerTurn = turn;
-            var power = Owner.Creature.GetPower<InherentMemoryPower>();
-            if (power != null)
-            {
-                Flash();
-                await PowerCmd.Apply<InherentMemoryPower>(ctx, Owner.Creature, 1m, Owner.Creature, null);
-            }
+            Flash();
+            await PowerCmd.Apply<ScarletSwordPower>(ctx, Owner.Creature, 1m, Owner.Creature, null);
         }
     }
 }

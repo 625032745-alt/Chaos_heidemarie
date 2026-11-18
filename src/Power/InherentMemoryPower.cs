@@ -25,6 +25,7 @@ public class InherentMemoryPower : ModPowerTemplate
         IconPath: "res://ArtWorks/images/power/InherentMemoryPower_Small.png",
         BigIconPath: "res://ArtWorks/images/power/InherentMemoryPower_Big.png"
     );
+    private int _lastLinkTriggerTurn = -1;
 
     // 上限 = 10 + 极昼层数。首次施加时 Owner 还是 null，所以按参数里的生物去算。
     private static decimal GetMaxAmountFor(Creature creature)
@@ -104,12 +105,15 @@ public class InherentMemoryPower : ModPowerTemplate
 
     private async Task ApplyPower(PlayerChoiceContext choiceContext, CardModel card)
     {
-        if (card.Owner != Owner.Player) return;
+        if (Owner.Player == null || card.Owner != Owner.Player) return;
         if (!card.Keywords.Contains(LinkKeywords.Link)) return;
         if (GetRemainingAmount() <= 0m) return;
+        var player = Owner.Player;
+        var turnNumber = player.PlayerCombatState?.TurnNumber ?? -1;
+        if (turnNumber < 0 || _lastLinkTriggerTurn == turnNumber) return;
+        _lastLinkTriggerTurn = turnNumber;
 
         Flash();
-        // 上限由 TryModifyPowerAmountReceived 统一钳制，这里直接加 1 层即可。
         await PowerCmd.ModifyAmount(choiceContext, this, 1m, Owner, card);
     }
 
