@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
@@ -13,7 +12,7 @@ public sealed class Heidemarie : ModCharacterTemplate<HeidemarieCardPool, Heidem
 {
     public override CharacterGender Gender => CharacterGender.Feminine;
     public override Color NameColor => new("8E5AC8FF");
-    public override int StartingHp => 72;
+    public override int StartingHp => 75;
     public override int StartingGold => 99;
     public override float AttackAnimDelay => 0.15f;
     public override float CastAnimDelay => 0.25f;
@@ -29,6 +28,11 @@ public sealed class Heidemarie : ModCharacterTemplate<HeidemarieCardPool, Heidem
     // vanilla-style unlock path so RitsuLib does not look up non-existent ids.
     public override bool RequiresEpochAndTimeline => false;
     public override CharacterAssetProfile AssetProfile => new(
+        Multiplayer: new CharacterMultiplayerAssetSet(
+            ArmPointingTexturePath: "res://ArtWorks/images/ui/hands/multiplayer_hand_regent_point.png",
+            ArmRockTexturePath: "res://ArtWorks/images/ui/hands/multiplayer_hand_regent_rock.png",
+            ArmPaperTexturePath: "res://ArtWorks/images/ui/hands/multiplayer_hand_paper.png",
+            ArmScissorsTexturePath: "res://ArtWorks/images/ui/hands/multiplayer_hand_scissors.png"),
         Scenes: new CharacterSceneAssetSet(
             VisualsPath: "res://ArtWorks/scenes/creature_visuals/heidemarie.tscn",
             EnergyCounterPath: "res://ArtWorks/scenes/combat/energy_counters/heidemarie_energy_counter.tscn",
@@ -40,7 +44,8 @@ public sealed class Heidemarie : ModCharacterTemplate<HeidemarieCardPool, Heidem
             IconPath: "res://ArtWorks/scenes/ui/character_icons/heidemarie_icon.tscn",
             CharacterSelectBgPath: "res://ArtWorks/scenes/screens/char_select/char_select_bg_heidemarie.tscn",
             CharacterSelectIconPath: "res://ArtWorks/images/packed/character_select/char_select_heidemarie.png",
-            CharacterSelectLockedIconPath: "res://ArtWorks/images/packed/character_select/char_select_heidemarie_locked.png",
+            CharacterSelectLockedIconPath:
+            "res://ArtWorks/images/packed/character_select/char_select_heidemarie_locked.png",
             CharacterSelectTransitionPath: "res://ArtWorks/materials/transitions/heidemarie_transition_mat.tres",
             MapMarkerPath: "res://ArtWorks/images/packed/map/icons/map_marker_heidemarie.png"),
         Vfx: new CharacterVfxAssetSet(
