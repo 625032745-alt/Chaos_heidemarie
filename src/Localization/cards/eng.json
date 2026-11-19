@@ -176,5 +176,5 @@
   "CHAOS_HEIDEMARIE_CARD_DAWNLIGHT_VIGIL_CARD.title": "Dawnlight Vigil",
   "CHAOS_HEIDEMARIE_CARD_DAWNLIGHT_VIGIL_CARD.description": "Gain {Block:diff()} Block. Draw 1 card. If you have [gold]Aurora Chain[/gold], consume 1 stack to draw 1 additional card.",
   "CHAOS_HEIDEMARIE_CARD_DAWNLIGHT_JUDGMENT_CARD.title": "Dawnlight Judgment",
-  "CHAOS_HEIDEMARIE_CARD_DAWNLIGHT_JUDGMENT_CARD.description": "Deal {Damage:diff()} damage to ALL enemies. Lose {JudgmentLoss:diff()} stacks of [gold]Aurora Chain[/gold] to reduce ALL enemies' [gold]Strength[/gold] by an amount equal to the number of stacks lost this turn."
+  "CHAOS_HEIDEMARIE_CARD_DAWNLIGHT_JUDGMENT_CARD.description": "Deal {Damage:diff()} damage to ALL enemies. Lose up to {JudgmentLoss:diff()} stacks of [gold]Aurora Chain[/gold]. ALL enemies lose [gold]Strength[/gold] equal to the number of stacks lost for this turn."
 }
