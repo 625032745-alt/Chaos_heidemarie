@@ -33,7 +33,12 @@ public class DawnlightJudgmentCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        // 1. 先结清代价：实际扣掉多少层，就只挂多少层降力
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .FromCard(this, cardPlay)
+            .TargetingAllOpponents(CombatState)
+            .WithHitFx("vfx/vfx_starry_impact")
+            .SpawningHitVfxOnEachCreature()
+            .Execute(choiceContext);
         var loss = DynamicVars["JudgmentLoss"].BaseValue;
         var used = 0m;
         var memory = Owner.Creature.GetPower<InherentMemoryPower>();
@@ -43,13 +48,6 @@ public class DawnlightJudgmentCard : ModCardTemplate
             if (used > 0m)
                 await memory.ConsumeAsync(choiceContext, used, Owner.Creature, this);
         }
-
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this, cardPlay)
-            .TargetingAllOpponents(CombatState)
-            .WithHitFx("vfx/vfx_starry_impact")
-            .SpawningHitVfxOnEachCreature()
-            .Execute(choiceContext);
 
         if (used <= 0m)
             return;
