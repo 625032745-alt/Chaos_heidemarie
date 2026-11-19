@@ -21,20 +21,21 @@ public class ResilientChainPower : ModPowerTemplate
     );
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
-        decimal amount, Creature? applier,
-        CardModel? cardSource)
+        decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (power is not InherentMemoryPower)
             return;
 
-        // 不是自己的极光连锁
-        if (power.Owner != Owner)
+        if (!ReferenceEquals(power.Owner, Owner))
             return;
-
-        // amount < 0 代表这次极光连锁减少
-        if (amount >= 0)
+        
+        if (amount >= 0m)
             return;
-
+        
+        if (power.Amount > 0m)
+            return;
+        
+        Flash();
         await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Move, null);
     }
 }

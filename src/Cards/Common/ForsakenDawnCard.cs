@@ -15,8 +15,7 @@ public class ForsakenDawnCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("ForsakenDawn", 1)];
 
     public ForsakenDawnCard() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
