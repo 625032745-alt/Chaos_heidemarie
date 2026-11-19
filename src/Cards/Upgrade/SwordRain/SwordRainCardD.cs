@@ -46,12 +46,13 @@ public class SwordRainCardD : ModCardTemplate
         var player = card.Owner;
         var playerCombatState = player.PlayerCombatState;
         var cards = playerCombatState.Hand.Cards.Where(c => c is LiberationAuroraCard).ToList();
+        var damage = DynamicVars.EvaluateValueOrDefault("BladeDamage", 30m, cardPlay.Target);
         foreach (var cardModel in cards)
         {
             await CardCmd.Exhaust(choiceContext, cardModel);
         }
 
-        await DamageCmd.Attack(DynamicVars.EvaluateValueOrDefault("BladeDamage", 30m, cardPlay.Target))
+        await DamageCmd.Attack(damage)
             .FromCard(this, cardPlay)
             .TargetingAllOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")

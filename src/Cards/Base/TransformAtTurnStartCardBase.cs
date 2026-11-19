@@ -49,13 +49,13 @@ public abstract class TransformAtTurnStartCardBase : TemporaryLinkCardBase
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        ICombatState? combatState = CombatState;
+        var combatState = CombatState;
         if (combatState == null || player != Owner || !PendingUpgrade)
         {
             return;
         }
 
-        List<CardModel> candidates = BuildCandidates(combatState, player);
+        var candidates = BuildCandidates(combatState, player);
         if (candidates.Count == 0)
         {
             // 没有候选就别留着标记，否则每回合空转
@@ -64,10 +64,10 @@ public abstract class TransformAtTurnStartCardBase : TemporaryLinkCardBase
         }
 
 
-        CardSelectorPrefs prefs = new CardSelectorPrefs(CardSelectorPrefs.TransformSelectionPrompt, 0, 1);
-        IEnumerable<CardModel> selected =
+        var prefs = new CardSelectorPrefs(CardSelectorPrefs.TransformSelectionPrompt, 0, 1);
+        var selected =
             await CardSelectCmd.FromSimpleGrid(choiceContext, candidates, player, prefs);
-        CardModel? picked = selected.FirstOrDefault();
+        var picked = selected.FirstOrDefault();
 
         // 取消 / 点确认没选：清标记，避免下回合再弹
         PendingUpgrade = false;
@@ -84,20 +84,12 @@ public abstract class TransformAtTurnStartCardBase : TemporaryLinkCardBase
 
     private List<CardModel> BuildCandidates(ICombatState combatState, Player player)
     {
-        List<CardModel> result = new List<CardModel>(4);
-        HashSet<string> seen = new HashSet<string>();
+        var result = new List<CardModel>(4);
+        var seen = new HashSet<string>();
 
-        foreach (Func<ICombatState, Player, CardModel> factory in CandidateCardFactories)
+        foreach (var factory in CandidateCardFactories)
         {
-            CardModel? card;
-            try
-            {
-                card = factory(combatState, player);
-            }
-            catch (Exception)
-            {
-                continue;
-            }
+            var card = factory(combatState, player);
 
             if (card.Owner != player)
             {
