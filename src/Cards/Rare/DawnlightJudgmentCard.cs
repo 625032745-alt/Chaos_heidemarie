@@ -5,7 +5,6 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
@@ -34,23 +33,31 @@ public class DawnlightJudgmentCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        IReadOnlyList<Creature> enemies = CombatState.HittableEnemies;
+        // 1. 先结清代价：实际扣掉多少层，就只挂多少层降力
+        var loss = DynamicVars["JudgmentLoss"].BaseValue;
+        var used = 0m;
+        var memory = Owner.Creature.GetPower<InherentMemoryPower>();
+        if (memory != null)
+        {
+            used = Math.Min(memory.Amount, loss);
+            if (used > 0m)
+                await memory.ConsumeAsync(choiceContext, used, Owner.Creature, this);
+        }
+
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .TargetingAllOpponents(CombatState)
-            .WithHitFx("vfx/vfx_attack_slash")
+            .WithHitFx("vfx/vfx_starry_impact")
             .SpawningHitVfxOnEachCreature()
             .Execute(choiceContext);
-        var power = Owner.Creature.GetPower<InherentMemoryPower>();
-        if (power != null)
+
+        if (used <= 0m)
+            return;
+
+        foreach (Creature enemy in CombatState.HittableEnemies)
         {
-            await power.ConsumeAsync(choiceContext, DynamicVars["JudgmentLoss"].BaseValue, Owner.Creature, this);
-            foreach (Creature enemy in enemies)
-            {
-                await PowerCmd.Apply<DyingStarPower>(choiceContext, enemy, DynamicVars["JudgmentLoss"].BaseValue,
-                    Owner.Creature, this);
-                VfxCmd.PlayOnCreature(enemy, "vfx/vfx_attack_slash");
-            }
+            await PowerCmd.Apply<DawnlightJudgmentPower>(choiceContext, enemy, used, Owner.Creature, this);
+            VfxCmd.PlayOnCreature(enemy, "vfx/vfx_attack_slash");
         }
     }
 
