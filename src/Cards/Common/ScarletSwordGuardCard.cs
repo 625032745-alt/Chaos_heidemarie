@@ -36,11 +36,7 @@ public class ScarletSwordGuardCard : ModCardTemplate
             return;
         var originalAmount = power.Amount;
         var consumeAmount = Math.Min(originalAmount, 2);
-        // 消耗赤光剑
-        for (var i = 0; i < consumeAmount; i++)
-        {
-            await PowerCmd.Decrement(power);
-        }
+        await power.ConsumeAsync(choiceContext, consumeAmount, Owner.Creature, this);
 
         var blockAmount = consumeAmount * DynamicVars.Block.BaseValue;
         await CreatureCmd.GainBlock(Owner.Creature, blockAmount, ValueProp.Move, cardPlay);

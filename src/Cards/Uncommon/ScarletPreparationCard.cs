@@ -40,10 +40,7 @@ public class ScarletPreparationCard : ModCardTemplate
         var card = selected.FirstOrDefault();
         if (card == null)
             return;
-        for (var i = 0; i < consumeAmount; i++)
-        {
-            await PowerCmd.Decrement(power);
-        }
+        await power.ConsumeAsync(choiceContext, consumeAmount, Owner.Creature, this);
 
         // 选中的牌本回合费用变为0
         card.SetToFreeThisTurn();

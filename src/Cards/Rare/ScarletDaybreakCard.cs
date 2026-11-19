@@ -15,8 +15,10 @@ public class ScarletDaybreakCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
+
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(12, ValueProp.Unpowered)];
+
     public ScarletDaybreakCard() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
     {
     }
@@ -31,8 +33,8 @@ public class ScarletDaybreakCard : ModCardTemplate
         var power = Owner.Creature.GetPower<ScarletSwordPower>();
         if (power != null)
         {
-            int hits = power.Amount;
-            for (int i = 0; i < hits; i++)
+            var hits = power.Amount;
+            for (var i = 0; i < hits; i++)
             {
                 await DamageCmd.Attack(6)
                     .FromCard(this, cardPlay)

@@ -180,5 +180,7 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_SWORD_GUARD_CARD.title": "赤光守势",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_SWORD_GUARD_CARD.description": "消耗至多2层[gold]赤光剑[/gold]。每消耗1层，获得 {Block:diff()} 点格挡。若因此失去所有[gold]赤光剑[/gold]，对所有敌人造成 {Damage:diff()} 点伤害",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_PREPARATION_CARD.title": "绯刃预备",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_PREPARATION_CARD.description": "消耗 {ScarletPreparation:diff()} 层[gold]赤光剑[/gold]。选择手牌中的1张牌，本回合其费用变为0。抽 1 张牌"
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_PREPARATION_CARD.description": "消耗 {ScarletPreparation:diff()} 层[gold]赤光剑[/gold]。选择手牌中的1张牌，本回合其费用变为0。抽 1 张牌",
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_TRANSPOSITION_CARD.title": "赤光转势",
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_TRANSPOSITION_CARD.description": "消耗 {CrimsonTransposition:diff()} 层[gold]赤光剑[/gold]。获得 1 点能量，抽 1 张牌"
 }

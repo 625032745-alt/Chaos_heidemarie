@@ -180,5 +180,7 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_SWORD_GUARD_CARD.title": "Scarlet Sword Guard",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_SWORD_GUARD_CARD.description": "Consume up to 2 stacks of [gold]Scarlet Sword[/gold]. Gain {Block:diff()} Block for each stack consumed. If you lose all stacks of [gold]Scarlet Sword[/gold] this way, deal {Damage:diff()} damage to ALL enemies.",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_PREPARATION_CARD.title": "Scarlet Preparation",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_PREPARATION_CARD.description": "Consume {ScarletPreparation:diff()} stacks of [gold]Scarlet Sword[/gold]. Choose 1 card from your hand. Its cost becomes 0 this turn. Draw 1 card."
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_PREPARATION_CARD.description": "Consume {ScarletPreparation:diff()} stacks of [gold]Scarlet Sword[/gold]. Choose 1 card from your hand. Its cost becomes 0 this turn. Draw 1 card.",
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_TRANSPOSITION_CARD.title": "Crimson Transposition",
+  "CHAOS_HEIDEMARIE_CARD_CRIMSON_TRANSPOSITION_CARD.description": "Consume {CrimsonTransposition:diff()} stacks of [gold]Scarlet Sword[/gold]. Gain 1 Energy and draw 1 card."
 }

@@ -24,7 +24,11 @@ public class RadianceConversionCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<ScarletSwordPower>(choiceContext, Owner.Creature, -2, Owner.Creature, this);
+        var power = Owner.Creature.GetPower<ScarletSwordPower>();
+        if (power != null)
+        {
+            await power.ConsumeAsync(choiceContext, -2, Owner.Creature, this);
+        }
         await PlayerCmd.GainEnergy(DynamicVars["RadianceConversion"].BaseValue, Owner);
     }
 
