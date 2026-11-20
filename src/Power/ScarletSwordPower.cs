@@ -38,10 +38,9 @@ public class ScarletSwordPower : ModPowerTemplate
         if (card.Owner.Creature != Owner) return;
         if (card.Keywords.Contains(LinkKeywords.Link))
         {
-            var player = card.Owner;
-            var combatState = player.Creature.CombatState;
-            if (null == combatState) return;
-            var enemy = combatState.RunState.Rng.CombatTargets.NextItem(combatState.HittableEnemies);
+            var hittableEnemies = CombatState.HittableEnemies;
+            if (hittableEnemies.Count <= 0) return;
+            var enemy = Owner.Player.RunState.Rng.CombatTargets.NextItem(hittableEnemies);
             if (enemy == null) return;
             Flash();
             await CreatureCmd.Damage(choiceContext, enemy, 6, ValueProp.Unpowered, Owner, card, null);
@@ -83,7 +82,7 @@ public class ScarletSwordPower : ModPowerTemplate
 
         return Task.CompletedTask;
     }
-    
+
     public async Task ConsumeAsync(PlayerChoiceContext ctx, decimal count,
         Creature? applier, CardModel? cardSource)
     {

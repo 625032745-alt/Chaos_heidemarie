@@ -19,20 +19,11 @@ public class SwordRainCardB : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var combatState = CombatState;
-        if (combatState == null)
-            return;
-
         var cards = PileType.Exhaust.GetPile(Owner).Cards
             .OfType<EffulgentBladeCard>().Take(5).ToList();
         foreach (var card in cards)
         {
-            var enemies = combatState.HittableEnemies.ToList();
-            if (enemies.Count == 0)
-                break;
-
-            var target = Owner.RunState.Rng.CombatTargets.NextItem(enemies);
-            await CardCmd.AutoPlay(choiceContext, card, target);
+            await CardCmd.AutoPlay(choiceContext, card, null);
         }
     }
 }

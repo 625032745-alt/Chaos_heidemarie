@@ -31,7 +31,7 @@ public class ScarletRainCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    public ScarletRainCard() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+    public ScarletRainCard() : base(2, CardType.Attack, CardRarity.Rare, TargetType.RandomEnemy)
     {
     }
 
