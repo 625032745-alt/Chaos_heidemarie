@@ -25,9 +25,9 @@ public class ForsakenDawnCard : ModCardTemplate
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var baseValue = DynamicVars["ForsakenDawn"].IntValue;
+        await CardPileCmd.Draw(choiceContext, baseValue, Owner);
         var selected = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
             CardSelectorPrefs.DiscardSelectionPrompt, baseValue, baseValue);
-        await CardPileCmd.Draw(choiceContext, baseValue, Owner);
         await CardCmd.Discard(choiceContext, selected);
     }
 
