@@ -17,6 +17,11 @@ public sealed class AfterglowPower : ModPowerTemplate
     public override PowerStackType StackType => PowerStackType.Counter;
 
     private int _lastTriggerTurn = -1;
+    
+    public override PowerAssetProfile AssetProfile => new(
+        IconPath: "res://ArtWorks/images/power/AfterglowPower_Small.png",
+        BigIconPath: "res://ArtWorks/images/power/AfterglowPower_Big.png"
+    );
 
     public override int ModifyCardPlayCount(CardModel card, Creature? target, int playCount)
     {
