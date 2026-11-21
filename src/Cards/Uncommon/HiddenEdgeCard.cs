@@ -19,7 +19,7 @@ public class HiddenEdgeCard : ModCardTemplate
 
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    
+
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(7, ValueProp.Move)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
@@ -33,10 +33,13 @@ public class HiddenEdgeCard : ModCardTemplate
         var selected = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
             CardSelectorPrefs.DiscardSelectionPrompt, 1, 1);
         var card = selected.FirstOrDefault();
-        if (card != null && card.Type == CardType.Attack)
+        if (card != null)
         {
             await CardCmd.Discard(choiceContext, card);
-            await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
+            if (card.Type == CardType.Attack)
+            {
+                await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
+            }
         }
     }
 

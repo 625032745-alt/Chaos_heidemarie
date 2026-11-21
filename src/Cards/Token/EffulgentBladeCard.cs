@@ -3,6 +3,7 @@ using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -20,7 +21,9 @@ public class EffulgentBladeCard : ModCardTemplate
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link, CardKeyword.Exhaust];
-    public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
+
+    public override CardAssetProfile AssetProfile =>
+        new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public EffulgentBladeCard() : base(1, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
     {
@@ -28,11 +31,11 @@ public class EffulgentBladeCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var card = cardPlay.Card;
-        if (card.Keywords.Contains(RecycleKeywords.Recycle))
+        if (Keywords.Contains(RecycleKeywords.Recycle))
         {
-            card.RemoveKeyword(RecycleKeywords.Recycle);
+            RemoveKeyword(RecycleKeywords.Recycle);
         }
+
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
@@ -44,44 +47,29 @@ public class EffulgentBladeCard : ModCardTemplate
     {
         if (card != this)
             return;
+        var combatState = CombatState;
+        if (combatState == null || !combatState.HittableEnemies.Any())
+            return;
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(card, null)
-            .TargetingRandomOpponents(CombatState)
+            .TargetingRandomOpponents(combatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
     }
-    
-    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
+
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
+        CardModel? cardSource,
         CardPlay? cardPlay)
     {
-        if (dealer != Owner.Creature || !props.IsPoweredAttack())
-        {
-            return 0m;
-        }
         if (cardSource != this)
             return 0M;
-        decimal damage = 0m;
-        var hasPower1 = Owner.Creature.HasPower<EffulgentExpansionPower>();
-        if (hasPower1)
-        {
-            damage += 2m;
-        }
-
-        return damage;
+        if (!props.IsPoweredAttack())
+            return 0M;
+        if (dealer != Owner.Creature)
+            return 0m;
+        return Owner.Creature.HasPower<EffulgentExpansionPower>() ? 2m : 0m;
     }
 
-    public override async Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel clonedBy)
-    {
-        if (card != this)
-            return;
-        
-        if (oldPileType != PileType.Discard)
-            return;
-
-        var currentPile = card.Pile?.Type;
-        
-        if (currentPile != PileType.Draw)
-            return;
-        await CardPileCmd.Add(card, PileType.Discard);
-    }
+    public override void ModifyShuffleOrder(Player player, List<CardModel> cards, bool isInitialShuffle) =>
+        cards.RemoveAll(c => ReferenceEquals(c, this));
 }
