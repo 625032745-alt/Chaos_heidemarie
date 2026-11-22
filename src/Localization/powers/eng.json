@@ -63,5 +63,8 @@
   "CHAOS_HEIDEMARIE_POWER_QUIET_RADIANCE_POWER.smartDescription": "The first time you play a Skill each turn, gain {Amount} Block.",
   "CHAOS_HEIDEMARIE_POWER_CHAINLIGHT_TRAIL_POWER.title": "Chainlight Trail",
   "CHAOS_HEIDEMARIE_POWER_CHAINLIGHT_TRAIL_POWER.description": "The first time you play a [gold]Link[/gold] card each turn, draw 1 card.",
-  "CHAOS_HEIDEMARIE_POWER_CHAINLIGHT_TRAIL_POWER.smartDescription": "The first time you play a [gold]Link[/gold] card each turn, draw 1 card."
+  "CHAOS_HEIDEMARIE_POWER_CHAINLIGHT_TRAIL_POWER.smartDescription": "The first time you play a [gold]Link[/gold] card each turn, draw 1 card.",
+  "CHAOS_HEIDEMARIE_POWER_RADIANT_RESONANCE_POWER.title": "Radiant Resonance",
+  "CHAOS_HEIDEMARIE_POWER_RADIANT_RESONANCE_POWER.description": "The first time you play a [gold]Link[/gold] Attack each turn, it deals {Amount} additional damage.",
+  "CHAOS_HEIDEMARIE_POWER_RADIANT_RESONANCE_POWER.smartDescription": "The first time you play a [gold]Link[/gold] Attack each turn, it deals {Amount} additional damage."
 }

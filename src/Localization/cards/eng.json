@@ -190,5 +190,7 @@
   "CHAOS_HEIDEMARIE_CARD_QUIET_RADIANCE_CARD.title": "Quiet Radiance",
   "CHAOS_HEIDEMARIE_CARD_QUIET_RADIANCE_CARD.description": "The first time you play a Skill each turn, gain {Block:diff()} Block.",
   "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_TRAIL_CARD.title": "Chainlight Trail",
-  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_TRAIL_CARD.description": "The first time you play a [gold]Linked[/gold] card each turn, draw 1 card."
+  "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_TRAIL_CARD.description": "The first time you play a [gold]Linked[/gold] card each turn, draw 1 card.",
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_RESONANCE_CARD.title": "Radiant Resonance",
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_RESONANCE_CARD.description": "The first time you play a [gold]Linked[/gold] Attack each turn, it deals {RadiantResonance:diff()} additional damage."
 }
