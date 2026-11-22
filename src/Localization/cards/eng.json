@@ -116,7 +116,7 @@
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.title": "Crimson Blade",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.description": "Deal {Damage:diff()} damage twice.\nIf you consumed [gold]Scarlet Sword[/gold] this turn, deal 3 additional damage.",
   "CHAOS_HEIDEMARIE_CARD_FADING_RADIANCE_CARD.title": "Fading Radiance",
-  "CHAOS_HEIDEMARIE_CARD_FADING_RADIANCE_CARD.description": "Gain {Block:diff()} Block.\nGain {FadingRadiance:diff()} [gold]Scarlet Sword[gold].",
+  "CHAOS_HEIDEMARIE_CARD_FADING_RADIANCE_CARD.description": "Gain {Block:diff()} Block.\nGain {FadingRadiance:diff()} [gold]Scarlet Sword[/gold].",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_SCAR_CARD.title": "Scarlet Scar",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_SCAR_CARD.description": "Deal {Damage:diff()} damage.\nIf you discarded an Attack this turn, deal 4 additional damage.",
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_PURSUIT_CARD.title": "Afterglow Pursuit",

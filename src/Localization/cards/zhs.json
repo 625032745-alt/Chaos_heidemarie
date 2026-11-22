@@ -116,7 +116,7 @@
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.title": "绯刃",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_BLADE_CARD.description": "造成 {Damage:diff()} 点伤害 2 次，\n若本回合消耗过[gold]赤光剑[/gold]，额外造成 3 点伤害",
   "CHAOS_HEIDEMARIE_CARD_FADING_RADIANCE_CARD.title": "落辉",
-  "CHAOS_HEIDEMARIE_CARD_FADING_RADIANCE_CARD.description": "获得 {Block:diff()} 点格挡，获得 {FadingRadiance:diff()} 层[gold]赤光剑[gold]",
+  "CHAOS_HEIDEMARIE_CARD_FADING_RADIANCE_CARD.description": "获得 {Block:diff()} 点格挡，获得 {FadingRadiance:diff()} 层[gold]赤光剑[/gold]",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_SCAR_CARD.title": "赤痕",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_SCAR_CARD.description": "造成 {Damage:diff()} 点伤害，\n若本回合丢弃过攻击牌，额外造成 4 点伤害",
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_PURSUIT_CARD.title": "残光追斩",

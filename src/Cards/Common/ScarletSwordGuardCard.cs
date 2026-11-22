@@ -44,8 +44,8 @@ public class ScarletSwordGuardCard : ModCardTemplate
         if (originalAmount <= 2 && CombatState != null)
         {
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .TargetingAllOpponents(CombatState)
                 .FromCard(this, cardPlay)
+                .TargetingAllOpponents(CombatState)
                 .WithHitFx("vfx/vfx_attack_slash")
                 .Execute(choiceContext);
         }
