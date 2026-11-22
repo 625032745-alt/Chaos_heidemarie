@@ -31,8 +31,7 @@ public class GatheringLightCard : ModCardTemplate
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         var selected =
-            await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Discard, SelectFromDiscardToHand, 1,
-                1);
+            await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Discard, SelectFromDiscardToHand, 1);
         foreach (var card in selected)
         {
             await CardPileCmd.Add(card, PileType.Hand);

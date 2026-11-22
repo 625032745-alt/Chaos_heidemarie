@@ -47,7 +47,7 @@ public class ReforgeCard : ModCardTemplate
     {
         var baseValue = DynamicVars["ChooseLink"].IntValue;
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, PileType.Hand, SelectFromHand, baseValue, 1);
+            ctx, player, PileType.Hand, SelectFromHand, baseValue);
         foreach (var card in selected)
         {
             card.AddKeyword(LinkKeywords.Link);

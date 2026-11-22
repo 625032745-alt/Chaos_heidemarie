@@ -42,7 +42,7 @@ public class ChainlightRevivalCard : ModCardTemplate
     {
         var selectCount = DynamicVars["ChainlightRevival"].IntValue;
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, PileType.Exhaust, SelectFromExhaust, selectCount, 1);
+            ctx, player, PileType.Exhaust, SelectFromExhaust, selectCount);
         foreach (var card in selected)
         {
             await CardPileCmd.Add(card, PileType.Hand);

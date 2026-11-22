@@ -24,7 +24,7 @@ public class ChainSlashCard : ModCardTemplate
     public override bool GainsBlock => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [new DamageVar(7, ValueProp.Move), new BlockVar(3, ValueProp.Move)];
+        [new DamageVar(5, ValueProp.Move), new BlockVar(3, ValueProp.Move)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     private bool WasDiscardAppliedThisTurn => CombatManager.Instance.History.Entries.OfType<CardDiscardedEntry>()
@@ -47,7 +47,7 @@ public class ChainSlashCard : ModCardTemplate
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3);
-        DynamicVars.Block.UpgradeValueBy(1);
+        DynamicVars.Block.UpgradeValueBy(3);
     }
 
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
@@ -55,6 +55,6 @@ public class ChainSlashCard : ModCardTemplate
     {
         if (dealer != Owner.Creature || !props.IsPoweredAttack()) return 0m;
         if (cardSource != this) return 0;
-        return WasDiscardAppliedThisTurn ? 3 : 0;
+        return WasDiscardAppliedThisTurn ? DynamicVars.Damage.BaseValue : 0;
     }
 }

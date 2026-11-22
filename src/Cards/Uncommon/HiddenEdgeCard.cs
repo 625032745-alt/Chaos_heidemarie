@@ -31,7 +31,7 @@ public class HiddenEdgeCard : ModCardTemplate
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         var selected = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
-            CardSelectorPrefs.DiscardSelectionPrompt, 1, 1);
+            CardSelectorPrefs.DiscardSelectionPrompt, 1);
         var card = selected.FirstOrDefault();
         if (card != null)
         {

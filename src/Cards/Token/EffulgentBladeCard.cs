@@ -72,4 +72,9 @@ public class EffulgentBladeCard : ModCardTemplate
 
     public override void ModifyShuffleOrder(Player player, List<CardModel> cards, bool isInitialShuffle) =>
         cards.RemoveAll(c => ReferenceEquals(c, this));
+
+    protected override void OnUpgrade()
+    {
+        EnergyCost.UpgradeBy(-1);
+    }
 }

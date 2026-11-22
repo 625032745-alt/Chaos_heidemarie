@@ -16,7 +16,7 @@ public sealed class SwordCurtainCard : ModCardTemplate
     public override bool GainsBlock => true;
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(7, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(6, ValueProp.Move)];
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public SwordCurtainCard() : base(1, CardType.Skill, CardRarity.Basic, TargetType.Self)

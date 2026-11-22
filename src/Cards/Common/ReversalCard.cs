@@ -25,7 +25,7 @@ public class ReversalCard : ModCardTemplate
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var selected = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
-            CardSelectorPrefs.DiscardSelectionPrompt, 1, 1);
+            CardSelectorPrefs.DiscardSelectionPrompt, 1);
         var card = selected.FirstOrDefault();
         if (card != null)
         {

@@ -27,7 +27,7 @@ public class ForsakenDawnCard : ModCardTemplate
         var baseValue = DynamicVars["ForsakenDawn"].IntValue;
         await CardPileCmd.Draw(choiceContext, baseValue, Owner);
         var selected = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
-            CardSelectorPrefs.DiscardSelectionPrompt, baseValue, baseValue);
+            CardSelectorPrefs.DiscardSelectionPrompt, baseValue);
         await CardCmd.Discard(choiceContext, selected);
     }
 

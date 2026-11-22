@@ -30,7 +30,7 @@ public class ScarletChainReserveCard : ModCardTemplate
         var powerAmount = Owner.Creature.GetPowerAmount<ScarletSwordPower>();
         if (powerAmount < 3) return;
         var selected = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
-            CardSelectorPrefs.DiscardSelectionPrompt, 2, 1);
+            CardSelectorPrefs.DiscardSelectionPrompt, 2);
         foreach (var card in selected)
         {
             await CardCmd.Discard(choiceContext, card);

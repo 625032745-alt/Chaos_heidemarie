@@ -35,7 +35,7 @@ public class ScarletPreparationCard : ModCardTemplate
             return;
         // 选择1张手牌
         var selected =
-            await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand, SelectPrompt, 1, 1);
+            await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand, SelectPrompt, 1);
 
         var card = selected.FirstOrDefault();
         if (card == null)

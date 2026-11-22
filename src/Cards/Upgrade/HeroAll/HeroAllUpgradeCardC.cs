@@ -37,7 +37,7 @@ public class HeroAllUpgradeCardC : ModCardTemplate
     private async Task SelectFromPileToHand(PlayerChoiceContext ctx, Player player, PileType pileType, LocString prompt)
     {
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, pileType, prompt, 1, 1);
+            ctx, player, pileType, prompt, 1);
         foreach (var card in selected)
         {
             card.AddKeyword(LinkKeywords.Link);

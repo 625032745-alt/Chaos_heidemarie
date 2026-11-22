@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
 
@@ -78,7 +79,8 @@ public abstract class TransformAtTurnStartCardBase : TemporaryLinkCardBase
 
         if (IsTransformable && Pile != null)
         {
-            await CardCmd.Transform(this, picked);
+            await Cmd.CustomScaledWait(0.2f, 0.4f);
+            await CardCmd.Transform(this, picked, CardPreviewStyle.None);
         }
     }
 

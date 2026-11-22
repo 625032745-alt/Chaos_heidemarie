@@ -25,6 +25,6 @@ public class EffulgentExpansionCardC : ModCardTemplate
         var combatState = card.CombatState;
         if (combatState == null)
             return;
-        await CardGenerationHelper.GenerateEffulgentBlades(Owner, 6, PileType.Discard);
+        await CardGenerationHelper.GenerateEffulgentBlades(Owner, 6, PileType.Exhaust);
     }
 }

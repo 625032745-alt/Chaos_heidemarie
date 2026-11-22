@@ -18,14 +18,9 @@ public class ScarletResonanceCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    public override IEnumerable<CardKeyword> CanonicalKeywords =>
-        [CardKeyword.Exhaust];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("ScarletResonance", 3)];
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [new("ScarletResonance", 2)];
-
-    public ScarletResonanceCard()
-        : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+    public ScarletResonanceCard() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
 
@@ -36,7 +31,7 @@ public class ScarletResonanceCard : ModCardTemplate
         await PowerCmd.Apply<ScarletResonancePower>(choiceContext, Owner.Creature, blockAmount, Owner.Creature, this);
         // 选择0至3张手牌丢弃
         var selected = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
-            CardSelectorPrefs.DiscardSelectionPrompt, 3, 1);
+            CardSelectorPrefs.DiscardSelectionPrompt, 3);
         foreach (var card in selected)
         {
             await CardCmd.Discard(choiceContext, card);

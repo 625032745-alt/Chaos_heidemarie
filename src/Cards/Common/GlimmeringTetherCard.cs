@@ -33,7 +33,7 @@ public class GlimmeringTetherCard : ModCardTemplate
     {
         var selectCount = DynamicVars["GlimmeringTether"].IntValue;
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, PileType.Hand, SelectFromHand, selectCount,1);
+            ctx, player, PileType.Hand, SelectFromHand, selectCount);
         foreach (var card in selected)
         {
             card.AddKeyword(LinkKeywords.Link);
