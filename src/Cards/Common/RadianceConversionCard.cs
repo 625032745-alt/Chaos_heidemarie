@@ -16,7 +16,7 @@ public class RadianceConversionCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("RadianceConversion", 1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1)];
 
     public RadianceConversionCard() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
@@ -29,11 +29,12 @@ public class RadianceConversionCard : ModCardTemplate
         {
             await power.ConsumeAsync(choiceContext, -2, Owner.Creature, this);
         }
-        await PlayerCmd.GainEnergy(DynamicVars["RadianceConversion"].BaseValue, Owner);
+
+        await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["RadianceConversion"].UpgradeValueBy(1);
+        DynamicVars.Energy.UpgradeValueBy(1);
     }
 }

@@ -15,7 +15,7 @@ public class CrimsonTranspositionCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("CrimsonTransposition", 2)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("CrimsonTransposition", 2), new EnergyVar(1)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     public CrimsonTranspositionCard() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
@@ -29,7 +29,7 @@ public class CrimsonTranspositionCard : ModCardTemplate
         {
             await power.ConsumeAsync(choiceContext, DynamicVars["CrimsonTransposition"].BaseValue, Owner.Creature,
                 this);
-            await PlayerCmd.GainEnergy(1, Owner);
+            await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
             await CardPileCmd.Draw(choiceContext, Owner);
         }
     }

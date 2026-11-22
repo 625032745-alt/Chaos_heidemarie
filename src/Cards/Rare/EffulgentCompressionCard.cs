@@ -1,16 +1,16 @@
-﻿using ChaosHeidemarie.Keywords;
+﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.CardPools;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
 namespace ChaosHeidemarie.Cards.Rare;
 
-[RegisterCard(typeof(QuestCardPool))]
+[RegisterCard(typeof(HeidemarieCardPool))]
 public class EffulgentCompressionCard : ModCardTemplate
 {
     public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
