@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Common;
+namespace ChaosHeidemarie.Cards.Uncommon;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class DawnlightVigilCard : ModCardTemplate
@@ -18,7 +18,7 @@ public class DawnlightVigilCard : ModCardTemplate
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(8, ValueProp.Move)];
 
-    public DawnlightVigilCard() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+    public DawnlightVigilCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
