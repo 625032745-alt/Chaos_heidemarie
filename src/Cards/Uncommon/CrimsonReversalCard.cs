@@ -43,7 +43,7 @@ public class CrimsonReversalCard : ModCardTemplate
         if (power != null)
         {
             if (CombatState == null) return;
-            var enemy = CombatState.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
+            var enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
             if (enemy == null) return;
             await CreatureCmd.Damage(choiceContext, enemy, 6, ValueProp.Unpowered, this, null);
             await PowerCmd.Decrement(power);

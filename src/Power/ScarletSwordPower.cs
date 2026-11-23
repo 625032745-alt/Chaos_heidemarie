@@ -40,7 +40,7 @@ public class ScarletSwordPower : ModPowerTemplate
         {
             var hittableEnemies = CombatState.HittableEnemies;
             if (hittableEnemies.Count <= 0) return;
-            var enemy = Owner.Player.RunState.Rng.CombatTargets.NextItem(hittableEnemies);
+            var enemy = CombatState.RunState.Rng.CombatTargets.NextItem(hittableEnemies);
             if (enemy == null) return;
             Flash();
             var damage = 6m;

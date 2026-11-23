@@ -48,13 +48,12 @@ public class EffulgentBladeCard : ModCardTemplate
         if (card != this)
             return;
         var combatState = CombatState;
-        if (combatState == null || !combatState.HittableEnemies.Any())
+        if (combatState == null)
             return;
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(card, null)
-            .TargetingRandomOpponents(combatState)
-            .WithHitFx("vfx/vfx_attack_slash")
-            .Execute(choiceContext);
+        var enemy = Owner.RunState.Rng.CombatTargets.NextItem(combatState.HittableEnemies);
+        if (enemy == null) return;
+        await CreatureCmd.Damage(choiceContext, enemy, DynamicVars.Damage.BaseValue, ValueProp.Move, Owner.Creature,
+            this, null);
     }
 
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
