@@ -194,5 +194,9 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_SALVAGE_CARD.title": "Scarlet Salvage",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_SALVAGE_CARD.description": "The first time you discard a non-[gold]Link[/gold] card each turn, draw {ScarletSalvage:diff()} cards.",
   "CHAOS_HEIDEMARIE_CARD_RADIANT_CHAINSTRIKE_CARD.title": "Radiant Chainstrike",
-  "CHAOS_HEIDEMARIE_CARD_RADIANT_CHAINSTRIKE_CARD.description": "Deal {Damage:diff()} damage.\nDeal {RadiantChainstrike:diff()} additional damage for each [gold]Link[/gold] card played this turn, up to 16 additional damage."
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_CHAINSTRIKE_CARD.description": "Deal {Damage:diff()} damage.\nDeal {RadiantChainstrike:diff()} additional damage for each [gold]Link[/gold] card played this turn, up to 16 additional damage.",
+  "CHAOS_HEIDEMARIE_CARD_DAWNBREAK_SEVERANCE_CARD.title": "Dawnbreak Severance",
+  "CHAOS_HEIDEMARIE_CARD_DAWNBREAK_SEVERANCE_CARD.description": "Deal {Damage:diff()} damage.\nConsume 3 stacks of [gold]Aurora Chain[/gold]. Choose 1 card from your hand and Exhaust it.",
+  "CHAOS_HEIDEMARIE_CARD_DAWN_SANCTUARY_CARD.title": "Dawn Sanctuary",
+  "CHAOS_HEIDEMARIE_CARD_DAWN_SANCTUARY_CARD.description": "Gain {Block:diff()} Block.\nDiscard 2 cards.\nGain {Energy:energyIcons()}."
 }
