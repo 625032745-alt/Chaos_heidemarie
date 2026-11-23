@@ -69,5 +69,8 @@
   "CHAOS_HEIDEMARIE_POWER_RADIANT_RESONANCE_POWER.smartDescription": "The first time you play a [gold]Link[/gold] Attack each turn, it deals {Amount} additional damage.",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_TEMPERING_POWER.title": "Scarlet Tempering",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_TEMPERING_POWER.description": "Whenever [gold]Scarlet Sword[/gold] attacks, that attack deals {Amount} additional damage.",
-  "CHAOS_HEIDEMARIE_POWER_SCARLET_TEMPERING_POWER.smartDescription": "Whenever [gold]Scarlet Sword[/gold] attacks, that attack deals {Amount} additional damage."
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_TEMPERING_POWER.smartDescription": "Whenever [gold]Scarlet Sword[/gold] attacks, that attack deals {Amount} additional damage.",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_SALVAGE_POWER.title": "Scarlet Salvage",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_SALVAGE_POWER.description": "The first time you discard a non-[gold]Link[/gold] card each turn, draw {Amount} cards.",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_SALVAGE_POWER.smartDescription": "The first time you discard a non-[gold]Link[/gold] card each turn, draw {Amount} cards."
 }

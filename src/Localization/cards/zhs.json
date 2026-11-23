@@ -194,5 +194,7 @@
   "CHAOS_HEIDEMARIE_CARD_RADIANT_RESONANCE_CARD.title": "辉光共振",
   "CHAOS_HEIDEMARIE_CARD_RADIANT_RESONANCE_CARD.description": "每回合第一次打出[gold]连接[/gold]攻击牌时，该牌额外造成 {RadiantResonance:diff()} 点伤害",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_TEMPERING_CARD.title": "赤锋磨砺",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_TEMPERING_CARD.description": "每次[gold]赤光剑[/gold]发动攻击时，该次攻击额外造成 {ScarletTempering:diff()} 点伤害"
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_TEMPERING_CARD.description": "每次[gold]赤光剑[/gold]发动攻击时，该次攻击额外造成 {ScarletTempering:diff()} 点伤害",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_SALVAGE_CARD.title": "绯光拾遗",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_SALVAGE_CARD.description": "每回合第一次丢弃不是连接牌时，抽 {ScarletSalvage:diff()} 张牌"
 }
