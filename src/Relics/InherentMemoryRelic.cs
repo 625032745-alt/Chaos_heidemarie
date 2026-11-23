@@ -23,11 +23,10 @@ public class InherentMemoryRelic : ModRelicTemplate
         IReadOnlyList<Creature> participants,
         ICombatState combatState)
     {
-        if (side == CombatSide.Player)
-        {
-            Flash();
-            await PowerCmd.Apply<InherentMemoryPower>(choiceContext, Owner.Creature,
-                1m, Owner.Creature, null);
-        }
+        if (side != CombatSide.Player || !participants.Contains(Owner.Creature))
+            return;
+        Flash();
+        await PowerCmd.Apply<InherentMemoryPower>(choiceContext, Owner.Creature,
+            1m, Owner.Creature, null);
     }
 }

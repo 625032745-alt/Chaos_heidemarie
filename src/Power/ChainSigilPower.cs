@@ -26,7 +26,7 @@ public class ChainSigilPower : ModPowerTemplate
         IReadOnlyList<Creature> participants,
         ICombatState combatState)
     {
-        if (side != CombatSide.Player)
+        if (side != CombatSide.Player || !participants.Contains(Owner))
             return;
 
         var inherentMemory = Owner.GetPower<InherentMemoryPower>();
