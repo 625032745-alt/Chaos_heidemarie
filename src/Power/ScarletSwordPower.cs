@@ -43,7 +43,12 @@ public class ScarletSwordPower : ModPowerTemplate
             var enemy = Owner.Player.RunState.Rng.CombatTargets.NextItem(hittableEnemies);
             if (enemy == null) return;
             Flash();
-            await CreatureCmd.Damage(choiceContext, enemy, 6, ValueProp.Unpowered, Owner, card, null);
+            var damage = 6m;
+            if (Owner.GetPower<ScarletTemperingPower>() is { } temperingPower)
+            {
+                damage += temperingPower.GetBonusDamage();
+            }
+            await CreatureCmd.Damage(choiceContext, enemy, damage, ValueProp.Unpowered, Owner, card, null);
             if (Owner.GetPower<ScarletResonancePower>() is { } resonancePower)
             {
                 await resonancePower.OnScarletSwordAttack();

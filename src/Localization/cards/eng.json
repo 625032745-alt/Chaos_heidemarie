@@ -192,5 +192,7 @@
   "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_TRAIL_CARD.title": "Chainlight Trail",
   "CHAOS_HEIDEMARIE_CARD_CHAINLIGHT_TRAIL_CARD.description": "The first time you play a [gold]Linked[/gold] card each turn, draw 1 card.",
   "CHAOS_HEIDEMARIE_CARD_RADIANT_RESONANCE_CARD.title": "Radiant Resonance",
-  "CHAOS_HEIDEMARIE_CARD_RADIANT_RESONANCE_CARD.description": "The first time you play a [gold]Linked[/gold] Attack each turn, it deals {RadiantResonance:diff()} additional damage."
+  "CHAOS_HEIDEMARIE_CARD_RADIANT_RESONANCE_CARD.description": "The first time you play a [gold]Linked[/gold] Attack each turn, it deals {RadiantResonance:diff()} additional damage.",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_TEMPERING_CARD.title": "Scarlet Tempering",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_TEMPERING_CARD.description": "Whenever [gold]Scarlet Sword[/gold] attacks, that attack deals {ScarletTempering:diff()} additional damage."
 }
