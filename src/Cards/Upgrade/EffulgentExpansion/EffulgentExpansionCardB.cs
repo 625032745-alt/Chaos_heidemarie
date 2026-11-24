@@ -15,6 +15,7 @@ public class EffulgentExpansionCardB : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/EffulgentExpansionCard.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
+    public override int MaxUpgradeLevel => 0;
     public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
     private int _handCardCount;
 

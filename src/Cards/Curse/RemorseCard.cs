@@ -19,6 +19,7 @@ public class RemorseCard : ModCardTemplate
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("Combats", 6m)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
+    public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromCard<BladeParadiseCard>()];
     public override int MaxUpgradeLevel => 0;
     private const int MaxCombats = 6;
@@ -46,7 +47,7 @@ public class RemorseCard : ModCardTemplate
         if (pile != null && pile.Type == PileType.Deck)
         {
             CombatsSeen++;
-            if (CombatsSeen >= 5 && Pile.Type == PileType.Deck)
+            if (CombatsSeen >= 6 && Pile.Type == PileType.Deck)
             {
                 var bladeParadiseCard = CombatState.CreateCard<BladeParadiseCard>(Owner);
                 await CardCmd.Transform(this, bladeParadiseCard);

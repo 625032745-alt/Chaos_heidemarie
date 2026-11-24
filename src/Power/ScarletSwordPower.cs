@@ -41,6 +41,12 @@ public class ScarletSwordPower : ModPowerTemplate
             var hittableEnemies = CombatState.HittableEnemies;
             if (hittableEnemies.Count <= 0) return;
             var enemy = CombatState.RunState.Rng.CombatTargets.NextItem(hittableEnemies);
+            var dancePower = Owner.GetPower<ScarletBladeDancePower>();
+            if (dancePower is { Amount: > 0 })
+            {
+                enemy = await dancePower.TrySelectTargetAsync(hittableEnemies);
+            }
+
             if (enemy == null) return;
             Flash();
             var damage = 6m;
@@ -77,9 +83,7 @@ public class ScarletSwordPower : ModPowerTemplate
         Creature? applier,
         CardModel? cardSource)
     {
-        if (power != this) return Task.CompletedTask;
-        if (power is not ScarletSwordPower || amount <= 0)
-            return Task.CompletedTask;
+        if (power != this || amount <= 0) return Task.CompletedTask;
         if (power.Amount > 8)
         {
             SetAmount(8);

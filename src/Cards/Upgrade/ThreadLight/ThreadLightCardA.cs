@@ -17,6 +17,7 @@ public class ThreadLightCardA : ModCardTemplate
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(12, ValueProp.Move)];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
+    public override int MaxUpgradeLevel => 0;
     public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
 
     public override CardAssetProfile AssetProfile =>

@@ -52,7 +52,7 @@ public class ScarletArrayPower : ModPowerTemplate
         var combatState = Owner.CombatState;
         if (combatState == null)
             return;
-        var enemies = combatState.HittableEnemies.ToList();
+        var enemies = combatState.HittableEnemies;
         if (enemies.Count == 0)
             return;
         var enemy = combatState.RunState.Rng.CombatTargets.NextItem(enemies);

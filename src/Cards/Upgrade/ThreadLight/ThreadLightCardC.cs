@@ -14,7 +14,7 @@ public class ThreadLightCardC : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: "res://ArtWorks/images/cards/ThreadLightCard.png");
-
+    public override int MaxUpgradeLevel => 0;
     private List<CardModel> _cards = new();
     public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
 

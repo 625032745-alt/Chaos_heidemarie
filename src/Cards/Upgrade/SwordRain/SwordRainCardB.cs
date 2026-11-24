@@ -13,6 +13,7 @@ public class SwordRainCardB : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/SwordRainCard.png");
     public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
+    public override int MaxUpgradeLevel => 0;
     public SwordRainCardB() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }

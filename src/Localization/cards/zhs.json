@@ -202,5 +202,7 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_REPRISAL_CARD.title": "赤光逆袭",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_REPRISAL_CARD.description": "造成 {Damage:diff()} 点伤害\n若你本回合失去过[gold]赤光剑[/gold]层数，获得等同于本次造成伤害一半的格挡",
   "CHAOS_HEIDEMARIE_CARD_REMORSE_CARD.title": "自责",
-  "CHAOS_HEIDEMARIE_CARD_REMORSE_CARD.description": "在{Combats:diff()}场战斗后从你的[gold]牌组[/gold]中变换为[gold]剑之乐园[/gold]"
+  "CHAOS_HEIDEMARIE_CARD_REMORSE_CARD.description": "在{Combats:diff()}场战斗后从你的[gold]牌组[/gold]中变换为[gold]剑之乐园[/gold]",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_BLADE_DANCE_CARD.title": "绯刃狂舞",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_BLADE_DANCE_CARD.description": "对所有敌人造成 {Damage:diff()} 点伤害。\n本回合接下来 {ScarletBladeDance:diff()} 次[gold]赤光剑[/gold]攻击优先攻击生命值最低的敌人。"
 }

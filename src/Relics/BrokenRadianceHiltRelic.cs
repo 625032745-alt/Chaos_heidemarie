@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -52,21 +53,13 @@ public sealed class BrokenRadianceHiltRelic : ModRelicTemplate
         if (combatState == null)
             return;
 
-        // 没有可以攻击的敌人时不触发
-        if (!combatState.HittableEnemies.Any())
-            return;
-
         // 先标记，避免重复触发
         _triggeredThisTurn = true;
 
         Flash();
-
-        // 额外发动一次极光剑的丢弃攻击
-        await DamageCmd.Attack(blade.DynamicVars.Damage.BaseValue)
-            .FromCard(blade, null)
-            .TargetingRandomOpponents(combatState)
-            .WithHitFx("vfx/vfx_attack_slash")
-            .Execute(choiceContext);
+        var enemy = combatState.RunState.Rng.CombatTargets.NextItem(combatState.HittableEnemies);
+        if (enemy == null) return;
+        await CreatureCmd.Damage(choiceContext, enemy, blade.DynamicVars.Damage, blade, null);
     }
 
     public override Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side,

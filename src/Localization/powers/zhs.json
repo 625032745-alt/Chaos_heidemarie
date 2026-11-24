@@ -72,5 +72,8 @@
   "CHAOS_HEIDEMARIE_POWER_SCARLET_TEMPERING_POWER.smartDescription": "每次[gold]赤光剑[/gold]发动攻击时，该次攻击额外造成 {Amount} 点伤害",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_SALVAGE_POWER.title": "绯光拾遗",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_SALVAGE_POWER.description": "每回合第一次丢弃不是连接牌时，抽 {Amount} 张牌",
-  "CHAOS_HEIDEMARIE_POWER_SCARLET_SALVAGE_POWER.smartDescription": "每回合第一次丢弃不是连接牌时，抽 {Amount} 张牌"
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_SALVAGE_POWER.smartDescription": "每回合第一次丢弃不是连接牌时，抽 {Amount} 张牌",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_BLADE_DANCE_POWER.title": "绯刃狂舞",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_BLADE_DANCE_POWER.description": "本回合接下来 {Amount} 次[gold]赤光剑[/gold]攻击优先攻击生命值最低的敌人",
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_BLADE_DANCE_POWER.smartDescription": "本回合接下来 {Amount} 次[gold]赤光剑[/gold]攻击优先攻击生命值最低的敌人"
 }
