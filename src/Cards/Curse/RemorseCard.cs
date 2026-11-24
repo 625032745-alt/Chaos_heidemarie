@@ -20,6 +20,7 @@ public class RemorseCard : ModCardTemplate
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("Combats", 6m)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
     public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
+    public override bool CanBeGeneratedByModifiers => false;
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [HoverTipFactory.FromCard<BladeParadiseCard>()];
     public override int MaxUpgradeLevel => 0;
     private const int MaxCombats = 6;

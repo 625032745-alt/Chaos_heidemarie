@@ -1,4 +1,4 @@
-﻿using ChaosHeidemarie.Cards.Quest;
+﻿using ChaosHeidemarie.Cards.Curse;
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Combat;

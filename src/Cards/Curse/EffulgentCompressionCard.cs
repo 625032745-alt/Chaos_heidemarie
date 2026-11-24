@@ -8,13 +8,14 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Quest;
+namespace ChaosHeidemarie.Cards.Curse;
 
 [RegisterCard(typeof(CurseCardPool))]
 public class EffulgentCompressionCard : ModCardTemplate
 {
     public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
     public override int MaxUpgradeLevel => 0;
+    public override bool CanBeGeneratedByModifiers => false;
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>

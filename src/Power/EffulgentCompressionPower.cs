@@ -1,4 +1,4 @@
-﻿using ChaosHeidemarie.Cards.Quest;
+﻿using ChaosHeidemarie.Cards.Curse;
 using ChaosHeidemarie.Cards.Rare;
 using ChaosHeidemarie.Cards.Token;
 using ChaosHeidemarie.Keywords;
