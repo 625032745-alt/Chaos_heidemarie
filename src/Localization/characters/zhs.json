@@ -1,12 +1,20 @@
 {
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.title": "海德玛丽",
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.titleObject": "海德玛丽",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.description": "[b]过去的英雄,同时也是大众的偶像。[/b]在「伊甸尼蒂号」的悲剧--「艾立纳德」事件中大显身手的英雄。因伤自干员之位退下后,依然获得广大民众的热烈支持,并在「必须跨越悲剧、迈向未来」的声浪推动下,登上了市长之位。",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounSubject": "她",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.description": "过去的英雄,同时也是大众的偶像。在「伊甸尼蒂号」的悲剧--「艾立纳德」事件中大显身手的英雄。因伤自干员之位退下后,依然获得广大民众的热烈支持,并在「必须跨越悲剧、迈向未来」的声浪推动下,登上了市长之位。",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.flavor": "过去的英雄,同时也是大众的偶像。在「伊甸尼蒂号」的悲剧--「艾立纳德」事件中大显身手的英雄。因伤自干员之位退下后,依然获得广大民众的热烈支持,并在「必须跨越悲剧、迈向未来」的声浪推动下,登上了市长之位。",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.selectMessage": "我来打头阵，那么出发吧！",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.victoryMessage": "嘿嘿，没什么大不了的。",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.defeatMessage": "这次都是我的错，对不起嘛~",
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounObject": "她",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounPossessive": "她的",
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.possessiveAdjective": "她的",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.cardsModifierTitle": "海德玛丽牌",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.cardsModifierDescription": "来自海德玛丽牌池的卡牌。",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.unlockText": "默认解锁。"
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounPossessive": "她的",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounSubject": "她",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.goldMonologue": "多一点资金，总不会有坏处。",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.eventDeathPrevention": "都……都怪我……",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.aromaPrinciple": "我不会认输！",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.cardsModifierTitle": "海德玛丽卡牌",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.cardsModifierDescription": "海德玛丽的卡牌现在会出现在奖励和商店中。",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.banter.alive.endTurnPing": "各位，做好准备！",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.banter.dead.endTurnPing": "这次都是我的错，对不起嘛~"
 }

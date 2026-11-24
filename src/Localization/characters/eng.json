@@ -1,12 +1,20 @@
 {
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.title": "Heidemarie",
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.titleObject": "Heidemarie",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.description": "[b]A hero of the past, and also an idol of the masses.[/b] A hero who distinguished herself during the tragedy of the \"Edenity\" – the \"Elinard\" incident. Though she stepped down from her post as an operative due to injury, she continues to enjoy overwhelming popular support, and was propelled into the mayoral office by public sentiment that \"we must transcend tragedy and move toward the future.\"",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounSubject": "she",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.description": "A hero of the past and an idol of the people. She distinguished herself during the Elinad Incident, the tragedy aboard the Edenity. After retiring from her position as an Operator due to her injuries, she continued to enjoy overwhelming public support. Driven by the people's call to overcome tragedy and move toward the future, she rose to the office of mayor.",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.flavor": "A hero of the past and an idol of the people. She distinguished herself during the Elinad Incident, the tragedy aboard the Edenity. After retiring from her position as an Operator due to her injuries, she continued to enjoy overwhelming public support. Driven by the people's call to overcome tragedy and move toward the future, she rose to the office of mayor.",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.selectMessage": "I'll take the lead. Let's get going!",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.victoryMessage": "Hehe, it was no big deal.",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.defeatMessage": "It was all my fault this time. I'm sorry~",
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounObject": "her",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounPossessive": "hers",
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.possessiveAdjective": "her",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounPossessive": "hers",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.pronounSubject": "she",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.goldMonologue": "A little extra funding never hurts.",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.eventDeathPrevention": "It's... It's all my fault...",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.aromaPrinciple": "I won't give up!",
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.cardsModifierTitle": "Heidemarie Cards",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.cardsModifierDescription": "Cards from Heidemarie's card pool.",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.unlockText": "Unlocked by default."
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.cardsModifierDescription": "Heidemarie's cards now appear in card rewards and shops.",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.banter.alive.endTurnPing": "Everyone, get ready!",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.banter.dead.endTurnPing": "It was all my fault this time. I'm sorry~"
 }
