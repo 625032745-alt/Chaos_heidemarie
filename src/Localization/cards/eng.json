@@ -200,5 +200,7 @@
   "CHAOS_HEIDEMARIE_CARD_DAWN_SANCTUARY_CARD.title": "Dawn Sanctuary",
   "CHAOS_HEIDEMARIE_CARD_DAWN_SANCTUARY_CARD.description": "Gain {Block:diff()} Block.\nDiscard 2 cards.\nGain {Energy:energyIcons()}.",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_REPRISAL_CARD.title": "Scarlet Reprisal",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_REPRISAL_CARD.description": "Deal {Damage:diff()} damage\nIf you have lost any stacks of [gold]Scarlet Sword[/gold] this turn, gain Block equal to half the damage dealt."
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_REPRISAL_CARD.description": "Deal {Damage:diff()} damage\nIf you have lost any stacks of [gold]Scarlet Sword[/gold] this turn, gain Block equal to half the damage dealt.",
+  "CHAOS_HEIDEMARIE_CARD_REMORSE_CARD.title": "Remorse",
+  "CHAOS_HEIDEMARIE_CARD_REMORSE_CARD.description": "After {Combats:diff()} combats, transform this card in your [gold]Deck[/gold] into [gold]Blade Paradise[/gold]."
 }

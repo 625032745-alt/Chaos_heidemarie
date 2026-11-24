@@ -40,6 +40,7 @@ public class ChainDevourCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
+        DynamicVars.Damage.UpgradeValueBy(3);
         DynamicVars["ChainDevour"].UpgradeValueBy(1);
     }
 }
