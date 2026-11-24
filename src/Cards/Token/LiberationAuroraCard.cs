@@ -1,4 +1,5 @@
-﻿using ChaosHeidemarie.Cards.Rare;
+﻿using ChaosHeidemarie.Cards.Quest;
+using ChaosHeidemarie.Cards.Rare;
 using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;

@@ -19,5 +19,8 @@
   "CHAOS_HEIDEMARIE_RELIC_AURORA_EMBER_RELIC.flavor": "Even when the aurora has faded away, its last glimmer of light will quietly burn among the ashes.",
   "CHAOS_HEIDEMARIE_RELIC_MAYOR_MEDAL_RELIC.title": "Mayor's Medal",
   "CHAOS_HEIDEMARIE_RELIC_MAYOR_MEDAL_RELIC.description": "Upon pickup, obtain [red]Remorse[/red].",
-  "CHAOS_HEIDEMARIE_RELIC_MAYOR_MEDAL_RELIC.flavor": "It was all my fault this time. I'm sorry~"
+  "CHAOS_HEIDEMARIE_RELIC_MAYOR_MEDAL_RELIC.flavor": "It was all my fault this time. I'm sorry~",
+  "CHAOS_HEIDEMARIE_RELIC_HEART_SCARLET_AURORA_RELIC.title": "Heart of the Scarlet Aurora",
+  "CHAOS_HEIDEMARIE_RELIC_HEART_SCARLET_AURORA_RELIC.description": "At the start of combat, move [gold]Effulgent Compression[/gold] from your draw pile into your hand.\nAt the start of each turn, gain 5 stacks of [gold]Scarlet Sword[/gold].",
+  "CHAOS_HEIDEMARIE_RELIC_HEART_SCARLET_AURORA_RELIC.flavor": "The first light of dawn crystallizes within the heart, while the crimson spirit of the blade burns eternal."
 }

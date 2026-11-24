@@ -16,5 +16,6 @@
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.cardsModifierTitle": "Heidemarie Cards",
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.cardsModifierDescription": "Heidemarie's cards now appear in card rewards and shops.",
   "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.banter.alive.endTurnPing": "Everyone, get ready!",
-  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.banter.dead.endTurnPing": "It was all my fault this time. I'm sorry~"
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.banter.dead.endTurnPing": "It was all my fault this time. I'm sorry~",
+  "CHAOS_HEIDEMARIE_CHARACTER_HEIDEMARIE.unlockText": "Unlocked by default."
 }

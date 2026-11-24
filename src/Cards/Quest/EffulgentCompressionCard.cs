@@ -8,16 +8,20 @@ using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
-namespace ChaosHeidemarie.Cards.Rare;
+namespace ChaosHeidemarie.Cards.Quest;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class EffulgentCompressionCard : ModCardTemplate
 {
     public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link, CardKeyword.Unplayable,RecycleKeywords.Recycle,UniqueKeyword.Unique];
 
-    public EffulgentCompressionCard() : base(-1, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        LinkKeywords.Link, CardKeyword.Unplayable, RecycleKeywords.Recycle, UniqueKeyword.Unique
+    ];
+
+    public EffulgentCompressionCard() : base(-1, CardType.Quest, CardRarity.Quest, TargetType.AnyEnemy)
     {
     }
 

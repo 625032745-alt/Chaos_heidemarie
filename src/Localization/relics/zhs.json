@@ -19,5 +19,8 @@
   "CHAOS_HEIDEMARIE_RELIC_AURORA_EMBER_RELIC.flavor": "纵使极光散尽，最后一缕微光，也会在灰烬中静静燃烧",
   "CHAOS_HEIDEMARIE_RELIC_MAYOR_MEDAL_RELIC.title": "市长勋章",
   "CHAOS_HEIDEMARIE_RELIC_MAYOR_MEDAL_RELIC.description": "拾起时，获得[red]自责[/red]",
-  "CHAOS_HEIDEMARIE_RELIC_MAYOR_MEDAL_RELIC.flavor": "这次都是我的错，对不起嘛~"
+  "CHAOS_HEIDEMARIE_RELIC_MAYOR_MEDAL_RELIC.flavor": "这次都是我的错，对不起嘛~",
+  "CHAOS_HEIDEMARIE_RELIC_HEART_SCARLET_AURORA_RELIC.title": "赤极之心",
+  "CHAOS_HEIDEMARIE_RELIC_HEART_SCARLET_AURORA_RELIC.description": "战斗开始时，将[gold]凝聚极光[/gold]从抽牌堆移入手牌。\n每回合开始时，获得 5 层[gold]赤光剑[/gold]。",
+  "CHAOS_HEIDEMARIE_RELIC_HEART_SCARLET_AURORA_RELIC.flavor": "黎明的微光凝结于心，赤红的剑意永不熄灭。"
 }
