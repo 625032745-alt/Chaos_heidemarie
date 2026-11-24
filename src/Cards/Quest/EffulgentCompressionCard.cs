@@ -10,7 +10,7 @@ using STS2RitsuLib.Scaffolding.Content;
 
 namespace ChaosHeidemarie.Cards.Quest;
 
-[RegisterCard(typeof(QuestCardPool))]
+[RegisterCard(typeof(CurseCardPool))]
 public class EffulgentCompressionCard : ModCardTemplate
 {
     public override CardVisualStyle CustomVisualStyle => CardVisualStyle.Ancient;
@@ -22,7 +22,7 @@ public class EffulgentCompressionCard : ModCardTemplate
         LinkKeywords.Link, CardKeyword.Unplayable, RecycleKeywords.Recycle, UniqueKeyword.Unique
     ];
 
-    public EffulgentCompressionCard() : base(-1, CardType.Quest, CardRarity.Quest, TargetType.AnyEnemy)
+    public EffulgentCompressionCard() : base(-1, CardType.Skill, CardRarity.Curse, TargetType.AnyEnemy)
     {
     }
 
