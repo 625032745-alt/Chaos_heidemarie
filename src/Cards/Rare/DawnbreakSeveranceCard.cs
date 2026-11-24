@@ -17,7 +17,7 @@ public class DawnbreakSeveranceCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-
+    protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(18, ValueProp.Move)];
 
     public DawnbreakSeveranceCard() : base(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)

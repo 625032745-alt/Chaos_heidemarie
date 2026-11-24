@@ -134,7 +134,7 @@
   "CHAOS_HEIDEMARIE_CARD_HIDDEN_EDGE_CARD.title": "藏锋",
   "CHAOS_HEIDEMARIE_CARD_HIDDEN_EDGE_CARD.description": "获得 {Block:diff()} 点格挡。\n选择 1 张手牌丢弃。\n若丢弃的是攻击牌，再获得 {Block:diff()} 点格挡",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.title": "赤光凝形",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.description": "获得 {ScarletManifestation:diff()} 层[gold]赤光剑[/gold]",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.description": "获得 2 层[gold]赤光剑[/gold]\n获得{Energy:energyIcons()}\n将一张[gold]虚空[/gold]加入你的[gold]弃牌堆[/gold]",
   "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.title": "流转",
   "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.description": "选择 1 张手牌丢弃。\n若丢弃的是[gold]连接[/gold]牌，本次丢弃不会触发[gold]赤光剑[/gold]攻击，改为获得 {FlowingCycle:diff()} 层[gold]赤光剑[/gold]。\n抽 1 张牌",
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_TETHER_CARD.title": "余辉牵引",
@@ -198,5 +198,7 @@
   "CHAOS_HEIDEMARIE_CARD_DAWNBREAK_SEVERANCE_CARD.title": "曦光断界",
   "CHAOS_HEIDEMARIE_CARD_DAWNBREAK_SEVERANCE_CARD.description": "造成 {Damage:diff()} 点伤害\n消耗3层极光连锁,选择 1 张手牌，将其消耗",
   "CHAOS_HEIDEMARIE_CARD_DAWN_SANCTUARY_CARD.title": "晨曦庇护",
-  "CHAOS_HEIDEMARIE_CARD_DAWN_SANCTUARY_CARD.description": "获得 {Block:diff()} 点格挡\n丢弃 2 张牌\n获得{Energy:energyIcons()}"
+  "CHAOS_HEIDEMARIE_CARD_DAWN_SANCTUARY_CARD.description": "获得 {Block:diff()} 点格挡\n丢弃 2 张牌\n获得{Energy:energyIcons()}",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_REPRISAL_CARD.title": "赤光逆袭",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_REPRISAL_CARD.description": "造成 {Damage:diff()} 点伤害\n若你本回合失去过[gold]赤光剑[/gold]层数，获得等同于本次造成伤害一半的格挡"
 }

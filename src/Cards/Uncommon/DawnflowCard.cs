@@ -1,6 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
-using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -15,7 +14,8 @@ public class DawnflowCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,RestKeyword.REST];
+
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("Dawnflow", 3)];
 
     public DawnflowCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
@@ -30,6 +30,6 @@ public class DawnflowCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        CardCmd.RemoveKeyword(this, CardKeyword.Exhaust);
+        DynamicVars["Dawnflow"].UpgradeValueBy(1);
     }
 }

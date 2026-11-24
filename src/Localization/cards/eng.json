@@ -134,7 +134,7 @@
   "CHAOS_HEIDEMARIE_CARD_HIDDEN_EDGE_CARD.title": "Hidden Edge",
   "CHAOS_HEIDEMARIE_CARD_HIDDEN_EDGE_CARD.description": "Gain {Block:diff()} Block.\nChoose 1 card in your hand to discard.\nIf it is an Attack, gain {Block:diff()} additional Block.",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.title": "Scarlet Manifestation",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.description": "Gain {ScarletManifestation:diff()} [gold]Scarlet Sword[/gold].",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_MANIFESTATION_CARD.description": "Gain 2 stacks of [gold]Scarlet Sword[/gold].\nGain {Energy:energyIcons()}.\nAdd a [gold]Void[/gold] to your [gold]discard pile[/gold].",
   "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.title": "Flowing Cycle",
   "CHAOS_HEIDEMARIE_CARD_FLOWING_CYCLE_CARD.description": "Choose 1 card in your hand to discard.\nIf it has [gold]Link[/gold], this discard does not trigger a [gold]Scarlet Sword[/gold] attack. Gain {FlowingCycle:diff()} [gold]Scarlet Sword[/gold] instead.\nDraw 1 card.",
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_TETHER_CARD.title": "Afterglow Tether",
@@ -198,5 +198,7 @@
   "CHAOS_HEIDEMARIE_CARD_DAWNBREAK_SEVERANCE_CARD.title": "Dawnbreak Severance",
   "CHAOS_HEIDEMARIE_CARD_DAWNBREAK_SEVERANCE_CARD.description": "Deal {Damage:diff()} damage.\nConsume 3 stacks of [gold]Aurora Chain[/gold]. Choose 1 card from your hand and Exhaust it.",
   "CHAOS_HEIDEMARIE_CARD_DAWN_SANCTUARY_CARD.title": "Dawn Sanctuary",
-  "CHAOS_HEIDEMARIE_CARD_DAWN_SANCTUARY_CARD.description": "Gain {Block:diff()} Block.\nDiscard 2 cards.\nGain {Energy:energyIcons()}."
+  "CHAOS_HEIDEMARIE_CARD_DAWN_SANCTUARY_CARD.description": "Gain {Block:diff()} Block.\nDiscard 2 cards.\nGain {Energy:energyIcons()}.",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_REPRISAL_CARD.title": "Scarlet Reprisal",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_REPRISAL_CARD.description": "Deal {Damage:diff()} damage\nIf you have lost any stacks of [gold]Scarlet Sword[/gold] this turn, gain Block equal to half the damage dealt."
 }
