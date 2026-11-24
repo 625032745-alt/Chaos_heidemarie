@@ -4,7 +4,7 @@
   "name": "市长-海德玛丽",
   "author": "SKY",
   "description": "基于RitsuLib制作的海德玛丽卡组，参考卡厄斯梦境中的海德玛丽人物而制作的模组",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "min_game_version": "0.113.0",
   "has_pck": true,
   "has_dll": true,
