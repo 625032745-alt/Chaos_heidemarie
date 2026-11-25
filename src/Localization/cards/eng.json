@@ -204,5 +204,7 @@
   "CHAOS_HEIDEMARIE_CARD_REMORSE_CARD.title": "Remorse",
   "CHAOS_HEIDEMARIE_CARD_REMORSE_CARD.description": "After {Combats:diff()} combats, transform this card in your [gold]Deck[/gold] into [gold]Blade Paradise[/gold].",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_BLADE_DANCE_CARD.title": "Scarlet Blade Dance",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_BLADE_DANCE_CARD.description": "Deal {Damage:diff()} damage to ALL enemies.\nThe next {ScarletBladeDance:diff()} [gold]Scarlet Sword[/gold] attacks this turn target the enemy with the lowest HP."
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_BLADE_DANCE_CARD.description": "Deal {Damage:diff()} damage to ALL enemies.\nThe next {ScarletBladeDance:diff()} [gold]Scarlet Sword[/gold] attacks this turn target the enemy with the lowest HP.",
+  "CHAOS_HEIDEMARIE_CARD_INTERWOVEN_CARD.title": "Interwoven",
+  "CHAOS_HEIDEMARIE_CARD_INTERWOVEN_CARD.description": "Whenever you discard a [gold]Link[/gold] card each turn, gain {Energy:energyIcons()}."
 }

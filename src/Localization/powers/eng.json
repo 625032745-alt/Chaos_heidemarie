@@ -75,5 +75,8 @@
   "CHAOS_HEIDEMARIE_POWER_SCARLET_SALVAGE_POWER.smartDescription": "The first time you discard a non-[gold]Link[/gold] card each turn, draw {Amount} cards.",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_BLADE_DANCE_POWER.title": "Scarlet Blade Dance",
   "CHAOS_HEIDEMARIE_POWER_SCARLET_BLADE_DANCE_POWER.description": "The next {Amount} [gold]Scarlet Sword[/gold] attacks this turn prioritize the enemy with the lowest HP.",
-  "CHAOS_HEIDEMARIE_POWER_SCARLET_BLADE_DANCE_POWER.smartDescription": "The next {Amount} [gold]Scarlet Sword[/gold] attacks this turn prioritize the enemy with the lowest HP."
+  "CHAOS_HEIDEMARIE_POWER_SCARLET_BLADE_DANCE_POWER.smartDescription": "The next {Amount} [gold]Scarlet Sword[/gold] attacks this turn prioritize the enemy with the lowest HP.",
+  "CHAOS_HEIDEMARIE_POWER_INTERWOVEN_POWER.title": "Interwoven",
+  "CHAOS_HEIDEMARIE_POWER_INTERWOVEN_POWER.description": "Whenever you discard a [gold]Link[/gold] card each turn, gain {Amount:energyIcons()}.",
+  "CHAOS_HEIDEMARIE_POWER_INTERWOVEN_POWER.smartDescription": "Whenever you discard a [gold]Link[/gold] card each turn, gain {Amount:energyIcons()}."
 }
