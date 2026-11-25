@@ -206,5 +206,7 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_BLADE_DANCE_CARD.title": "绯刃狂舞",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_BLADE_DANCE_CARD.description": "对所有敌人造成 {Damage:diff()} 点伤害。\n本回合接下来 {ScarletBladeDance:diff()} 次[gold]赤光剑[/gold]攻击优先攻击生命值最低的敌人。",
   "CHAOS_HEIDEMARIE_CARD_INTERWOVEN_CARD.title": "交织",
-  "CHAOS_HEIDEMARIE_CARD_INTERWOVEN_CARD.description": "每回合丢弃[gold]连接[/gold]牌时，获得{Energy:energyIcons()}"
+  "CHAOS_HEIDEMARIE_CARD_INTERWOVEN_CARD.description": "每回合丢弃[gold]连接[/gold]牌时，获得{Energy:energyIcons()}",
+  "CHAOS_HEIDEMARIE_CARD_SWORD_GOD_FORM_CARD.title": "剑神形态",
+  "CHAOS_HEIDEMARIE_CARD_SWORD_GOD_FORM_CARD.description": "每回合开始时，获得 1 层[gold]赤光剑[/gold]。\n[gold]赤光剑[/gold]攻击现在会对所有敌人造成伤害"
 }

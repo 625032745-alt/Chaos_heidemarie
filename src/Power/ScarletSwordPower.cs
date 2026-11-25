@@ -47,14 +47,25 @@ public class ScarletSwordPower : ModPowerTemplate
                 enemy = await dancePower.TrySelectTargetAsync(hittableEnemies);
             }
 
-            if (enemy == null) return;
-            Flash();
             var damage = 6m;
             if (Owner.GetPower<ScarletTemperingPower>() is { } temperingPower)
             {
                 damage += temperingPower.GetBonusDamage();
             }
-            await CreatureCmd.Damage(choiceContext, enemy, damage, ValueProp.Unpowered, Owner, card, null);
+
+            var godFormPower = Owner.HasPower<SwordGodFormPower>();
+            Flash();
+            if (godFormPower)
+            {
+                await CreatureCmd.Damage(choiceContext, hittableEnemies, damage, ValueProp.Unpowered, Owner,
+                    card, null);
+            }
+            else
+            {
+                if (enemy == null) return;
+                await CreatureCmd.Damage(choiceContext, enemy, damage, ValueProp.Unpowered, Owner, card, null);
+            }
+
             if (Owner.GetPower<ScarletResonancePower>() is { } resonancePower)
             {
                 await resonancePower.OnScarletSwordAttack();

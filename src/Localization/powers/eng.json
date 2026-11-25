@@ -78,5 +78,8 @@
   "CHAOS_HEIDEMARIE_POWER_SCARLET_BLADE_DANCE_POWER.smartDescription": "The next {Amount} [gold]Scarlet Sword[/gold] attacks this turn prioritize the enemy with the lowest HP.",
   "CHAOS_HEIDEMARIE_POWER_INTERWOVEN_POWER.title": "Interwoven",
   "CHAOS_HEIDEMARIE_POWER_INTERWOVEN_POWER.description": "Whenever you discard a [gold]Link[/gold] card each turn, gain {Amount:energyIcons()}.",
-  "CHAOS_HEIDEMARIE_POWER_INTERWOVEN_POWER.smartDescription": "Whenever you discard a [gold]Link[/gold] card each turn, gain {Amount:energyIcons()}."
+  "CHAOS_HEIDEMARIE_POWER_INTERWOVEN_POWER.smartDescription": "Whenever you discard a [gold]Link[/gold] card each turn, gain {Amount:energyIcons()}.",
+  "CHAOS_HEIDEMARIE_POWER_SWORD_GOD_FORM_POWER.title": "Sword God Form",
+  "CHAOS_HEIDEMARIE_POWER_SWORD_GOD_FORM_POWER.description": "At the start of each turn, gain 1 stack of [gold]Scarlet Sword[/gold]. [gold]Scarlet Sword[/gold] attacks now deal damage to ALL enemies.",
+  "CHAOS_HEIDEMARIE_POWER_SWORD_GOD_FORM_POWER.smartDescription": "At the start of each turn, gain 1 stack of [gold]Scarlet Sword[/gold]. [gold]Scarlet Sword[/gold] attacks now deal damage to ALL enemies."
 }
