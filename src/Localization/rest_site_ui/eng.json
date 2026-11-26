@@ -1,5 +1,5 @@
 ﻿{
-  "OPTIONS_MEDITATION.name": "Meditation",
-  "OPTIONS_MEDITATION.description": "Spend 80 Gold to choose 1 card with a Flash effect and reassign its Flash effect.",
-  "OPTIONS_MEDITATION.descriptionDisabled": "There are no cards with a Flash effect."
+  "OPTION_MEDITATION.name": "Meditation",
+  "OPTION_MEDITATION.description": "Spend 80 Gold to choose 1 card with a Flash effect and reassign its Flash effect.",
+  "OPTION_MEDITATION.descriptionDisabled": "There are no cards with a Flash effect."
 }
