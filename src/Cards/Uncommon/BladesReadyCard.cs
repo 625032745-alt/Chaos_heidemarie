@@ -18,8 +18,8 @@ public class BladesReadyCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public override bool GainsBlock => true;
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(6, ValueProp.Move)];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,RestKeyword.REST];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(7, ValueProp.Move)];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
 
     public BladesReadyCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
@@ -29,9 +29,9 @@ public class BladesReadyCard : ModCardTemplate
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         var powerAmount = Owner.Creature.GetPowerAmount<ScarletSwordPower>();
-        if (powerAmount >= 4)
+        if (powerAmount >= 3)
         {
-            await CreatureCmd.GainBlock(Owner.Creature, 7m, ValueProp.Move, cardPlay);
+            await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         }
     }
 

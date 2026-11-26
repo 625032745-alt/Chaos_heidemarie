@@ -1,4 +1,3 @@
-using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -11,6 +10,7 @@ namespace ChaosHeidemarie.Relics;
 
 [RegisterRelic(typeof(Content.HeidemarieRelicPool))]
 [RegisterCharacterStarterRelic(typeof(Characters.Heidemarie))]
+[RegisterTouchOfOrobasRefinement(typeof(UnleashedMemoryRelic))]
 public sealed class HeidemarieStarterRelic : ModRelicTemplate
 {
     public override RelicRarity Rarity => RelicRarity.Starter;
@@ -33,7 +33,6 @@ public sealed class HeidemarieStarterRelic : ModRelicTemplate
         if (cardPlay.Player.Creature != Owner.Creature) return;
         if (cardPlay.IsAutoPlay) return;
         if (!cardPlay.IsLastInSeries) return;
-        if (!cardPlay.Card.Keywords.Contains(LinkKeywords.Link)) return;
         if (Owner.PlayerCombatState is { } pcs)
         {
             var turn = pcs.TurnNumber;

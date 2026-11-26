@@ -1,6 +1,6 @@
 {
   "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.title": "苏醒的记忆",
-  "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.description": "战斗开始时，获得1层极光连锁。每回合第一次使用连接牌时，获得1层[gold]赤光剑[/gold]，每回合只能触发一次，下一回合重置",
+  "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.description": "战斗开始时，获得1层极光连锁。每回合第一次打出牌时，获得1层[gold]赤光剑[/gold]",
   "CHAOS_HEIDEMARIE_RELIC_HEIDEMARIE_STARTER_RELIC.flavor": "强化战斗被动效果",
   "CHAOS_HEIDEMARIE_RELIC_INHERENT_MEMORY_RELIC.title": "内在的记忆",
   "CHAOS_HEIDEMARIE_RELIC_INHERENT_MEMORY_RELIC.description": "[gold]极光连锁[/gold]的基础上限增加 2 层。每回合开始时，获得 1 层[gold]极光连锁[/gold]",
@@ -22,5 +22,8 @@
   "CHAOS_HEIDEMARIE_RELIC_MAYOR_MEDAL_RELIC.flavor": "这次都是我的错，对不起嘛~",
   "CHAOS_HEIDEMARIE_RELIC_HEART_SCARLET_AURORA_RELIC.title": "赤极之心",
   "CHAOS_HEIDEMARIE_RELIC_HEART_SCARLET_AURORA_RELIC.description": "战斗开始时，将[gold]凝聚极光[/gold]从抽牌堆移入手牌。\n每回合开始时，获得 5 层[gold]赤光剑[/gold]。",
-  "CHAOS_HEIDEMARIE_RELIC_HEART_SCARLET_AURORA_RELIC.flavor": "黎明的微光凝结于心，赤红的剑意永不熄灭。"
+  "CHAOS_HEIDEMARIE_RELIC_HEART_SCARLET_AURORA_RELIC.flavor": "黎明的微光凝结于心，赤红的剑意永不熄灭。",
+  "CHAOS_HEIDEMARIE_RELIC_UNLEASHED_MEMORY_RELIC.title": "释放的记忆",
+  "CHAOS_HEIDEMARIE_RELIC_UNLEASHED_MEMORY_RELIC.description": "战斗开始时，获得3层[gold]极光连锁[/gold]和3层[gold]赤光剑[/gold]\n每回合第一次打出牌时，获得2层赤光剑\n当[gold]赤光剑[/gold]或[gold]极光连锁[/gold]失去了至少5层时，对所有敌人造成15点伤害，并获得2点能量",
+  "CHAOS_HEIDEMARIE_RELIC_UNLEASHED_MEMORY_RELIC.flavor": "强化战斗被动效果"
 }

@@ -15,7 +15,7 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace ChaosHeidemarie.Cards.Rare;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
-public class EffulgentExpansionCard : TransformAtTurnStartCardBase
+public class EffulgentExpansionCard : ModCardTemplate
 {
     public override CardAssetProfile AssetProfile => new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     public override IEnumerable<CardKeyword> CanonicalKeywords => [RestKeyword.REST];
@@ -48,12 +48,4 @@ public class EffulgentExpansionCard : TransformAtTurnStartCardBase
     {
         CardCmd.ApplyKeyword(this, LinkKeywords.Link);
     }
-    
-    protected override IReadOnlyList<Func<ICombatState, Player, CardModel>> CandidateCardFactories => 
-    [
-        static (combatState, player) => combatState.CreateCard<EffulgentExpansionCardA>(player),
-        static (combatState, player) => combatState.CreateCard<EffulgentExpansionCardB>(player),
-        static (combatState, player) => combatState.CreateCard<EffulgentExpansionCardC>(player),
-        static (combatState, player) => combatState.CreateCard<EffulgentExpansionCardD>(player)
-    ];
 }

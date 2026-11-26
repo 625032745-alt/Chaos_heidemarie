@@ -31,7 +31,7 @@ public class ChainSigilPower : ModPowerTemplate
 
         var inherentMemory = Owner.GetPower<InherentMemoryPower>();
 
-        if (inherentMemory == null || inherentMemory.Amount < 5)
+        if (inherentMemory == null || inherentMemory.Amount < 3)
             return;
 
         // 随机选择一个敌人

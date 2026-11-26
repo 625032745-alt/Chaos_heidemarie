@@ -20,8 +20,6 @@ public class CrimsonEchoPower : ModPowerTemplate
         BigIconPath: "res://ArtWorks/images/power/CrimsonEchoPower_Big.png"
     );
 
-    private int _lastTriggerTurn = -1;
-
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
         decimal amount, Creature? applier, CardModel? cardSource)
     {
@@ -31,14 +29,6 @@ public class CrimsonEchoPower : ModPowerTemplate
             return;
         if (amount >= 0m)
             return;
-        var combatState = Owner.Player?.PlayerCombatState;
-        if (combatState == null)
-            return;
-        // 本回合已经触发
-        if (combatState.TurnNumber == _lastTriggerTurn)
-            return;
-        // 记录本回合已经触发
-        _lastTriggerTurn = combatState.TurnNumber;
         Flash();
         await CardPileCmd.Draw(choiceContext, Amount, Owner.Player);
     }

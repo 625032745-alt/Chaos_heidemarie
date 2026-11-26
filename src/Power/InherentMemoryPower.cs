@@ -18,29 +18,25 @@ public class InherentMemoryPower : ModPowerTemplate
     private const decimal BaseMaxAmount = 10m;
 
     public override PowerType Type => PowerType.Buff;
-
     public override PowerStackType StackType => PowerStackType.Counter;
 
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/InherentMemoryPower_Small.png",
         BigIconPath: "res://ArtWorks/images/power/InherentMemoryPower_Big.png"
     );
+
     private int _lastLinkTriggerTurn = -1;
 
-    // 上限 = 10 + 极昼层数。首次施加时 Owner 还是 null，所以按参数里的生物去算。
+    // 上限 = 10 + 极昼层数 + 极大遗物 2 层。首次施加时 Owner 还是 null，所以按参数里的生物去算。
     private static decimal GetMaxAmountFor(Creature creature)
-        => BaseMaxAmount + (creature.GetPower<PolarDayPower>()?.Amount ?? 0m) + (creature.Player?.GetRelic<InherentMemoryRelic>() != null ? 2m : 0m);
+        => BaseMaxAmount
+           + (creature.GetPower<PolarDayPower>()?.Amount ?? 0m)
+           + (creature.Player?.GetRelic<InherentMemoryRelic>() != null ? 2m : 0m);
 
-    private decimal GetMaxAmount()
-        => Owner == null ? BaseMaxAmount : GetMaxAmountFor(Owner);
+    private decimal GetMaxAmount() => Owner == null ? BaseMaxAmount : GetMaxAmountFor(Owner);
 
-    private decimal GetRemainingAmount()
-        => Math.Max(0m, GetMaxAmount() - Amount);
+    private decimal GetRemainingAmount() => Math.Max(0m, GetMaxAmount() - Amount);
 
-    /// <summary>
-    /// 拦截所有外来加层（遗物、卡牌、药水、其它能力都走这里）。
-    /// Apply 与 ModifyAmount 两条路径都会调用，所以不再依赖 AddAmountWithLimit。
-    /// </summary>
     public override bool TryModifyPowerAmountReceived(PowerModel canonicalPower, Creature target, decimal amount,
         Creature? applier, out decimal modifiedAmount)
     {
@@ -63,9 +59,6 @@ public class InherentMemoryPower : ModPowerTemplate
         return true;
     }
 
-    /// <summary>
-    /// 首次施加时本能力还没进监听列表，上面那个钩子不生效，这里补一次钳制。
-    /// </summary>
     public override Task AfterApplied(Creature? applier, CardModel? cardSource)
     {
         if (Owner != null)
@@ -78,24 +71,22 @@ public class InherentMemoryPower : ModPowerTemplate
         return Task.CompletedTask;
     }
 
-    /// <summary>
-    /// 极昼掉层后上限变小，已有层数跟着回落。
-    /// </summary>
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
+    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
         decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (power is not PolarDayPower || !ReferenceEquals(power.Owner, Owner) || amount >= 0m)
-            return;
+            return Task.CompletedTask;
 
         var max = GetMaxAmount();
         if (Amount > max)
-            await PowerCmd.ModifyAmount(choiceContext, this, max - Amount, Owner, null);
+            SetAmount((int)max, true);
+
+        return Task.CompletedTask;
     }
 
     public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var card = cardPlay.Card;
-        await ApplyPower(choiceContext, card);
+        await ApplyPower(choiceContext, cardPlay.Card);
     }
 
     public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)
@@ -105,14 +96,19 @@ public class InherentMemoryPower : ModPowerTemplate
 
     private async Task ApplyPower(PlayerChoiceContext choiceContext, CardModel card)
     {
-        if (Owner.Player == null || card.Owner != Owner.Player) return;
-        if (!card.Keywords.Contains(LinkKeywords.Link)) return;
-        if (GetRemainingAmount() <= 0m) return;
+        if (Owner.Player == null || card.Owner != Owner.Player)
+            return;
+        if (!card.Keywords.Contains(LinkKeywords.Link))
+            return;
+        if (GetRemainingAmount() <= 0m)
+            return;
+
         var player = Owner.Player;
         var turnNumber = player.PlayerCombatState?.TurnNumber ?? -1;
-        if (turnNumber < 0 || _lastLinkTriggerTurn == turnNumber) return;
-        _lastLinkTriggerTurn = turnNumber;
+        if (turnNumber < 0 || _lastLinkTriggerTurn == turnNumber)
+            return;
 
+        _lastLinkTriggerTurn = turnNumber;
         Flash();
         await PowerCmd.ModifyAmount(choiceContext, this, 1m, Owner, card);
     }
@@ -120,16 +116,14 @@ public class InherentMemoryPower : ModPowerTemplate
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
         CardModel? cardSource, CardPlay? cardPlay)
     {
-        if (!props.IsPoweredAttack())
-            return 0m;
         if (dealer != Owner)
             return 0m;
-        if (cardSource == null)
+        if (!props.IsPoweredAttack())
             return 0m;
 
         return Amount;
     }
-    
+
     public async Task ConsumeAsync(PlayerChoiceContext ctx, decimal count,
         Creature? applier, CardModel? cardSource)
     {

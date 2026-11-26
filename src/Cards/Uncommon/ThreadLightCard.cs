@@ -1,12 +1,8 @@
-﻿using ChaosHeidemarie.Cards.Base;
-using ChaosHeidemarie.Cards.Upgrade.ThreadLight;
-using ChaosHeidemarie.Content;
+﻿using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
-using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -17,7 +13,7 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace ChaosHeidemarie.Cards.Uncommon;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
-public class ThreadLightCard : TransformAtTurnStartCardBase
+public class ThreadLightCard : ModCardTemplate
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
         [new DamageVar(8, ValueProp.Move), new("ThreadLight", 2)];
@@ -68,12 +64,4 @@ public class ThreadLightCard : TransformAtTurnStartCardBase
         DynamicVars.Damage.UpgradeValueBy(2);
         DynamicVars["ThreadLight"].UpgradeValueBy(1);
     }
-    
-    protected override IReadOnlyList<Func<ICombatState, Player, CardModel>> CandidateCardFactories =>
-    [
-        static (combatState, player) => combatState.CreateCard<ThreadLightCardA>(player),
-        static (combatState, player) => combatState.CreateCard<ThreadLightCardB>(player),
-        static (combatState, player) => combatState.CreateCard<ThreadLightCardC>(player),
-        static (combatState, player) => combatState.CreateCard<ThreadLightCardD>(player)
-    ];
 }

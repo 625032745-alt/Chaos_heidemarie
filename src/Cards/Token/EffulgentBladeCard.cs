@@ -69,8 +69,20 @@ public class EffulgentBladeCard : ModCardTemplate
         return Owner.Creature.HasPower<EffulgentExpansionPower>() ? 2m : 0m;
     }
 
-    public override void ModifyShuffleOrder(Player player, List<CardModel> cards, bool isInitialShuffle) =>
-        cards.RemoveAll(c => ReferenceEquals(c, this));
+    public override async Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel clonedBy)
+    {
+        if (card != this)
+            return;
+        
+        if (oldPileType != PileType.Discard)
+            return;
+
+        var currentPile = card.Pile?.Type;
+        
+        if (currentPile != PileType.Draw)
+            return;
+        await CardPileCmd.Add(card, PileType.Discard);
+    }
 
     protected override void OnUpgrade()
     {

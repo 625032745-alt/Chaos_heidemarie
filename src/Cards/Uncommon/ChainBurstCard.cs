@@ -17,7 +17,6 @@ public class ChainBurstCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(5, ValueProp.Move)];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
 
     public ChainBurstCard() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies)

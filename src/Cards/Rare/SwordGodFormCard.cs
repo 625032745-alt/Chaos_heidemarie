@@ -14,7 +14,7 @@ public class SwordGodFormCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
     
-    public SwordGodFormCard() : base(3, CardType.Power, CardRarity.Rare, TargetType.Self)
+    public SwordGodFormCard() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }
 
@@ -25,6 +25,6 @@ public class SwordGodFormCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        AddKeyword(CardKeyword.Retain);
+        AddKeyword(CardKeyword.Innate);
     }
 }

@@ -31,7 +31,7 @@ public sealed class Heidemarie : ModCharacterTemplate<HeidemarieCardPool, Heidem
         Multiplayer: new CharacterMultiplayerAssetSet(
             ArmPointingTexturePath: "res://ArtWorks/images/ui/hands/multiplayer_hand_regent_point.png",
             ArmRockTexturePath: "res://ArtWorks/images/ui/hands/multiplayer_hand_regent_rock.png",
-            ArmPaperTexturePath: "res://ArtWorks/images/ui/hands/multiplayer_hand_paper.png",
+            ArmPaperTexturePath: "res://ArtWorks/images/ui/hands/multiplayer_hand_regent_paper.png",
             ArmScissorsTexturePath: "res://ArtWorks/images/ui/hands/multiplayer_hand_scissors.png"),
         Scenes: new CharacterSceneAssetSet(
             VisualsPath: "res://ArtWorks/scenes/creature_visuals/heidemarie.tscn",

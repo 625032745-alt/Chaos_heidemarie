@@ -27,24 +27,16 @@ public class DawnPierceCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var powerAmount = Owner.Creature.GetPowerAmount<InherentMemoryPower>();
-        if (powerAmount >= 5)
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .FromCard(this, cardPlay)
+            .Targeting(cardPlay.Target)
+            .WithHitFx("vfx/vfx_attack_slash")
+            .Execute(choiceContext);
+        var power = Owner.Creature.GetPower<InherentMemoryPower>();
+        if (power != null)
         {
-            await CreatureCmd.TriggerAnim(Owner.Creature, "Attack", 0.1f);
-            await using AttackContext context =
-                await AttackCommand.CreateContextAsync(CombatState, choiceContext, cardPlay);
-            var hits = (await CreatureCmd.Damage(choiceContext, cardPlay.Target,
-                DynamicVars.Damage.BaseValue,
-                ValueProp.Move | ValueProp.Unblockable, this, cardPlay)).ToList();
-            context.AddHit(hits);
-        }
-        else
-        {
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this, cardPlay)
-                .Targeting(cardPlay.Target)
-                .WithHitFx("vfx/vfx_attack_slash")
-                .Execute(choiceContext);
+            await power.ConsumeAsync(choiceContext, 2, Owner.Creature, this);
+            await CreatureCmd.LoseBlock(choiceContext, cardPlay.Target, cardPlay.Target.Block, Owner.Creature);
         }
     }
 

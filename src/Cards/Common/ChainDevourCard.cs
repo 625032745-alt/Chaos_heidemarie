@@ -14,8 +14,7 @@ namespace ChaosHeidemarie.Cards.Common;
 [RegisterCard(typeof(HeidemarieCardPool))]
 public class ChainDevourCard : ModCardTemplate
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [new DamageVar(10, ValueProp.Move), new("ChainDevour", 1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move)];
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
@@ -29,18 +28,16 @@ public class ChainDevourCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if ((await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
-                .WithHitFx("vfx/vfx_attack_blunt")
-                .Execute(choiceContext)).Results.SelectMany(r => r).Any(r => r.WasTargetKilled))
-        {
-            var baseValue = DynamicVars["ChainDevour"].BaseValue;
-            await PowerCmd.Apply<InherentMemoryPower>(choiceContext, Owner.Creature, baseValue, Owner.Creature, this);
-        }
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .FromCard(this, cardPlay)
+            .Targeting(cardPlay.Target)
+            .WithHitFx("vfx/vfx_attack_blunt")
+            .Execute(choiceContext);
+        await CardPileCmd.Draw(choiceContext, Owner);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3);
-        DynamicVars["ChainDevour"].UpgradeValueBy(1);
+        DynamicVars.Damage.UpgradeValueBy(2);
     }
 }

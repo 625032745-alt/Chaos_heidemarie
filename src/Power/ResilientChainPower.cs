@@ -1,8 +1,8 @@
-﻿using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Creatures;
+﻿using ChaosHeidemarie.Keywords;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
@@ -20,22 +20,14 @@ public class ResilientChainPower : ModPowerTemplate
         BigIconPath: "res://ArtWorks/images/power/ResilientChainPower_Big.png"
     );
 
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
-        decimal amount, Creature? applier, CardModel? cardSource)
+    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (power is not InherentMemoryPower)
+        var card = cardPlay.Card;
+        if (Owner.Player == null || card.Owner != Owner.Player)
             return;
-
-        if (!ReferenceEquals(power.Owner, Owner))
+        if (!card.Keywords.Contains(LinkKeywords.Link))
             return;
-        
-        if (amount >= 0m)
-            return;
-        
-        if (power.Amount > 0m)
-            return;
-        
         Flash();
-        await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Move, null);
+        await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, cardPlay);
     }
 }

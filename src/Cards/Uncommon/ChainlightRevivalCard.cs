@@ -2,6 +2,7 @@
 using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
 using ChaosHeidemarie.Power;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -21,9 +22,6 @@ public class ChainlightRevivalCard : ModCardTemplate
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("ChainlightRevival", 1)];
 
-    private static readonly LocString SelectFromExhaust =
-        new("card_selection", "CHAOS_HEIDEMARIE_SELECT_FROM_EXHAUST_TO_HAND");
-
     public ChainlightRevivalCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
@@ -42,14 +40,11 @@ public class ChainlightRevivalCard : ModCardTemplate
     {
         var selectCount = DynamicVars["ChainlightRevival"].IntValue;
         var selected = await CardSelectionHelper.SelectFromPile(
-            ctx, player, PileType.Exhaust, SelectFromExhaust, selectCount);
+            ctx, player, PileType.Draw, CardSelectorPrefs.DiscardSelectionPrompt, selectCount);
         foreach (var card in selected)
         {
-            await CardPileCmd.Add(card, PileType.Hand);
-            if (card.Keywords.Contains(LinkKeywords.Link))
-            {
-                await PowerCmd.Apply<InherentMemoryPower>(ctx, Owner.Creature, 2m, Owner.Creature, this);
-            }
+            await CardCmd.Discard(ctx, card);
+            await PowerCmd.Apply<InherentMemoryPower>(ctx, Owner.Creature, 1m, Owner.Creature, this);
         }
     }
 }

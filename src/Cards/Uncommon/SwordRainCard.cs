@@ -17,7 +17,7 @@ namespace ChaosHeidemarie.Cards.Uncommon;
 
 [RegisterCard(typeof(HeidemarieCardPool))]
 [RegisterCharacterStarterCard(typeof(Characters.Heidemarie))]
-public class SwordRainCard : TransformAtTurnStartCardBase
+public class SwordRainCard : ModCardTemplate
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8, ValueProp.Move), new("SwordRain", 1)];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
@@ -54,12 +54,4 @@ public class SwordRainCard : TransformAtTurnStartCardBase
         var baseValue = DynamicVars["SwordRain"].IntValue;
         await CardGenerationHelper.GenerateEffulgentBlades(Owner, baseValue);
     }
-    
-    protected override IReadOnlyList<Func<ICombatState, Player, CardModel>> CandidateCardFactories =>
-    [
-        static (combatState, player) => combatState.CreateCard<SwordRainCardA>(player),
-        static (combatState, player) => combatState.CreateCard<SwordRainCardB>(player),
-        static (combatState, player) => combatState.CreateCard<SwordRainCardC>(player),
-        static (combatState, player) => combatState.CreateCard<SwordRainCardD>(player)
-    ];
 }

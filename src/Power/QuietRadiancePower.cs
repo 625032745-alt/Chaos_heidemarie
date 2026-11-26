@@ -20,28 +20,14 @@ public class QuietRadiancePower : ModPowerTemplate
         BigIconPath: "res://ArtWorks/images/power/QuietRadiancePower_Big.png"
     );
 
-    // 上一次触发的回合
-    private int _lastTriggerTurn = -1;
-
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var card = cardPlay.Card;
-        // 只响应技能牌
         if (card.Type != CardType.Skill)
             return;
-        // 只响应能力拥有者打出的牌
         if (Owner.Player == null || card.Owner != Owner.Player)
             return;
-        var combatState = Owner.Player.PlayerCombatState;
-        if (combatState == null)
-            return;
-        var currentTurn = combatState.TurnNumber;
-        // 每回合只能触发一次
-        if (_lastTriggerTurn == currentTurn)
-            return;
-        // 先记录回合，避免重复触发
-        _lastTriggerTurn = currentTurn;
         Flash();
-        await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Move, null);
+        await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Move, cardPlay);
     }
 }

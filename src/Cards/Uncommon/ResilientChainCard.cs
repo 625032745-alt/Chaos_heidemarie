@@ -16,7 +16,7 @@ public class ResilientChainCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(8, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(6, ValueProp.Unpowered)];
 
     public ResilientChainCard() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
@@ -30,6 +30,6 @@ public class ResilientChainCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(4);
+        EnergyCost.UpgradeBy(-1);
     }
 }

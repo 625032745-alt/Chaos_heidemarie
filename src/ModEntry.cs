@@ -36,7 +36,7 @@ public static class ModEntry
         _harmony.PatchAll(assembly);
 
         RitsuLibFramework.ApplyRequiredPatcher(patcher, DisableMod);
-        
+
         ModCardHandOutlineRegistry.Register(typeof(CardModel), ModCardHandOutlineRules.Switch(
             card => card.Keywords.Contains(LinkKeywords.Link) ? Colors.Blue : null,
             visibleWhenUnplayable: true));
@@ -47,7 +47,8 @@ public static class ModEntry
         if (locManager is null)
             return;
 
-        foreach (var table in new[] { "characters", "cards", "relics", "card_keywords", "card_selection", "powers" })
+        foreach (var table in new[]
+                     { "characters", "cards", "relics", "card_keywords", "card_selection", "powers", "rest_site_ui" })
         {
             MergeLocalizationTable(locManager, table, "eng");
             if (!string.Equals(locManager.Language, "eng", StringComparison.OrdinalIgnoreCase))
