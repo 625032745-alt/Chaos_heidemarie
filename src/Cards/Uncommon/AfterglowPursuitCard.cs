@@ -21,10 +21,8 @@ public class AfterglowPursuitCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [new DamageVar(3, ValueProp.Move), new("AfterglowPursuit", 2)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(5, ValueProp.Move)];
 
     private int DiscardThisTurnCount => CombatManager.Instance.History.Entries.OfType<CardDiscardedEntry>().Count(e =>
         e.HappenedThisTurn(CombatState) && e.Actor == Owner.Creature);
@@ -48,11 +46,11 @@ public class AfterglowPursuitCard : ModCardTemplate
     {
         if (cardSource != this) return 0;
         if (dealer != Owner.Creature || !props.IsPoweredAttack()) return 0m;
-        return DiscardThisTurnCount * DynamicVars["AfterglowPursuit"].BaseValue;
+        return DiscardThisTurnCount * DynamicVars.Damage.BaseValue;
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["AfterglowPursuit"].UpgradeValueBy(2);
+        DynamicVars.Damage.UpgradeValueBy(3);
     }
 }

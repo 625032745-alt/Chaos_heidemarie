@@ -25,7 +25,7 @@ public class RadiantShieldCard : ModCardTemplate
             var blockAmount = ctx.GetCardBaseValueOrDefault("BlockAmount", 8m);
             if (!ctx.HasSourceCreature) return blockAmount;
             var powerAmount = ctx.SourceCreature.GetPowerAmount<InherentMemoryPower>();
-            return blockAmount + Math.Min(blockAmount, powerAmount * 2);
+            return blockAmount + powerAmount * 2;
         })
     ];
 

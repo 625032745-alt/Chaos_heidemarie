@@ -49,6 +49,7 @@ public class ScarletPreparationCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
+        EnergyCost.UpgradeBy(-1);
         DynamicVars["ScarletPreparation"].UpgradeValueBy(-1);
     }
 }

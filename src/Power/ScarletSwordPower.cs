@@ -38,55 +38,7 @@ public class ScarletSwordPower : ModPowerTemplate
         if (card.Owner.Creature != Owner) return;
         if (card.Keywords.Contains(LinkKeywords.Link))
         {
-            var hittableEnemies = CombatState.HittableEnemies;
-            if (hittableEnemies.Count <= 0) return;
-            var enemy = CombatState.RunState.Rng.CombatTargets.NextItem(hittableEnemies);
-            var dancePower = Owner.GetPower<ScarletBladeDancePower>();
-            if (dancePower is { Amount: > 0 })
-            {
-                enemy = await dancePower.TrySelectTargetAsync(hittableEnemies);
-            }
-
-            var damage = 6m;
-            if (Owner.GetPower<ScarletTemperingPower>() is { } temperingPower)
-            {
-                damage += temperingPower.GetBonusDamage();
-            }
-
-            var godFormPower = Owner.HasPower<SwordGodFormPower>();
-            Flash();
-            if (godFormPower)
-            {
-                await CreatureCmd.Damage(choiceContext, hittableEnemies, damage, ValueProp.Unpowered, Owner,
-                    card, null);
-            }
-            else
-            {
-                if (enemy == null) return;
-                await CreatureCmd.Damage(choiceContext, enemy, damage, ValueProp.Unpowered, Owner, card, null);
-            }
-
-            if (Owner.GetPower<ScarletResonancePower>() is { } resonancePower)
-            {
-                await resonancePower.OnScarletSwordAttack();
-            }
-
-            if (Owner.GetPower<BladesAfterglowPower>() is { } bladesAfterglowPower)
-            {
-                await bladesAfterglowPower.OnScarletSwordAttack(choiceContext);
-            }
-
-            if (Owner.GetPower<CrimsonChainPower>() is { } crimsonChainPower)
-            {
-                await crimsonChainPower.OnScarletSwordAttack(choiceContext, enemy);
-            }
-
-            if (Owner.GetPower<ScarletArrayPower>() is { } scarletArrayPower)
-            {
-                await scarletArrayPower.OnScarletSwordAttack(choiceContext);
-            }
-
-            await PowerCmd.Decrement(this);
+            await Damage(choiceContext, card);
         }
     }
 
@@ -111,5 +63,58 @@ public class ScarletSwordPower : ModPowerTemplate
             return;
         // 扣到 0 时框架会自己 Remove（ShouldRemoveDueToAmount），别手动 Remove
         await PowerCmd.ModifyAmount(ctx, this, -used, applier ?? Owner, cardSource);
+    }
+
+    public async Task Damage(PlayerChoiceContext choiceContext, CardModel card)
+    {
+        var hittableEnemies = CombatState.HittableEnemies;
+        if (hittableEnemies.Count <= 0) return;
+        var enemy = CombatState.RunState.Rng.CombatTargets.NextItem(hittableEnemies);
+        var dancePower = Owner.GetPower<ScarletBladeDancePower>();
+        if (dancePower is { Amount: > 0 })
+        {
+            enemy = await dancePower.TrySelectTargetAsync(hittableEnemies);
+        }
+
+        var damage = 6m;
+        if (Owner.GetPower<ScarletTemperingPower>() is { } temperingPower)
+        {
+            damage += temperingPower.GetBonusDamage();
+        }
+
+        var godFormPower = Owner.HasPower<SwordGodFormPower>();
+        Flash();
+        if (godFormPower)
+        {
+            await CreatureCmd.Damage(choiceContext, hittableEnemies, damage, ValueProp.Unpowered, Owner,
+                card, null);
+        }
+        else
+        {
+            if (enemy == null) return;
+            await CreatureCmd.Damage(choiceContext, enemy, damage, ValueProp.Unpowered, Owner, card, null);
+        }
+
+        if (Owner.GetPower<ScarletResonancePower>() is { } resonancePower)
+        {
+            await resonancePower.OnScarletSwordAttack();
+        }
+
+        if (Owner.GetPower<BladesAfterglowPower>() is { } bladesAfterglowPower)
+        {
+            await bladesAfterglowPower.OnScarletSwordAttack(choiceContext);
+        }
+
+        if (Owner.GetPower<CrimsonChainPower>() is { } crimsonChainPower)
+        {
+            await crimsonChainPower.OnScarletSwordAttack(choiceContext, enemy);
+        }
+
+        if (Owner.GetPower<ScarletArrayPower>() is { } scarletArrayPower)
+        {
+            await scarletArrayPower.OnScarletSwordAttack(choiceContext);
+        }
+
+        await PowerCmd.Decrement(this);
     }
 }

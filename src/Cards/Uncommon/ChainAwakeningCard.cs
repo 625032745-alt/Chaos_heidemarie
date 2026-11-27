@@ -17,7 +17,7 @@ public class ChainAwakeningCard : ModCardTemplate
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [new("ChainAwakening", 5), new("ChainAwakeningEnergy", 2)];
+        [new("ChainAwakening", 5), new EnergyVar(2)];
 
     public ChainAwakeningCard() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
@@ -27,16 +27,16 @@ public class ChainAwakeningCard : ModCardTemplate
     {
         var power = Owner.Creature.GetPower<InherentMemoryPower>();
         var baseValue = DynamicVars["ChainAwakening"].BaseValue;
-        var baseValue2 = DynamicVars["ChainAwakeningEnergy"].BaseValue;
+        var energyValue = DynamicVars.Energy.BaseValue;
         if (power != null && power.Amount >= baseValue)
         {
-            await PlayerCmd.GainEnergy(baseValue2, Owner);
+            await PlayerCmd.GainEnergy(energyValue, Owner);
         }
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars["ChainAwakening"].UpgradeValueBy(-1);
-        DynamicVars["ChainAwakeningEnergy"].UpgradeValueBy(1);
+        DynamicVars.Energy.UpgradeValueBy(1);
     }
 }

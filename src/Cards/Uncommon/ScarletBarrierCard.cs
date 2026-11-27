@@ -25,11 +25,14 @@ public class ScarletBarrierCard : ModCardTemplate
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         ModCardVars.ComputedBlock("Block",
-            static ctx => ctx.HasCombatState && ctx.HasSourceCreature
-                ? ctx.BaseValue + Math.Min(3m * CombatManager.Instance.History.Entries
+            static ctx =>
+            {
+                var baseValue = ctx.BaseValue;
+                if (!ctx.HasSourceCreature || !ctx.HasCombatState) return baseValue;
+                return baseValue + 3m * CombatManager.Instance.History.Entries
                     .OfType<CardDiscardedEntry>()
-                    .Count(e => e.HappenedThisTurn(ctx.CombatState) && e.Actor == ctx.SourceCreature), 9m)
-                : ctx.BaseValue,
+                    .Count(e => e.HappenedThisTurn(ctx.CombatState) && e.Actor == ctx.SourceCreature);
+            },
             baseValue: 6m)
     ];
 

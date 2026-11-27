@@ -1,5 +1,7 @@
-﻿using ChaosHeidemarie.Content;
+﻿using ChaosHeidemarie.Cards.Base;
+using ChaosHeidemarie.Content;
 using ChaosHeidemarie.Keywords;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -16,7 +18,7 @@ public class ChainBurstCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(5, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move)];
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
 
     public ChainBurstCard() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies)
@@ -25,10 +27,9 @@ public class ChainBurstCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var cards = PileType.Hand.GetPile(Owner).Cards
-            .Where(card => card.Keywords.Contains(LinkKeywords.Link))
-            .Take(2)
-            .ToList();
+        var count = PileType.Hand.GetPile(Owner).Cards.Count(c => c.Keywords.Contains(LinkKeywords.Link));
+        var cards = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
+            CardSelectorPrefs.DiscardSelectionPrompt, count);
         foreach (var card in cards)
         {
             await CardCmd.Discard(choiceContext, card);

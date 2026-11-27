@@ -19,7 +19,7 @@ public class CrimsonReversalCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(7, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(10, ValueProp.Move)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
     public CrimsonReversalCard() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
@@ -42,11 +42,7 @@ public class CrimsonReversalCard : ModCardTemplate
         var power = Owner.Creature.GetPower<ScarletSwordPower>();
         if (power != null)
         {
-            if (CombatState == null) return;
-            var enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
-            if (enemy == null) return;
-            await CreatureCmd.Damage(choiceContext, enemy, 6, ValueProp.Unpowered, this, null);
-            await PowerCmd.Decrement(power);
+            await power.Damage(choiceContext, card);
         }
     }
 

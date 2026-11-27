@@ -33,7 +33,7 @@ public class ChainlightReversalCard : ModCardTemplate
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         var power = Owner.Creature.GetPower<InherentMemoryPower>();
-        if (power is { Amount: > 2 })
+        if (power is { Amount: >= 2 })
         {
             await power.ConsumeAsync(choiceContext, 2m, Owner.Creature, this);
             await CardPileCmd.Draw(choiceContext, 2m, Owner);
