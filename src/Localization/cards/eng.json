@@ -150,11 +150,11 @@
   "CHAOS_HEIDEMARIE_CARD_SCARLET_RESONANCE_CARD.title": "Scarlet Resonance",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_RESONANCE_CARD.description": "Choose up to 3 cards in your hand to discard.\nFor each [gold]Link[/gold] card discarded this way, gain 1 stack of [gold]Scarlet Sword[/gold].\nWhenever [gold]Scarlet Sword[/gold] attacks this turn, gain {ScarletResonance:diff()} Block.",
   "CHAOS_HEIDEMARIE_CARD_BLADES_AFTERGLOW_CARD.title": "Blades Afterglow",
-  "CHAOS_HEIDEMARIE_CARD_BLADES_AFTERGLOW_CARD.description": "After [gold]Scarlet Sword[/gold] has attacked 3 times in a turn, deal {BladesAfterglow:diff()} damage to ALL enemies.",
+  "CHAOS_HEIDEMARIE_CARD_BLADES_AFTERGLOW_CARD.description": "Each turn, consume 1 stack of [gold]Aurora Chain[/gold] to give 1 card in your hand [gold]Replay[/gold].",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_CHAIN_CARD.title": "Crimson Chain",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_CHAIN_CARD.description": "Whenever [gold]Scarlet Sword[/gold] attacks, apply 2 Vulnerable to the target and cause your next Attack to deal {VigorAmount:diff()} additional damage.",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_ARRAY_CARD.title": "Scarlet Array",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_ARRAY_CARD.description": "Whenever [gold]Scarlet Sword[/gold] attacks, if you have at least 2 stacks of [gold]Scarlet Sword[/gold], lose 2 stacks.\nThe next {ScarletArray:diff()} [gold]Scarlet Sword[/gold] attacks this turn each trigger 1 additional time.",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_ARRAY_CARD.description": "Whenever [gold]Scarlet Sword[/gold] attacks, randomly apply {ScarletArray:diff} [gold]Doom[/gold], [gold]Poison[/gold], [gold]Weak[/gold], [gold]Vulnerable[/gold], or cause an enemy to lose that much [gold]Strength[/gold].",
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_CARD.title": "Afterglow",
   "CHAOS_HEIDEMARIE_CARD_AFTERGLOW_CARD.description": "The first time you play a non-[gold]Link[/gold] Attack each turn, consume 1 stack of [gold]Scarlet Sword[/gold] to play that Attack {Afterglow:diff()} additional times.",
   "CHAOS_HEIDEMARIE_CARD_CRIMSON_ECHO_CARD.title": "Crimson Echo",
@@ -204,9 +204,9 @@
   "CHAOS_HEIDEMARIE_CARD_REMORSE_CARD.title": "Remorse",
   "CHAOS_HEIDEMARIE_CARD_REMORSE_CARD.description": "After {Combats:diff()} combats, transform this card in your [gold]Deck[/gold] into [gold]Blade Paradise[/gold].",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_BLADE_DANCE_CARD.title": "Scarlet Blade Dance",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_BLADE_DANCE_CARD.description": "Deal {Damage:diff()} damage to ALL enemies.\nThe next {ScarletBladeDance:diff()} [gold]Scarlet Sword[/gold] attacks this turn prioritize the enemy with the lowest HP.",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_BLADE_DANCE_CARD.description": "Deal {Damage:diff()} damage.\nAutomatically play all [gold]Link[/gold] cards in your hand.",
   "CHAOS_HEIDEMARIE_CARD_INTERWOVEN_CARD.title": "Interwoven",
   "CHAOS_HEIDEMARIE_CARD_INTERWOVEN_CARD.description": "Whenever you discard a [gold]Link[/gold] card each turn, gain {Energy:energyIcons()}.",
   "CHAOS_HEIDEMARIE_CARD_SWORD_GOD_FORM_CARD.title": "Sword God Form",
-  "CHAOS_HEIDEMARIE_CARD_SWORD_GOD_FORM_CARD.description": "At the start of each turn, gain 1 stack of [gold]Scarlet Sword[/gold].\n[gold]Scarlet Sword[/gold] attacks now deal damage to ALL enemies."
+  "CHAOS_HEIDEMARIE_CARD_SWORD_GOD_FORM_CARD.description": "The first time you lose [gold]Aurora Chain[/gold] stacks each turn, regain all stacks lost this way and gain {Energy:energyIcons()}.\nThe first time you lose [gold]Scarlet Sword[/gold] stacks each turn, regain all stacks lost this way and gain {Block:diff()} Block."
 }

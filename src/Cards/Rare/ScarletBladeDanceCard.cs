@@ -1,5 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
-using ChaosHeidemarie.Power;
+using ChaosHeidemarie.Keywords;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -17,14 +17,10 @@ public class ScarletBladeDanceCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Ethereal];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6m, ValueProp.Move)];
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [
-        new DamageVar(10m, ValueProp.Move),
-        new("ScarletBladeDance", 3m)
-    ];
-
-    public ScarletBladeDanceCard() : base(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+    public ScarletBladeDanceCard() : base(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
     {
     }
 
@@ -32,17 +28,18 @@ public class ScarletBladeDanceCard : ModCardTemplate
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
-            .TargetingAllOpponents(CombatState)
+            .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
-            .SpawningHitVfxOnEachCreature()
             .Execute(choiceContext);
-
-        await PowerCmd.Apply<ScarletBladeDancePower>(choiceContext, Owner.Creature,
-            DynamicVars["ScarletBladeDance"].BaseValue, Owner.Creature, this);
+        var cards = PileType.Hand.GetPile(Owner).Cards.Where(c => c.Keywords.Contains(LinkKeywords.Link)).ToList();
+        foreach (var card in cards)
+        {
+            await CardCmd.AutoPlay(choiceContext, card,null);
+        }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4m);
+        DynamicVars.Damage.UpgradeValueBy(2m);
     }
 }

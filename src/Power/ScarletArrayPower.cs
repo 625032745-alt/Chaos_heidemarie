@@ -1,8 +1,8 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -20,42 +20,37 @@ public class ScarletArrayPower : ModPowerTemplate
             BigIconPath: "res://ArtWorks/images/power/ScarletArrayPower_Big.png"
         );
 
-    private bool _activatedThisTurn;
-    private int _extraAttackCount;
 
-
-    public async Task OnScarletSwordAttack(PlayerChoiceContext choiceContext, ScarletSwordPower swordPower,
-        CardModel? card)
+    public async Task OnScarletSwordAttack(PlayerChoiceContext choiceContext, Creature target)
     {
-        if (!_activatedThisTurn)
-        {
-            if (swordPower.Amount < 2m)
-                return;
-            _activatedThisTurn = true;
-            _extraAttackCount = Amount;
-            Flash();
-            await swordPower.ConsumeAsync(choiceContext, 2m, Owner, card);
-            return;
-        }
-
-        if (_extraAttackCount <= 0)
-            return;
-        _extraAttackCount--;
         Flash();
-        await swordPower.Damage(choiceContext, card, isExtraAttack: true);
-    }
-
-    public override Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side,
-        IEnumerable<Creature> participants)
-    {
-        if (side != CombatSide.Player || !participants.Contains(Owner))
+        var effect = CombatState.RunState.Rng.CombatTargets.NextInt(5);
+        switch (effect)
         {
-            return Task.CompletedTask;
+            // 灾厄
+            case 0:
+                await PowerCmd.Apply<DoomPower>(choiceContext, target, Amount, Owner, null);
+                break;
+
+            // 中毒
+            case 1:
+                await PowerCmd.Apply<PoisonPower>(choiceContext, target, Amount, Owner, null);
+                break;
+
+            // 易伤
+            case 2:
+                await PowerCmd.Apply<VulnerablePower>(choiceContext, target, Amount, Owner, null);
+                break;
+
+            // 虚弱
+            case 3:
+                await PowerCmd.Apply<WeakPower>(choiceContext, target, Amount, Owner, null);
+                break;
+
+            // 永久降低力量
+            case 4:
+                await PowerCmd.Apply<StrengthPower>(choiceContext, target, -1m, Owner, null);
+                break;
         }
-
-        _activatedThisTurn = false;
-        _extraAttackCount = 0;
-
-        return Task.CompletedTask;
     }
 }

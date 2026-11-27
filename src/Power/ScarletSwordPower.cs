@@ -64,43 +64,16 @@ public class ScarletSwordPower : ModPowerTemplate
     }
 
 
-    public async Task Damage(PlayerChoiceContext choiceContext, CardModel? card, bool isExtraAttack = false)
+    public async Task Damage(PlayerChoiceContext choiceContext, CardModel? card)
     {
-        if (!isExtraAttack && Amount <= 0m)
+        var enemy = CombatState.HittableEnemies.MaxBy(t => t.CurrentHp);
+        if (enemy == null)
             return;
-
-        var combatState = Owner.CombatState;
-        if (combatState == null)
-            return;
-
-        var hittableEnemies = combatState.HittableEnemies;
-        if (hittableEnemies.Count == 0)
-            return;
-
-        var enemy = combatState.RunState.Rng.CombatTargets.NextItem(hittableEnemies);
-        var godForm = Owner.HasPower<SwordGodFormPower>();
-        if (!godForm && Owner.GetPower<ScarletBladeDancePower>() is { Amount: > 0 } dancePower)
-        {
-            enemy = await dancePower.TrySelectTargetAsync(hittableEnemies);
-        }
 
         var damage = 6m;
         if (Owner.GetPower<ScarletTemperingPower>() is { } temperingPower)
         {
             damage += temperingPower.GetBonusDamage();
-        }
-
-        Flash();
-        if (godForm)
-        {
-            await CreatureCmd.Damage(choiceContext, hittableEnemies, damage, ValueProp.Unpowered, Owner, card, null);
-        }
-        else
-        {
-            if (enemy == null)
-                return;
-
-            await CreatureCmd.Damage(choiceContext, enemy, damage, ValueProp.Unpowered, Owner, card, null);
         }
 
         // 赤剑共鸣：获得格挡
@@ -109,28 +82,20 @@ public class ScarletSwordPower : ModPowerTemplate
             await resonancePower.OnScarletSwordAttack();
         }
 
-        // 万辉：累计赤光剑攻击次数
-        if (Owner.GetPower<BladesAfterglowPower>() is { } afterglowPower)
-        {
-            await afterglowPower.OnScarletSwordAttack(choiceContext);
-        }
-
         // 绯红连锁：对目标施加易伤，并获得增伤效果
-        if (enemy != null && Owner.GetPower<CrimsonChainPower>() is { } crimsonChainPower)
+        if (Owner.GetPower<CrimsonChainPower>() is { } crimsonChainPower)
         {
             await crimsonChainPower.OnScarletSwordAttack(choiceContext, enemy);
         }
 
-        // 赤剑阵追加攻击不消耗赤光剑，
-        // 也不能再次触发赤剑阵。
-        if (isExtraAttack)
-            return;
-
-        await PowerCmd.Decrement(this);
-
+        // 赤剑阵：随机施加debuff
         if (Owner.GetPower<ScarletArrayPower>() is { } arrayPower)
         {
-            await arrayPower.OnScarletSwordAttack(choiceContext, this, card);
+            await arrayPower.OnScarletSwordAttack(choiceContext, enemy);
         }
+
+        Flash();
+        await CreatureCmd.Damage(choiceContext, enemy, damage, ValueProp.Unpowered, Owner, card, null);
+        await PowerCmd.Decrement(this);
     }
 }

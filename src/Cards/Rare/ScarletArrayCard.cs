@@ -15,7 +15,7 @@ public class ScarletArrayCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("ScarletArray", 2)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new("ScarletArray", 3)];
 
     public ScarletArrayCard() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
@@ -28,6 +28,6 @@ public class ScarletArrayCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        DynamicVars["ScarletArray"].UpgradeValueBy(1);
+        DynamicVars["ScarletArray"].UpgradeValueBy(3);
     }
 }

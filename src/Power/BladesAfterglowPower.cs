@@ -1,9 +1,11 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+﻿using MegaCrit.Sts2.Core.CardSelection;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.Core.Localization;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
@@ -14,35 +16,32 @@ public class BladesAfterglowPower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
 
-    public override PowerStackType StackType => PowerStackType.Counter;
+    public override PowerStackType StackType => PowerStackType.Single;
 
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/BladesAfterglowPower_Small.png",
         BigIconPath: "res://ArtWorks/images/power/BladesAfterglowPower_Big.png"
     );
-    
-    private const int RequiredAttackCount = 3;
-    
-    private int _attackCount;
-    
-    public async Task OnScarletSwordAttack(PlayerChoiceContext choiceContext)
-    {
-        _attackCount++;
-        if (_attackCount < RequiredAttackCount)
-            return;
-        Flash();
-        await CreatureCmd.Damage(choiceContext, CombatState.HittableEnemies, Amount, ValueProp.Unpowered, Owner);
-        _attackCount = 0;
-    }
 
-    // 每回合结束时重置计数
-    public override Task AfterSideTurnEnd(PlayerChoiceContext choiceContext,
-        CombatSide side, IEnumerable<Creature> participants)
-    {
-        if (side != CombatSide.Player || !participants.Contains(Owner))
-            return Task.CompletedTask;
+    private static readonly LocString SelectPrompt =
+        new("card_selection", "CHAOS_HEIDEMARIE_SELECT_CARD_TO_REPLAY");
 
-        _attackCount = 0;
-        return Task.CompletedTask;
+    public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants,
+        ICombatState combatState)
+    {
+        var power = Owner.GetPower<InherentMemoryPower>();
+        if (power == null) return;
+        var cardToTransfigure = await CardSelectCmd.FromHand(new ThrowingPlayerChoiceContext(), Owner.Player,
+            new CardSelectorPrefs(SelectPrompt, 1), null, this);
+        foreach (var item in cardToTransfigure)
+        {
+            if (!item.EnergyCost.CostsX && item.EnergyCost.GetWithModifiers(CostModifiers.None) >= 0)
+            {
+                item.EnergyCost.AddThisCombat(1);
+            }
+
+            item.BaseReplayCount++;
+            await power.ConsumeAsync(new ThrowingPlayerChoiceContext(), 1m, Owner, null);
+        }
     }
 }

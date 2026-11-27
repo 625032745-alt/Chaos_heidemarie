@@ -15,20 +15,17 @@ public class BladesAfterglowCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new("BladesAfterglow", 12)];
-
     public BladesAfterglowCard() : base(3, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var damage = DynamicVars["BladesAfterglow"].BaseValue;
-        await PowerCmd.Apply<BladesAfterglowPower>(choiceContext, Owner.Creature, damage, Owner.Creature, this);
+        await PowerCmd.Apply<BladesAfterglowPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["BladesAfterglow"].UpgradeValueBy(6);
+        AddKeyword(CardKeyword.Innate);
     }
 }
