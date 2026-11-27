@@ -33,17 +33,17 @@ public class CrimsonReversalCard : ModCardTemplate
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-        await PowerCmd.Apply<ScarletSwordPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<ScarletSwordPower>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
 
     public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)
     {
-        if (card != this) return;
-        var power = Owner.Creature.GetPower<ScarletSwordPower>();
-        if (power != null)
-        {
-            await power.Damage(choiceContext, card);
-        }
+        if (!ReferenceEquals(card, this))
+            return;
+        var swordPower = Owner.Creature.GetPower<ScarletSwordPower>();
+        if (swordPower is not { Amount: > 0 })
+            return;
+        await swordPower.Damage(choiceContext, this);
     }
 
     protected override void OnUpgrade()

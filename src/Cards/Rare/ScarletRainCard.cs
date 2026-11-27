@@ -22,8 +22,8 @@ public class ScarletRainCard : ModCardTemplate
             var baseValue = ctx.BaseValue;
             if (!ctx.HasSourceCreature) return baseValue;
             var amount = ctx.SourceCreature!.GetPowerAmount<ScarletSwordPower>();
-            return Math.Min(amount / 2 + baseValue, 5m);
-        }, 3m)
+            return amount + baseValue;
+        }, 1m)
     ];
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
@@ -31,7 +31,7 @@ public class ScarletRainCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    public ScarletRainCard() : base(2, CardType.Attack, CardRarity.Rare, TargetType.RandomEnemy)
+    public ScarletRainCard() : base(2, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
     {
     }
 
@@ -39,8 +39,8 @@ public class ScarletRainCard : ModCardTemplate
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
-            .WithHitCount((int)DynamicVars.EvaluateValueOrDefault("Repeat", 3m, cardPlay.Target))
-            .TargetingRandomOpponents(CombatState)
+            .WithHitCount((int)DynamicVars.EvaluateValueOrDefault("Repeat", 1m, cardPlay.Target))
+            .TargetingAllOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
     }

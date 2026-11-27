@@ -17,15 +17,14 @@ public class ScarletSwordPower : ModPowerTemplate
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override PowerAssetProfile AssetProfile => new(
-        IconPath: "res://ArtWorks/images/power/ScarletSwordPower_Small.png",
-        BigIconPath: "res://ArtWorks/images/power/ScarletSwordPower_Big.png"
-    );
+    public override PowerAssetProfile AssetProfile =>
+        new(IconPath: "res://ArtWorks/images/power/ScarletSwordPower_Small.png",
+            BigIconPath: "res://ArtWorks/images/power/ScarletSwordPower_Big.png"
+        );
 
     public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var card = cardPlay.Card;
-        await ApplyPower(choiceContext, card);
+        await ApplyPower(choiceContext, cardPlay.Card);
     }
 
     public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)
@@ -35,43 +34,52 @@ public class ScarletSwordPower : ModPowerTemplate
 
     private async Task ApplyPower(PlayerChoiceContext choiceContext, CardModel card)
     {
-        if (card.Owner.Creature != Owner) return;
-        if (card.Keywords.Contains(LinkKeywords.Link))
-        {
-            await Damage(choiceContext, card);
-        }
+        if (card.Owner.Creature != Owner)
+            return;
+
+        if (!card.Keywords.Contains(LinkKeywords.Link))
+            return;
+
+        await Damage(choiceContext, card);
     }
 
     public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount,
-        Creature? applier,
-        CardModel? cardSource)
+        Creature? applier, CardModel? cardSource)
     {
-        if (power != this || amount <= 0) return Task.CompletedTask;
-        if (power.Amount > 8)
-        {
+        if (power != this || amount <= 0m)
+            return Task.CompletedTask;
+
+        if (Amount > 8m)
             SetAmount(8);
-        }
 
         return Task.CompletedTask;
     }
 
-    public async Task ConsumeAsync(PlayerChoiceContext ctx, decimal count,
-        Creature? applier, CardModel? cardSource)
+    public async Task ConsumeAsync(PlayerChoiceContext ctx, decimal count, Creature? applier, CardModel? cardSource)
     {
         var used = Math.Min(Amount, Math.Max(0m, count));
         if (used <= 0m)
             return;
-        // 扣到 0 时框架会自己 Remove（ShouldRemoveDueToAmount），别手动 Remove
         await PowerCmd.ModifyAmount(ctx, this, -used, applier ?? Owner, cardSource);
     }
 
-    public async Task Damage(PlayerChoiceContext choiceContext, CardModel card)
+
+    public async Task Damage(PlayerChoiceContext choiceContext, CardModel? card, bool isExtraAttack = false)
     {
-        var hittableEnemies = CombatState.HittableEnemies;
-        if (hittableEnemies.Count <= 0) return;
-        var enemy = CombatState.RunState.Rng.CombatTargets.NextItem(hittableEnemies);
-        var dancePower = Owner.GetPower<ScarletBladeDancePower>();
-        if (dancePower is { Amount: > 0 })
+        if (!isExtraAttack && Amount <= 0m)
+            return;
+
+        var combatState = Owner.CombatState;
+        if (combatState == null)
+            return;
+
+        var hittableEnemies = combatState.HittableEnemies;
+        if (hittableEnemies.Count == 0)
+            return;
+
+        var enemy = combatState.RunState.Rng.CombatTargets.NextItem(hittableEnemies);
+        var godForm = Owner.HasPower<SwordGodFormPower>();
+        if (!godForm && Owner.GetPower<ScarletBladeDancePower>() is { Amount: > 0 } dancePower)
         {
             enemy = await dancePower.TrySelectTargetAsync(hittableEnemies);
         }
@@ -82,39 +90,47 @@ public class ScarletSwordPower : ModPowerTemplate
             damage += temperingPower.GetBonusDamage();
         }
 
-        var godFormPower = Owner.HasPower<SwordGodFormPower>();
         Flash();
-        if (godFormPower)
+        if (godForm)
         {
-            await CreatureCmd.Damage(choiceContext, hittableEnemies, damage, ValueProp.Unpowered, Owner,
-                card, null);
+            await CreatureCmd.Damage(choiceContext, hittableEnemies, damage, ValueProp.Unpowered, Owner, card, null);
         }
         else
         {
-            if (enemy == null) return;
+            if (enemy == null)
+                return;
+
             await CreatureCmd.Damage(choiceContext, enemy, damage, ValueProp.Unpowered, Owner, card, null);
         }
 
+        // 赤剑共鸣：获得格挡
         if (Owner.GetPower<ScarletResonancePower>() is { } resonancePower)
         {
             await resonancePower.OnScarletSwordAttack();
         }
 
-        if (Owner.GetPower<BladesAfterglowPower>() is { } bladesAfterglowPower)
+        // 万辉：累计赤光剑攻击次数
+        if (Owner.GetPower<BladesAfterglowPower>() is { } afterglowPower)
         {
-            await bladesAfterglowPower.OnScarletSwordAttack(choiceContext);
+            await afterglowPower.OnScarletSwordAttack(choiceContext);
         }
 
-        if (Owner.GetPower<CrimsonChainPower>() is { } crimsonChainPower)
+        // 绯红连锁：对目标施加易伤，并获得增伤效果
+        if (enemy != null && Owner.GetPower<CrimsonChainPower>() is { } crimsonChainPower)
         {
             await crimsonChainPower.OnScarletSwordAttack(choiceContext, enemy);
         }
 
-        if (Owner.GetPower<ScarletArrayPower>() is { } scarletArrayPower)
-        {
-            await scarletArrayPower.OnScarletSwordAttack(choiceContext);
-        }
+        // 赤剑阵追加攻击不消耗赤光剑，
+        // 也不能再次触发赤剑阵。
+        if (isExtraAttack)
+            return;
 
         await PowerCmd.Decrement(this);
+
+        if (Owner.GetPower<ScarletArrayPower>() is { } arrayPower)
+        {
+            await arrayPower.OnScarletSwordAttack(choiceContext, this, card);
+        }
     }
 }

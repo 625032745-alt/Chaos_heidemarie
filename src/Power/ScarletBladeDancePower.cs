@@ -14,7 +14,7 @@ public class ScarletBladeDancePower : ModPowerTemplate
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
-    
+
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/ScarletBladeDancePower_Small.png",
         BigIconPath: "res://ArtWorks/images/power/ScarletBladeDancePower_Big.png"
@@ -22,25 +22,27 @@ public class ScarletBladeDancePower : ModPowerTemplate
 
     public async Task<Creature?> TrySelectTargetAsync(IReadOnlyList<Creature> candidates)
     {
-        if (Amount <= 0m || candidates.Count == 0) return null;
+        if (Amount <= 0m || candidates.Count == 0)
+            return null;
 
-        var hittableEnemies = CombatState.HittableEnemies;
-        var target = hittableEnemies.MinBy(c => c.CurrentHp);
+        var target = candidates.MinBy(c => c.CurrentHp);
 
-        if (target == null) return null;
+        if (target == null)
+            return null;
+
         Flash();
         await PowerCmd.Decrement(this);
         return target;
     }
 
-
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side,
         IEnumerable<Creature> participants)
     {
-        if (side != CombatSide.Player)
+        if (side != CombatSide.Player || !participants.Contains(Owner))
+        {
             return;
-        if (!participants.Contains(Owner))
-            return;
+        }
+
         await PowerCmd.Remove(this);
     }
 }
