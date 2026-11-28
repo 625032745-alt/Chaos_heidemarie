@@ -80,7 +80,7 @@
   "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.title": "Radiance",
   "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.description": "Deal {Damage:diff()} damage.\nIf you have at least {Radiance:diff()} stacks of [gold]Aurora Chain[/gold], deal double damage.",
   "CHAOS_HEIDEMARIE_CARD_DAWNSHATTER_CARD.title": "Dawnshatter",
-  "CHAOS_HEIDEMARIE_CARD_DAWNSHATTER_CARD.description": "Each turn, add 3 random Rare Attacks to your hand. They gain [gold]Exhaust[/gold].",
+  "CHAOS_HEIDEMARIE_CARD_DAWNSHATTER_CARD.description": "Each turn, add 3 random Rare Attack cards to your hand. They gain [gold]Exhaust[/gold] and cost 0 this turn.",
   "CHAOS_HEIDEMARIE_CARD_DAWNGLOW_CARD.title": "Dawnglow",
   "CHAOS_HEIDEMARIE_CARD_DAWNGLOW_CARD.description": "Deal {Damage:diff()} damage.\nDraw 2 cards.\nDiscard 2 cards.",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_SLASH_CARD.title": "Chain Slash",

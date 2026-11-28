@@ -31,6 +31,7 @@ public class DawnshatterPower : ModPowerTemplate
         foreach (var card in cards)
         {
             card.AddKeyword(CardKeyword.Exhaust);
+            card.SetToFreeThisTurn();
         }
         await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Hand, Owner.Player);
     }
