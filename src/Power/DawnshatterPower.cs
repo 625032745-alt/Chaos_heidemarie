@@ -26,11 +26,11 @@ public class DawnshatterPower : ModPowerTemplate
         var pool = Owner.Player.Character.CardPool
             .GetUnlockedCards(Owner.Player.UnlockState, CombatState.RunState.CardMultiplayerConstraint)
             .Where(c => c.Type == CardType.Attack && c.Rarity == CardRarity.Rare);
-        var cards = CardFactory.GetForCombat(Owner.Player, pool, 3, CombatState.RunState.Rng.CombatCardGeneration)
+        var cards = CardFactory.GetForCombat(Owner.Player, pool, 1, CombatState.RunState.Rng.CombatCardGeneration)
             .ToList();
         foreach (var card in cards)
         {
-            card.AddKeyword(CardKeyword.Exhaust);
+            CardCmd.Upgrade(card);
             card.SetToFreeThisTurn();
         }
         await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Hand, Owner.Player);

@@ -80,7 +80,7 @@
   "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.title": "辉耀",
   "CHAOS_HEIDEMARIE_CARD_RADIANCE_CARD.description": "造成 {Damage:diff()} 点伤害。\n若你拥有至少 {Radiance:diff()} 层[gold]极光连锁[/gold]，造成双倍伤害",
   "CHAOS_HEIDEMARIE_CARD_DAWNSHATTER_CARD.title": "曦裂",
-  "CHAOS_HEIDEMARIE_CARD_DAWNSHATTER_CARD.description": "每回合将 3 张随机稀有攻击牌加入你的手牌中获得[gold]消耗[/gold]，本回合免费打出",
+  "CHAOS_HEIDEMARIE_CARD_DAWNSHATTER_CARD.description": "每回合将 1 张随机稀有攻击牌加入你的手牌中获得[gold]升级[/gold]，本回合免费打出",
   "CHAOS_HEIDEMARIE_CARD_DAWNGLOW_CARD.title": "曦华",
   "CHAOS_HEIDEMARIE_CARD_DAWNGLOW_CARD.description": "造成 {Damage:diff()} 点伤害\n抽 2 张牌\n丢弃 2 张牌",
   "CHAOS_HEIDEMARIE_CARD_CHAIN_SLASH_CARD.title": "链斩",
