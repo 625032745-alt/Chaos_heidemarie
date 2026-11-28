@@ -29,7 +29,7 @@ public class ChainBurstCard : ModCardTemplate
     {
         var count = PileType.Hand.GetPile(Owner).Cards.Count(c => c.Keywords.Contains(LinkKeywords.Link));
         var cards = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
-            CardSelectorPrefs.DiscardSelectionPrompt, count);
+            CardSelectorPrefs.DiscardSelectionPrompt, count, c => c.Keywords.Contains(LinkKeywords.Link));
         foreach (var card in cards)
         {
             await CardCmd.Discard(choiceContext, card);

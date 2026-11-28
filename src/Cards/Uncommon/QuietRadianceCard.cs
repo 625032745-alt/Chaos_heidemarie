@@ -16,7 +16,7 @@ public class QuietRadianceCard : ModCardTemplate
     public override CardAssetProfile AssetProfile =>
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(3, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(3, ValueProp.Unpowered)];
     
     public QuietRadianceCard() : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
     {
