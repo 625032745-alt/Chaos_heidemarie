@@ -128,7 +128,7 @@
   "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.title": "Blade Burial",
   "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.description": "Choose up to 3 cards in your hand to discard.\nFor each card discarded this way, deal {Damage:diff()} damage to a random enemy.",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.title": "Scarlet Daybreak",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.description": "Deal {Damage:diff()} damage.\nConsume all [gold]Scarlet Sword[/gold].\nFor each stack consumed, deal 6 additional damage.",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.description": "Deal {Damage:diff()} damage.\nAttack {Repeat:diff()} additional times based on your stacks of [gold]Scarlet Sword[/gold]",
   "CHAOS_HEIDEMARIE_CARD_GATHERING_LIGHT_CARD.title": "Gathering Light",
   "CHAOS_HEIDEMARIE_CARD_GATHERING_LIGHT_CARD.description": "Gain {Block:diff()} Block.\nChoose 1 card from your discard pile and put it into your hand.",
   "CHAOS_HEIDEMARIE_CARD_HIDDEN_EDGE_CARD.title": "Hidden Edge",

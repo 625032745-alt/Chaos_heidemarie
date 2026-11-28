@@ -128,7 +128,7 @@
   "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.title": "葬剑",
   "CHAOS_HEIDEMARIE_CARD_BLADE_BURIAL_CARD.description": "选择至多 3 张手牌丢弃。\n每以此法丢弃 1 张牌，对一名随机敌人造成 {Damage:diff()} 点伤害",
   "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.title": "赤昼终斩",
-  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.description": "造成 {Damage:diff()} 点伤害。\n消耗所有[gold]赤光剑[/gold]。\n每消耗 1 层，额外造成 6 点伤害",
+  "CHAOS_HEIDEMARIE_CARD_SCARLET_DAYBREAK_CARD.description": "造成 {Damage:diff()} 点伤害。\n基于[gold]赤光剑[/gold]层数额外攻击 {Repeat:diff()} 次",
   "CHAOS_HEIDEMARIE_CARD_GATHERING_LIGHT_CARD.title": "拾光",
   "CHAOS_HEIDEMARIE_CARD_GATHERING_LIGHT_CARD.description": "获得 {Block:diff()} 点格挡。\n从弃牌堆选择 1 张牌放入手牌",
   "CHAOS_HEIDEMARIE_CARD_HIDDEN_EDGE_CARD.title": "藏锋",
