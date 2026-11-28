@@ -12,8 +12,7 @@ namespace ChaosHeidemarie.Power;
 public class AuroraPower : ModPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Single;
-    private int _lastGainTurn = -1;
+    public override PowerStackType StackType => PowerStackType.Counter;
 
     public override PowerAssetProfile AssetProfile => new(
         IconPath: "res://ArtWorks/images/power/AuroraPower_Small.png",
@@ -25,12 +24,7 @@ public class AuroraPower : ModPowerTemplate
     {
         if (power is not InherentMemoryPower || amount <= 0m) return;
 
-        var combatState = Owner.Player?.PlayerCombatState;
-        if (combatState == null || combatState.TurnNumber == _lastGainTurn)
-            return;
-
-        _lastGainTurn = combatState.TurnNumber;
         Flash();
-        await CardPileCmd.Draw(choiceContext, Owner.Player);
+        await CardPileCmd.Draw(choiceContext, Amount, Owner.Player);
     }
 }

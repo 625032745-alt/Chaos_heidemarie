@@ -24,9 +24,10 @@ public class CrimsonTranspositionCard : ModCardTemplate
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var power = Owner.Creature.GetPower<ScarletSwordPower>();
-        if (power != null)
+        var baseValue = DynamicVars["CrimsonTransposition"].BaseValue;
+        if (power != null && power.Amount >= baseValue)
         {
-            await power.ConsumeAsync(choiceContext, DynamicVars["CrimsonTransposition"].BaseValue, Owner.Creature,
+            await power.ConsumeAsync(choiceContext, baseValue, Owner.Creature,
                 this);
             await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
             await CardPileCmd.Draw(choiceContext, Owner);
