@@ -1,0 +1,43 @@
+﻿using ChaosHeidemarie.Cards.Base;
+using ChaosHeidemarie.Content;
+using MegaCrit.Sts2.Core.CardSelection;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
+
+namespace ChaosHeidemarie.Cards.Uncommon;
+
+[RegisterCard(typeof(HeidemarieCardPool))]
+public class TemperingCard : ModCardTemplate
+{
+    public override CardAssetProfile AssetProfile =>
+        new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
+    public override bool GainsBlock => true;
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(9, ValueProp.Move)];
+
+    public TemperingCard() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    {
+    }
+
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
+        var selected = await CardSelectionHelper.SelectFromPile(choiceContext, Owner, PileType.Hand,
+            CardSelectorPrefs.UpgradeSelectionPrompt, 2, c => c.IsUpgradable);
+        foreach (var item in selected)
+        {
+            CardCmd.Upgrade(item);
+            item.SetToFreeThisCombat();
+        }
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Block.UpgradeValueBy(3);
+    }
+}

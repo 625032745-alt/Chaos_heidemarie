@@ -28,9 +28,9 @@ public class RadiantReflectionCard : ModCardTemplate
     {
         var baseValue = DynamicVars["RadiantReflection"].BaseValue;
         var power = Owner.Creature.GetPower<InherentMemoryPower>();
-        if (power != null && power.Amount >= 3)
+        if (power != null && power.Amount >= 2)
         {
-            baseValue += power.Amount / 3;
+            baseValue += power.Amount / 2;
         }
 
         await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature,

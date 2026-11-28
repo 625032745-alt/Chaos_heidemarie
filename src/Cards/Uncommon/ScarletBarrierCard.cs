@@ -20,7 +20,6 @@ public class ScarletBarrierCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     public override bool GainsBlock => true;
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [LinkKeywords.Link];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
@@ -29,7 +28,7 @@ public class ScarletBarrierCard : ModCardTemplate
             {
                 var baseValue = ctx.BaseValue;
                 if (!ctx.HasSourceCreature || !ctx.HasCombatState) return baseValue;
-                return baseValue + 3m * CombatManager.Instance.History.Entries
+                return baseValue + baseValue * CombatManager.Instance.History.Entries
                     .OfType<CardDiscardedEntry>()
                     .Count(e => e.HappenedThisTurn(ctx.CombatState) && e.Actor == ctx.SourceCreature);
             },

@@ -28,6 +28,7 @@ public class ScarletPreparationCard : ModCardTemplate
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await CardPileCmd.Draw(choiceContext, Owner);
         var power = Owner.Creature.GetPower<ScarletSwordPower>();
         var consumeAmount = DynamicVars["ScarletPreparation"].BaseValue;
         // 赤光剑不足时，不触发效果
@@ -41,10 +42,8 @@ public class ScarletPreparationCard : ModCardTemplate
         if (card == null)
             return;
         await power.ConsumeAsync(choiceContext, consumeAmount, Owner.Creature, this);
-
-        // 选中的牌本回合费用变为0
+        
         card.SetToFreeThisTurn();
-        await CardPileCmd.Draw(choiceContext, Owner);
     }
 
     protected override void OnUpgrade()

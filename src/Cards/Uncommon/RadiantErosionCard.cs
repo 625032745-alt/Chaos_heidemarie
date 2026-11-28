@@ -1,4 +1,5 @@
 ﻿using ChaosHeidemarie.Content;
+using ChaosHeidemarie.Power;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -26,7 +27,7 @@ public class RadiantErosionCard : ModCardTemplate
         var baseValue = DynamicVars["RadiantErosion"].BaseValue;
         await PowerCmd.Apply<WeakPower>(choiceContext, cardPlay.Target, baseValue, Owner.Creature, this);
         await PowerCmd.Apply<VulnerablePower>(choiceContext, cardPlay.Target, baseValue, Owner.Creature, this);
-        await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, baseValue, Owner.Creature, this);
+        await PowerCmd.Apply<InherentMemoryPower>(choiceContext, Owner.Creature, baseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

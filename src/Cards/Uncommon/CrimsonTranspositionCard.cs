@@ -16,7 +16,6 @@ public class CrimsonTranspositionCard : ModCardTemplate
         new(PortraitPath: $"res://ArtWorks/images/cards/{GetType().Name}.png");
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("CrimsonTransposition", 2), new EnergyVar(1)];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     public CrimsonTranspositionCard() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {

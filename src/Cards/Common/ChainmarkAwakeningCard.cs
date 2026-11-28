@@ -20,7 +20,7 @@ public class ChainmarkAwakeningCard : ModCardTemplate
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [new("ChainmarkAwakening", 1), new BlockVar(8, ValueProp.Move)];
+        [new("ChainmarkAwakening", 1), new BlockVar(20, ValueProp.Move)];
 
     public ChainmarkAwakeningCard() : base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
@@ -35,7 +35,7 @@ public class ChainmarkAwakeningCard : ModCardTemplate
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(3);
+        AddKeyword(CardKeyword.Retain);
         DynamicVars["ChainmarkAwakening"].UpgradeValueBy(1m);
     }
 }

@@ -28,19 +28,16 @@ public class ReforgeCard : ModCardTemplate
     {
     }
 
-    public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var cardModel = cardPlay.Card;
-        if (cardModel != this) return;
-        var player = cardModel.Owner;
-        var pile = PileType.Hand.GetPile(player);
+        var pile = PileType.Hand.GetPile(Owner);
         var cards = pile.Cards.Where(c => c.Keywords.Contains(LinkKeywords.Link)).ToList();
         foreach (var card in cards)
         {
             card.RemoveKeyword(LinkKeywords.Link);
         }
 
-        await SelectFromHandPileToLink(choiceContext, player);
+        await SelectFromHandPileToLink(choiceContext, Owner);
     }
 
     private async Task SelectFromHandPileToLink(PlayerChoiceContext ctx, Player player)

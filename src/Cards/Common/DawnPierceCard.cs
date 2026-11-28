@@ -33,10 +33,11 @@ public class DawnPierceCard : ModCardTemplate
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         var power = Owner.Creature.GetPower<InherentMemoryPower>();
-        if (power != null)
+        var targetBlock = cardPlay.Target.Block;
+        if (power != null && targetBlock > 0)
         {
             await power.ConsumeAsync(choiceContext, 2, Owner.Creature, this);
-            await CreatureCmd.LoseBlock(choiceContext, cardPlay.Target, cardPlay.Target.Block, Owner.Creature);
+            await CreatureCmd.LoseBlock(choiceContext, cardPlay.Target, targetBlock, Owner.Creature);
         }
     }
 
