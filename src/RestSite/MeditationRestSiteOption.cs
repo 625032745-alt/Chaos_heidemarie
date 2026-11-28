@@ -38,7 +38,19 @@ public class MeditationRestSiteOption : ModRestSiteOptionTemplate
             SwordRainCard
             or ThreadLightCard
             or HeroAllCard
-            or EffulgentExpansionCard;
+            or EffulgentExpansionCard
+            or SwordRainCardA
+            or SwordRainCardB
+            or SwordRainCardC
+            or SwordRainCardD
+            or HeroAllUpgradeCardA
+            or HeroAllUpgradeCardB
+            or HeroAllUpgradeCardC
+            or HeroAllUpgradeCardD
+            or EffulgentExpansionCardA
+            or EffulgentExpansionCardB
+            or EffulgentExpansionCardC
+            or EffulgentExpansionCardD;
     }
 
     public override async Task<bool> OnSelect()
@@ -76,7 +88,7 @@ public class MeditationRestSiteOption : ModRestSiteOptionTemplate
 
         return original switch
         {
-            SwordRainCard =>
+            SwordRainCard or SwordRainCardA or SwordRainCardB or SwordRainCardC or SwordRainCardD =>
             [
                 runState.CreateCard<SwordRainCardA>(Owner),
                 runState.CreateCard<SwordRainCardB>(Owner),
@@ -84,7 +96,7 @@ public class MeditationRestSiteOption : ModRestSiteOptionTemplate
                 runState.CreateCard<SwordRainCardD>(Owner)
             ],
 
-            ThreadLightCard =>
+            ThreadLightCard or ThreadLightCardA or ThreadLightCardB or ThreadLightCardC or ThreadLightCardD =>
             [
                 runState.CreateCard<ThreadLightCardA>(Owner),
                 runState.CreateCard<ThreadLightCardB>(Owner),
@@ -92,7 +104,7 @@ public class MeditationRestSiteOption : ModRestSiteOptionTemplate
                 runState.CreateCard<ThreadLightCardD>(Owner)
             ],
 
-            HeroAllCard =>
+            HeroAllCard or HeroAllUpgradeCardA or HeroAllUpgradeCardB or HeroAllUpgradeCardC or HeroAllUpgradeCardD =>
             [
                 runState.CreateCard<HeroAllUpgradeCardA>(Owner),
                 runState.CreateCard<HeroAllUpgradeCardB>(Owner),
@@ -100,13 +112,14 @@ public class MeditationRestSiteOption : ModRestSiteOptionTemplate
                 runState.CreateCard<HeroAllUpgradeCardD>(Owner)
             ],
 
-            EffulgentExpansionCard =>
-            [
-                runState.CreateCard<EffulgentExpansionCardA>(Owner),
-                runState.CreateCard<EffulgentExpansionCardB>(Owner),
-                runState.CreateCard<EffulgentExpansionCardC>(Owner),
-                runState.CreateCard<EffulgentExpansionCardD>(Owner)
-            ]
+            EffulgentExpansionCard or EffulgentExpansionCardA or EffulgentExpansionCardB or EffulgentExpansionCardC
+                or EffulgentExpansionCardD =>
+                [
+                    runState.CreateCard<EffulgentExpansionCardA>(Owner),
+                    runState.CreateCard<EffulgentExpansionCardB>(Owner),
+                    runState.CreateCard<EffulgentExpansionCardC>(Owner),
+                    runState.CreateCard<EffulgentExpansionCardD>(Owner)
+                ]
         };
     }
 }
